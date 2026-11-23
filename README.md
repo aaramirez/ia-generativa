@@ -16,6 +16,5 @@ Este repositorio solo tiene el sitio generado. El curso está en preparación: l
 | 06 | Imagen, audio y video |
 | 07 | Datos y hojas de cálculo con IA |
 | 08 | Código para no programadores |
-| 09 | La escalera de la IA en una empresa |
-| 10 | Casos por área |
-| 11 | De usarla a adoptarla: la IA en tu equipo |
+| 09 | Casos por área |
+| 10 | De usarla a adoptarla: la IA en tu equipo |
