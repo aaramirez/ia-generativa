@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trabajar con tus documentos · IA generativa · IA generativa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Usar la IA generativa en el trabajo, sin tecnicismos: qué puede y qué no, cómo pedir bien, cómo verificar, qué hacer con texto, imágenes y datos, casos por área y cómo llevarla a tu equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="trabajar-con-tus-documentos">
+<header class="topbar"><a class="brand" href="index.html">IA <b>generativa</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 04 DE 10</span><h1>Trabajar con tus documentos</h1><p class="lede">Un asistente no conoce tu empresa: sus políticas, sus contratos y sus cifras no estaban en lo que leyó. Este capítulo enseña a darle tu material para que responda con él, cite de dónde sacó cada dato y diga «no lo sé» cuando el material no alcanza, sin subir lo que no se debe.</p></header>
+<section><div class="prose"><p>El informe mensual tiene una sección sobre gastos del área, y la gerencia pidió que explique si los viáticos del último viaje a la zona norte cumplieron la política de la empresa. Le preguntas al asistente: «¿Cuánto es el viático diario para un viaje nacional según nuestra política?». Te responde, muy seguro, con una cifra y una regla sobre recibos. Ninguna de las dos sale de tu política. Salen de cientos de políticas de viáticos de otras empresas que el modelo leyó alguna vez.</p><p>Ahora adjuntas el documento de la política y repites la pregunta pidiendo que cite la página. La respuesta cambia: da la cifra correcta, dice que está en la sección 3 y copia la frase. Este capítulo trata de esa diferencia: cómo darle tu material a la IA, qué pasa por dentro cuando lo haces y qué material no conviene darle.</p></div></section>
+<section><h2>Por qué la IA no conoce tu empresa</h2><div class="prose"><p>Un modelo de lenguaje aprendió de lo que estaba disponible para entrenarlo: páginas web públicas, libros, artículos, foros. Los documentos internos de tu empresa no estaban ahí. Ni la política de viáticos, ni el contrato con tu proveedor, ni las cifras del mes pasado, ni el nombre de tu jefa. Y aunque algo de tu empresa fuera público, el modelo lo leyó hasta su fecha de corte, y quizá solo una vez entre miles de millones de textos.</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en un consultor brillante que contratas por un día. Sabe muchísimo de gestión, escribe muy bien y entiende rápido. Pero llega sin acceso a la intranet, sin haber leído los manuales y sin conocer a nadie. Si le preguntas «¿cuál es nuestra política de viáticos?», puede contarte cómo son las políticas de viáticos en general, o puede adivinar. Si le das la carpeta con los documentos, en diez minutos te responde con lo que dice tu política y te muestra la página. La carpeta es lo que cambia todo.</p></div><div class="prose"><p>En el capítulo 2 viste que darle una fuente al asistente se llama <b>anclaje</b> (<i>grounding</i>): la respuesta deja de salir solo de lo que el modelo recuerda y pasa a apoyarse en un texto concreto que tú puedes revisar. Tus documentos son la forma más directa de anclaje.</p></div></section>
+<section><h2>Adjuntar documentos, hojas y presentaciones</h2><div class="prose"><p>Casi todos los asistentes permiten adjuntar archivos: PDF, documentos de texto, hojas de cálculo, presentaciones, imágenes. Por fuera parece que el asistente «lee el archivo». Por dentro pasan varias cosas, y conocerlas explica la mayoría de los problemas.</p></div><figure class="fig fig-flujo" id="04-diagrama-1"><div class="lienzo"><svg viewBox="0 0 820 440" style="min-width:680px" role="img" aria-label="Flujo de un documento adjunto: al subirlo se extrae el texto, se corta en fragmentos y se indexa; al preguntar se buscan los fragmentos más parecidos, se ponen en la ventana de contexto y el modelo responde citándolos. Debajo de cada paso, qué puede fallar.">
+  <defs>
+    <marker id="g4d1-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  <text x="20" y="24" class="t t-xs t-m">AL SUBIR EL ARCHIVO (UNA VEZ)</text>
+  <rect x="20" y="34" width="176" height="84" rx="10" class="caja"/>
+  <text x="34" y="58" class="t t-b">① Subes el archivo</text>
+  <text x="34" y="78" class="t t-s">PDF, documento,</text>
+  <text x="34" y="94" class="t t-s">hoja, presentación</text>
+  <rect x="220" y="34" width="176" height="84" rx="10" class="c-tra"/>
+  <text x="234" y="58" class="t t-b k-tra">② Extrae el texto</text>
+  <text x="234" y="78" class="t t-s">si es un escaneo,</text>
+  <text x="234" y="94" class="t t-s">con OCR</text>
+  <rect x="420" y="34" width="176" height="84" rx="10" class="c-tra"/>
+  <text x="434" y="58" class="t t-b k-tra">③ Corta en fragmentos</text>
+  <rect x="434" y="72" width="40" height="12" rx="3" class="caja"/><rect x="478" y="72" width="40" height="12" rx="3" class="caja"/><rect x="522" y="72" width="40" height="12" rx="3" class="caja"/>
+  <rect x="434" y="90" width="40" height="12" rx="3" class="caja"/><rect x="478" y="90" width="40" height="12" rx="3" class="caja"/><text x="526" y="100" class="t t-s t-m">…</text>
+  <rect x="620" y="34" width="180" height="84" rx="10" class="c-tra"/>
+  <text x="634" y="58" class="t t-b k-tra">④ Índice de significados</text>
+  <text x="634" y="78" class="t t-s">un vector (embedding)</text>
+  <text x="634" y="94" class="t t-s">por fragmento</text>
+  <path d="M196 76 H216" class="ln" style="stroke-width:2" marker-end="url(#g4d1-fl)"/>
+  <path d="M396 76 H416" class="ln" style="stroke-width:2" marker-end="url(#g4d1-fl)"/>
+  <path d="M596 76 H616" class="ln" style="stroke-width:2" marker-end="url(#g4d1-fl)"/>
+  <text x="34" y="138" class="t t-s k-warm">—</text>
+  <text x="234" y="138" class="t t-s k-warm">✗ escaneo torcido: letras</text>
+  <text x="234" y="154" class="t t-s k-warm">mal leídas; tablas sin columnas</text>
+  <text x="434" y="138" class="t t-s k-warm">✗ una idea queda partida</text>
+  <text x="434" y="154" class="t t-s k-warm">entre dos fragmentos</text>
+  <text x="634" y="138" class="t t-s k-warm">(si el texto es corto, se</text>
+  <text x="634" y="154" class="t t-s k-warm">salta: entra entero)</text>
+
+  <line x1="20" y1="176" x2="800" y2="176" class="ln ln-d"/>
+  <text x="20" y="200" class="t t-xs t-m">AL PREGUNTAR (CADA VEZ)</text>
+  <rect x="20" y="210" width="176" height="84" rx="10" class="caja"/>
+  <text x="34" y="234" class="t t-b">⑤ Preguntas</text>
+  <text x="34" y="254" class="t t-s">«¿Cuánto es el viático</text>
+  <text x="34" y="270" class="t t-s">diario nacional?»</text>
+  <rect x="220" y="210" width="176" height="84" rx="10" class="c-red"/>
+  <text x="234" y="234" class="t t-b k-red">⑥ Busca fragmentos</text>
+  <text x="234" y="254" class="t t-s">los más parecidos</text>
+  <text x="234" y="270" class="t t-s">a tu pregunta</text>
+  <rect x="420" y="210" width="176" height="84" rx="10" class="d-sis"/>
+  <text x="434" y="234" class="t t-b k-sis">⑦ Ventana de contexto</text>
+  <text x="434" y="254" class="t t-s">fragmentos + tu pedido</text>
+  <text x="434" y="270" class="t t-s">+ instrucciones</text>
+  <rect x="620" y="210" width="180" height="84" rx="10" class="c-enl"/>
+  <text x="634" y="234" class="t t-b k-enl">⑧ Responde y cita</text>
+  <text x="634" y="254" class="t t-s">«$ 80 por día»</text>
+  <text x="634" y="270" class="t t-s">[sección 3, p. 2]</text>
+  <path d="M196 252 H216" class="ln" style="stroke-width:2" marker-end="url(#g4d1-fl)"/>
+  <path d="M396 252 H416" class="ln" style="stroke-width:2" marker-end="url(#g4d1-fl)"/>
+  <path d="M596 252 H616" class="ln" style="stroke-width:2" marker-end="url(#g4d1-fl)"/>
+  <path d="M796 118 V166 H308 V206" class="ln ln-d" style="stroke-width:1.6" marker-end="url(#g4d1-fl)"/>
+  <text x="34" y="314" class="t t-s k-warm">✗ pregunta ambigua:</text>
+  <text x="34" y="330" class="t t-s k-warm">busca otra cosa</text>
+  <text x="234" y="314" class="t t-s k-warm">✗ el fragmento con la</text>
+  <text x="234" y="330" class="t t-s k-warm">respuesta no se recupera</text>
+  <text x="434" y="314" class="t t-s k-warm">✗ mezcla con lo que el</text>
+  <text x="434" y="330" class="t t-s k-warm">modelo ya sabía</text>
+  <text x="634" y="314" class="t t-s k-warm">✗ cita una página</text>
+  <text x="634" y="330" class="t t-s k-warm">equivocada o inventada</text>
+
+  <rect x="20" y="356" width="780" height="70" rx="10" class="caja"/>
+  <text x="36" y="382" class="t t-b">A esto se le llama RAG: recuperar primero, generar después.</text>
+  <text x="36" y="404" class="t t-s">Si el documento es largo, el modelo no lo lee entero: lee los fragmentos del paso ⑥. Lo que no se recuperó,</text>
+  <text x="36" y="418" class="t t-s">para él no existe. Por eso conviene pedir que cite y comprobar la cita.</text>
+</svg></div><figcaption><b>Qué pasa cuando adjuntas un documento.</b> Arriba, lo que pasa una sola vez, al subir el archivo; abajo, lo que pasa en cada pregunta. Subes el archivo (①); la aplicación extrae el texto (②), con reconocimiento óptico si es una imagen o un escaneo; lo corta en fragmentos (③) y, si es largo, los guarda en un índice de significados (④). Cuando preguntas (⑤), busca los fragmentos más parecidos a tu pregunta (⑥), los pone en la ventana de contexto junto con tu pedido (⑦) y el modelo responde citándolos (⑧). Debajo de cada paso, en rojo, lo que puede fallar.</figcaption></figure><div class="prose"><p>Paso a paso:</p><ul><li><b>Extraer el texto.</b> El modelo trabaja con texto (o con imágenes, si es multimodal), no con archivos. Un PDF generado desde un procesador de textos ya trae su texto. Un PDF escaneado es una foto de cada página, y hace falta <b>OCR</b> (<i>optical character recognition</i>, reconocimiento óptico de caracteres) para convertir la imagen en letras. El OCR se equivoca con escaneos torcidos, sellos, firmas y letra pequeña.</li><li><b>Tablas y hojas de cálculo.</b> Al extraer el texto, una tabla puede perder sus columnas y quedar como una fila de números sueltos. Por eso, para analizar una hoja de cálculo, los asistentes que pueden <b>ejecutar código</b> la abren con un programa en lugar de leerla como texto (es el tema del capítulo 7).</li><li><b>Presentaciones e imágenes.</b> El texto de las diapositivas se extrae bien; los gráficos y diagramas solo los «ve» un asistente multimodal, y con menos precisión.</li><li><b>¿Cabe todo?</b> Si el documento es corto, el texto entero entra en la <b>ventana de contexto</b> (<i>context window</i>) y el modelo lo lee completo. Si es largo, la aplicación lo corta en fragmentos y en cada pregunta busca solo los más relevantes. Esa técnica se llama <b>generación aumentada por recuperación</b> (RAG, <i>retrieval-augmented generation</i>): primero recupera los fragmentos, después genera la respuesta con ellos. La búsqueda usa los vectores de significado (<i>embeddings</i>) que viste en el capítulo 1.</li></ul><p>La consecuencia práctica de RAG es importante: cuando el documento es largo, el modelo <b>no lo leyó entero</b> para responderte. Leyó los fragmentos que la búsqueda trajo. Si la respuesta estaba en un fragmento que no se recuperó, el asistente no la ve, y puede decir que el documento no habla del tema o, peor, completar con lo que encaja. Cómo se construye un sistema RAG por dentro es tema del curso <a href="https://aaramirez.github.io/aplicaciones-con-ia/temario.html" target="_blank" rel="noopener">Aplicaciones con IA</a>.</p></div><div class="lab" id="04-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>¿Cabe en la ventana?</h3></div><p class="hint">Elige el tamaño del documento y la ventana de contexto del asistente. Mira cuántos tokens ocupa, si cabe entero y, si no cabe, qué parte del documento ve el modelo en cada pregunta. Mueve después el número de fragmentos que recupera.</p><style>
+[id="04-lab-1"] .c4l1-fila{display:grid;gap:4px}
+[id="04-lab-1"] .c4l1-fila>span{font:700 .72rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+[id="04-lab-1"] .c4l1-doc{display:grid;grid-template-columns:repeat(40,minmax(0,1fr));gap:2px}
+[id="04-lab-1"] .c4l1-doc i{display:block;height:22px;border-radius:2px;background:var(--grid)}
+[id="04-lab-1"] .c4l1-doc i.v{background:var(--good)}
+[id="04-lab-1"] .c4l1-doc i.r{background:var(--accent)}
+[id="04-lab-1"] .c4l1-doc i.res{outline:2px solid var(--warm);outline-offset:-2px}
+[id="04-lab-1"] .c4l1-win{height:30px;border-radius:6px;border:1px solid var(--line);background:var(--paper);display:flex;overflow:hidden}
+[id="04-lab-1"] .c4l1-win i{display:block;height:100%;transition:width .25s}
+[id="04-lab-1"] .c4l1-win .ins{background:var(--c-tra)}
+[id="04-lab-1"] .c4l1-win .doc{background:var(--good)}
+[id="04-lab-1"] .c4l1-win .frag{background:var(--accent)}
+@media (prefers-reduced-motion: reduce){[id="04-lab-1"] .c4l1-win i{transition:none}}
+</style>
+<div class="ctls">
+  <label class="ctl">Tamaño del documento <output id="c4l1-p-o"></output>
+    <input id="c4l1-p" type="range" min="0" max="9" step="1" value="3"></label>
+  <label class="ctl">Fragmentos que recupera por pregunta <output id="c4l1-k-o"></output>
+    <input id="c4l1-k" type="range" min="1" max="20" step="1" value="5"></label>
+</div>
+<div class="opciones">
+  <label>Ventana de contexto del asistente
+    <select id="c4l1-w">
+      <option value="8000">8.000 tokens (modelos antiguos o pequeños)</option>
+      <option value="32000">32.000 tokens</option>
+      <option value="128000" selected>128.000 tokens</option>
+      <option value="200000">200.000 tokens</option>
+      <option value="1000000">1.000.000 de tokens</option>
+    </select></label>
+  <label>La respuesta está en la página
+    <select id="c4l1-pos">
+      <option value="0.1">del principio</option>
+      <option value="0.5" selected>del medio</option>
+      <option value="0.9">del final</option>
+    </select></label>
+</div>
+<div class="c4l1-fila"><span>El documento (cada cuadro es una parte)</span><div class="c4l1-doc" id="c4l1-doc" aria-hidden="true"></div></div>
+<div class="c4l1-fila"><span>La ventana de contexto</span><div class="c4l1-win" id="c4l1-win" aria-hidden="true"></div></div>
+<div class="legend"><span><i style="background:var(--good)"></i>documento que entra entero</span><span><i style="background:var(--accent)"></i>fragmentos recuperados</span><span><i style="background:var(--c-tra)"></i>instrucciones y tu pedido</span><span><i style="background:var(--warm)"></i>dónde está la respuesta</span></div>
+<div class="readout texto" id="c4l1-out" aria-live="polite"></div></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>¿Cuánto ocupa un documento?</h3></div><p>Vas a descargar el texto de un artículo largo y público de Wikipedia, contar sus palabras y estimar cuántos tokens ocupa. Como regla aproximada, en español cuenta 1,5 tokens por palabra. Solo necesitas la terminal; el archivo se guarda en la carpeta donde estés.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>curl.exe -s -L -o articulo.txt "https://es.wikipedia.org/w/index.php?title=Inteligencia_artificial&amp;action=raw"</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>(Get-Content articulo.txt -Raw -Encoding UTF8 | Measure-Object -Word).Words</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>(Get-Item articulo.txt).Length</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>curl -s -L -o articulo.txt "https://es.wikipedia.org/w/index.php?title=Inteligencia_artificial&amp;action=raw"</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>wc -w articulo.txt</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>wc -c articulo.txt</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Ejecuta la primera línea para descargar el texto del artículo «Inteligencia artificial».</span></li><li><span>Ejecuta la segunda: cuenta las palabras. Multiplica por 1,5 para estimar los tokens.</span></li><li><span>Ejecuta la tercera: el tamaño en bytes (más o menos, en letras).</span></li><li><span>Compara tu estimación con la ventana de contexto de un asistente: muchos manejan hoy entre 100.000 y 1.000.000 de tokens, según el modelo y el plan.</span></li></ol><p><b>Qué observar:</b> el artículo tiene unas 16.000 palabras, unos 24.000 tokens: cabe sin problema en cualquier asistente actual. Un manual de 300 páginas, con unas 120.000 palabras, ya serían unos 180.000 tokens, y ahí muchos asistentes pasan a buscar fragmentos en lugar de leerlo entero. El número exacto cambia con cada edición del artículo. Cuando termines, puedes borrar <code>articulo.txt</code>.</p></div></section>
+<section><h2>Proyectos y espacios de trabajo</h2><div class="prose"><p>Adjuntar un archivo a una conversación tiene un límite evidente: la próxima conversación empieza de cero, y hay que volver a subirlo y volver a explicar el contexto. Para eso existen los <b>proyectos</b> (<i>projects</i>) o <b>espacios de trabajo</b> (<i>workspaces</i>): una carpeta dentro del asistente con instrucciones y archivos que se quedan, y que todas las conversaciones de ese proyecto pueden usar.</p><p>Algunos ejemplos del mercado, sin orden de preferencia: los Proyectos de ChatGPT y de Claude, las Gems de Gemini y los cuadernos de Microsoft Copilot. NotebookLM, de Google, es un caso particular: está diseñado para responder solo con las fuentes que subes, y cada respuesta trae citas numeradas que llevan al fragmento exacto. Los nombres y las funciones cambian con frecuencia; la idea se mantiene.</p></div><figure class="fig fig-comparacion" id="04-diagrama-2"><div class="lienzo"><svg viewBox="0 0 820 372" style="min-width:680px" role="img" aria-label="Comparación de cuatro maneras de darle material a un asistente: pegar en el mensaje, adjuntar a una conversación, un proyecto con instrucciones y archivos, y la memoria; qué dura, quién lo ve y cuándo conviene cada una">
+  <defs>
+    <marker id="g4d2-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  <line x1="110" y1="20" x2="800" y2="20" class="ln" style="stroke-width:2" marker-end="url(#g4d2-fl)"/>
+  <text x="110" y="14" class="t t-s t-m">más pasajero</text>
+  <text x="790" y="14" class="t t-s t-m" text-anchor="end">más permanente</text>
+
+  <text x="16" y="108" class="t t-xs t-m">QUÉ DURA</text>
+  <text x="16" y="196" class="t t-xs t-m">QUIÉN LO VE</text>
+  <text x="16" y="284" class="t t-xs t-m">CONVIENE</text>
+  <text x="16" y="300" class="t t-xs t-m">CUANDO</text>
+
+  <rect x="110" y="32" width="166" height="326" rx="10" class="c-red"/>
+  <text x="124" y="56" class="t t-b k-red">Pegar en el</text>
+  <text x="124" y="72" class="t t-b k-red">mensaje</text>
+  <text x="124" y="104" class="t t-s">Esta conversación</text>
+  <text x="124" y="120" class="t t-s">(mientras quepa)</text>
+  <text x="124" y="192" class="t t-s">Solo este chat</text>
+  <text x="124" y="280" class="t t-s">Un párrafo, unas notas,</text>
+  <text x="124" y="296" class="t t-s">un correo</text>
+
+  <rect x="284" y="32" width="166" height="326" rx="10" class="c-tra"/>
+  <text x="298" y="56" class="t t-b k-tra">Adjuntar a una</text>
+  <text x="298" y="72" class="t t-b k-tra">conversación</text>
+  <text x="298" y="104" class="t t-s">Esta conversación;</text>
+  <text x="298" y="120" class="t t-s">si es largo, por fragmentos</text>
+  <text x="298" y="192" class="t t-s">Solo este chat</text>
+  <text x="298" y="280" class="t t-s">Un documento para</text>
+  <text x="298" y="296" class="t t-s">una consulta puntual</text>
+
+  <rect x="458" y="32" width="166" height="326" rx="10" class="c-enl"/>
+  <text x="472" y="56" class="t t-b k-enl">Proyecto o</text>
+  <text x="472" y="72" class="t t-b k-enl">espacio de trabajo</text>
+  <text x="472" y="104" class="t t-s">Instrucciones y archivos</text>
+  <text x="472" y="120" class="t t-s">para todos sus chats</text>
+  <text x="472" y="192" class="t t-s">Todos los chats del</text>
+  <text x="472" y="208" class="t t-s">proyecto (y quien lo</text>
+  <text x="472" y="224" class="t t-s">comparta, si se puede)</text>
+  <text x="472" y="280" class="t t-s">Una tarea que se repite:</text>
+  <text x="472" y="296" class="t t-s">el informe de cada mes</text>
+
+  <rect x="632" y="32" width="172" height="326" rx="10" class="c-fis"/>
+  <text x="646" y="56" class="t t-b k-fis">Memoria del</text>
+  <text x="646" y="72" class="t t-b k-fis">asistente</text>
+  <text x="646" y="104" class="t t-s">Datos sueltos sobre ti,</text>
+  <text x="646" y="120" class="t t-s">hasta que los borres</text>
+  <text x="646" y="192" class="t t-s">Todas tus conversaciones</text>
+  <text x="646" y="208" class="t t-s">nuevas</text>
+  <text x="646" y="280" class="t t-s">Preferencias: tu cargo,</text>
+  <text x="646" y="296" class="t t-s">tu formato favorito</text>
+
+  <line x1="110" y1="146" x2="804" y2="146" class="ln ln-d"/>
+  <line x1="110" y1="246" x2="804" y2="246" class="ln ln-d"/>
+  <text x="124" y="342" class="t t-xs t-m">REVISIÓN: BAJA</text>
+  <text x="646" y="342" class="t t-xs k-fis">REVISA QUÉ GUARDÓ</text>
+</svg></div><figcaption><b>Cuatro maneras de darle tu material, de la más pasajera a la más permanente.</b> De izquierda a derecha: pegar el texto en el mensaje, adjuntar un archivo a una conversación, armar un proyecto con instrucciones y archivos, y la memoria del asistente. En cada columna, las tres filas dicen qué dura, quién lo ve y cuándo conviene. Fíjate en la línea de abajo: cuanto más permanente, más importa revisar qué quedó guardado.</figcaption></figure><div class="prose"><p>Un proyecto bien armado para el informe mensual tendría:</p><ul><li><b>Instrucciones</b>: «Eres analista del área comercial. Los informes son para la gerencia, en tablas y viñetas, máximo una página. Usa solo los datos de los archivos y de mis mensajes; si falta un dato, escribe [FALTA DATO]».</li><li><b>Archivos fijos</b>: el informe del mes pasado (como ejemplo de estilo), la política de viáticos, el glosario de términos del área.</li><li><b>Conversaciones</b>: una por mes, donde pegas los datos nuevos.</li></ul><p>Es la biblioteca de pedidos del capítulo 3, con el material adentro.</p></div></section>
+<section><h2>Pedir que responda solo con el material y que cite la página</h2><div class="prose"><p>Adjuntar el documento no basta. Si no dices lo contrario, el asistente mezcla lo que dice tu documento con lo que sabe en general, y no te avisa de qué parte viene de dónde. Hay que pedirlo explícitamente, con tres instrucciones:</p><ol class="steps"><li><span><b>Que responda solo con el material</b>: «usa únicamente la información del documento adjunto».</span></li><li><span><b>Que cite dónde está cada dato</b>: la página, la sección o el título. Mejor aún, que copie la frase exacta entre comillas.</span></li><li><span><b>Que separe lo que no viene del documento</b>: «si agregas algo que no está en el documento, márcalo como [FUERA DEL DOCUMENTO]».</span></li></ol><p>La cita textual tiene una ventaja enorme: se comprueba en segundos. Abres el documento, usas la búsqueda (Ctrl+F en Windows y Linux, Cmd+F en macOS), pegas una parte de la frase y miras si está. Si la frase no aparece tal cual, el asistente la reconstruyó o la inventó, y ya sabes qué revisar. Una cita con número de página también puede estar mal: a veces el OCR o la extracción cambian la numeración.</p></div><div class="lab" id="04-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Con y sin el documento</h3></div><p class="hint">Una política de viáticos de cuatro secciones y cinco preguntas sobre ella. Para cada pregunta, compara tres maneras de preguntar: sin el documento, con el documento adjunto, y con el documento pidiendo que responda solo con él y cite. Mira la respuesta, el fragmento que encontró en el documento y los errores.</p><style>
+[id="04-lab-2"] .c4l2-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:12px}
+[id="04-lab-2"] .c4l2-doc{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--paper);display:grid;gap:8px;align-content:start;min-width:0}
+[id="04-lab-2"] .c4l2-doc h4{margin:0;font:700 .85rem var(--f-display)}
+[id="04-lab-2"] .c4l2-sec{font:.85rem/1.45 var(--f-body);border-left:3px solid var(--line);padding:2px 8px;margin:0;transition:background .2s}
+[id="04-lab-2"] .c4l2-sec b{font-family:var(--f-display)}
+[id="04-lab-2"] .c4l2-sec.rec{border-left-color:var(--accent);background:var(--accent-soft)}
+[id="04-lab-2"] .c4l2-doc.off{opacity:.4}
+[id="04-lab-2"] .c4l2-resp{display:grid;gap:8px;align-content:start;min-width:0}
+[id="04-lab-2"] .c4l2-burb{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:.95rem/1.5 var(--f-body);margin:0}
+[id="04-lab-2"] .c4l2-burb .inv{background:var(--warm-soft);box-shadow:inset 0 -2px 0 var(--warm)}
+[id="04-lab-2"] .c4l2-burb q{font-style:italic;color:var(--good)}
+[id="04-lab-2"] .c4l2-tags{display:flex;flex-wrap:wrap;gap:6px}
+[id="04-lab-2"] .c4l2-tags span{font:600 .78rem var(--f-display);border-radius:20px;padding:3px 10px;border:1px solid var(--line)}
+[id="04-lab-2"] .c4l2-tags .si{background:var(--good-soft);border-color:var(--good)}
+[id="04-lab-2"] .c4l2-tags .no{background:var(--warm-soft);border-color:var(--warm)}
+[id="04-lab-2"] .c4l2-tabla td{font-size:.84rem}
+[id="04-lab-2"] .c4l2-tabla td.si{color:var(--good);font-weight:700}
+[id="04-lab-2"] .c4l2-tabla td.no{color:var(--warm);font-weight:700}
+@media (prefers-reduced-motion: reduce){[id="04-lab-2"] .c4l2-sec{transition:none}}
+</style>
+<div class="opciones">
+  <label>La pregunta
+    <select id="c4l2-q">
+      <option value="0">¿Cuánto es el viático diario para un viaje nacional?</option>
+      <option value="1">¿El viático nacional incluye el hospedaje?</option>
+      <option value="2">¿Con cuánta anticipación se solicita un viaje?</option>
+      <option value="3">¿Se aceptan gastos sin comprobante?</option>
+      <option value="4">¿Se puede viajar en clase ejecutiva en vuelos largos?</option>
+    </select></label>
+</div>
+<div class="btns" role="group" aria-label="Cómo preguntas">
+  <button type="button" data-m="0">Sin el documento</button>
+  <button type="button" data-m="1">Con el documento adjunto</button>
+  <button type="button" data-m="2">Con el documento: «solo con él y cita»</button>
+</div>
+<div class="c4l2-cols">
+  <div class="c4l2-doc" id="c4l2-doc">
+    <h4>Política de viáticos · Ejemplo S.A. (ficticia)</h4>
+    <p class="c4l2-sec" id="c4l2-s1"><b>1. Alcance.</b> Aplica a quienes viajan por trabajo, dentro del país o al exterior, con el viaje aprobado por su jefatura.</p>
+    <p class="c4l2-sec" id="c4l2-s2"><b>2. Solicitud.</b> El viaje se solicita con al menos 5 días hábiles de anticipación en el sistema de gestión de gastos. Los viajes urgentes requieren aprobación de la gerencia del área.</p>
+    <p class="c4l2-sec" id="c4l2-s3"><b>3. Montos.</b> El viático diario para viajes nacionales es de $ 80 e incluye alimentación y transporte local. El hospedaje se paga aparte, con un máximo de $ 120 por noche. En el exterior, el viático diario es de $ 150.</p>
+    <p class="c4l2-sec" id="c4l2-s4"><b>4. Rendición.</b> Los gastos se rinden dentro de los 10 días hábiles siguientes al regreso, con comprobantes. Los gastos sin comprobante de hasta $ 15 por día se aceptan con una declaración jurada.</p>
+  </div>
+  <div class="c4l2-resp">
+    <p class="c4l2-burb" id="c4l2-r" aria-live="polite"></p>
+    <div class="c4l2-tags" id="c4l2-tags"></div>
+  </div>
+</div>
+<div class="readout texto" id="c4l2-out" aria-live="polite"></div>
+<div class="tbl"><table class="c4l2-tabla"><thead><tr><th>Pregunta</th><th>Sin documento</th><th>Con documento</th><th>Solo con él y cita</th></tr></thead><tbody id="c4l2-tb"></tbody></table></div></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>La misma pregunta, con y sin el documento</h3></div><p>Usa el archivo <code>articulo.txt</code> de la práctica anterior (o cualquier documento público que tengas, como un reglamento publicado en internet) y cualquier asistente gratuito que acepte archivos adjuntos.</p><ol class="steps"><li><span>En una conversación nueva, <b>sin adjuntar nada</b>, pregunta: «¿En qué año y en qué conferencia se acuñó el término “inteligencia artificial”, y quiénes la organizaron?».</span></li><li><span>En otra conversación nueva, adjunta <code>articulo.txt</code> y pregunta: «Responde solo con el documento adjunto y copia entre comillas la frase que lo respalda: ¿en qué año y en qué conferencia se acuñó el término “inteligencia artificial”, y quiénes la organizaron?».</span></li><li><span>Busca en el archivo, con Ctrl+F o Cmd+F, una parte de la frase que copió.</span></li><li><span>En la misma conversación, pregunta algo que el artículo seguramente no dice: «Según el documento, ¿cuántas personas trabajan en IA en mi empresa?».</span></li></ol><p><b>Qué observar:</b> en la primera respuesta el dato puede ser correcto, porque es un hecho muy conocido, pero no tienes de dónde verificarlo. En la segunda, la cita debería aparecer en el archivo; como el texto trae las marcas de edición de Wikipedia (corchetes dobles, por ejemplo), busca un pedazo corto de la frase. En el paso 4, un buen pedido hace que el asistente responda que el documento no lo dice; si inventa una cifra, ya sabes por qué conviene el pedido de la sección siguiente. Si el asistente no acepta archivos <code>.txt</code>, abre el archivo, copia una parte y pégala en el mensaje.</p></div></section>
+<section><h2>Que diga «no lo sé» cuando el material no alcanza</h2><div class="prose"><p>La pregunta más reveladora sobre un documento es una cuya respuesta <b>no está</b> en él. Un asistente sin instrucciones tiende a responder de todos modos, completando con lo que sabe de políticas en general, y lo dice con el mismo tono que usa para lo que sí está en el documento.</p><p>Para evitarlo, dale una salida explícita: «si el documento no contiene la respuesta, responde exactamente “El documento no lo dice” y no agregues nada más». Parece obvio, pero cambia mucho el comportamiento: le das permiso para no saber, y ese permiso es justo lo que el entrenamiento no le dio (lo viste en el capítulo 2).</p><p>Hay respuestas parciales que también conviene marcar: el documento dice el monto del viático pero no si incluye el hospedaje. Pide que lo distinga: «si el documento responde solo una parte, di qué parte responde y qué parte no».</p><p>Una última precaución con documentos largos: los modelos tienden a prestar más atención al principio y al final de un texto largo que al medio. Si una respuesta te parece incompleta, pregunta por la sección específica («¿qué dice la sección 4 sobre…?») o adjunta solo la parte que importa.</p></div><div class="ml"><b>En la práctica</b><p><b>El asistente de procedimientos de un área de operaciones.</b> Un área de operaciones armó un proyecto en un asistente con sus diez procedimientos internos y una instrucción fija: responder solo con los procedimientos, citar el número y la sección, y decir «No está en los procedimientos, consulta con tu supervisor» cuando no encuentra la respuesta. Los técnicos nuevos lo usan para consultas rápidas en lugar de buscar en los PDF. Cada mes, el supervisor revisa las preguntas que quedaron sin respuesta: le muestran qué falta escribir en los procedimientos.</p></div></section>
+<section><h2>Qué no subir</h2><div class="prose"><p>Todo lo que adjuntas sale de tu computadora y llega a los servidores de la empresa que ofrece el asistente. Lo que pase después depende del servicio y del plan: cuánto tiempo se guarda, quién puede verlo y si se usa para entrenar modelos futuros. Antes de subir un documento, conviene clasificarlo.</p><p>Muchas organizaciones usan una escala de <b>clasificación de la información</b> (<i>information classification</i>) de cuatro niveles, con nombres que varían:</p><ul><li><b>Pública</b>: ya está publicada o se puede publicar. Un comunicado de prensa, un artículo de la web.</li><li><b>Interna</b>: para uso dentro de la empresa, sin daño grave si se filtra. Un procedimiento general, el organigrama.</li><li><b>Confidencial</b>: su filtración causaría daño. Contratos, cifras financieras no publicadas, estrategias comerciales, datos de clientes.</li><li><b>Restringida</b>: muy sensible y con acceso limitado. Datos personales sensibles (salud, salarios individuales), credenciales, información legal en curso.</li></ul><p>Con los <b>datos personales</b> (<i>personal data</i>, a veces llamados PII, <i>personally identifiable information</i>, información de identificación personal) hay que tener un cuidado especial: nombres con números de documento, teléfonos, direcciones, datos de salud o de cuentas bancarias de clientes o compañeros. Además de la política de tu empresa, los protegen leyes de protección de datos en casi todos los países.</p></div><figure class="fig fig-comparacion" id="04-diagrama-3"><div class="lienzo"><svg viewBox="0 0 820 400" style="min-width:680px" role="img" aria-label="Semáforo de qué subir: filas con los niveles pública, interna, confidencial y restringida; columnas con asistente gratuito, versión empresarial aprobada y ninguna IA; verde se puede, amarillo solo si la política lo permite, rojo no">
+  <text x="196" y="30" class="t t-b">Asistente gratuito</text>
+  <text x="196" y="46" class="t t-s t-m">para personas</text>
+  <text x="400" y="30" class="t t-b">Versión empresarial</text>
+  <text x="400" y="46" class="t t-s t-m">aprobada por tu empresa</text>
+  <text x="604" y="30" class="t t-b">Ninguna IA</text>
+  <text x="604" y="46" class="t t-s t-m">se trabaja sin asistente</text>
+
+  <text x="16" y="86" class="t t-b">Pública</text>
+  <text x="16" y="102" class="t t-s t-m">comunicado, web</text>
+  <text x="16" y="154" class="t t-b">Interna</text>
+  <text x="16" y="170" class="t t-s t-m">procedimiento general</text>
+  <text x="16" y="222" class="t t-b">Confidencial</text>
+  <text x="16" y="238" class="t t-s t-m">contratos, cifras, clientes</text>
+  <text x="16" y="290" class="t t-b">Restringida</text>
+  <text x="16" y="306" class="t t-s t-m">salud, salarios, claves</text>
+
+  <rect x="186" y="62" width="196" height="56" rx="8" class="c-enl"/><text x="200" y="95" class="t t-s">✓ Se puede</text>
+  <rect x="390" y="62" width="196" height="56" rx="8" class="c-enl"/><text x="404" y="95" class="t t-s">✓ Se puede</text>
+  <rect x="594" y="62" width="210" height="56" rx="8" class="caja"/><text x="608" y="95" class="t t-s t-m">no hace falta</text>
+
+  <rect x="186" y="130" width="196" height="56" rx="8" class="c-fis"/><text x="200" y="154" class="t t-s">~ Solo si la política lo</text><text x="200" y="170" class="t t-s">permite; mejor sin nombres</text>
+  <rect x="390" y="130" width="196" height="56" rx="8" class="c-enl"/><text x="404" y="163" class="t t-s">✓ Se puede</text>
+  <rect x="594" y="130" width="210" height="56" rx="8" class="caja"/><text x="608" y="163" class="t t-s t-m">no hace falta</text>
+
+  <rect x="186" y="198" width="196" height="56" rx="8" class="c-apl"/><text x="200" y="222" class="t t-s">✗ No. Usa huecos:</text><text x="200" y="238" class="t t-s">[CLIENTE], [MONTO]</text>
+  <rect x="390" y="198" width="196" height="56" rx="8" class="c-fis"/><text x="404" y="222" class="t t-s">~ Si la política lo permite,</text><text x="404" y="238" class="t t-s">solo lo necesario</text>
+  <rect x="594" y="198" width="210" height="56" rx="8" class="caja"/><text x="608" y="231" class="t t-s t-m">si la política lo excluye</text>
+
+  <rect x="186" y="266" width="196" height="56" rx="8" class="c-apl"/><text x="200" y="299" class="t t-s">✗ No</text>
+  <rect x="390" y="266" width="196" height="56" rx="8" class="c-apl"/><text x="404" y="290" class="t t-s">✗ Por regla general no,</text><text x="404" y="306" class="t t-s">salvo autorización expresa</text>
+  <rect x="594" y="266" width="210" height="56" rx="8" class="c-enl"/><text x="608" y="290" class="t t-s">✓ Se trabaja a mano, con</text><text x="608" y="306" class="t t-s">acceso controlado</text>
+
+  <rect x="16" y="342" width="788" height="44" rx="10" class="d-sis"/>
+  <text x="32" y="369" class="t t-b k-sis">Regla de oro:</text>
+  <text x="128" y="369" class="t t-s">ante la duda, pregunta antes de subir. La política de tu empresa manda sobre este cuadro.</text>
+</svg></div><figcaption><b>El semáforo de qué subir.</b> Las filas son los cuatro niveles de clasificación, de pública a restringida. Las columnas son tres tipos de herramienta: un asistente gratuito para personas, la versión empresarial aprobada por tu empresa y ninguna herramienta de IA. Verde es «se puede», amarillo «solo si la política lo permite, y anonimizado si se puede» y rojo «no». La regla de oro está abajo: ante la duda, pregunta antes de subir.</figcaption></figure><div class="prose"><p>Tres ideas para decidir:</p><ul><li><b>La política de tu empresa manda.</b> Si tu empresa contrató una versión empresarial con condiciones de privacidad, úsala para el material interno. Si hay una lista de herramientas aprobadas, quédate en ella. Si no sabes cuál es la política, pregunta al área de sistemas o de seguridad de la información.</li><li><b>Las versiones gratuitas para personas no son el lugar del material confidencial</b>, aunque desactives opciones de entrenamiento: no sabes quién más tiene acceso ni cuánto tiempo se guarda.</li><li><b>Muchas veces no hace falta el dato real.</b> Para que te ayude a redactar un correo de cobranza, el asistente no necesita el nombre ni el documento del cliente: escribe «el cliente [NOMBRE]» y lo completas tú después. Eso se llama <b>anonimizar</b> (<i>anonymize</i>), quitar o reemplazar lo que identifica a una persona, y resuelve la mayoría de los casos.</li></ul></div><div class="lab" id="04-lab-3"><div class="lab-title"><span class="tag">Laboratorio</span><h3>¿Se puede subir?</h3></div><p class="hint">Diez archivos de un día de trabajo. Para cada uno, decide si lo subirías a un asistente gratuito, solo a la versión empresarial aprobada, o a ninguno. Al responder, verás su clasificación, el riesgo y cómo podrías usar la IA de todos modos.</p><style>
+[id="04-lab-3"] .c4l3-lista{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+[id="04-lab-3"] .c4l3-f{border:1px solid var(--line);border-left:6px solid var(--line);border-radius:10px;padding:9px 12px;display:grid;gap:6px;background:var(--card)}
+[id="04-lab-3"] .c4l3-f.libre{border-left-color:var(--good)}
+[id="04-lab-3"] .c4l3-f.emp{border-left-color:var(--c-fis)}
+[id="04-lab-3"] .c4l3-f.no{border-left-color:var(--warm)}
+[id="04-lab-3"] .c4l3-nom{font:600 .9rem var(--f-mono);overflow-wrap:anywhere}
+[id="04-lab-3"] .c4l3-des{font-size:.9rem;color:var(--muted);margin:0}
+[id="04-lab-3"] .c4l3-f .btns button{font-size:.8rem;padding:5px 9px}
+[id="04-lab-3"] .c4l3-exp{margin:0;font-size:.9rem}
+[id="04-lab-3"] .c4l3-res{display:grid;grid-template-columns:minmax(0,10rem) minmax(0,1fr) 2rem;gap:5px 8px;align-items:center;font:.82rem var(--f-display)}
+[id="04-lab-3"] .c4l3-res .b{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--grid)}
+[id="04-lab-3"] .c4l3-res .b i{display:block;height:100%}
+[id="04-lab-3"] .c4l3-res b{font:600 .8rem var(--f-mono);text-align:right}
+</style>
+<ol class="c4l3-lista" id="c4l3-lista"></ol>
+<div class="c4l3-res" id="c4l3-res" aria-hidden="true"></div>
+<div class="readout texto" id="c4l3-out" aria-live="polite"></div></div><div class="prose"><p>El tema de la privacidad y la protección de datos personales tiene su propio curso, <a href="https://aaramirez.github.io/proteccion-de-datos/temario.html" target="_blank" rel="noopener">Protección de datos</a>, y los riesgos éticos de la IA se tratan en <a href="https://aaramirez.github.io/ia-responsable/temario.html" target="_blank" rel="noopener">IA responsable</a>.</p></div></section>
+<section><h2>Asistentes que recuerdan</h2><div class="prose"><p>Algunos asistentes tienen <b>memoria</b> (<i>memory</i>): guardan datos de tus conversaciones para usarlos en las siguientes. Le contaste que trabajas en el área comercial y que prefieres las tablas, y la próxima vez lo sabe sin que lo repitas. Es cómodo, y tiene la otra cara: lo que guardó también lo puede usar cuando no quieres.</p><p>Conviene distinguir tres cosas que a veces se confunden:</p><ul><li><b>El historial de conversaciones</b>: la lista de tus chats anteriores. Lo guarda la aplicación para que puedas volver a ellos.</li><li><b>La memoria</b>: datos sueltos que el asistente decidió (o tú le pediste) recordar de ti, que se agregan a la ventana de contexto de conversaciones nuevas.</li><li><b>El entrenamiento</b>: el uso de tus conversaciones para entrenar modelos futuros. Es independiente de los dos anteriores y depende del plan y de tu configuración.</li></ul><p>Cada asistente organiza esto a su manera, pero casi todos tienen en la configuración una sección de privacidad o de personalización donde puedes <b>ver qué recuerdos guardó y borrarlos</b>, desactivar la memoria, borrar conversaciones y elegir si tus datos se usan para entrenar. Muchos ofrecen también <b>conversaciones temporales</b> (<i>temporary chats</i>), que no quedan en el historial ni alimentan la memoria. Revisa esa sección al menos una vez: suele sorprender lo que hay ahí.</p><p>Si usas un asistente de la empresa, la memoria y el historial suelen estar bajo las reglas que define la organización, y el área de sistemas puede tener acceso a ellos. Cómo diseñan la memoria los asistentes que trabajan por ti durante días está en el curso <a href="https://aaramirez.github.io/agentes-personales/temario.html" target="_blank" rel="noopener">Agentes personales</a>.</p></div></section>
+<section><h2>Pedidos para copiar</h2><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Solo con el documento</h3></div><div class="code-copia"><pre><code>Responde la pregunta usando únicamente el documento adjunto. Para cada dato, indica la sección o página y copia entre comillas la frase exacta que lo respalda. Si el documento no contiene la respuesta, responde «El documento no lo dice» y no agregues nada más. Si responde solo una parte, di qué parte responde y qué parte no.
+Pregunta: [escribe aquí tu pregunta]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Instrucciones de un proyecto</h3></div><div class="code-copia"><pre><code>Eres [rol] del área de [área]. En este proyecto trabajamos [qué tipo de documentos o tareas]. Reglas: usa solo la información de los archivos del proyecto y de mis mensajes; cita el archivo y la sección de cada dato; si falta un dato, escribe [FALTA DATO]; si algo no está en el material, dilo. Formato habitual: [formato].</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Anonimizar antes de pedir</h3></div><div class="code-copia"><pre><code>Te voy a pegar un texto que contiene datos personales. No lo resumas ni lo analices todavía: devuélvelo igual, pero reemplaza cada nombre, número de documento, teléfono, correo y dirección por una etiqueta como [CLIENTE 1], [TELÉFONO 1], manteniendo la misma etiqueta si el dato se repite.
+[pega aquí el texto]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prose"><p>Ojo con el último pedido: sirve para un texto que ya puedes compartir con ese asistente (por ejemplo, en la versión empresarial aprobada) y que quieres anonimizar antes de pasarlo a otra herramienta o a otra persona. No sirve para «limpiar» un dato antes de dárselo a un asistente gratuito, porque para anonimizarlo ya se lo diste.</p></div></section>
+<section><h2>Lo que te llevas</h2><div class="prose"><p>Con tu material y pidiendo citas, la IA pasa de opinar a responder con evidencia. Adjunta el documento, pide que responda solo con él, que copie la frase que respalda cada dato y que diga «no lo dice» cuando no alcanza. Y antes de subir nada, pregúntate en qué nivel está y qué permite la política de tu empresa.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Por qué un asistente responde con seguridad una pregunta sobre tu política de viáticos sin haberla leído?</summary><p>Porque completa con lo que encaja según las muchas políticas de otras empresas que leyó al entrenarse. Tu documento interno no estaba en sus datos.</p></details><details><summary>Adjuntas un manual de 300 páginas. ¿Lo leyó entero el modelo para responderte?</summary><p>Probablemente no. Si no cabe en la ventana de contexto, la aplicación busca los fragmentos más parecidos a tu pregunta (RAG) y el modelo responde solo con ellos.</p></details><details><summary>¿Por qué conviene pedir que copie la frase exacta entre comillas?</summary><p>Porque se comprueba en segundos con la búsqueda del documento. Si la frase no aparece tal cual, el asistente la reconstruyó o la inventó.</p></details><details><summary>¿Qué instrucción hace que el asistente diga «no lo sé» cuando el documento no tiene la respuesta?</summary><p>Darle una salida explícita: «si el documento no contiene la respuesta, responde “El documento no lo dice” y no agregues nada más».</p></details><details><summary>Quieres ayuda para redactar un correo de cobranza a un cliente con un asistente gratuito. ¿Cómo lo haces sin exponer sus datos?</summary><p>Escribes el pedido sin el nombre, el documento ni el monto reales, con huecos como [NOMBRE] y [MONTO], y los completas tú después.</p></details><details><summary>¿Qué diferencia hay entre el historial, la memoria y el uso para entrenamiento?</summary><p>El historial es la lista de tus chats; la memoria son datos sueltos que el asistente guarda para usarlos en conversaciones nuevas; el entrenamiento es el uso de tus conversaciones para entrenar modelos futuros, que depende del plan y de tu configuración.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Cómo funciona por dentro el reconocimiento óptico de caracteres y por qué se equivoca más con escaneos torcidos o de baja resolución?<small>Pista: busca «Tesseract OCR» y «binarización de imágenes».</small></li><li>¿Cómo midió el artículo «Lost in the Middle» (2023) que los modelos aprovechan peor lo que está en el medio de un texto largo, y cuánto caía su precisión?<small>Pista: busca el título del artículo y mira sus gráficos.</small></li><li>¿Qué dice la ley de protección de datos personales de tu país sobre enviar datos de clientes a servicios en otros países?<small>Pista: busca «transferencia internacional de datos personales» junto al nombre de tu país.</small></li><li>¿Qué es una base de datos vectorial y qué productos del mercado se usan para guardar los vectores de un sistema RAG?</li><li>¿Qué certificaciones de seguridad (como ISO/IEC 27001 o SOC 2) suelen exigir las empresas a un proveedor de IA, y qué garantizan?<small>Pista: busca qué audita cada una.</small></li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://es.wikipedia.org/wiki/Generaci%C3%B3n_aumentada_por_recuperaci%C3%B3n" target="_blank" rel="noopener">Generación aumentada por recuperación, en Wikipedia <small>lectura</small></a><a class="vid" href="https://notebooklm.google/" target="_blank" rel="noopener">NotebookLM: un asistente que responde con tus fuentes <small>herramienta</small></a><a class="vid" href="https://aaramirez.github.io/proteccion-de-datos/temario.html" target="_blank" rel="noopener">Protección de datos: privacidad y datos personales <small>curso</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-generativa" target="_blank" rel="noopener">github.com/aaramirez/ia-generativa</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const PAG=[1,5,10,25,50,100,200,300,500,1000];
+  const TPP=750,FRAG=500,INS=3000,N=40;
+  const f=n=>n.toLocaleString('es');
+  function pintar(){
+    const pag=PAG[+$('#c4l1-p').value],k=+$('#c4l1-k').value,W=+$('#c4l1-w').value,pos=+$('#c4l1-pos').value;
+    $('#c4l1-p-o').textContent=pag+(pag===1?' página':' páginas');
+    $('#c4l1-k-o').textContent=k;
+    const tok=pag*TPP,cabe=tok+INS<=W;
+    const nfrag=Math.ceil(tok/FRAG);
+    const resCell=Math.min(N-1,Math.floor(pos*N));
+    // fragmentos recuperados: el que contiene la respuesta tiene más probabilidad cuanto más k; simulamos posiciones
+    const cells=[];
+    const visto=cabe?1:Math.min(1,k*FRAG/tok);
+    const nVist=cabe?N:Math.max(1,Math.round(visto*N));
+    // elegir celdas recuperadas: la de la respuesta entra si k es suficiente (más difícil en documentos enormes)
+    const pEncuentra=cabe?1:Math.min(.97,.45+.06*k-.04*Math.log10(nfrag));
+    const encuentra=cabe||pEncuentra>=.6;
+    const sel=new Set();
+    if(!cabe){
+      if(encuentra)sel.add(resCell);
+      for(let i=0;i<N&&sel.size<nVist;i++){const c=(i*17+5)%N;if(c!==resCell)sel.add(c);}
+    }
+    for(let i=0;i<N;i++)cells.push('<i class="'+(cabe?'v':(sel.has(i)?'r':''))+(i===resCell?' res':'')+'"></i>');
+    $('#c4l1-doc').innerHTML=cells.join('');
+    const usado=cabe?tok:Math.min(k*FRAG,tok);
+    const pIns=100*INS/W,pDoc=100*Math.min(usado,W-INS)/W;
+    $('#c4l1-win').innerHTML='<i class="ins" style="width:'+pIns+'%"></i><i class="'+(cabe?'doc':'frag')+'" style="width:'+pDoc+'%"></i>';
+    let l='<span class="big">'+f(pag)+' página'+(pag===1?'':'s')+' ≈ '+f(tok)+' tokens · ventana de '+f(W)+' · '+(cabe?'cabe entero':'no cabe')+'.</span>';
+    if(cabe){
+      l+='<span>El modelo lee el documento completo en cada pregunta. La respuesta está a su alcance, aunque en documentos largos se le puede pasar un dato que está en el medio: si algo falta, pregunta por la sección.</span>';
+      if(tok>W*0.5)l+='<span>Ojo: el documento ocupa más de la mitad de la ventana. Queda poco espacio para una conversación larga.</span>';
+    }else{
+      l+='<span>La aplicación corta el documento en unos '+f(nfrag)+' fragmentos y en cada pregunta le pasa al modelo los '+k+' más parecidos: '+f(k*FRAG)+' tokens, el '+(visto*100<1?'menos del 1':Math.round(visto*100))+' % del documento.</span>';
+      l+=encuentra?'<span class="ok">Esta vez el fragmento con la respuesta está entre los recuperados (el cuadro con borde rojo es azul).</span>'
+                  :'<span class="warn">El fragmento con la respuesta no está entre los recuperados. El modelo no lo ve: puede decir que el documento no habla del tema o completar con lo que encaja. Sube los fragmentos, pregunta con las palabras del documento o adjunta solo la parte que importa.</span>';
+    }
+    $('#c4l1-out').innerHTML=l;
+  }
+  ['p','k','w','pos'].forEach(id=>{const e=$('#c4l1-'+id);e.addEventListener('input',pintar);e.addEventListener('change',pintar);});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  // r: [texto, seccion recuperada (0 = ninguna), correcta, inventa, cita]
+  const Q=[
+    {c:'Viático nacional',r:[
+      ['Depende de la empresa, pero un valor habitual es <span class="inv">$ 60 por día, con el hospedaje incluido</span>.',0,false,true,false],
+      ['El viático diario nacional es de $ 80 e incluye alimentación y transporte local, <span class="inv">además de las propinas</span>.',3,false,true,false],
+      ['$ 80 por día. Sección 3: <q>«El viático diario para viajes nacionales es de $ 80 e incluye alimentación y transporte local.»</q>',3,true,false,true]]},
+    {c:'¿Incluye hospedaje?',r:[
+      ['<span class="inv">Sí, normalmente el viático diario cubre el hospedaje</span> y la alimentación.',0,false,true,false],
+      ['No, el hospedaje se paga aparte, con un máximo de $ 120 por noche.',3,true,false,false],
+      ['No. Sección 3: <q>«El hospedaje se paga aparte, con un máximo de $ 120 por noche.»</q>',3,true,false,true]]},
+    {c:'Anticipación',r:[
+      ['Lo recomendable es solicitarlo con <span class="inv">al menos 15 días de anticipación</span>.',0,false,true,false],
+      ['Con al menos 5 días hábiles de anticipación, en el sistema de gestión de gastos.',2,true,false,false],
+      ['Con al menos 5 días hábiles. Sección 2: <q>«El viaje se solicita con al menos 5 días hábiles de anticipación en el sistema de gestión de gastos.»</q> Los urgentes requieren aprobación de la gerencia del área.',2,true,false,true]]},
+    {c:'Sin comprobante',r:[
+      ['<span class="inv">No, todos los gastos deben tener factura</span>.',0,false,true,false],
+      ['Sí, hasta $ 15 por día con una declaración jurada, <span class="inv">y hasta $ 50 con autorización de la jefatura</span>.',4,false,true,false],
+      ['Sí, hasta $ 15 por día. Sección 4: <q>«Los gastos sin comprobante de hasta $ 15 por día se aceptan con una declaración jurada.»</q>',4,true,false,true]]},
+    {c:'Clase ejecutiva',r:[
+      ['<span class="inv">Sí, en vuelos de más de 6 horas</span>, según las políticas habituales.',0,false,true,false],
+      ['La política permite <span class="inv">clase ejecutiva en vuelos de más de 8 horas para cargos gerenciales</span>.',3,false,true,false],
+      ['El documento no lo dice. La política habla de montos de viático y hospedaje, pero no de pasajes ni de clases de vuelo.',3,true,false,false]]}
+  ];
+  const NOM=['Sin el documento','Con el documento adjunto','Solo con él y cita'];
+  let q=0,m=0;const visto=Q.map(()=>[null,null,null]);
+  function pintar(){
+    const R=Q[q].r[m];visto[q][m]=R;
+    document.querySelectorAll('[id="04-lab-2"] [data-m]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.m===m?'true':'false'));
+    $('#c4l2-r').innerHTML='<b>Asistente:</b> '+R[0];
+    $('#c4l2-doc').classList.toggle('off',m===0);
+    for(let s=1;s<=4;s++)$('#c4l2-s'+s).classList.toggle('rec',m>0&&R[1]===s);
+    const T=[[R[2]?'Correcta':'Incorrecta',R[2]],[R[3]?'Con datos inventados':'Sin inventos',!R[3]],[R[4]?'Cita comprobable':'Sin cita',R[4]]];
+    $('#c4l2-tags').innerHTML=T.map(t=>'<span class="'+(t[1]?'si':'no')+'">'+(t[1]?'✓ ':'✗ ')+t[0]+'</span>').join('');
+    let l='<span class="big">'+NOM[m]+'.</span>';
+    if(m===0)l+='<span>El documento está apagado: el asistente no lo ve. Responde con lo que encaja según las muchas políticas de otras empresas que leyó. Suena razonable y no es tu política.</span>';
+    else if(m===1)l+='<span>El fragmento resaltado es el que la aplicación encontró y puso en la ventana de contexto. '+(R[3]?'Aun así, el asistente mezcló el documento con lo que «sabe» de políticas en general, y no te avisa de qué parte viene de dónde.':'Esta vez acertó, pero sin cita tienes que buscar tú en el documento para confirmarlo.')+'</span>';
+    else l+='<span>'+(R[4]?'La cita se comprueba en segundos: busca la frase en el documento.':'Como le diste permiso para no saber, dice que el documento no lo dice en lugar de inventar.')+'</span>';
+    $('#c4l2-out').innerHTML=l;
+    const cel=r=>r?'<td class="'+(r[2]&&!r[3]?'si':'no')+'">'+(r[2]&&!r[3]?'✓ bien':'✗ '+(r[3]?'inventa':'mal'))+'</td>':'<td>—</td>';
+    $('#c4l2-tb').innerHTML=Q.map((x,k)=>'<tr><td>'+x.c+'</td>'+visto[k].map(cel).join('')+'</tr>').join('');
+  }
+  document.querySelectorAll('[id="04-lab-2"] [data-m]').forEach(b=>b.addEventListener('click',()=>{m=+b.dataset.m;pintar();}));
+  $('#c4l2-q').addEventListener('change',e=>{q=+e.target.value;pintar();});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const OP={libre:'Asistente gratuito',emp:'Solo la versión empresarial',no:'Ninguna IA'};
+  const F=[
+    {n:'comunicado_de_prensa_publicado.pdf',d:'El comunicado que la empresa ya publicó en su sitio web.',v:'libre',cl:'Pública',
+     e:'Ya es público: no hay nada que proteger. Puedes pedirle que lo resuma o lo adapte a redes sociales.'},
+    {n:'plantilla_informe_mensual_vacia.docx',d:'El formato del informe, con títulos y sin ningún dato.',v:'libre',cl:'Interna, sin contenido sensible',
+     e:'Una plantilla vacía no revela nada. Sirve como ejemplo de formato para tus pedidos.'},
+    {n:'articulo_tendencias_del_sector.html',d:'Un artículo de una revista del sector, publicado en internet.',v:'libre',cl:'Pública',
+     e:'Es público. Pídele un resumen, pero cita al autor original si lo usas en el informe.'},
+    {n:'borrador_correo_sin_datos.txt',d:'Un correo a un proveedor, sin nombres, montos ni datos del contrato.',v:'libre',cl:'Interna, de bajo riesgo',
+     e:'Sin datos que identifiquen a nadie ni cifras del negocio, el riesgo es bajo. Si tu política es más estricta, manda la política.'},
+    {n:'procedimiento_de_reembolsos.docx',d:'El procedimiento interno general de reembolsos de gastos.',v:'emp',cl:'Interna',
+     e:'Es interno: la versión empresarial es el lugar. En un asistente gratuito, solo si la política lo permite expresamente.'},
+    {n:'contrato_proveedor_transporte.pdf',d:'El contrato firmado con un proveedor, con precios y condiciones.',v:'emp',cl:'Confidencial',
+     e:'Precios y condiciones son confidenciales. Si la política lo permite, en la versión empresarial aprobada. Nunca en una gratuita.'},
+    {n:'resultados_trimestre_no_publicados.pptx',d:'La presentación de resultados antes de que se hagan públicos.',v:'emp',cl:'Confidencial',
+     e:'Cifras financieras no publicadas: confidenciales. En una empresa que cotiza en bolsa, además, filtrarlas puede tener consecuencias legales.'},
+    {n:'base_clientes_marzo.xlsx',d:'Nombres, números de documento, teléfonos y deuda de 2.000 clientes.',v:'emp',cl:'Confidencial, con datos personales',
+     e:'Datos personales de clientes, protegidos por ley. Solo en la versión aprobada, si la política lo permite, y quitando las columnas que la tarea no necesita (casi nunca hace falta el documento ni el teléfono).'},
+    {n:'evaluaciones_desempeno_y_salarios.xlsx',d:'Las evaluaciones de cada persona del equipo, con su salario.',v:'no',cl:'Restringida',
+     e:'Datos sensibles de personas con acceso muy limitado. Se trabaja sin IA, salvo una herramienta autorizada expresamente para eso. Puedes pedir ayuda con la redacción usando casos inventados.'},
+    {n:'claves_de_sistemas.txt',d:'Usuarios y contraseñas de los sistemas del área.',v:'no',cl:'Restringida',
+     e:'Nunca. Las credenciales no se comparten con ninguna herramienta, ni siquiera la empresarial. (Y tampoco deberían estar en un archivo de texto.)'}
+  ];
+  const r=F.map(()=>null);
+  const L=$('#c4l3-lista');
+  F.forEach((f,k)=>{
+    const li=document.createElement('li');li.className='c4l3-f';li.id='c4l3-f'+k;
+    li.innerHTML='<span class="c4l3-nom"></span><p class="c4l3-des"></p><div class="btns" role="group" aria-label="Dónde lo subirías">'+
+      Object.keys(OP).map(o=>'<button type="button" data-o="'+o+'">'+OP[o]+'</button>').join('')+'</div><p class="c4l3-exp" aria-live="polite"></p>';
+    li.querySelector('.c4l3-nom').textContent=f.n;
+    li.querySelector('.c4l3-des').textContent=f.d;
+    li.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{r[k]=b.dataset.o;pintar();}));
+    L.appendChild(li);
+  });
+  function pintar(){
+    let bien=0,arriesga=0,cauto=0;
+    F.forEach((f,k)=>{
+      const li=$('#c4l3-f'+k);
+      li.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',r[k]===b.dataset.o?'true':'false'));
+      const ex=li.querySelector('.c4l3-exp');
+      if(!r[k]){li.className='c4l3-f';ex.textContent='';return;}
+      li.className='c4l3-f '+f.v;
+      const ord={libre:0,emp:1,no:2};
+      const d=ord[r[k]]-ord[f.v];
+      if(d===0)bien++;else if(d<0)arriesga++;else cauto++;
+      ex.innerHTML='<b>'+(d===0?'Bien. ':d<0?'Demasiado arriesgado. ':'Más cauto de lo necesario. ')+'</b>Clasificación: '+f.cl+'. Lo indicado: '+OP[f.v].toLowerCase()+'. '+f.e;
+    });
+    const hechas=r.filter(Boolean).length;
+    const N=F.length;
+    const fila=(t,n,c)=>'<span>'+t+'</span><span class="b"><i style="width:'+(100*n/N)+'%;background:'+c+'"></i></span><b>'+n+'</b>';
+    $('#c4l3-res').innerHTML=fila('Bien',bien,'var(--good)')+fila('Demasiado arriesgado',arriesga,'var(--warm)')+fila('Más cauto',cauto,'var(--c-fis)');
+    let l='<span class="big">Decidiste '+hechas+' de '+N+' · bien '+bien+'.</span>';
+    if(arriesga)l+='<span class="warn">'+arriesga+' decisión'+(arriesga>1?'es':'')+' demasiado arriesgada'+(arriesga>1?'s':'')+': son las que pueden terminar en una filtración. Mira qué tenían en común.</span>';
+    if(cauto)l+='<span>Ser más cauto no causa daños, pero te quita ayuda útil en material que podrías usar sin problema.</span>';
+    if(hechas===N)l+='<span>La pregunta que ordena todo: ¿qué pasaría si este archivo apareciera publicado mañana? Si la respuesta es «nada», puedes usar cualquier asistente. Si es «un problema», solo la herramienta aprobada. Si es «un problema grave», ninguna, salvo autorización expresa. Y la política de tu empresa manda sobre este ejercicio.</span>';
+    else l+='<span>Elige una opción para cada archivo.</span>';
+    $('#c4l3-out').innerHTML=l;
+  }
+  pintar();
+})();
+</script>
+</body>
+</html>

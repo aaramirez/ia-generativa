@@ -4,7 +4,7 @@ Usar la IA generativa en el trabajo, sin tecnicismos: qué puede y qué no, cóm
 
 **Ver en línea:** https://aaramirez.github.io/ia-generativa/
 
-Este repositorio solo tiene el sitio generado. El curso está en preparación: la tabla de contenido ya está publicada para revisión.
+Este repositorio solo tiene el sitio generado. Curso completo: 10 capítulos con laboratorios interactivos, diagramas y prácticas.
 
 | # | Capítulo |
 |---|---|

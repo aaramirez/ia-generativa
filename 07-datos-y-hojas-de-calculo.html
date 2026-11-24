@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Datos y hojas de cálculo · IA generativa · IA generativa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Usar la IA generativa en el trabajo, sin tecnicismos: qué puede y qué no, cómo pedir bien, cómo verificar, qué hacer con texto, imágenes y datos, casos por área y cómo llevarla a tu equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="datos-y-hojas-de-calculo">
+<header class="topbar"><a class="brand" href="index.html">IA <b>generativa</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 07 DE 10</span><h1>Datos y hojas de cálculo con IA</h1><p class="lede">Con la IA puedes pedir una fórmula en palabras, limpiar una tabla desordenada o preguntarle a una hoja por sus tendencias. Pero un número que suena bien no es un número correcto: hay que saber cuándo la IA calcula de verdad y comprobar siempre una muestra.</p></header>
+<section><div class="prose"><p>El informe mensual tiene una parte que no se escribe: se calcula. Las ventas por zona, el promedio por vendedor, los gastos del mes por categoría y la comparación con el mes anterior salen de dos hojas de cálculo. Una está ordenada. La otra la arman tres personas, cada una a su manera.</p><p>En el capítulo 1 viste que la IA es poco confiable con las cifras exactas y que un asistente que «calcula de memoria» puede escribir un total equivocado con total seguridad. Este capítulo no te pide que dejes de usar la IA con números: te enseña a usarla de las dos maneras que sí funcionan. Una es que la IA te escriba la <b>fórmula</b> y la hoja de cálculo haga la cuenta. La otra es que la IA <b>ejecute código</b> para calcular. En las dos, tú compruebas.</p></div></section>
+<section><h2>Las herramientas: dónde viven los datos y dónde calcula la IA</h2><div class="prose"><p>Una <b>hoja de cálculo</b> (<i>spreadsheet</i>) es una tabla donde cada celda puede tener un dato o una <b>fórmula</b> (<i>formula</i>), una instrucción que calcula a partir de otras celdas. Las más usadas son Microsoft Excel, Google Sheets y LibreOffice Calc, que es libre y gratuita. Muchos datos de la empresa también viajan como <b>CSV</b> (<i>comma-separated values</i>, valores separados por comas), un archivo de texto donde cada línea es una fila y las columnas se separan con comas o con punto y coma. Casi todos los sistemas (facturación, inventario, el CRM) exportan a CSV.</p><p>La IA entra a este mundo por tres puertas:</p><ol class="steps"><li><span><b>El asistente de chat</b> te explica y te escribe fórmulas, y tú las pegas en tu hoja.</span></li><li><span><b>El asistente con análisis de datos</b>: subes el archivo y el asistente escribe y ejecuta un pequeño programa, casi siempre en el lenguaje <b>Python</b> con la biblioteca <b>pandas</b>, dentro de un <b>entorno aislado</b> (<i>sandbox</i>), una computadora temporal que se borra al terminar.</span></li><li><span><b>La IA dentro de la hoja</b>: Copilot en Excel, Gemini en Google Sheets y funciones parecidas en otras herramientas (son ejemplos del mercado). Proponen fórmulas, tablas y gráficos sobre la hoja abierta.</span></li></ol></div></section>
+<section><h2>Pedir una fórmula y entenderla antes de usarla</h2><div class="prose"><p>Pedir una fórmula es la manera más segura de usar la IA con números, porque el cálculo lo hace la hoja, que no se equivoca sumando. Lo que puede salir mal es que la fórmula no haga lo que tú crees.</p></div><div class="analogia"><b>Imagínalo así</b><p>Una fórmula es como una receta que le dejas escrita a alguien que cocina sin pensar. Si la receta dice «dos tazas de harina» y querías decir dos tazas de azúcar, va a cocinar exactamente lo que escribiste, sin preguntar. La hoja de cálculo es ese cocinero. Por eso la receta (la fórmula) hay que leerla antes de usarla, y probarla con algo cuyo resultado ya conoces.</p></div><div class="prose"><p>Para que la IA te dé la fórmula correcta a la primera, descríbele tu hoja como se la describirías a un colega que no la ve: qué hay en cada columna (con su letra), en qué filas están los datos, en qué programa trabajas y en qué idioma. El idioma importa: en Excel en español, la función que suma con una condición se llama <code>SUMAR.SI</code>; en inglés, <code>SUMIF</code>. Y según la <b>configuración regional</b> (<i>locale</i>) de tu hoja, los argumentos se separan con coma o con punto y coma.</p></div><figure class="fig fig-esquema" id="07-diagrama-1"><div class="lienzo"><svg viewBox="0 0 820 360" style="min-width:680px" role="img" aria-label="Anatomía de la fórmula SUMAR.SI.CONJUNTO que suma el monto de la zona Norte en marzo: el rango que se suma y dos parejas de rango de búsqueda y criterio, con referencias absolutas, y la misma fórmula en inglés">
+  <rect x="10" y="10" width="800" height="210" rx="10" class="caja"/>
+  <text x="24" y="34" class="t t-xs t-m">LA FÓRMULA, EN EXCEL O GOOGLE SHEETS EN ESPAÑOL</text>
+  <text x="34.0" y="74" class="t t-mono t-b">=SUMAR.SI.CONJUNTO(</text>
+  <rect x="184.1" y="54" width="83.0" height="28" rx="5" class="c-red"/>
+  <text x="186.1" y="74" class="t t-mono t-b">$E$2:$E$13</text>
+  <text x="271.1" y="74" class="t t-mono t-b">;</text>
+  <rect x="279.0" y="54" width="83.0" height="28" rx="5" class="c-enl"/>
+  <text x="281.0" y="74" class="t t-mono t-b">$C$2:$C$13</text>
+  <text x="366.0" y="74" class="t t-mono t-b">;</text>
+  <rect x="373.9" y="54" width="59.3" height="28" rx="5" class="c-enl"/>
+  <text x="375.9" y="74" class="t t-mono t-b">&quot;Norte&quot;</text>
+  <text x="437.2" y="74" class="t t-mono t-b">;</text>
+  <rect x="445.1" y="54" width="83.0" height="28" rx="5" class="c-tra"/>
+  <text x="447.1" y="74" class="t t-mono t-b">$F$2:$F$13</text>
+  <text x="532.1" y="74" class="t t-mono t-b">;</text>
+  <rect x="540.0" y="54" width="59.3" height="28" rx="5" class="c-tra"/>
+  <text x="542.0" y="74" class="t t-mono t-b">&quot;Marzo&quot;</text>
+  <text x="603.3" y="74" class="t t-mono t-b">)</text>
+  <line x1="225.6" y1="84" x2="225.6" y2="114" class="ln"/>
+  <text x="225.6" y="128" class="t t-s t-b k-red" text-anchor="middle">① qué se suma</text>
+  <text x="225.6" y="143" class="t t-s t-m" text-anchor="middle">el monto</text>
+  <line x1="320.5" y1="84" x2="320.5" y2="156" class="ln"/>
+  <text x="320.5" y="170" class="t t-s t-b k-enl" text-anchor="middle">② dónde buscar</text>
+  <text x="320.5" y="185" class="t t-s t-m" text-anchor="middle">la columna Zona</text>
+  <line x1="403.5" y1="84" x2="403.5" y2="114" class="ln"/>
+  <text x="403.5" y="128" class="t t-s t-b k-enl" text-anchor="middle">③ qué buscar</text>
+  <text x="403.5" y="143" class="t t-s t-m" text-anchor="middle">la zona Norte</text>
+  <line x1="486.6" y1="84" x2="486.6" y2="156" class="ln"/>
+  <text x="486.6" y="170" class="t t-s t-b k-tra" text-anchor="middle">④ dónde buscar</text>
+  <text x="486.6" y="185" class="t t-s t-m" text-anchor="middle">la columna Mes</text>
+  <line x1="569.6" y1="84" x2="569.6" y2="114" class="ln"/>
+  <text x="569.6" y="128" class="t t-s t-b k-tra" text-anchor="middle">⑤ qué buscar</text>
+  <text x="569.6" y="143" class="t t-s t-m" text-anchor="middle">el mes de marzo</text>
+  <rect x="10" y="232" width="392" height="118" rx="10" class="c-red"/>
+  <text x="24" y="256" class="t t-b k-red">La misma fórmula en inglés</text>
+  <text x="24" y="280" class="t t-s t-mono">=SUMIFS($E$2:$E$13, $C$2:$C$13, "Norte",</text>
+  <text x="80" y="296" class="t t-s t-mono">$F$2:$F$13, "Marzo")</text>
+  <text x="24" y="320" class="t t-s">Cambian el nombre de la función y el separador</text>
+  <text x="24" y="336" class="t t-s">(coma o punto y coma, según la configuración).</text>
+  <rect x="418" y="232" width="392" height="118" rx="10" class="d-sis"/>
+  <text x="432" y="256" class="t t-b k-sis">Pregúntale a la IA antes de usarla</text>
+  <text x="432" y="280" class="t t-s">• ¿Qué hace cada pieza? ¿Qué significa el $?</text>
+  <text x="432" y="298" class="t t-s">• ¿Qué pasa si una zona dice «norte » con espacio?</text>
+  <text x="432" y="316" class="t t-s">• ¿Y si agrego filas debajo de la 13?</text>
+  <text x="432" y="334" class="t t-s">• ¿Con qué caso la pruebo a mano?</text>
+</svg></div><figcaption><b>Anatomía de una fórmula.</b> La fórmula de arriba suma las ventas de la zona Norte en marzo. Cada color es una pieza: el rango que se suma, y dos parejas de «dónde buscar» y «qué buscar». Las letras con signo <code>$</code> son <b>referencias absolutas</b> (<i>absolute references</i>), que no se mueven al copiar la fórmula a otra celda. Abajo, la misma fórmula en inglés y lo que le preguntas a la IA para entenderla.</figcaption></figure><div class="prose"><p>Antes de usar una fórmula que no entiendes, pide que te la explique <b>pieza por pieza</b> y pregúntale qué pasa en los casos raros: una celda vacía, un texto donde va un número, una zona escrita «norte» en minúsculas o con un espacio al final. Después pruébala con un caso que puedas verificar a mano: si la tabla tiene tres ventas de la zona Norte, súmalas tú y compara.</p></div><div class="lab" id="07-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>De la pregunta a la fórmula</h3></div><p class="hint">Elige una pregunta sobre la tabla de ventas y mira la fórmula que propone el asistente, en español o en inglés. Las filas que la fórmula usa se iluminan. Activa «Primer intento del asistente» y busca por qué da otro resultado. Después cambia un monto de la tabla y mira cómo se recalcula todo.</p><style>
+[id="07-lab-1"] .c7l1-f{font:600 .92rem/1.5 var(--f-mono);background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:6px;padding:8px 10px;overflow-wrap:anywhere}
+[id="07-lab-1"] .c7l1-f.mal{border-left-color:var(--warm)}
+[id="07-lab-1"] .c7l1-f small{display:block;font:500 .8rem var(--f-display);color:var(--muted);margin-top:4px}
+[id="07-lab-1"] table{border-collapse:collapse;width:100%;min-width:430px}
+[id="07-lab-1"] th,[id="07-lab-1"] td{font:500 .82rem var(--f-display);padding:3px 6px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+[id="07-lab-1"] th.l,[id="07-lab-1"] td.l{color:var(--muted);font-family:var(--f-mono);width:2rem;text-align:center}
+[id="07-lab-1"] tr.usa td{background:var(--good-soft)}
+[id="07-lab-1"] tr.usa td.l{color:var(--good);font-weight:700}
+[id="07-lab-1"] tr.fuera td{background:var(--warm-soft)}
+[id="07-lab-1"] tr.fuera td.l{color:var(--warm);font-weight:700}
+[id="07-lab-1"] td input{width:5.2rem;font:600 .82rem var(--f-mono);padding:2px 4px;border:1px solid var(--line);border-radius:4px;background:var(--card);color:var(--ink);text-align:right}
+[id="07-lab-1"] .c7l1-leg{display:flex;flex-wrap:wrap;gap:12px;font:500 .78rem var(--f-display);color:var(--muted)}
+[id="07-lab-1"] .c7l1-leg i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:4px}
+</style>
+<div class="opciones">
+  <label>Tu pregunta
+    <select id="c7l1-q">
+      <option value="0" selected>¿Cuánto vendió la zona Norte en total?</option>
+      <option value="1">¿Cuánto vendió Ana en marzo?</option>
+      <option value="2">¿Cuál es la venta promedio del Plan Hogar?</option>
+      <option value="3">¿Cuántas ventas superaron 500?</option>
+      <option value="4">¿Qué monto tiene la venta del 15 de abril?</option>
+    </select></label>
+  <label>Tu hoja está en
+    <select id="c7l1-idi">
+      <option value="es" selected>español (Excel o Sheets)</option>
+      <option value="en">inglés</option>
+    </select></label>
+</div>
+<div class="btns" role="group" aria-label="Versión de la fórmula">
+  <button id="c7l1-v1" aria-pressed="false">Primer intento del asistente</button>
+  <button id="c7l1-v2" aria-pressed="true">Fórmula revisada</button>
+</div>
+<div class="c7l1-f" id="c7l1-f" aria-live="polite"></div>
+<div class="c7l1-leg"><span><i style="background:var(--good-soft);border:1px solid var(--good)"></i>filas que entran al cálculo</span><span><i style="background:var(--warm-soft);border:1px solid var(--warm)"></i>filas mal tratadas: quedaron fuera o entraron sin deber</span></div>
+<div class="tbl"><table><thead><tr><th class="l"></th><th>A · Fecha</th><th>B · Vendedor</th><th>C · Zona</th><th>D · Producto</th><th>E · Monto</th></tr></thead><tbody id="c7l1-t"></tbody></table></div>
+<div class="readout texto" id="c7l1-out" aria-live="polite"></div></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Una fórmula pedida en palabras</h3></div><p>Vas a pedir una fórmula y probarla en una hoja de cálculo real. Usa cualquier asistente gratuito y la hoja que tengas: Excel, Google Sheets o LibreOffice Calc.</p><p>Primero copia esta tabla en tu hoja, empezando en la celda A1 (pega y, si hace falta, usa «Datos &gt; Dividir texto en columnas» o el asistente de importación con separador de punto y coma):</p><div class="code-copia"><pre><code>Fecha;Vendedor;Zona;Producto;Monto
+03/03/2026;Ana;Norte;Plan Hogar;420
+05/03/2026;Luis;Sur;Plan Pyme;980
+11/03/2026;Ana;Norte;Plan Pyme;760
+14/03/2026;Marta;Centro;Plan Hogar;390
+19/03/2026;Luis;Norte;Plan Hogar;450
+24/03/2026;Marta;Sur;Plan Hogar;410</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><ol class="steps"><li><span>Pídele al asistente: «En [tu programa, en español o en inglés], tengo en A1:E7 una tabla con Fecha, Vendedor, Zona, Producto y Monto. Dame la fórmula que suma el Monto de la zona Norte del Plan Hogar, y explícamela pieza por pieza».</span></li><li><span>Pega la fórmula en una celda vacía.</span></li><li><span>Calcula a mano el resultado mirando la tabla y compara.</span></li></ol><p><b>Qué observar:</b> el resultado correcto es 870 (420 + 450). Si la fórmula da error, lo más común es el separador (coma o punto y coma) o el nombre de la función en el idioma equivocado: díselo al asistente con el mensaje exacto del error. Fíjate en la explicación: si no la entiendes, pide otra más simple antes de usar la fórmula en tu informe.</p></div></section>
+<section><h2>Limpiar y ordenar una tabla desordenada</h2><div class="prose"><p>La segunda hoja del informe, la de gastos, tiene los problemas de cualquier hoja que llenan varias personas: fechas escritas de tres maneras, nombres de proveedor con espacios de más y mayúsculas distintas, montos guardados como texto, filas repetidas, celdas combinadas y una fila de «TOTAL» en medio de los datos. Ninguna fórmula funciona bien así.</p><p>Una tabla limpia sigue una regla simple que en análisis de datos se llama <b>datos ordenados</b> (<i>tidy data</i>): una fila por registro, una columna por dato, un solo tipo de dato por columna y nada más en la tabla (ni totales, ni notas, ni celdas combinadas).</p></div><figure class="fig fig-comparacion" id="07-diagrama-2"><div class="lienzo"><svg viewBox="0 0 820 340" style="min-width:680px" role="img" aria-label="Una tabla de gastos antes y después de limpiarla: fechas en formatos distintos, espacios y mayúsculas, montos como texto, una fila de total en medio y una fila repetida, y la tabla ordenada resultante">
+  <defs>
+    <marker id="g7d2-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  
+  <text x="10" y="18" class="t t-xs t-m">ANTES: COMO LLEGA</text>
+  <rect x="10" y="28" width="290" height="216" rx="8" class="c-apl"/>
+  <text x="20" y="50" class="t t-s t-b">Fecha</text><text x="112" y="50" class="t t-s t-b">Proveedor</text><text x="290" y="50" class="t t-s t-b" text-anchor="end">Monto</text>
+  <line x1="16" y1="58" x2="294" y2="58" class="ln"/>
+  <text x="20" y="82" class="t t-s t-mono">3-may</text><text x="112" y="82" class="t t-s">Papelería Sur</text><text x="262" y="82" class="t t-s t-mono" text-anchor="end">318</text><text x="292" y="82" class="t t-s t-b k-apl" text-anchor="end">①</text>
+  <text x="20" y="112" class="t t-s t-mono">05/05/26</text><text x="112" y="112" class="t t-s t-mono">" papeleria sur "</text><text x="262" y="112" class="t t-s t-mono" text-anchor="end">412</text><text x="292" y="112" class="t t-s t-b k-apl" text-anchor="end">②</text>
+  <text x="20" y="142" class="t t-s t-mono">2026-05-07</text><text x="112" y="142" class="t t-s">Muebles Norte</text><text x="262" y="142" class="t t-s t-mono" text-anchor="end">'2.290</text><text x="292" y="142" class="t t-s t-b k-apl" text-anchor="end">③</text>
+  <text x="20" y="172" class="t t-s t-b">TOTAL</text><text x="262" y="172" class="t t-s t-mono t-b" text-anchor="end">3.020</text><text x="292" y="172" class="t t-s t-b k-apl" text-anchor="end">④</text>
+  <text x="20" y="202" class="t t-s t-mono">05/05/26</text><text x="112" y="202" class="t t-s t-mono">" papeleria sur "</text><text x="262" y="202" class="t t-s t-mono" text-anchor="end">412</text><text x="292" y="202" class="t t-s t-b k-apl" text-anchor="end">⑤</text>
+  <text x="20" y="232" class="t t-s t-m">5 filas · suma de montos: 6.452</text>
+
+  
+  <text x="320" y="18" class="t t-xs t-m">QUÉ HIZO LA LIMPIEZA</text>
+  <text x="320" y="82" class="t t-s">① una sola forma de fecha</text>
+  <text x="320" y="112" class="t t-s">② ESPACIOS y NOMPROPIO</text>
+  <text x="320" y="142" class="t t-s">③ VALOR: de texto a número</text>
+  <text x="320" y="172" class="t t-s">④ el total, fuera de la tabla</text>
+  <text x="320" y="196" class="t t-s">⑤ duplicado confirmado</text>
+  <text x="332" y="212" class="t t-s">y eliminado</text>
+  <line x1="320" y1="232" x2="500" y2="232" class="ln" style="stroke-width:2" marker-end="url(#g7d2-fl)"/>
+
+  
+  <text x="520" y="18" class="t t-xs t-m">DESPUÉS: DATOS ORDENADOS</text>
+  <rect x="520" y="28" width="290" height="216" rx="8" class="c-enl"/>
+  <text x="530" y="50" class="t t-s t-b">Fecha</text><text x="622" y="50" class="t t-s t-b">Proveedor</text><text x="800" y="50" class="t t-s t-b" text-anchor="end">Monto</text>
+  <line x1="526" y1="58" x2="804" y2="58" class="ln"/>
+  <text x="530" y="82" class="t t-s t-mono">2026-05-03</text><text x="622" y="82" class="t t-s">Papelería Sur</text><text x="800" y="82" class="t t-s t-mono" text-anchor="end">318</text>
+  <text x="530" y="112" class="t t-s t-mono">2026-05-05</text><text x="622" y="112" class="t t-s">Papelería Sur</text><text x="800" y="112" class="t t-s t-mono" text-anchor="end">412</text>
+  <text x="530" y="142" class="t t-s t-mono">2026-05-07</text><text x="622" y="142" class="t t-s">Muebles Norte</text><text x="800" y="142" class="t t-s t-mono" text-anchor="end">2290</text>
+  <text x="530" y="232" class="t t-s t-m">3 filas · suma de montos: 3.020</text>
+
+  <rect x="10" y="262" width="800" height="66" rx="10" class="d-sis"/>
+  <text x="24" y="286" class="t t-b k-sis">El control al final</text>
+  <text x="24" y="306" class="t t-s">Cuenta las filas y suma los montos antes y después. Aquí quedaron 3 filas de 5: una era el total (④) y otra un duplicado (⑤).</text>
+  <text x="24" y="322" class="t t-s">La suma limpia, 3.020, coincide con el total que estaba en la tabla. Si no coincide, algo se perdió.</text>
+</svg></div><figcaption><b>Antes y después de limpiar.</b> A la izquierda, la tabla como llega: cada problema está marcado con un número. A la derecha, la misma tabla ordenada. En el centro, qué hizo la limpieza con cada problema. Fíjate en el ⑤: la fila repetida se eliminó, pero solo después de confirmar que de verdad era un duplicado.</figcaption></figure><div class="prose"><p>Aquí la IA ayuda de tres maneras, de la más controlada a la más automática:</p><ul><li><b>Te dice qué está mal.</b> Pega las primeras veinte filas y pide: «Lista los problemas de esta tabla que impedirían sumar y filtrar». Es un buen diagnóstico y no toca nada.</li><li><b>Te da las fórmulas o los pasos</b> para arreglar cada problema: <code>ESPACIOS</code> (<code>TRIM</code>) quita espacios sobrantes, <code>NOMPROPIO</code> (<code>PROPER</code>) iguala las mayúsculas, <code>VALOR</code> (<code>VALUE</code>) convierte texto en número. En Excel, la herramienta <b>Power Query</b> guarda los pasos de limpieza para repetirlos el mes siguiente.</li><li><b>Lo limpia ella</b> con código, si el asistente tiene análisis de datos, y te devuelve un archivo nuevo.</li></ul><p>En los tres casos, una regla: <b>nunca limpies sobre el original</b>. Trabaja en una copia o en columnas nuevas, y al final compara: el número de filas antes y después, y la suma de los montos antes y después. Si una fila desapareció, tienes que saber por qué.</p></div></section>
+<section><h2>Preguntarle a una hoja: totales, tendencias y comparaciones</h2><div class="prose"><p>Con la tabla limpia, puedes hacerle preguntas: ¿cuánto gastamos por categoría?, ¿qué zona creció más?, ¿qué vendedor está por debajo del promedio? La herramienta clásica para eso es la <b>tabla dinámica</b> (<i>pivot table</i>), que resume una tabla grande agrupando y sumando. La IA puede armártela, explicarte cómo hacerla o responder directamente si le subes el archivo.</p><p>La calidad de la respuesta depende de que la pregunta no tenga dos lecturas. «¿Cuánto vendimos en marzo?» parece clara hasta que preguntas: ¿con o sin impuestos?, ¿por fecha de venta o de factura?, ¿se restan las devoluciones? Si no lo dices, el asistente elige, y puede elegir distinto que tu área de finanzas. Define los términos en el pedido y pide que te muestre la tabla intermedia que usó para responder, no solo la conclusión.</p></div><div class="ml"><b>En la práctica</b><p><b>Explicar una variación.</b> En un área de finanzas, cada cierre de mes alguien tiene que explicar por qué un gasto se desvió del presupuesto. El analista sube la exportación del sistema contable (sin datos personales) a un asistente con análisis de datos y pide: «Compara este mes con el anterior por categoría, ordena por la diferencia más grande y muéstrame las cinco facturas que más explican cada variación». La IA encuentra en un minuto lo que antes tomaba una hora de filtros. El analista no copia la conclusión: abre las cinco facturas en el sistema y escribe la explicación él mismo.</p></div></section>
+<section><h2>Gráficos a partir de una pregunta</h2><div class="prose"><p>Un buen gráfico responde una pregunta. Si le pides a la IA «hazme un gráfico con estos datos», te dará uno cualquiera. Si le dices la pregunta, puede elegir el adecuado:</p><ul><li><b>Comparar</b> categorías (ventas por zona): barras.</li><li><b>Ver la evolución</b> en el tiempo (ventas por mes): líneas.</li><li><b>Ver las partes de un total</b> (gasto por categoría): barras ordenadas o barras apiladas, que se leen mejor que un gráfico de torta cuando hay más de tres o cuatro partes.</li><li><b>Ver la relación</b> entre dos medidas (precio y cantidad vendida): puntos.</li></ul><p>Los asistentes con análisis de datos dibujan el gráfico con código (en Python, con bibliotecas como matplotlib) y te lo entregan como imagen; los asistentes dentro de la hoja lo crean como un gráfico editable. En los dos casos revisa lo mismo: que el eje de las barras empiece en cero, que el título diga el período y la unidad, y que no falte ninguna categoría.</p></div></section>
+<section><h2>Cuando la IA calcula y cuando hace como que calcula</h2><div class="prose"><p>Esta es la idea central del capítulo. Cuando le pides un número a un asistente, puede pasar una de dos cosas muy distintas, y por fuera se ven casi iguales.</p></div><figure class="fig fig-flujo" id="07-diagrama-3"><div class="lienzo"><svg viewBox="0 0 820 330" style="min-width:680px" role="img" aria-label="Dos caminos para calcular un total: de memoria, el modelo predice dígitos y da un número plausible que puede estar mal; con herramienta, el modelo escribe código, un entorno aislado lo ejecuta y la respuesta lleva el número exacto">
+  <defs>
+    <marker id="g7d3-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  
+  <text x="10" y="20" class="t t-xs t-m">CAMINO 1: «DE MEMORIA»</text>
+  <rect x="10" y="30" width="150" height="100" rx="10" class="caja"/>
+  <text x="22" y="52" class="t t-b">① Los montos</text>
+  <text x="22" y="74" class="t t-s t-mono">1840, 1235,</text>
+  <text x="22" y="90" class="t t-s t-mono">318, 2290…</text>
+  <text x="22" y="114" class="t t-s t-m">en el pedido</text>
+  <rect x="182" y="30" width="190" height="100" rx="10" class="c-apl"/>
+  <text x="194" y="52" class="t t-b k-apl">② Predice dígitos</text>
+  <text x="194" y="74" class="t t-s">«El total es» → «11»</text>
+  <text x="194" y="90" class="t t-s">→ «.1» → «06»</text>
+  <text x="194" y="114" class="t t-s t-m">como cualquier texto</text>
+  <rect x="394" y="30" width="190" height="100" rx="10" class="c-apl"/>
+  <text x="406" y="52" class="t t-b k-apl">③ Total: 11.106</text>
+  <text x="406" y="74" class="t t-s">plausible, con los</text>
+  <text x="406" y="90" class="t t-s">dígitos esperados</text>
+  <text x="406" y="114" class="t t-s t-b">y equivocado</text>
+  <line x1="160" y1="80" x2="180" y2="80" class="ln" style="stroke-width:2" marker-end="url(#g7d3-fl)"/>
+  <line x1="372" y1="80" x2="392" y2="80" class="ln" style="stroke-width:2" marker-end="url(#g7d3-fl)"/>
+  <rect x="606" y="30" width="204" height="100" rx="10" class="c-fis"/>
+  <text x="618" y="52" class="t t-b k-fis">Señales</text>
+  <text x="618" y="74" class="t t-s">sin código ni aviso</text>
+  <text x="618" y="90" class="t t-s">responde al instante</text>
+  <text x="618" y="106" class="t t-s">no ofrece un archivo</text>
+
+  <line x1="10" y1="152" x2="810" y2="152" class="ln ln-d"/>
+
+  
+  <text x="10" y="178" class="t t-xs t-m">CAMINO 2: CON HERRAMIENTA</text>
+  <rect x="10" y="188" width="150" height="100" rx="10" class="c-red"/>
+  <text x="22" y="210" class="t t-b k-red">④ Escribe código</text>
+  <text x="22" y="232" class="t t-s t-mono">df = leer(csv)</text>
+  <text x="22" y="248" class="t t-s t-mono">df.Monto.sum()</text>
+  <text x="22" y="272" class="t t-s t-m">Python + pandas</text>
+  <rect x="182" y="188" width="190" height="100" rx="10" class="c-tra"/>
+  <text x="194" y="210" class="t t-b k-tra">⑤ Entorno aislado</text>
+  <text x="194" y="232" class="t t-s">ejecuta el código y</text>
+  <text x="194" y="248" class="t t-s">suma de verdad</text>
+  <text x="194" y="272" class="t t-s t-mono">→ 11016</text>
+  <rect x="394" y="188" width="190" height="100" rx="10" class="c-enl"/>
+  <text x="406" y="210" class="t t-b k-enl">⑥ Respuesta</text>
+  <text x="406" y="232" class="t t-s">el modelo redacta</text>
+  <text x="406" y="248" class="t t-s">con el número exacto</text>
+  <text x="406" y="272" class="t t-s t-b">11.016</text>
+  <line x1="160" y1="238" x2="180" y2="238" class="ln" style="stroke-width:2" marker-end="url(#g7d3-fl)"/>
+  <line x1="372" y1="238" x2="392" y2="238" class="ln" style="stroke-width:2" marker-end="url(#g7d3-fl)"/>
+  <rect x="606" y="188" width="204" height="100" rx="10" class="c-enl"/>
+  <text x="618" y="210" class="t t-b k-enl">Señales</text>
+  <text x="618" y="232" class="t t-s">muestra el código</text>
+  <text x="618" y="248" class="t t-s">«Analizando…»</text>
+  <text x="618" y="264" class="t t-s">archivo de resultados</text>
+
+  <text x="10" y="318" class="t t-s t-m">Por fuera, los dos caminos terminan en una frase como «El total es…». Lo que cambia es quién hizo la cuenta.</text>
+</svg></div><figcaption><b>Dos caminos para el mismo total.</b> Arriba, el camino «de memoria»: el modelo lee los montos (①) y escribe el total como escribe cualquier texto, prediciendo dígitos (②); el resultado es plausible y puede estar mal (③). Abajo, el camino con herramienta: el modelo escribe un programa (④), el entorno aislado lo ejecuta y calcula de verdad (⑤), y el modelo redacta la respuesta con el número exacto (⑥). A la derecha, las señales para saber qué camino tomó.</figcaption></figure><div class="prose"><p>En el camino de arriba, el modelo no suma: escribe la continuación más probable de un texto que termina en «el total es». Con tres números pequeños suele acertar; con cuarenta montos de cuatro cifras, la probabilidad de error es alta. Lo peor es que el error no se nota: el total tiene la cantidad de dígitos esperada, y los porcentajes que salen de él suman 100 %, porque el modelo es coherente consigo mismo aunque esté equivocado.</p><p>¿Cómo saber qué camino tomó? Hay señales: el asistente muestra un bloque de código o un aviso como «Analizando» o «Ejecutando código», ofrece descargar un archivo con los resultados, o te dice explícitamente que usó una herramienta. Si no ves ninguna señal, asume el camino de arriba. Y pídelo: «usa análisis de datos o ejecuta código para calcular, y muéstrame el código».</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Comprueba un total con tu computadora</h3></div><p>Vas a sumar una columna con un comando y comparar ese total con el que te da un asistente sin herramientas.</p><p>Primero crea un archivo de texto llamado <code>gastos.csv</code> en tu carpeta de usuario con este contenido (cópialo tal cual, con el bloc de notas o cualquier editor):</p><div class="code-copia"><pre><code>Categoria,Proveedor,Monto
+Viajes,Aerolinea Ejemplo,1840
+Viajes,Hotel Centro,1235
+Oficina,Papeleria Sur,318
+Oficina,Muebles Norte,2290
+Software,Licencias Ejemplo,1575
+Software,Nube Ejemplo,940
+Capacitacion,Instituto Ejemplo,1460
+Viajes,Taxis Ciudad,287
+Oficina,Cafeteria,412
+Capacitacion,Curso en linea,659</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div><p>Después abre la terminal en tu carpeta de usuario y suma la columna Monto con el comando de tu sistema:</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>Import-Csv gastos.csv | Measure-Object -Property Monto -Sum</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>awk -F, 'NR&gt;1 {s+=$3} END {print s}' gastos.csv</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>En un asistente gratuito, en una conversación nueva, pega el mismo contenido y pide: «Suma la columna Monto. No uses herramientas ni código: responde solo con el total y el subtotal de cada categoría».</span></li><li><span>En otra conversación nueva, pide lo mismo pero «usa una herramienta de análisis de datos o ejecuta código si la tienes, y muéstrame el código».</span></li></ol><p><b>Qué observar:</b> el total correcto es 11016. Con solo diez filas, es posible que el asistente acierte incluso sin herramienta; revisa también los subtotales por categoría, que es donde más suelen aparecer errores. Si quieres ver la diferencia con más claridad, agrega veinte filas más inventadas y repite. El comando de la terminal siempre da el mismo resultado: eso es calcular.</p></div></section>
+<section><h2>Comprobar los números con una muestra</h2><div class="prose"><p>No hace falta rehacer todo el análisis para confiar en él. Hace falta una rutina corta de comprobación, como la que hace un auditor: revisar una <b>muestra</b> (<i>sample</i>) de los resultados y unos pocos controles que detectan casi cualquier error grande.</p><ol class="steps"><li><span><b>El total contra la fuente.</b> La suma de la columna en tu hoja o en el sistema debe coincidir con el total del análisis. Es el control más barato y el que más errores atrapa.</span></li><li><span><b>La cantidad de filas.</b> Si el archivo tiene 1.250 filas y el análisis habla de 1.180 registros, algo se filtró o se perdió.</span></li><li><span><b>Tres a cinco filas al azar</b>, recalculadas a mano.</span></li><li><span><b>Un caso que conoces.</b> Si sabes que la zona Sur vendió unos 3.000 el mes pasado, búscalo.</span></li><li><span><b>Los extremos.</b> El mayor y el menor: ¿son reales o son un error de carga (un monto con dos ceros de más)?</span></li><li><span><b>El sentido común.</b> Si un gasto «creció 340 %», antes de escribirlo en el informe, confirma que no cambió la forma de registrarlo.</span></li></ol></div><div class="lab" id="07-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Encuentra el total mal sumado</h3></div><p class="hint">Un asistente analizó los gastos del mes sin usar herramientas. Su informe tiene subtotales, un total y un porcentaje. Toca un subtotal para comprobarlo contra las filas de la tabla: cada comprobación cuesta tiempo, así que elige bien. Cuando encuentres el error, mira qué otras cifras arrastró y compara con el resultado calculado con código.</p><style>
+[id="07-lab-2"] .c7l2-inf{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:8px}
+[id="07-lab-2"] .c7l2-inf .q{font:600 .78rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+[id="07-lab-2"] .c7l2-inf p{margin:0;font:400 .98rem/1.5 var(--f-body)}
+[id="07-lab-2"] table{border-collapse:collapse;width:100%}
+[id="07-lab-2"] th,[id="07-lab-2"] td{font:500 .84rem var(--f-display);padding:4px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+[id="07-lab-2"] td.n{font-family:var(--f-mono);text-align:right;white-space:nowrap}
+[id="07-lab-2"] tr.bien td{background:var(--good-soft)}
+[id="07-lab-2"] tr.malo td{background:var(--warm-soft)}
+[id="07-lab-2"] td button{font-size:.78rem;padding:3px 8px}
+[id="07-lab-2"] .c7l2-det{font:.78rem/1.4 var(--f-mono);color:var(--muted);display:block;margin-top:3px}
+[id="07-lab-2"] .c7l2-cod{font:.8rem/1.5 var(--f-mono);background:var(--paper);border-radius:8px;padding:10px 12px;white-space:pre-wrap;overflow-x:auto;margin:0}
+[id="07-lab-2"] svg{display:block;width:100%;max-width:560px;height:auto}
+</style>
+<div class="c7l2-inf">
+  <span class="q">El análisis del asistente (sin herramientas)</span>
+  <p>«Los gastos del mes suman <b>14.454</b>. Viajes sigue siendo el mayor gasto (27,8 %), y <b>Software ya es el segundo gasto del área (22,1 %)</b>, por encima de Oficina. Recomiendo revisar las licencias.»</p>
+  <div class="tbl"><table><thead><tr><th>Categoría</th><th style="text-align:right">Subtotal IA</th><th style="text-align:right">% IA</th><th>Comprobar</th></tr></thead><tbody id="c7l2-t"></tbody></table></div>
+</div>
+<svg id="c7l2-g" viewBox="0 0 520 190" role="img" aria-label="Barras de los subtotales del asistente y, para los comprobados, el valor real"></svg>
+<div class="btns"><button id="c7l2-cod-b" aria-pressed="false">Ver el cálculo hecho con código</button><button id="c7l2-reset">Empezar de nuevo</button></div>
+<pre class="c7l2-cod" id="c7l2-cod" hidden></pre>
+<div class="readout texto" id="c7l2-out" aria-live="polite"></div></div><div class="prose"><p>El laboratorio enseña dos cosas. La primera: el error está en un subtotal, pero el total y los porcentajes son coherentes con ese subtotal equivocado, así que comprobar solo que «los porcentajes suman 100» no sirve. La segunda: comprobar todo cuesta lo mismo que hacerlo de nuevo, y comprobar una muestra bien elegida (el total contra la fuente y la categoría más grande) atrapa la mayoría de los errores en poco tiempo.</p><p>Si quieres aprender a analizar datos con más profundidad (estadística, programación en Python, visualización), están los cursos <a href="https://aaramirez.github.io/ciencia-de-datos/temario.html" target="_blank" rel="noopener">Ciencia de datos</a> y <a href="https://aaramirez.github.io/programacion-python/temario.html" target="_blank" rel="noopener">Programación en Python</a>.</p></div></section>
+<section><h2>Pedidos para copiar</h2><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Una fórmula que entienda</h3></div><div class="code-copia"><pre><code>Trabajo en [Excel / Google Sheets / LibreOffice Calc] en [español / inglés]. Mi tabla está en [rango, por ejemplo A1:E500] con estas columnas: [letra y nombre de cada columna].
+Necesito una fórmula que [qué quieres calcular, con sus condiciones].
+Dame la fórmula, explícala pieza por pieza y dime qué pasa si hay celdas vacías, textos en lugar de números o espacios de más.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Diagnóstico de una tabla</h3></div><div class="code-copia"><pre><code>Estas son las primeras filas de una tabla que necesito sumar y filtrar. No la modifiques. Lista todos los problemas que encuentres (fechas, textos, números guardados como texto, duplicados, filas de totales, celdas vacías) y, para cada uno, la fórmula o el paso para corregirlo en [programa].
+[pega aquí las filas]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Análisis con cálculo real</h3></div><div class="code-copia"><pre><code>Analiza el archivo adjunto. Usa análisis de datos o ejecuta código para todos los cálculos y muéstrame el código.
+Definiciones: [qué significa cada término, por ejemplo «ventas = monto sin impuestos, por fecha de factura»].
+Responde: [tus preguntas]. Para cada resultado, muéstrame la tabla intermedia que usaste, la cantidad de filas que entraron al cálculo y el total de la columna principal, para que yo lo compare con mi hoja.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Elegir el gráfico</h3></div><div class="code-copia"><pre><code>Quiero un gráfico que responda esta pregunta: [pregunta]. Los datos son [descripción o tabla]. Recomiéndame el tipo de gráfico y explica por qué. Luego genéralo con el eje empezando en cero, un título con el período y la unidad, y sin categorías omitidas.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div></section>
+<section><h2>Lo que te llevas</h2><div class="prose"><p>Pide que la IA calcule con una herramienta y comprueba siempre una muestra de los resultados. Una fórmula que la hoja ejecuta o un código que el asistente ejecuta dan números confiables; un número que el modelo «escribe de memoria» solo da un número plausible. Y antes de que un número entre a tu informe, pasa por tu rutina: el total contra la fuente, las filas, una muestra y un caso que conoces.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Por qué pedir una fórmula es más seguro que pedirle a la IA el resultado directamente?</summary><p>Porque la cuenta la hace la hoja de cálculo, que no se equivoca sumando. Lo que hay que revisar es que la fórmula haga lo que quieres, y eso se comprueba leyéndola y probándola con un caso conocido.</p></details><details><summary>Una fórmula que te dio el asistente da error al pegarla en tu hoja. ¿Cuáles son las dos causas más comunes?</summary><p>El nombre de la función en otro idioma (por ejemplo SUMIF en lugar de SUMAR.SI) y el separador de argumentos (coma en lugar de punto y coma, según la configuración regional).</p></details><details><summary>¿Qué es una tabla con «datos ordenados»?</summary><p>Una fila por registro, una columna por dato, un solo tipo de dato por columna y nada más en la tabla: ni totales intermedios, ni notas, ni celdas combinadas.</p></details><details><summary>¿Cómo sabes si un asistente calculó de verdad o escribió el número «de memoria»?</summary><p>Si calculó, suele mostrar el código, un aviso de que está analizando o ejecutando código, o un archivo de resultados. Si no hay ninguna señal, asume que lo escribió de memoria.</p></details><details><summary>Los porcentajes de un análisis suman exactamente 100 %. ¿Eso prueba que los subtotales están bien?</summary><p>No. El modelo es coherente consigo mismo: si un subtotal está mal, el total y los porcentajes se calculan sobre ese error y siguen sumando 100 %.</p></details><details><summary>¿Cuál es el control más barato para detectar un error en un análisis?</summary><p>Comparar el total del análisis con el total de la columna en la fuente (tu hoja o el sistema). Después, la cantidad de filas y una muestra de filas al azar.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Por qué algunos programas muestran 0,1 + 0,2 como 0,30000000000000004?<small>Pista: busca «aritmética de punto flotante» e «IEEE 754».</small></li><li>¿Qué es la paradoja de Simpson y cómo puede engañar una comparación de promedios entre grupos?</li><li>¿Qué es Power Query y en qué se diferencia de limpiar una tabla con fórmulas?</li><li>¿Qué es pandas y por qué casi todos los asistentes lo usan para analizar archivos de datos?</li><li>¿Qué es un muestreo aleatorio estratificado y cuándo conviene más que elegir filas al azar?<small>Pista: busca cómo lo usan los auditores.</small></li><li>¿Desde qué día empieza Excel a contar sus números de fecha, y por qué un CSV con fechas puede abrirse mal en una computadora configurada para otro país?</li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://support.google.com/docs/table/25273?hl=es" target="_blank" rel="noopener">Lista de funciones de Google Sheets <small>referencia</small></a><a class="vid" href="https://help.libreoffice.org/latest/es/text/scalc/main0000.html" target="_blank" rel="noopener">Ayuda de LibreOffice Calc <small>referencia</small></a><a class="vid" href="https://aaramirez.github.io/ciencia-de-datos/temario.html" target="_blank" rel="noopener">Ciencia de datos: analizar datos con método <small>curso</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-generativa" target="_blank" rel="noopener">github.com/aaramirez/ia-generativa</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const D=[[3,3,'Ana','Norte','Plan Hogar',420],[5,3,'Luis','Sur','Plan Pyme',980],[11,3,'Ana','Norte','Plan Pyme',760],[14,3,'Marta','Centro','Plan Hogar',390],
+    [19,3,'Luis','Norte','Plan Hogar',450],[24,3,'Marta','Sur','Plan Hogar',410],[2,4,'Ana','Centro','Plan Pyme',1150],[8,4,'Luis','Sur','Plan Hogar',380],
+    [15,4,'Marta','Norte','Plan Pyme',870],[21,4,'Ana','Sur','Plan Hogar',440],[27,4,'Luis','Centro','Plan Hogar',395],[29,4,'Marta','Norte','Plan Hogar',520]];
+  const n=x=>x.toLocaleString('es',{maximumFractionDigits:2});
+  const idx=f=>D.map((r,i)=>f(r)?i:-1).filter(i=>i>=0);
+  // cada pregunta: fórmula revisada (ok) y primer intento (mal); cada una devuelve {usa, val, txt}
+  const Q=[
+    {ok:{es:'=SUMAR.SI(C2:C13;"Norte";E2:E13)',en:'=SUMIF(C2:C13,"Norte",E2:E13)',usa:()=>idx(r=>r[3]==='Norte'),op:'suma'},
+     mal:{es:'=SUMAR.SI(C2:C12;"Norte";E2:E12)',en:'=SUMIF(C2:C12,"Norte",E2:E12)',usa:()=>idx(r=>r[3]==='Norte').filter(i=>i<11),op:'suma',
+      por:'El rango termina en la fila 12: la última venta (fila 13) quedó fuera. Pasa cuando la IA cuenta mal las filas o cuando agregas filas después de pedir la fórmula. La revisada usa C2:C13.'},
+     piezas:'SUMAR.SI(dónde buscar; qué buscar; qué sumar): busca «Norte» en la columna C y suma los montos de la columna E de esas filas.'},
+    {ok:{es:'=SUMAR.SI.CONJUNTO(E2:E13;B2:B13;"Ana";A2:A13;">="&FECHA(2026;3;1);A2:A13;"<"&FECHA(2026;4;1))',en:'=SUMIFS(E2:E13,B2:B13,"Ana",A2:A13,">="&DATE(2026,3,1),A2:A13,"<"&DATE(2026,4,1))',usa:()=>idx(r=>r[2]==='Ana'&&r[1]===3),op:'suma'},
+     mal:{es:'=SUMAR.SI.CONJUNTO(E2:E13;B2:B13;"Ana")',en:'=SUMIFS(E2:E13,B2:B13,"Ana")',usa:()=>idx(r=>r[2]==='Ana'),op:'suma',
+      por:'Olvidó la condición del mes: sumó todas las ventas de Ana, también las de abril. La fórmula funciona y da un número creíble; simplemente no responde tu pregunta.'},
+     piezas:'SUMAR.SI.CONJUNTO(qué sumar; dónde buscar 1; qué buscar 1; …): suma la columna E cuando el vendedor es Ana y la fecha está entre el 1 de marzo (incluido) y el 1 de abril (excluido).'},
+    {ok:{es:'=PROMEDIO.SI(D2:D13;"Plan Hogar";E2:E13)',en:'=AVERAGEIF(D2:D13,"Plan Hogar",E2:E13)',usa:()=>idx(r=>r[4]==='Plan Hogar'),op:'prom'},
+     mal:{es:'=PROMEDIO(E2:E13)',en:'=AVERAGE(E2:E13)',usa:()=>idx(()=>true),op:'prom',
+      por:'Promedió todas las ventas, también las del Plan Pyme, que son más grandes. El número sube y parece razonable: por eso este error se cuela.'},
+     piezas:'PROMEDIO.SI(dónde buscar; qué buscar; qué promediar): promedia los montos de las filas cuyo producto es «Plan Hogar».'},
+    {ok:{es:'=CONTAR.SI(E2:E13;">500")',en:'=COUNTIF(E2:E13,">500")',usa:()=>idx(r=>r[5]>500),op:'contar'},
+     mal:{es:'=SUMAR.SI(E2:E13;">500")',en:'=SUMIF(E2:E13,">500")',usa:()=>idx(r=>r[5]>500),op:'suma',
+      por:'Usa las filas correctas, pero suma los montos en lugar de contarlas. La pregunta era «cuántas», y la respuesta tendría que ser una cantidad, no un monto.'},
+     piezas:'CONTAR.SI(dónde mirar; condición): cuenta las celdas de la columna E con un valor mayor que 500.'},
+    {ok:{es:'=BUSCARX(FECHA(2026;4;15);A2:A13;E2:E13)',en:'=XLOOKUP(DATE(2026,4,15),A2:A13,E2:E13)',usa:()=>idx(r=>r[0]===15&&r[1]===4),op:'buscar'},
+     mal:{es:'=BUSCARX("15/04";A2:A13;E2:E13)',en:'=XLOOKUP("15/04",A2:A13,E2:E13)',usa:()=>[],op:'buscar',err:true,
+      por:'Busca el texto «15/04», pero la columna A tiene fechas, que la hoja guarda como números. No encuentra nada y devuelve un error (#N/D en español, #N/A en inglés).'},
+     piezas:'BUSCARX(qué buscar; dónde buscar; qué devolver): busca la fecha 15/04/2026 en la columna A y devuelve el monto de la misma fila.'}
+  ];
+  let ver='ok';
+  function calc(f){
+    const u=f.usa(),vals=u.map(i=>D[i][5]);
+    if(f.err)return {u,val:null,txt:'#N/D'};
+    if(f.op==='suma')return {u,val:vals.reduce((a,b)=>a+b,0),vals};
+    if(f.op==='prom')return {u,val:vals.reduce((a,b)=>a+b,0)/vals.length,vals};
+    if(f.op==='contar')return {u,val:vals.length,vals};
+    return {u,val:vals[0],vals};
+  }
+  function pintar(){
+    const q=Q[+$('#c7l1-q').value],idi=$('#c7l1-idi').value,F=q[ver],R=calc(F),OK=calc(q.ok);
+    $('#c7l1-v1').setAttribute('aria-pressed',ver==='mal'?'true':'false');$('#c7l1-v2').setAttribute('aria-pressed',ver==='ok'?'true':'false');
+    const box=$('#c7l1-f');box.className='c7l1-f'+(ver==='mal'?' mal':'');
+    box.textContent=F[idi];
+    const sm=document.createElement('small');sm.textContent=ver==='ok'?q.piezas:'Primer intento: se ve correcta. ¿Lo es? Compara con la revisada.';box.appendChild(sm);
+    const fuera=OK.u.filter(i=>!R.u.includes(i));
+    const tb=$('#c7l1-t');
+    if(!tb.childElementCount){
+      D.forEach((r,i)=>{
+        const tr=document.createElement('tr');
+        tr.innerHTML='<td class="l">'+(i+2)+'</td><td>'+String(r[0]).padStart(2,'0')+'/'+String(r[1]).padStart(2,'0')+'/2026</td><td>'+r[2]+'</td><td>'+r[3]+'</td><td>'+r[4]+'</td><td><input type="number" min="0" step="10" aria-label="Monto de la fila '+(i+2)+'"></td>';
+        const inp=tr.querySelector('input');inp.value=r[5];
+        inp.addEventListener('input',()=>{const v=parseFloat(inp.value);D[i][5]=isNaN(v)?0:v;pintar();});
+        tb.appendChild(tr);
+      });
+    }
+    [...tb.children].forEach((tr,i)=>{const sobra=R.u.includes(i)&&!OK.u.includes(i);tr.className=sobra||fuera.includes(i)?'fuera':(R.u.includes(i)?'usa':'');});
+    const res=R.val===null?R.txt:(F.op==='prom'?n(Math.round(R.val*100)/100):n(R.val));
+    const resOk=F.op===q.ok.op&&R.val===OK.val;
+    let h='<span class="big">Resultado: '+res+(F.op==='contar'?' ventas':'')+'</span>';
+    if(R.vals&&R.vals.length){
+      const cuenta=F.op==='contar'?'filas '+R.u.map(i=>i+2).join(', '):(F.op==='buscar'?'fila '+(R.u[0]+2):R.vals.map(n).join(' + ')+(F.op==='prom'?', dividido entre '+R.vals.length:''));
+      h+='<span>Compruébalo a mano: '+cuenta+'.</span>';
+    }
+    if(ver==='mal')h+=(resOk?'<span>Con estos montos coincide con la revisada, pero la fórmula sigue mal: '+q.mal.por+'</span>':'<span class="warn">No responde la pregunta. '+q.mal.por+'</span><span>La fórmula revisada da '+(OK.val===null?'#N/D':(q.ok.op==='prom'?n(Math.round(OK.val*100)/100):n(OK.val)))+'.</span>');
+    else h+='<span class="ok">Responde la pregunta. Cambia un monto de la tabla y mira cómo se recalcula; después mira el primer intento.</span>';
+    $('#c7l1-out').innerHTML=h;
+  }
+  $('#c7l1-v1').addEventListener('click',()=>{ver='mal';pintar();});
+  $('#c7l1-v2').addEventListener('click',()=>{ver='ok';pintar();});
+  $('#c7l1-q').addEventListener('change',pintar);$('#c7l1-idi').addEventListener('change',pintar);
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const CAT=[
+    ['Viajes',[['Aerolínea',1840],['Hotel',1235],['Taxis',287],['Viáticos',655]],4017],
+    ['Oficina',[['Papelería',318],['Muebles',2290],['Cafetería',412]],3020],
+    ['Software',[['Licencias',1575],['Nube',940],['Antivirus',385]],3200],
+    ['Capacitación',[['Instituto',1460],['Curso en línea',659]],2119],
+    ['Mantenimiento',[['Aire acondicionado',730],['Limpieza',1120],['Plomería',248]],2098]
+  ];
+  const real=c=>c[1].reduce((a,b)=>a+b[1],0);
+  const TIA=CAT.reduce((a,c)=>a+c[2],0),TR=CAT.reduce((a,c)=>a+real(c),0);
+  const n=x=>x.toLocaleString('es');
+  const pct=(x,t)=>(x/t*100).toFixed(1).replace('.',',')+' %';
+  let hecho=new Set(),totalHecho=false,min=0,verCod=false;
+  function pintar(){
+    const tb=$('#c7l2-t');tb.innerHTML='';
+    CAT.forEach((c,i)=>{
+      const tr=document.createElement('tr'),ok=c[2]===real(c);
+      if(hecho.has(i))tr.className=ok?'bien':'malo';
+      tr.innerHTML='<td>'+c[0]+(hecho.has(i)?'<span class="c7l2-det">'+c[1].map(x=>n(x[1])).join(' + ')+' = '+n(real(c))+'</span>':'')+'</td><td class="n">'+n(c[2])+'</td><td class="n">'+pct(c[2],TIA)+'</td><td></td>';
+      const b=document.createElement('button');b.type='button';
+      b.textContent=hecho.has(i)?(ok?'✓ coincide':'✗ no coincide'):'Sumar filas (3 min)';b.disabled=hecho.has(i);
+      b.addEventListener('click',()=>{hecho.add(i);min+=3;pintar();});
+      tr.lastChild.appendChild(b);tb.appendChild(tr);
+    });
+    const trT=document.createElement('tr');if(totalHecho)trT.className='malo';
+    trT.innerHTML='<td><b>Total</b>'+(totalHecho?'<span class="c7l2-det">columna Monto en la hoja = '+n(TR)+'</span>':'')+'</td><td class="n"><b>'+n(TIA)+'</b></td><td class="n">100,0 %</td><td></td>';
+    const bt=document.createElement('button');bt.type='button';bt.textContent=totalHecho?'✗ no coincide':'Contra la hoja (1 min)';bt.disabled=totalHecho;
+    bt.addEventListener('click',()=>{totalHecho=true;min+=1;pintar();});
+    trT.lastChild.appendChild(bt);tb.appendChild(trT);
+    // gráfico
+    const max=4200,x0=104,w=400;let g='';
+    CAT.forEach((c,i)=>{
+      const y=12+i*34,wi=c[2]/max*w;
+      g+='<text x="'+(x0-8)+'" y="'+(y+15)+'" text-anchor="end" style="font:500 12px var(--f-display)" fill="var(--ink)">'+c[0]+'</text>';
+      g+='<rect x="'+x0+'" y="'+y+'" width="'+wi.toFixed(1)+'" height="20" rx="3" fill="var(--accent)" opacity="'+(hecho.has(i)?.35:.85)+'"/>';
+      if(hecho.has(i)){const wr=real(c)/max*w,ok=c[2]===real(c);g+='<rect x="'+x0+'" y="'+(y+5)+'" width="'+wr.toFixed(1)+'" height="10" rx="2" fill="'+(ok?'var(--good)':'var(--warm)')+'"/>';}
+      g+='<text x="'+(x0+wi+6).toFixed(1)+'" y="'+(y+15)+'" style="font:600 11px var(--f-mono)" fill="var(--muted)">'+n(c[2])+'</text>';
+    });
+    g+='<text x="'+x0+'" y="184" style="font:500 11px var(--f-display)" fill="var(--muted)">Azul: lo que dice el asistente. Barra interior: el valor real, cuando lo compruebas.</text>';
+    $('#c7l2-g').innerHTML=g;
+    // código
+    const cod=$('#c7l2-cod');cod.hidden=!verCod;$('#c7l2-cod-b').setAttribute('aria-pressed',verCod?'true':'false');
+    if(verCod){
+      const ord=CAT.map(c=>[c[0],real(c)]).sort((a,b)=>b[1]-a[1]);
+      cod.textContent='import pandas as pd\ndf = pd.read_csv("gastos.csv")\nsub = df.groupby("Categoria")["Monto"].sum().sort_values(ascending=False)\nprint(sub, sub.sum())\n\n# Resultado al ejecutarlo:\n'+ord.map(x=>x[0].padEnd(14)+String(x[1]).padStart(6)).join('\n')+'\n'+'Total'.padEnd(14)+String(TR).padStart(6);
+    }
+    // lectura
+    const malo=CAT.findIndex(c=>c[2]!==real(c)),hallado=hecho.has(malo);
+    let h='<span class="big">Tiempo usado: '+min+' min · comprobaste '+hecho.size+' de 5 subtotales'+(totalHecho?' y el total':'')+'</span>';
+    if(totalHecho&&!hallado)h+='<span class="warn">El total no coincide con la hoja: '+n(TIA)+' frente a '+n(TR)+'. Ya sabes que hay un error, por '+n(TIA-TR)+'. Ahora busca dónde: empieza por las categorías más grandes.</span>';
+    if(hallado){
+      h+='<span class="warn">Encontraste el error: Software suma '+n(real(CAT[malo]))+', no '+n(CAT[malo][2])+'. El asistente «escribió» un subtotal plausible sin sumar.</span>';
+      h+='<span>Mira lo que arrastró: el total correcto es '+n(TR)+', Software es el '+pct(real(CAT[malo]),TR)+' y Oficina ('+pct(3020,TR)+') sigue siendo el segundo gasto. La conclusión «Software ya es el segundo gasto» y la recomendación sobre licencias eran falsas, aunque los porcentajes sumaban exactamente 100 %.</span>';
+      h+=min<=7?'<span class="ok">Lo encontraste en '+min+' minutos: el total contra la fuente y una muestra bien elegida bastan.</span>':'<span>Te tomó '+min+' minutos. La ruta corta: comprobar el total contra la hoja (1 min) y luego las categorías que sostienen la conclusión.</span>';
+    }else if(!totalHecho&&!hecho.size)h+='<span>Elige qué comprobar. Pista: el control más barato es comparar el total con la columna de la hoja.</span>';
+    else if(!totalHecho)h+='<span>'+(hecho.size?'Por ahora todo coincide. ':'')+'¿Qué cifra sostiene la conclusión del informe?</span>';
+    $('#c7l2-out').innerHTML=h;
+  }
+  $('#c7l2-cod-b').addEventListener('click',()=>{verCod=!verCod;pintar();});
+  $('#c7l2-reset').addEventListener('click',()=>{hecho=new Set();totalHecho=false;min=0;verCod=false;pintar();});
+  pintar();
+})();
+</script>
+</body>
+</html>

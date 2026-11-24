@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Texto · IA generativa · IA generativa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Usar la IA generativa en el trabajo, sin tecnicismos: qué puede y qué no, cómo pedir bien, cómo verificar, qué hacer con texto, imágenes y datos, casos por área y cómo llevarla a tu equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="texto">
+<header class="topbar"><a class="brand" href="index.html">IA <b>generativa</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 05 DE 10</span><h1>Texto: redactar, resumir, traducir y revisar</h1><p class="lede">El texto es el terreno natural de la IA generativa: correos, informes, actas y presentaciones salen en segundos. El truco está en usarla como primer borrador y como revisora, sin entregarle el criterio ni la última palabra.</p></header>
+<section><div class="prose"><p>Llegó el día de escribir el informe mensual. Tienes las notas de las últimas cuatro semanas, el acta de la reunión de equipo, un correo largo de la gerencia con preguntas y la tarea de mandarle a un cliente importante un resumen de lo que cambió. Son cuatro textos distintos para cuatro lectores distintos, y todos salen del mismo material.</p><p>Este es el trabajo donde la IA generativa rinde más, porque es trabajo con el lenguaje: transformar texto que ya existe en otro texto. En el capítulo 1 viste que un modelo de lenguaje es un autocompletado con muchísima lectura, y que es bueno con las palabras y poco confiable con los hechos. Este capítulo convierte esa idea en una forma de trabajar: la IA hace el primer borrador y una primera revisión; tú pones los hechos, el criterio y la firma.</p></div></section>
+<section><h2>Dónde vive la IA que escribe</h2><div class="prose"><p>Antes de las técnicas, conviene saber con qué herramientas se hace este trabajo hoy, porque no todo pasa en la ventana de un chat:</p><ul><li><b>Asistentes de chat</b> como los del capítulo 1 (ChatGPT, Claude, Gemini, Copilot, Le Chat y otros): pegas el material, pides y copias el resultado.</li><li><b>Asistentes dentro de las herramientas de oficina</b>: Microsoft 365 Copilot en Word y Outlook, Gemini en Google Docs y Gmail, o las funciones de redacción de Notion y de otros editores. Son ejemplos del mercado; trabajan sobre el documento abierto, sin copiar y pegar.</li><li><b>Traductores automáticos</b> como DeepL o Google Traductor, que usan <b>traducción automática neuronal</b> (<i>neural machine translation</i>, NMT): modelos entrenados con millones de pares de frases traducidas.</li><li><b>Correctores</b>: el corrector clásico del procesador de textos compara cada palabra con un diccionario y aplica reglas; los correctores con IA leen la frase completa y proponen cómo reescribirla.</li><li><b>Transcriptores de reuniones</b>, integrados en Teams, Meet o Zoom, que convierten el audio en texto. Los verás de cerca en el capítulo 6.</li></ul><p>Todos se apoyan en el mismo mecanismo y en la misma limitación: el modelo lee lo que cabe en su <b>ventana de contexto</b> (<i>context window</i>), lo que le das más las instrucciones, y escribe a partir de eso. Si un dato no está ahí, lo reconstruye por parecido. Las técnicas de este capítulo son, en el fondo, maneras de poner en la ventana lo que hace falta y de revisar lo que sale.</p></div></section>
+<section><h2>Redactar desde notas sueltas</h2><div class="prose"><p>Las notas sueltas son el mejor material para la IA: tienen los hechos, que son tuyos, y les falta la forma, que es lo que ella hace bien.</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en un buen asistente de redacción al que le pasas tus apuntes escritos en una servilleta. Te devuelve un texto limpio y ordenado. Pero si en la servilleta faltaba una cifra, un asistente apurado la «completa» con algo razonable para que el párrafo suene bien. Tu trabajo es darle la servilleta completa y pedirle que deje un hueco visible donde falte algo, en lugar de rellenarlo.</p></div><div class="prose"><p>Un borrador útil sale de un pedido que dice cuatro cosas: <b>para quién</b> es el texto, <b>para qué</b> (informar, pedir una decisión, disculparse), <b>qué tan largo</b> y <b>qué reglas</b> tiene que cumplir. La regla más valiosa es la que ya viste en el capítulo 1: «usa solo las cifras de mis notas y escribe [FALTA DATO] donde haga falta algo que no tengo». El capítulo 3 trata a fondo cómo armar un buen pedido; aquí lo aplicamos al texto.</p></div><figure class="fig fig-flujo" id="05-diagrama-1"><div class="lienzo"><svg viewBox="0 0 820 440" style="min-width:660px" role="img" aria-label="Flujo de un texto escrito con IA: tú das notas y pedido al asistente, recibes un borrador, revisas hechos contra tus fuentes, tono y lo que falta, envías correcciones, recibes la versión corregida y la envías tú al lector">
+  <defs>
+    <marker id="g5d1-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="k-red"/></marker>
+    <marker id="g5d1-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="k-enl"/></marker>
+    <marker id="g5d1-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="k-tra"/></marker>
+  </defs>
+  
+  <rect x="20" y="14" width="120" height="46" rx="8" class="caja"/>
+  <text x="80" y="34" class="t t-b" text-anchor="middle">Tus fuentes</text>
+  <text x="80" y="50" class="t t-s t-m" text-anchor="middle">notas, hoja, sistemas</text>
+  <rect x="200" y="14" width="120" height="46" rx="8" class="c-enl"/>
+  <text x="260" y="34" class="t t-b k-enl" text-anchor="middle">Tú</text>
+  <text x="260" y="50" class="t t-s" text-anchor="middle">autor y responsable</text>
+  <rect x="380" y="14" width="120" height="46" rx="8" class="c-red"/>
+  <text x="440" y="34" class="t t-b k-red" text-anchor="middle">Asistente de IA</text>
+  <text x="440" y="50" class="t t-s" text-anchor="middle">redacta</text>
+  <rect x="560" y="14" width="120" height="46" rx="8" class="caja"/>
+  <text x="620" y="34" class="t t-b" text-anchor="middle">Lector</text>
+  <text x="620" y="50" class="t t-s t-m" text-anchor="middle">quien lo recibe</text>
+  <line x1="80" y1="60" x2="80" y2="372" class="vida"/>
+  <line x1="260" y1="60" x2="260" y2="372" class="vida"/>
+  <line x1="440" y1="60" x2="440" y2="372" class="vida"/>
+  <line x1="620" y1="60" x2="620" y2="372" class="vida"/>
+
+  
+  <text x="350" y="88" class="t t-s t-b" text-anchor="middle">① notas + pedido</text>
+  <line x1="262" y1="96" x2="436" y2="96" class="ln s-enl" style="stroke-width:2" marker-end="url(#g5d1-b)"/>
+  <text x="350" y="112" class="t t-s t-m" text-anchor="middle">lector, fin, largo, reglas</text>
+  
+  <text x="350" y="138" class="t t-s t-b" text-anchor="middle">② borrador</text>
+  <line x1="438" y1="146" x2="264" y2="146" class="ln s-red" style="stroke-width:2" marker-end="url(#g5d1-a)"/>
+  <text x="350" y="162" class="t t-s t-m" text-anchor="middle">con [FALTA DATO] a la vista</text>
+  
+  <text x="170" y="188" class="t t-s t-b" text-anchor="middle">③ revisas los hechos</text>
+  <line x1="258" y1="196" x2="84" y2="196" class="ln s-enl" style="stroke-width:2" marker-end="url(#g5d1-b)"/>
+  <text x="170" y="212" class="t t-s t-m" text-anchor="middle">contra notas, hoja, sistemas</text>
+  <rect x="200" y="224" width="120" height="40" rx="6" class="c-enl"/>
+  <text x="260" y="240" class="t t-s" text-anchor="middle">③ y también: tono</text>
+  <text x="260" y="256" class="t t-s" text-anchor="middle">y lo que falta</text>
+  
+  <text x="380" y="282" class="t t-s t-b" text-anchor="middle">④ correcciones</text>
+  <line x1="322" y1="290" x2="436" y2="290" class="ln s-enl" style="stroke-width:2" marker-end="url(#g5d1-b)"/>
+  <text x="380" y="306" class="t t-s t-m" text-anchor="middle">misma conversación</text>
+  <text x="350" y="324" class="t t-s t-b" text-anchor="middle">versión corregida</text>
+  <line x1="438" y1="332" x2="264" y2="332" class="ln s-red" style="stroke-width:2" marker-end="url(#g5d1-a)"/>
+  
+  <text x="440" y="354" class="t t-s t-b" text-anchor="middle">⑤ ajustas a mano y la envías tú</text>
+  <line x1="262" y1="362" x2="616" y2="362" class="ln s-tra" style="stroke-width:2" marker-end="url(#g5d1-c)"/>
+
+  
+  <rect x="712" y="76" width="96" height="94" rx="8" class="c-red"/>
+  <text x="760" y="114" class="t t-b k-red" text-anchor="middle">Borrador</text>
+  <text x="760" y="132" class="t t-s" text-anchor="middle">1 vuelta</text>
+  <rect x="712" y="178" width="96" height="160" rx="8" class="c-enl"/>
+  <text x="760" y="250" class="t t-b k-enl" text-anchor="middle">Revisión</text>
+  <text x="760" y="268" class="t t-s" text-anchor="middle">1 a 3 vueltas</text>
+  <rect x="712" y="344" width="96" height="30" rx="8" class="c-tra"/>
+  <text x="760" y="364" class="t t-b k-tra" text-anchor="middle">Envío</text>
+
+  
+  <rect x="16" y="388" width="792" height="44" rx="10" class="d-sis"/>
+  <text x="30" y="408" class="t t-b k-sis">Quién responde por qué</text>
+  <text x="30" y="425" class="t t-s">La IA redacta y reformula. Tú traes los hechos, decides qué se dice y firmas lo que sale.</text>
+</svg></div><figcaption><b>Del montón de notas a la versión que envías.</b> Sigue los números. Tus notas y el pedido (①) entran al asistente, que devuelve un borrador (②). Tú lo revisas en tres pasadas (③): los hechos contra tus fuentes, el tono para el lector y lo que falta. Las correcciones vuelven al asistente en la misma conversación (④) y, cuando el texto pasa las tres pasadas, lo ajustas a mano y lo envías tú (⑤). La franja de abajo dice quién es responsable de cada tramo.</figcaption></figure><div class="prose"><p>Hay un detalle que separa un borrador útil de uno inflado: <b>la proporción entre lo que das y lo que pides</b>. Si entregas cinco notas de una línea y pides dos páginas, el modelo tiene que llenar el espacio, y lo llena con frases genéricas («en un contexto cada vez más desafiante…») o con datos que suenan bien. Si quieres un texto largo, da material largo. Si tienes poco material, pide un texto corto.</p><p>En la práctica, conviene pedir en dos pasos. Primero el <b>esquema</b>: los títulos y una línea por sección. Lo corriges, porque ahí se decide qué se dice y en qué orden. Después pides el texto sección por sección. Es más rápido corregir un esquema de diez líneas que reescribir tres páginas que tomaron un rumbo equivocado.</p></div></section>
+<section><h2>Resumir para distintos lectores</h2><div class="prose"><p>Resumir es la tarea estrella de la IA en la oficina, y también la que más se usa mal. Un resumen no es una versión corta del texto: es una selección de lo que le importa a un lector concreto. El mismo informe de cuatro páginas produce resúmenes distintos para la gerencia, para el equipo y para un cliente.</p><p>Hay dos maneras técnicas de resumir. El <b>resumen extractivo</b> (<i>extractive summarization</i>) copia las frases más importantes tal como están en el original. El <b>resumen abstractivo</b> (<i>abstractive summarization</i>) lo reescribe con palabras nuevas. Los modelos de lenguaje hacen sobre todo el segundo, y por eso sus resúmenes se leen tan bien. El costo es que, al reescribir, pueden mezclar dos ideas en una, suavizar una advertencia o agregar una conclusión que el original no sacaba.</p></div><figure class="fig fig-comparacion" id="05-diagrama-2"><div class="lienzo"><svg viewBox="0 0 820 400" style="min-width:660px" role="img" aria-label="Comparación de tres resúmenes del mismo informe: para la gerencia, para el equipo y para un cliente, con lo que busca cada lector, lo que conserva, lo que deja fuera y su extensión">
+  <rect x="16" y="10" width="788" height="58" rx="10" class="caja"/>
+  <text x="30" y="32" class="t t-b">El informe mensual (4 páginas)</text>
+  <text x="30" y="54" class="t t-s t-m">ventas +8 % · campaña de abril · zona Norte −5 % · 2 vacantes · cliente grande renovó · proveedor atrasado · precios en estudio · tareas</text>
+
+  <rect x="136" y="84" width="216" height="34" rx="8" class="c-red"/>
+  <text x="244" y="106" class="t t-b k-red" text-anchor="middle">Gerencia</text>
+  <rect x="362" y="84" width="216" height="34" rx="8" class="c-enl"/>
+  <text x="470" y="106" class="t t-b k-enl" text-anchor="middle">Equipo</text>
+  <rect x="588" y="84" width="216" height="34" rx="8" class="c-tra"/>
+  <text x="696" y="106" class="t t-b k-tra" text-anchor="middle">Cliente</text>
+
+  <line x1="16" y1="128" x2="804" y2="128" class="ln"/>
+  <text x="20" y="148" class="t t-xs t-m">BUSCA</text>
+  <text x="146" y="148" class="t t-s">decidir: ¿ampliar la campaña?</text>
+  <text x="372" y="148" class="t t-s">qué hacer y para cuándo</text>
+  <text x="598" y="148" class="t t-s">qué cambia para él</text>
+
+  <line x1="16" y1="162" x2="804" y2="162" class="ln"/>
+  <text x="20" y="182" class="t t-xs t-m">CONSERVA</text>
+  <text x="146" y="182" class="t t-s">✓ ventas +8 % y su causa</text>
+  <text x="146" y="200" class="t t-s">✓ riesgo del proveedor</text>
+  <text x="146" y="218" class="t t-s">✓ la decisión que se pide</text>
+  <text x="372" y="182" class="t t-s">✓ tareas con responsable</text>
+  <text x="372" y="200" class="t t-s">✓ vacantes y cuándo se cubren</text>
+  <text x="372" y="218" class="t t-s">✓ fechas de entrega nuevas</text>
+  <text x="598" y="182" class="t t-s">✓ su renovación</text>
+  <text x="598" y="200" class="t t-s">✓ fechas de entrega nuevas</text>
+  <text x="598" y="218" class="t t-s">✓ la causa del retraso</text>
+
+  <line x1="16" y1="234" x2="804" y2="234" class="ln"/>
+  <text x="20" y="254" class="t t-xs t-m">DEJA FUERA</text>
+  <text x="146" y="254" class="t t-s">✗ tareas del día a día</text>
+  <text x="146" y="272" class="t t-s">✗ detalle por vendedor</text>
+  <text x="372" y="254" class="t t-s">✗ la discusión de precios</text>
+  <text x="372" y="272" class="t t-s">✗ la decisión pendiente</text>
+  <text x="598" y="254" class="t t-s">✗ todo dato interno: ventas,</text>
+  <text x="610" y="272" class="t t-s">vacantes, precios en estudio</text>
+
+  <line x1="16" y1="288" x2="804" y2="288" class="ln"/>
+  <text x="20" y="308" class="t t-xs t-m">EXTENSIÓN</text>
+  <text x="146" y="308" class="t t-s t-b">5 líneas</text>
+  <text x="372" y="308" class="t t-s t-b">10 a 15 líneas, en viñetas</text>
+  <text x="598" y="308" class="t t-s t-b">un párrafo cordial</text>
+
+  <rect x="16" y="330" width="788" height="58" rx="10" class="d-sis"/>
+  <text x="30" y="352" class="t t-b k-sis">En el pedido</text>
+  <text x="30" y="372" class="t t-s">Di quién lee y qué decide con el resumen. Si no, el asistente escribe un resumen promedio que no le sirve a nadie.</text>
+</svg></div><figcaption><b>Un informe, tres lectores.</b> En el centro, el informe con sus temas. Cada columna es un lector y dice qué busca, qué conserva su resumen, qué deja fuera y qué extensión tiene. Fíjate en la fila de abajo: lo que se deja fuera cambia más que lo que se conserva, y el resumen para el cliente nunca lleva datos internos.</figcaption></figure><div class="prose"><p>Para que el resumen sirva, dile al modelo quién lo va a leer y qué decisión va a tomar con él. «Resume este informe» produce un resumen promedio que no le sirve a nadie en particular. «Resume este informe para el gerente comercial, que tiene que decidir si amplía la campaña; cinco líneas, con las cifras que lo justifican» produce algo que se usa.</p></div><div class="lab" id="05-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Un informe, tres resúmenes</h3></div><p class="hint">A la izquierda, las 12 ideas del informe mensual de un área comercial. Elige el lector y la extensión, y mira qué ideas conserva el resumen (se encienden) y cuáles deja fuera. Después desactiva la regla «no agregues nada que no esté en el informe» y busca la frase que aparece de la nada.</p><style>
+[id="05-lab-1"] .c5l1-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:14px;align-items:start}
+@media (max-width:720px){[id="05-lab-1"] .c5l1-grid{grid-template-columns:minmax(0,1fr)}}
+[id="05-lab-1"] .c5l1-tit{font:600 .78rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+[id="05-lab-1"] .c5l1-ideas{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+[id="05-lab-1"] .c5l1-ideas li{display:grid;grid-template-columns:1.7rem minmax(0,1fr);gap:8px;align-items:start;padding:5px 8px;border:1px solid var(--line);border-radius:7px;background:var(--card);font:500 .84rem/1.35 var(--f-display);color:var(--muted);transition:background .2s}
+[id="05-lab-1"] .c5l1-ideas li .n{font:700 .74rem var(--f-mono);display:grid;place-items:center;width:1.6rem;height:1.6rem;border-radius:50%;border:1.5px solid var(--line)}
+[id="05-lab-1"] .c5l1-ideas li.on{color:var(--ink);background:var(--good-soft);border-color:var(--good)}
+[id="05-lab-1"] .c5l1-ideas li.on .n{border-color:var(--good);color:var(--good)}
+[id="05-lab-1"] .c5l1-ideas li.falta{border-color:var(--warm);border-style:dashed}
+[id="05-lab-1"] .c5l1-ideas li.foco{outline:3px solid var(--accent);outline-offset:1px}
+[id="05-lab-1"] .c5l1-ideas li.int::after{content:"interno";grid-column:2;font:600 .66rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+[id="05-lab-1"] .c5l1-res{background:var(--paper);border-radius:10px;padding:12px 14px;display:grid;gap:8px}
+[id="05-lab-1"] .c5l1-res p{margin:0;font:400 1rem/1.55 var(--f-body)}
+[id="05-lab-1"] .c5l1-fr{cursor:pointer;border-radius:4px;padding:1px 2px;border-bottom:1.5px dotted var(--muted)}
+[id="05-lab-1"] .c5l1-fr:hover,[id="05-lab-1"] .c5l1-fr:focus{background:var(--accent-soft);outline:none}
+[id="05-lab-1"] .c5l1-fr.sel{background:var(--accent-soft);border-bottom-color:var(--accent)}
+[id="05-lab-1"] .c5l1-fr.sel.inv{background:var(--warm-soft);border-bottom-color:var(--warm)}
+[id="05-lab-1"] .c5l1-fr sup{font:700 .66rem var(--f-mono);color:var(--muted);margin-left:2px}
+</style>
+<div class="opciones">
+  <label>Lector
+    <select id="c5l1-lector">
+      <option value="ger" selected>La gerencia</option>
+      <option value="eq">El equipo</option>
+      <option value="cli">Un cliente</option>
+    </select></label>
+</div>
+<div class="ctls">
+  <label class="ctl">Extensión del resumen <output id="c5l1-ext-o"></output>
+    <input id="c5l1-ext" type="range" min="1" max="3" step="1" value="1"></label>
+  <label class="ctl" style="grid-template-columns:auto 1fr;align-items:center"><input type="checkbox" id="c5l1-regla" checked> Regla en el pedido: «no agregues nada que no esté en el informe»</label>
+</div>
+<div class="c5l1-grid">
+  <div>
+    <div class="c5l1-tit">El informe: 12 ideas</div>
+    <ul class="c5l1-ideas" id="c5l1-ideas"></ul>
+  </div>
+  <div>
+    <div class="c5l1-tit" id="c5l1-rtit">El resumen</div>
+    <div class="c5l1-res"><p id="c5l1-res"></p><span class="hint">Toca una frase para ver de qué ideas del informe sale.</span></div>
+  </div>
+</div>
+<div class="readout texto" id="c5l1-out" aria-live="polite"></div></div><div class="prose"><p>El laboratorio muestra los dos riesgos de un resumen. El primero es la <b>omisión silenciosa</b>: el resumen corto para la gerencia deja fuera la advertencia sobre el proveedor, y nada en el texto te avisa. El segundo es el <b>agregado</b>: sin la regla, el resumen incluye una conclusión optimista que el informe no dice. Los dos se controlan igual: leyendo el resumen al lado del original, al menos la primera vez que usas un pedido.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Tres resúmenes del mismo texto y su extensión real</h3></div><p>Vas a resumir un texto público para tres lectores y comprobar si el asistente respeta la extensión que pediste. Usa cualquier asistente gratuito y un artículo largo de Wikipedia, por ejemplo el de «Telefonía móvil» o cualquiera de tu interés.</p><ol class="steps"><li><span>Copia unas mil palabras del artículo y pídele al asistente: «Resume este texto en 60 palabras para un gerente que no conoce el tema».</span></li><li><span>En la misma conversación, pide un resumen de 120 palabras para un equipo técnico y otro de 40 palabras para un cliente.</span></li><li><span>Copia cada resumen y cuenta sus palabras con el comando de tu sistema (lee lo que tengas en el portapapeles).</span></li></ol><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac">macOS</button><button type="button" role="tab" data-so="linux">Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>Get-Clipboard | Measure-Object -Word</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac"><div class="cmd-l"><code>pbpaste | wc -w</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="linux"><p class="cmd-nota">Linux (necesita el paquete xclip)</p><div class="cmd-l"><code>xclip -selection clipboard -o | wc -w</code><button type="button" class="copiar">Copiar</button></div></div></div><p>Por último, marca en el artículo original qué ideas aparecen en cada resumen.</p><p><b>Qué observar:</b> los resúmenes no tienen la misma información en menos palabras: cada uno elige ideas distintas según el lector. La cuenta de palabras rara vez coincide exacta con lo que pediste, porque el modelo no cuenta palabras mientras escribe: se aproxima. Si necesitas una extensión precisa (un límite de caracteres en un formulario), compruébala siempre tú.</p></div></section>
+<section><h2>Actas y tareas a partir de una reunión</h2><div class="prose"><p>Una reunión de una hora produce tres cosas útiles: decisiones, tareas y pendientes. Todo lo demás es conversación. Convertir esa hora en un acta clara es un trabajo que la IA hace muy bien, siempre que tenga el material.</p><p>El material suele ser una <b>transcripción</b> (<i>transcript</i>): el texto de lo que se dijo, producido por <b>reconocimiento automático del habla</b> (<i>automatic speech recognition</i>, ASR). Las plataformas de reuniones la generan solas si alguien la activa, y muchas ya ofrecen el resumen y el acta con un botón. Lo que hay detrás es una cadena de pasos, y cada paso puede introducir un error distinto.</p></div><figure class="fig fig-flujo" id="05-diagrama-3"><div class="lienzo"><svg viewBox="0 0 820 330" style="min-width:680px" role="img" aria-label="Cadena de una reunión al acta: audio, texto por reconocimiento del habla, diarización de quién habla, extracción de decisiones y tareas, armado del acta y revisión humana, con el error típico de cada paso">
+  <defs>
+    <marker id="g5d3-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  <rect x="10" y="10" width="392" height="30" rx="8" class="d-oper"/>
+  <text x="206" y="30" class="t t-s t-b k-oper" text-anchor="middle">Plataforma de reuniones (Teams, Meet, Zoom…)</text>
+  <rect x="418" y="10" width="256" height="30" rx="8" class="c-red"/>
+  <text x="546" y="30" class="t t-s t-b k-red" text-anchor="middle">Modelo de lenguaje</text>
+  <rect x="690" y="10" width="120" height="30" rx="8" class="c-enl"/>
+  <text x="750" y="30" class="t t-s t-b k-enl" text-anchor="middle">Persona</text>
+
+  <rect x="10" y="54" width="120" height="96" rx="10" class="caja"/>
+  <text x="22" y="76" class="t t-b">① Audio</text>
+  <text x="22" y="98" class="t t-s">la grabación de</text>
+  <text x="22" y="114" class="t t-s">la reunión</text>
+
+  <rect x="146" y="54" width="120" height="96" rx="10" class="caja"/>
+  <text x="158" y="76" class="t t-b">② Texto</text>
+  <text x="158" y="98" class="t t-s">reconocimiento</text>
+  <text x="158" y="114" class="t t-s">del habla (ASR)</text>
+
+  <rect x="282" y="54" width="120" height="96" rx="10" class="caja"/>
+  <text x="294" y="76" class="t t-b">③ Quién habla</text>
+  <text x="294" y="98" class="t t-s">diarización:</text>
+  <text x="294" y="114" class="t t-s">separa voces</text>
+
+  <rect x="418" y="54" width="120" height="96" rx="10" class="caja"/>
+  <text x="430" y="76" class="t t-b">④ Extrae</text>
+  <text x="430" y="98" class="t t-s">decisiones,</text>
+  <text x="430" y="114" class="t t-s">propuestas,</text>
+  <text x="430" y="130" class="t t-s">tareas</text>
+
+  <rect x="554" y="54" width="120" height="96" rx="10" class="caja"/>
+  <text x="566" y="76" class="t t-b">⑤ Acta</text>
+  <text x="566" y="98" class="t t-s">formato fijo y</text>
+  <text x="566" y="114" class="t t-s">tabla de tareas</text>
+
+  <rect x="690" y="54" width="120" height="96" rx="10" class="c-enl"/>
+  <text x="702" y="76" class="t t-b k-enl">⑥ Revisión</text>
+  <text x="702" y="98" class="t t-s">quien convocó</text>
+  <text x="702" y="114" class="t t-s">corrige y envía</text>
+  <text x="702" y="130" class="t t-s">en 24 horas</text>
+
+  <line x1="130" y1="102" x2="144" y2="102" class="ln" style="stroke-width:2" marker-end="url(#g5d3-fl)"/>
+  <line x1="266" y1="102" x2="280" y2="102" class="ln" style="stroke-width:2" marker-end="url(#g5d3-fl)"/>
+  <line x1="402" y1="102" x2="416" y2="102" class="ln" style="stroke-width:2" marker-end="url(#g5d3-fl)"/>
+  <line x1="538" y1="102" x2="552" y2="102" class="ln" style="stroke-width:2" marker-end="url(#g5d3-fl)"/>
+  <line x1="674" y1="102" x2="688" y2="102" class="ln" style="stroke-width:2" marker-end="url(#g5d3-fl)"/>
+
+  <text x="10" y="178" class="t t-xs t-m">ERROR TÍPICO DE CADA PASO</text>
+  <rect x="10" y="188" width="120" height="76" rx="10" class="c-apl"/>
+  <text x="22" y="210" class="t t-s">ruido, voces</text>
+  <text x="22" y="226" class="t t-s">encimadas,</text>
+  <text x="22" y="242" class="t t-s">mal micrófono</text>
+  <rect x="146" y="188" width="120" height="76" rx="10" class="c-apl"/>
+  <text x="158" y="210" class="t t-s">nombres, cifras</text>
+  <text x="158" y="226" class="t t-s">y siglas mal</text>
+  <text x="158" y="242" class="t t-s">oídos</text>
+  <rect x="282" y="188" width="120" height="76" rx="10" class="c-apl"/>
+  <text x="294" y="210" class="t t-s">frases atribuidas</text>
+  <text x="294" y="226" class="t t-s">a otra persona</text>
+  <rect x="418" y="188" width="120" height="76" rx="10" class="c-apl"/>
+  <text x="430" y="210" class="t t-s">una idea se</text>
+  <text x="430" y="226" class="t t-s">vuelve acuerdo</text>
+  <rect x="554" y="188" width="120" height="76" rx="10" class="c-apl"/>
+  <text x="566" y="210" class="t t-s">tareas con un</text>
+  <text x="566" y="226" class="t t-s">responsable o</text>
+  <text x="566" y="242" class="t t-s">fecha inventados</text>
+  <rect x="690" y="188" width="120" height="76" rx="10" class="c-enl"/>
+  <text x="702" y="210" class="t t-s">aquí se atrapan</text>
+  <text x="702" y="226" class="t t-s">los errores de</text>
+  <text x="702" y="242" class="t t-s">todos los pasos</text>
+
+  <rect x="10" y="280" width="800" height="40" rx="10" class="d-sis"/>
+  <text x="24" y="305" class="t t-s">Un glosario de nombres y siglas del área mejora los pasos ② y ④. La revisión del paso ⑥ no se salta nunca.</text>
+</svg></div><figcaption><b>De la reunión al acta.</b> De izquierda a derecha: el audio (①) se convierte en texto (②); la <b>diarización</b> (<i>speaker diarization</i>) separa quién habló en cada momento (③); el modelo de lenguaje extrae decisiones, tareas y pendientes (④) y arma el acta (⑤), que el responsable de la reunión revisa antes de enviarla (⑥). Debajo de cada paso está su error típico: nombres y cifras mal oídos, frases atribuidas a otra persona, ideas convertidas en acuerdos.</figcaption></figure><div class="prose"><p>El error más peligroso es el del paso ④: convertir una idea en un acuerdo. Alguien dijo «quizás podríamos revisar los precios», y el acta dice «Se acordó revisar los precios». Por eso un buen pedido para actas separa tres listas: lo que se <b>decidió</b>, lo que se <b>propuso</b> sin decidir y las <b>tareas</b>, cada una con responsable y fecha. Si una tarea no tiene responsable o fecha en la transcripción, el acta debe decirlo («responsable: sin definir»), no inventarlo.</p></div><div class="ml"><b>En la práctica</b><p><b>El acta que revisa quien convocó.</b> Un área de operaciones adoptó una regla simple: el acta generada por IA la revisa y la envía quien convocó la reunión, en las 24 horas siguientes. La revisión toma cinco minutos y se concentra en dos cosas: que cada tarea tenga el responsable correcto y que ninguna propuesta aparezca como decisión. Al principio, casi la mitad de las actas tenía al menos una corrección; con un pedido mejor y un glosario de nombres y siglas del área, las correcciones bajaron a pocas. Grabar una reunión requiere avisar a los participantes; tu empresa tiene reglas sobre eso.</p></div></section>
+<section><h2>Traducir y adaptar el tono</h2><div class="prose"><p>Traducir y cambiar el tono son la misma operación vista de dos maneras: decir lo mismo con otras palabras para otro lector. Los traductores automáticos son muy buenos con el sentido general; los asistentes de chat agregan algo más: puedes decirles para quién es el texto y cómo debe sonar.</p><p>Tres cuidados hacen la diferencia en el trabajo:</p><ul><li><b>Un glosario.</b> Los nombres de tus productos, cargos y procesos tienen una traducción oficial en tu empresa (o no se traducen). Ponla en el pedido: «"Plan Hogar" no se traduce; "corte por mora" se traduce como <i>service suspension for non-payment</i>».</li><li><b>La variante del idioma.</b> El español de México, el de Argentina y el de España no usan las mismas palabras ni el mismo trato. Si el cliente trata de «usted», el texto también. Adaptar un texto a un país se llama <b>localización</b> (<i>localization</i>).</li><li><b>Las cifras y fechas.</b> Al traducir, revisa los separadores (1.250,50 frente a 1,250.50) y el orden de las fechas (05/04 puede ser 5 de abril o 4 de mayo).</li></ul><p>El <b>tono</b> (<i>tone</i>) es lo que más se ajusta en el día a día: el correo que escribiste molesto, la respuesta a un reclamo, la negativa a un proveedor. La IA puede moverlo de muy formal a cercano sin cambiar el contenido. O casi: cuando se le pide «más amable», a veces agrega una disculpa que admite una culpa o una promesa que tú no haces.</p></div><div class="lab" id="05-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>El tono de un correo difícil</h3></div><p class="hint">Elige un correo y mueve el control de formal a cercano. Los datos que no pueden cambiar (monto, fecha, acción) están marcados en cada versión, y la lectura cuenta palabras, largo de las frases y trato. Lleva el control a los extremos y busca lo que el asistente agregó sin que se lo pidieras.</p><style>
+[id="05-lab-2"] .c5l2-mail{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:8px}
+[id="05-lab-2"] .c5l2-mail .cab{font:600 .78rem var(--f-display);color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:6px}
+[id="05-lab-2"] .c5l2-mail p{margin:0;font:400 1rem/1.6 var(--f-body)}
+[id="05-lab-2"] .c5l2-mail mark{background:var(--accent-soft);color:var(--ink);border-radius:3px;padding:0 3px;box-shadow:inset 0 -2px 0 var(--accent)}
+[id="05-lab-2"] .c5l2-mail .x{border-radius:3px}
+[id="05-lab-2"] .c5l2-mail.ver .x{background:var(--warm-soft);box-shadow:inset 0 -2px 0 var(--warm)}
+[id="05-lab-2"] .c5l2-esc{display:flex;justify-content:space-between;font:600 .74rem var(--f-display);color:var(--muted);margin-top:-4px}
+[id="05-lab-2"] .c5l2-barras{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;align-items:end;height:86px;padding:0 2px}
+[id="05-lab-2"] .c5l2-barras div{display:grid;gap:3px;align-content:end;justify-items:center;height:100%}
+[id="05-lab-2"] .c5l2-barras i{display:block;width:70%;border-radius:4px 4px 0 0;background:var(--grid);transition:height .25s}
+[id="05-lab-2"] .c5l2-barras div.act i{background:var(--accent)}
+[id="05-lab-2"] .c5l2-barras span{font:600 .7rem var(--f-mono);color:var(--muted)}
+[id="05-lab-2"] .c5l2-barras div.act span{color:var(--accent)}
+@media (prefers-reduced-motion: reduce){[id="05-lab-2"] .c5l2-barras i{transition:none}}
+</style>
+<div class="opciones">
+  <label>Correo
+    <select id="c5l2-caso">
+      <option value="a" selected>Cobro atrasado a un cliente</option>
+      <option value="b">Rechazo a un proveedor</option>
+    </select></label>
+</div>
+<div class="ctls">
+  <label class="ctl">Tono <output id="c5l2-t-o"></output>
+    <input id="c5l2-t" type="range" min="0" max="4" step="1" value="1"></label>
+  <label class="ctl" style="grid-template-columns:auto 1fr;align-items:center"><input type="checkbox" id="c5l2-ver"> Marcar lo que no estaba en el original</label>
+</div>
+<div class="c5l2-esc" aria-hidden="true"><span>muy formal</span><span>cercano</span></div>
+<div class="c5l2-mail" id="c5l2-mail" aria-live="polite"><div class="cab" id="c5l2-cab"></div><p id="c5l2-txt"></p></div>
+<div>
+  <div class="hint" style="margin-bottom:4px">Palabras de cada versión (la barra azul es la que estás viendo)</div>
+  <div class="c5l2-barras" id="c5l2-barras" aria-hidden="true"></div>
+</div>
+<div class="readout texto" id="c5l2-out" aria-live="polite"></div></div><div class="prose"><p>La lección del laboratorio es que el tono no es solo «más o menos amable»: cambia el trato (usted o tú), el largo de las frases, el orden de la información y hasta lo que se promete. Por eso, cuando pidas un cambio de tono, agrega una regla: «no cambies ningún dato, no agregues promesas ni disculpas que no estén en el original».</p></div></section>
+<section><h2>Revisar: ortografía, claridad y lo que falta</h2><div class="prose"><p>La IA también sirve en el otro extremo del trabajo: no para escribir, sino para revisar lo que escribiste tú. Es una revisora incansable y sin vergüenza de decirte que un párrafo no se entiende. Le puedes pedir tres revisiones distintas, y conviene pedirlas por separado:</p><ol class="steps"><li><span><b>Corrección</b>: ortografía, gramática y puntuación. Pide la lista de cambios con el antes y el después, no el texto reescrito: así ves cada cambio y no se cuela uno que altera el sentido. Es el equivalente al <b>control de cambios</b> (<i>track changes</i>) de los procesadores de texto.</span></li><li><span><b>Claridad</b>: frases demasiado largas, palabras técnicas sin explicar, párrafos que dicen lo mismo dos veces, el orden de las ideas.</span></li><li><span><b>Lo que falta</b>: «¿Qué preguntas le quedarían a un gerente después de leer esto?». Esta es la revisión más valiosa, porque es la que tú no puedes hacer bien sobre tu propio texto.</span></li></ol><p>Los asistentes tienden a ser complacientes: si les preguntas «¿está bien mi informe?», suelen decir que sí, con algún retoque. Para una revisión útil, pide un rol exigente («revisa como un gerente escéptico que busca huecos») y un formato que obligue a encontrar algo («dame los tres puntos más débiles, en orden de importancia»).</p></div><div class="caso"><b>Un caso real</b><p><b>El informe que se corrigió de más.</b> En un área de finanzas, una analista pidió a un asistente que «mejorara la redacción» del informe trimestral y pegó el resultado sin compararlo. El texto quedó más fluido, pero una frase que decía «los ingresos no crecieron lo esperado» pasó a decir «los ingresos crecieron menos de lo esperado», que afirma un crecimiento que no hubo. Nadie lo notó hasta la reunión de dirección. Desde entonces, el equipo pide la corrección como lista de cambios y revisa cada uno. Es un error pequeño de lenguaje con una consecuencia de hechos: justo la frontera que la IA no ve.</p></div></section>
+<section><h2>Mantener tu voz y no sonar a máquina</h2><div class="prose"><p>Después de unas semanas leyendo textos generados, se aprende a reconocerlos. Tienen frases de apertura grandilocuentes («En el dinámico entorno actual…»), conectores de relleno («Es importante destacar que…», «Cabe mencionar…»), listas de tres adjetivos, demasiadas viñetas y negritas, cierres que resumen lo que ya se dijo y despedidas de plantilla. Nada de eso es un error, pero un correo con todo eso suena a que no lo escribiste tú, y el lector lo nota.</p></div><div class="analogia"><b>Imagínalo así</b><p>Es como un traje de tienda: queda bien a casi todos y no le queda perfecto a nadie. El texto que sale de la IA está cortado a la medida del promedio de lo que leyó. Para que suene a ti hay que hacerle arreglos de sastre: tus palabras, tu largo de frase, tu manera de despedirte.</p></div><div class="prose"><p>La técnica más efectiva es <b>mostrar en lugar de describir</b>: pega dos o tres correos que escribiste tú y pide que imite ese estilo. Funciona mejor que «escribe de manera natural», porque «natural» para el modelo es el promedio. Si escribes mucho con IA, arma una <b>guía de estilo personal</b> (<i>style guide</i>) de diez líneas («frases cortas, trato de usted con clientes, nunca "espero que estés bien", despedida "Saludos"») y guárdala en las instrucciones de un proyecto o espacio de trabajo, como viste en el capítulo 4.</p><p>El último paso siempre es tuyo: leer el texto en voz alta. Lo que no dirías, lo cambias. Y una cuestión de honestidad: en algunos contextos (un trabajo académico, un artículo firmado, ciertos documentos legales) se espera que digas que usaste IA. Si tu empresa tiene una regla sobre eso, síguela.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Tu voz frente a la voz promedio</h3></div><p>Vas a comparar un correo escrito «a lo genérico» con uno escrito a partir de tu estilo. Usa cualquier asistente gratuito y dos o tres correos tuyos que no tengan datos personales ni confidenciales (o borra esos datos antes).</p><ol class="steps"><li><span>En una conversación nueva, pide: «Escribe un correo para avisar a mi equipo que la reunión del lunes se mueve al martes a las 10».</span></li><li><span>En otra conversación nueva, pega tus correos y pide: «Este es mi estilo de escritura. Escribe en este mismo estilo un correo para avisar a mi equipo que la reunión del lunes se mueve al martes a las 10».</span></li><li><span>Subraya en el primer correo las frases que nunca escribirías tú.</span></li><li><span>Pídele al asistente en la segunda conversación: «Describe mi estilo en cinco reglas». Guarda esas reglas.</span></li></ol><p><b>Qué observar:</b> el primer correo suele ser más largo y tener frases de plantilla («Espero que se encuentren bien»). El segundo se parece más a ti en el largo, el saludo y la despedida. Las cinco reglas son el inicio de tu guía de estilo: revísalas, porque a veces el asistente describe lo que cree que debería ser tu estilo, no lo que es.</p></div></section>
+<section><h2>Pedidos para copiar</h2><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Borrador desde notas</h3></div><div class="code-copia"><pre><code>Redacta el informe mensual del área [nombre del área] para [lector], que lo usará para [decisión o propósito]. Extensión: [número] palabras. Tono: profesional y directo.
+Reglas: usa solo los hechos y cifras de mis notas; donde falte un dato, escribe [FALTA DATO]; no agregues conclusiones que no estén en las notas.
+Primero dame solo el esquema con títulos y una línea por sección. Espera mi visto bueno antes de redactar.
+[pega aquí tus notas]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Resumen para un lector</h3></div><div class="code-copia"><pre><code>Resume el documento que pego para [lector], que necesita [qué decisión o qué saber]. Máximo [número] palabras.
+Conserva: [lo que no puede faltar]. Deja fuera: [lo que no le interesa o es interno].
+No agregues nada que no esté en el documento. Al final, lista en una línea los temas del documento que dejaste fuera.
+[pega aquí el documento]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Acta de reunión</h3></div><div class="code-copia"><pre><code>Con la transcripción que pego, arma el acta de la reunión en cuatro partes: 1) decisiones tomadas, 2) propuestas que se discutieron sin decidir, 3) tareas en una tabla con responsable y fecha, 4) pendientes. Si una tarea no tiene responsable o fecha en la transcripción, escribe «sin definir». No conviertas propuestas en decisiones.
+[pega aquí la transcripción]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Cambiar el tono sin cambiar los datos</h3></div><div class="code-copia"><pre><code>Reescribe este correo con un tono [formal / cordial / cercano] para [lector]. Trato de [usted / tú].
+No cambies ningún dato (montos, fechas, nombres, acciones), no agregues disculpas ni promesas que no estén en el original y mantén la extensión parecida.
+[pega aquí el correo]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Revisión exigente</h3></div><div class="code-copia"><pre><code>Revisa el texto que pego como un [cargo del lector] escéptico. No lo reescribas. Dame:
+1) los errores de ortografía y gramática como lista «antes → después»;
+2) las tres frases menos claras y por qué;
+3) las preguntas que le quedarían al lector después de leerlo.
+[pega aquí el texto]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div></section>
+<section><h2>Lo que te llevas</h2><div class="prose"><p>La IA hace el primer borrador; tú pones el criterio y la última palabra. Dale el material completo, dile para quién es el texto, pídele que marque lo que falta en lugar de inventarlo y revisa en tres pasadas: los hechos, el tono y lo que falta.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Por qué pedir dos páginas a partir de cinco notas cortas suele dar un mal texto?</summary><p>Porque el modelo tiene que llenar el espacio y lo llena con frases genéricas o con datos que suenan bien pero que no estaban en tus notas. La extensión pedida debe ser proporcional al material.</p></details><details><summary>¿Qué diferencia hay entre un resumen extractivo y uno abstractivo, y cuál hace sobre todo un asistente de chat?</summary><p>El extractivo copia las frases importantes del original; el abstractivo las reescribe. Los asistentes hacen sobre todo el abstractivo, que se lee mejor pero puede mezclar ideas, suavizar advertencias o agregar conclusiones.</p></details><details><summary>¿Cuál es el error más peligroso al generar un acta con IA y cómo se previene?</summary><p>Convertir una propuesta en una decisión. Se previene pidiendo listas separadas de decisiones, propuestas y tareas, y con la revisión de quien convocó la reunión.</p></details><details><summary>Pides que un correo suene más amable. ¿Qué tienes que revisar en la versión nueva?</summary><p>Que no haya cambiado ningún dato y que no haya agregado disculpas que admiten culpa o promesas que no haces.</p></details><details><summary>¿Por qué conviene pedir la corrección como una lista de cambios y no como el texto reescrito?</summary><p>Porque así ves cada cambio por separado y detectas uno que altera el sentido, como pasar de «no crecieron» a «crecieron menos».</p></details><details><summary>¿Qué funciona mejor para que un texto suene a ti: pedir que «suene natural» o pegar ejemplos de lo que escribes?</summary><p>Pegar ejemplos. «Natural» para el modelo es el promedio de lo que leyó; tus ejemplos le muestran tu largo de frase, tu trato y tus despedidas.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué tan confiables son los detectores de texto generado por IA y por qué varias universidades dejaron de usarlos?<small>Pista: busca estudios sobre falsos positivos con textos de personas que no escriben en su idioma materno.</small></li><li>¿Qué es ROUGE y cómo se mide automáticamente la calidad de un resumen?<small>Pista: busca «ROUGE métrica resumen automático».</small></li><li>¿Qué es el fenómeno «lost in the middle» en los modelos de lenguaje y cómo afecta a los resúmenes de documentos largos?</li><li>¿Qué norma internacional regula los servicios de traducción profesional y qué exige que haga un revisor humano?<small>Pista: busca «ISO 17100».</small></li><li>¿Qué dice la ley de tu país sobre grabar una reunión o una llamada de trabajo, y qué hay que avisar a los participantes?</li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://www.fundeu.es/" target="_blank" rel="noopener">FundéuRAE: dudas de español resueltas <small>consulta</small></a><a class="vid" href="https://es.wikipedia.org/wiki/Resumen_autom%C3%A1tico" target="_blank" rel="noopener">Resumen automático, en Wikipedia <small>lectura</small></a><a class="vid" href="https://es.wikipedia.org/wiki/Traducci%C3%B3n_autom%C3%A1tica" target="_blank" rel="noopener">Traducción automática, en Wikipedia <small>lectura</small></a><a class="vid" href="https://aaramirez.github.io/ia-responsable/temario.html" target="_blank" rel="noopener">IA responsable: derechos de autor, transparencia y privacidad <small>curso</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-generativa" target="_blank" rel="noopener">github.com/aaramirez/ia-generativa</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const IDEAS=[
+    ['Ventas del mes: 1.240 unidades, 8 % más que el mes anterior',1],
+    ['La campaña de abril explica la mayor parte del aumento',1],
+    ['La zona Norte cayó 5 % por falta de dos vendedores',1],
+    ['Dos vacantes abiertas; se cubren en mayo',1],
+    ['El cliente grande renovó su contrato por dos años',0],
+    ['Un proveedor de equipos retrasó entregas tres semanas',0],
+    ['Riesgo: si el retraso sigue, se pierden ventas de junio',1],
+    ['Se propone revisar el precio del plan básico (sin decisión)',1],
+    ['Satisfacción de clientes estable: 4,2 de 5',0],
+    ['Tareas: catálogo (Ana, 10/5) y capacitación (Luis, 20/5)',1],
+    ['Nuevas fechas de entrega para clientes desde el 15/5',0],
+    ['Decisión pedida: ampliar la campaña un mes más',1]
+  ];
+  const R={
+    ger:{nom:'la gerencia',ext:['2 frases','4 frases','6 frases'],n:[2,4,6],need:[0,11,6],
+      fr:[['Las ventas crecieron 8 % (1.240 unidades), impulsadas por la campaña de abril.',[0,1]],
+          ['Se pide aprobar la ampliación de la campaña un mes más.',[11]],
+          ['Riesgo: un proveedor retrasó entregas tres semanas y, si sigue, afectaría las ventas de junio.',[5,6]],
+          ['La zona Norte cayó 5 % por dos vacantes, que se cubren en mayo.',[2,3]],
+          ['El cliente más grande renovó por dos años.',[4]],
+          ['Se evaluará el precio del plan básico; todavía no hay decisión.',[7]]],
+      inv:[1,'Con estos resultados, el área cumplirá holgadamente la meta del trimestre.']},
+    eq:{nom:'el equipo',ext:['2 frases','4 frases','6 frases'],n:[2,4,6],need:[9,10],
+      fr:[['Este mes toca actualizar el catálogo (Ana, 10/5) y capacitar a los nuevos (Luis, 20/5).',[9]],
+          ['El proveedor viene con tres semanas de retraso: a los clientes, las nuevas fechas de entrega rigen desde el 15/5.',[5,10]],
+          ['Hay dos vacantes en la zona Norte, que bajó 5 %; se cubren en mayo.',[2,3]],
+          ['Buen mes: ventas +8 % gracias a la campaña de abril.',[0,1]],
+          ['La satisfacción de los clientes se mantiene en 4,2 de 5.',[8]],
+          ['Se discute revisar el precio del plan básico; por ahora no cambia nada.',[7]]],
+      inv:[2,'La gerencia ya aprobó un bono para todo el equipo por el resultado del mes.']},
+    cli:{nom:'un cliente',ext:['2 frases','3 frases','4 frases'],n:[2,3,4],need:[4,10],
+      fr:[['Gracias por renovar su contrato con nosotros por dos años más.',[4]],
+          ['Le informamos que, por un retraso de nuestro proveedor, las nuevas fechas de entrega rigen desde el 15 de mayo.',[5,10]],
+          ['Seguimos trabajando para que las entregas vuelvan a la normalidad.',[5]],
+          ['Nuestra encuesta de satisfacción se mantiene en 4,2 de 5, y queremos mejorarla con usted.',[8]]],
+      inv:[2,'Como compensación por el retraso, recibirá un descuento en su próxima factura.']}
+  };
+  let sel=-1;
+  function frases(){
+    const r=R[$('#c5l1-lector').value],k=+$('#c5l1-ext').value-1;
+    const f=r.fr.slice(0,r.n[k]).map(x=>({t:x[0],ids:x[1],inv:false}));
+    if(!$('#c5l1-regla').checked){f.splice(Math.min(r.inv[0],f.length),0,{t:r.inv[1],ids:[],inv:true});}
+    return f;
+  }
+  function pintar(){
+    const lec=$('#c5l1-lector').value,r=R[lec],k=+$('#c5l1-ext').value-1,F=frases();
+    $('#c5l1-ext-o').textContent=['corta','media','larga'][k]+' · '+r.ext[k];
+    const usadas=new Set();F.forEach(f=>f.ids.forEach(i=>usadas.add(i)));
+    const foco=sel>=0&&F[sel]?new Set(F[sel].ids):new Set();
+    $('#c5l1-ideas').innerHTML=IDEAS.map((d,i)=>{
+      let c=usadas.has(i)?'on':'';
+      if(!usadas.has(i)&&r.need.includes(i))c+=' falta';
+      if(foco.has(i))c+=' foco';
+      if(d[1])c+=' int';
+      return '<li class="'+c.trim()+'"><span class="n">'+(i+1)+'</span><span>'+d[0]+'</span></li>';
+    }).join('');
+    $('#c5l1-rtit').textContent='El resumen para '+r.nom;
+    const res=$('#c5l1-res');res.innerHTML='';
+    F.forEach((f,j)=>{
+      const s=document.createElement('span');s.className='c5l1-fr'+(j===sel?' sel':'')+(f.inv?' inv':'');s.tabIndex=0;s.setAttribute('role','button');
+      s.textContent=f.t;
+      const sup=document.createElement('sup');sup.textContent=f.ids.length?f.ids.map(i=>i+1).join(','):'?';s.appendChild(sup);
+      const act=()=>{sel=sel===j?-1:j;pintar();};
+      s.addEventListener('click',act);s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act();}});
+      res.appendChild(s);res.appendChild(document.createTextNode(' '));
+    });
+    const pal=F.map(f=>f.t).join(' ').split(/\s+/).filter(Boolean).length;
+    const faltan=r.need.filter(i=>!usadas.has(i));
+    const internos=lec==='cli'?[...usadas].filter(i=>IDEAS[i][1]):[];
+    let h='<span class="big">'+pal+' palabras · conserva '+usadas.size+' de 12 ideas</span>';
+    if(faltan.length)h+='<span class="warn">Omisión silenciosa: falta algo que '+r.nom+' necesita: '+faltan.map(i=>'«'+IDEAS[i][0]+'» ('+(i+1)+')').join('; ')+'. Nada en el texto avisa que no está.</span>';
+    else h+='<span class="ok">Están las ideas que '+r.nom+' necesita para decidir o actuar.</span>';
+    if(lec==='cli')h+=internos.length?'<span class="warn">El resumen para el cliente incluye datos internos.</span>':'<span>Ningún dato interno llega al cliente: las ventas, las vacantes y los precios en estudio quedan fuera, como debe ser.</span>';
+    if(sel>=0&&F[sel]){
+      if(F[sel].inv)h+='<span class="warn">Esta frase no sale de ninguna idea del informe. Es un agregado: suena bien y nadie lo dijo. '+(lec==='cli'?'Peor aún, es una promesa que tu empresa no hizo.':'')+' Vuelve a activar la regla y desaparece.</span>';
+      else h+='<span>La frase marcada sale de las ideas '+F[sel].ids.map(i=>i+1).join(' y ')+' (resaltadas a la izquierda).</span>';
+    }else if(!$('#c5l1-regla').checked)h+='<span>Sin la regla, el resumen tiene una frase más. Tócalas una por una: una no tiene ideas de origen (marca «?»).</span>';
+    $('#c5l1-out').innerHTML=h;
+  }
+  ['#c5l1-lector','#c5l1-ext','#c5l1-regla'].forEach(s=>$(s).addEventListener('input',()=>{sel=-1;pintar();}));
+  $('#c5l1-regla').addEventListener('change',()=>{sel=-1;pintar();});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const NIV=['Muy formal','Formal','Neutro','Cordial','Cercano'],CORTO=['M. formal','Formal','Neutro','Cordial','Cercano'];
+  // [[dato]] = dato que no puede cambiar (id:texto); {{x}} = agregado (texto|motivo)
+  const C={
+    a:{cab:'Para: cliente con una factura vencida · Datos: USD 1.250, pagar antes del 30 de mayo, si no, suspensión',
+       datos:{m:'el monto',f:'la fecha límite',s:'la consecuencia'},
+       v:['Estimado señor Pérez: Por medio de la presente, nos permitimos informarle que su cuenta registra un saldo vencido de [[m:USD 1.250]]. Le solicitamos respetuosamente regularizar dicho pago a más tardar el [[f:30 de mayo]], fecha a partir de la cual, {{conforme a la cláusula 9 de su contrato|cita una cláusula que el original no menciona: hay que comprobarla}}, se procederá a la [[s:suspensión del servicio]]. Quedamos a su entera disposición para cualquier aclaración. Atentamente, Área de Cobranzas.',
+          'Estimado señor Pérez: Le escribimos para informarle que su cuenta tiene un saldo vencido de [[m:USD 1.250]]. Le pedimos realizar el pago antes del [[f:30 de mayo]]; de lo contrario, se aplicará la [[s:suspensión del servicio]]. Puede pagar en línea desde el portal de clientes. Saludos cordiales, Área de Cobranzas.',
+          'Hola, señor Pérez: Su cuenta tiene un saldo pendiente de [[m:USD 1.250]]. Para evitar la [[s:suspensión del servicio]], el pago debe hacerse antes del [[f:30 de mayo]]. Puede pagar desde el portal de clientes. Saludos, Cobranzas.',
+          'Hola, señor Pérez: Esperamos que esté muy bien. Le recordamos que tiene un saldo pendiente de [[m:USD 1.250]]. Sabemos que a veces se pasan las fechas, así que le avisamos con tiempo: si paga antes del [[f:30 de mayo]], evitamos la [[s:suspensión del servicio]]. Puede hacerlo en dos minutos desde el portal. ¡Gracias por su confianza!',
+          '¡Hola, Juan! ¿Cómo va todo? Te escribo por un {{saldito|minimiza la deuda}} pendiente de [[m:USD 1.250]]. {{Nada grave|minimiza la deuda}}: si lo puedes pagar pronto, mejor, así no hay que [[s:cortar el servicio]]. {{Y si te complica, avísame y te damos unos días más sin problema.|promete una prórroga que nadie autorizó}} ¡Un abrazo!']},
+    b:{cab:'Para: proveedor que envió una propuesta · Datos: propuesta del 12 de abril, no se acepta, supera el presupuesto de este año',
+       datos:{p:'la propuesta y su fecha',n:'la negativa',b:'el motivo'},
+       v:['Estimados señores de Servicios Ejemplo: Acusamos recibo de su [[p:propuesta del 12 de abril]], la cual hemos analizado con detenimiento. Lamentamos comunicarles que, en esta oportunidad, [[n:no nos es posible aceptarla]], toda vez que excede el [[b:presupuesto aprobado para este año]]. {{Les expresamos nuestras más sinceras disculpas por los inconvenientes que esta decisión pudiera ocasionarles.|pide disculpas por una decisión que es legítima}} Atentamente, Compras.',
+          'Estimados señores de Servicios Ejemplo: Gracias por su [[p:propuesta del 12 de abril]]. Después de revisarla, [[n:no podemos aceptarla]] porque supera el [[b:presupuesto de este año]]. Agradecemos el tiempo dedicado. Saludos cordiales, Compras.',
+          'Hola, equipo de Servicios Ejemplo: Revisamos su [[p:propuesta del 12 de abril]]. [[n:No podemos aceptarla]]: supera el [[b:presupuesto de este año]]. Gracias por el trabajo. Saludos, Compras.',
+          'Hola, equipo de Servicios Ejemplo: Muchas gracias por la [[p:propuesta del 12 de abril]]; se nota el trabajo que hay detrás. Esta vez [[n:no podremos avanzar con ella]], porque supera el [[b:presupuesto de este año]]. Ojalá podamos coincidir más adelante. Un saludo, Compras.',
+          '¡Hola, Marta! Gracias mil por la propuesta, {{¡quedó buenísima!|un elogio que el proveedor puede usar para negociar}} Lamentablemente esta vez [[n:no va a poder ser]], el presupuesto anda apretado 😅. {{Pero tranquila: el próximo año seguro la sacamos adelante.|promete una compra futura}} ¡Abrazo!']}
+  };
+  function partes(s){
+    const datos=[],extras=[];
+    const html=s.replace(/\[\[(\w):([^\]]+)\]\]/g,(m,id,t)=>{datos.push(id);return '<mark>'+t+'</mark>';})
+      .replace(/\{\{([^|]+)\|([^}]+)\}\}/g,(m,t,por)=>{extras.push([t,por]);return '<span class="x" title="'+por+'">'+t+'</span>';});
+    const plano=s.replace(/\[\[\w:([^\]]+)\]\]/g,'$1').replace(/\{\{([^|]+)\|[^}]+\}\}/g,'$1');
+    return {html,datos,extras,plano};
+  }
+  const palabras=t=>t.split(/\s+/).filter(w=>/[\wáéíóúñ]/i.test(w)).length;
+  function pintar(){
+    const c=C[$('#c5l2-caso').value],k=+$('#c5l2-t').value,P=partes(c.v[k]),ver=$('#c5l2-ver').checked;
+    $('#c5l2-t-o').textContent=NIV[k];
+    $('#c5l2-cab').textContent=c.cab;
+    $('#c5l2-txt').innerHTML=P.html;
+    $('#c5l2-mail').classList.toggle('ver',ver);
+    const ws=c.v.map(v=>palabras(partes(v).plano)),max=Math.max(...ws);
+    $('#c5l2-barras').innerHTML=ws.map((w,i)=>'<div class="'+(i===k?'act':'')+'"><span>'+w+'</span><i style="height:'+Math.round(w/max*60)+'px"></i><span>'+CORTO[i]+'</span></div>').join('');
+    const fr=P.plano.split(/[.!?]+/).map(x=>x.trim()).filter(x=>palabras(x)>0);
+    const pf=(palabras(P.plano)/fr.length).toFixed(1).replace('.',',');
+    const usted=/\b(usted|su|le|señor|señores|les)\b/i.test(P.plano),tu=/\b(te|tu|puedes|tranquila)\b/i.test(P.plano);
+    const trato=tu?'tú':(usted?'usted':'impersonal');
+    const perdidos=Object.keys(c.datos).filter(id=>!P.datos.includes(id));
+    let h='<span class="big">'+NIV[k]+': '+palabras(P.plano)+' palabras · '+pf+' palabras por frase · trato de '+trato+'</span>';
+    h+=perdidos.length?'<span class="warn">Se perdió '+perdidos.map(id=>c.datos[id]).join(' y ')+': el correo ya no dice lo mismo.</span>':'<span class="ok">Los tres datos que no pueden cambiar siguen en el correo (marcados en azul).</span>';
+    if(ver){
+      h+=P.extras.length?'<span class="warn">Agregó '+P.extras.length+' cosa'+(P.extras.length>1?'s':'')+' que no estaba'+(P.extras.length>1?'n':'')+' en el original: '+P.extras.map(x=>'«'+x[0]+'» ('+x[1]+')').join('; ')+'.</span>':'<span>En esta versión no hay agregados: cambió la forma, no el contenido.</span>';
+    }else h+='<span>Activa «Marcar lo que no estaba en el original» para ver lo que el asistente agregó.</span>';
+    if(k===0)h+='<span>Lo muy formal alarga las frases y suena distante; en un cobro puede sonar a amenaza legal.</span>';
+    if(k===4)h+='<span>Lo muy cercano cambia el trato y tiende a minimizar el problema o a prometer. Revisa cada frase antes de enviarlo.</span>';
+    $('#c5l2-out').innerHTML=h;
+  }
+  ['#c5l2-caso','#c5l2-t','#c5l2-ver'].forEach(s=>{$(s).addEventListener('input',pintar);$(s).addEventListener('change',pintar);});
+  pintar();
+})();
+</script>
+</body>
+</html>

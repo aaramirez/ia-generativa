@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Qué puede y qué no · IA generativa · IA generativa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Usar la IA generativa en el trabajo, sin tecnicismos: qué puede y qué no, cómo pedir bien, cómo verificar, qué hacer con texto, imágenes y datos, casos por área y cómo llevarla a tu equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="que-puede-y-que-no">
+<header class="topbar"><a class="brand" href="index.html">IA <b>generativa</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 01 DE 10</span><h1>Qué puede y qué no puede hacer la IA generativa</h1><p class="lede">Un asistente de IA escribe, resume y conversa muy bien, pero no sabe, no calcula y no recuerda como una persona. Entender cómo produce cada palabra es la mejor manera de saber cuándo confiar en él.</p></header>
+<section><div class="prose"><p>Imagina que te toca preparar el informe mensual de tu área. Tienes notas sueltas, una hoja con cifras, el acta de la última reunión y poco tiempo. Abres un asistente de IA, pegas las notas y en diez segundos tienes un borrador ordenado, bien escrito y con un tono profesional. Te alegras. Luego lees el segundo párrafo: dice que las ventas crecieron un 12 %. Tus notas no dicen eso. El 12 % salió de la nada.</p><p>Las dos cosas pasaron en la misma respuesta: un trabajo de redacción excelente y una cifra inventada. Este capítulo explica por qué, con lo mínimo de tecnología que hace falta para usar bien la herramienta. Ese informe mensual nos acompañará en todo el curso.</p></div></section>
+<section><h2>Un autocompletado que leyó muchísimo</h2><div class="prose"><p>La <b>IA generativa</b> (<i>generative AI</i>) es la rama de la <b>inteligencia artificial</b> (IA, <i>artificial intelligence</i>) que produce contenido nuevo: texto, imágenes, audio, video o código. Los asistentes de chat que usas en el trabajo funcionan con un <b>modelo de lenguaje grande</b> (<i>large language model</i>, LLM), un programa entrenado con una cantidad enorme de texto para hacer una sola cosa: adivinar qué palabra viene después.</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en el autocompletado del teclado de tu celular. Escribes «nos vemos» y te sugiere «mañana», porque esa combinación es frecuente en lo que has escrito. Un modelo de lenguaje hace lo mismo, pero leyó una porción enorme de todo lo escrito en internet, en libros y en documentos públicos, y puede seguir escribiendo no una palabra, sino páginas enteras, con coherencia. Es un autocompletado con muchísima lectura.</p></div><div class="prose"><p>En la práctica, el modelo no trabaja con palabras completas sino con <b>tokens</b> (fragmentos de texto), pedazos de palabra como «inform» y «e». Cuando le escribes, tu pedido se corta en tokens, el modelo calcula para cada token posible qué tan probable es que siga, elige uno, lo agrega al texto y repite. Una respuesta de tres párrafos son cientos de esas vueltas.</p></div><figure class="fig fig-flujo" id="01-diagrama-1"><div class="lienzo"><svg viewBox="0 0 820 360" style="min-width:660px" role="img" aria-label="Ciclo de generación: tu pedido se corta en tokens, el modelo calcula la probabilidad de cada palabra siguiente, elige una con algo de azar, la agrega al texto y repite hasta elegir el fin">
+  <defs>
+    <marker id="g1d1-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  
+  <rect x="16" y="30" width="160" height="124" rx="10" class="caja"/>
+  <text x="30" y="56" class="t t-b">① Tu pedido</text>
+  <text x="30" y="84" class="t t-s">«Resume el informe</text>
+  <text x="30" y="100" class="t t-s">de ventas en tres</text>
+  <text x="30" y="116" class="t t-s">líneas»</text>
+  <text x="30" y="140" class="t t-xs t-m">ENTRADA</text>
+  
+  <rect x="214" y="30" width="176" height="124" rx="10" class="c-tra"/>
+  <text x="228" y="56" class="t t-b">② Se corta en tokens</text>
+  <rect x="228" y="70" width="38" height="24" rx="5" class="caja"/><text x="247" y="86" class="t t-s t-mono" text-anchor="middle">Res</text>
+  <rect x="270" y="70" width="44" height="24" rx="5" class="caja"/><text x="292" y="86" class="t t-s t-mono" text-anchor="middle">ume</text>
+  <rect x="318" y="70" width="30" height="24" rx="5" class="caja"/><text x="333" y="86" class="t t-s t-mono" text-anchor="middle">el</text>
+  <rect x="228" y="100" width="58" height="24" rx="5" class="caja"/><text x="257" y="116" class="t t-s t-mono" text-anchor="middle">inform</text>
+  <rect x="290" y="100" width="24" height="24" rx="5" class="caja"/><text x="302" y="116" class="t t-s t-mono" text-anchor="middle">e</text>
+  <text x="320" y="116" class="t t-s t-m">…</text>
+  <text x="228" y="142" class="t t-xs k-tra">PEDAZOS DE PALABRA</text>
+  
+  <rect x="428" y="30" width="186" height="124" rx="10" class="c-red"/>
+  <text x="442" y="56" class="t t-b">③ Calcula probabilidades</text>
+  <text x="442" y="82" class="t t-s">Las</text><rect x="482" y="72" width="82" height="12" rx="3" class="k-red"/><text x="570" y="82" class="t t-s t-mono">41 %</text>
+  <text x="442" y="104" class="t t-s">En</text><rect x="482" y="94" width="44" height="12" rx="3" class="k-red"/><text x="532" y="104" class="t t-s t-mono">22 %</text>
+  <text x="442" y="126" class="t t-s">El</text><rect x="482" y="116" width="36" height="12" rx="3" class="k-red"/><text x="524" y="126" class="t t-s t-mono">18 %</text>
+  <text x="442" y="146" class="t t-xs k-red">CADA PALABRA POSIBLE</text>
+  
+  <rect x="652" y="30" width="152" height="124" rx="10" class="c-apl"/>
+  <text x="666" y="56" class="t t-b">④ Elige una</text>
+  <text x="666" y="82" class="t t-s">Casi siempre una</text>
+  <text x="666" y="98" class="t t-s">de las probables,</text>
+  <text x="666" y="114" class="t t-s">con algo de azar</text>
+  <text x="666" y="142" class="t t-xs k-apl">TEMPERATURA</text>
+  <line x1="176" y1="92" x2="212" y2="92" class="ln" style="stroke-width:2" marker-end="url(#g1d1-fl)"/>
+  <line x1="390" y1="92" x2="426" y2="92" class="ln" style="stroke-width:2" marker-end="url(#g1d1-fl)"/>
+  <line x1="614" y1="92" x2="650" y2="92" class="ln" style="stroke-width:2" marker-end="url(#g1d1-fl)"/>
+  
+  <rect x="428" y="196" width="376" height="70" rx="10" class="caja"/>
+  <text x="442" y="222" class="t t-b">⑤ La agrega al texto y repite</text>
+  <text x="442" y="244" class="t t-s">«Las» → «Las ventas» → «Las ventas crecieron»…</text>
+  <text x="442" y="259" class="t t-s t-m">Cada vuelta escribe un token más.</text>
+  <path d="M728 154 V194" class="ln" style="stroke-width:2" marker-end="url(#g1d1-fl)"/>
+  <path d="M428 231 H302 V156" class="ln ln-d" style="stroke-width:2" marker-end="url(#g1d1-fl)"/>
+  <text x="310" y="186" class="t t-s t-m">otra vuelta</text>
+  <path d="M302 231 H256" class="ln" style="stroke-width:2" marker-end="url(#g1d1-fl)"/>
+  <text x="262" y="252" class="t t-s t-m">si elige «fin»</text>
+  
+  <rect x="16" y="196" width="238" height="70" rx="10" class="c-enl"/>
+  <text x="30" y="222" class="t t-b">⑥ Termina</text>
+  <text x="30" y="244" class="t t-s">La respuesta aparece en</text>
+  <text x="30" y="259" class="t t-s">pantalla token a token.</text>
+  
+  <rect x="16" y="292" width="788" height="54" rx="10" class="d-sis"/>
+  <text x="30" y="314" class="t t-b k-sis">Ventana de contexto</text>
+  <text x="30" y="334" class="t t-s">En cada vuelta el modelo relee todo: tu pedido y lo que ya escribió. Lo que no está ahí ni en lo que leyó al entrenarse, no lo sabe.</text>
+</svg></div><figcaption><b>Cómo nace una respuesta, token a token.</b> Sigue los números: tu pedido (①) se corta en tokens (②), el modelo calcula la probabilidad de cada continuación (③), elige una con algo de azar (④), la agrega al texto y vuelve a empezar (⑤) hasta que elige la señal de fin (⑥). La franja de abajo es la <b>ventana de contexto</b> (<i>context window</i>): todo lo que el modelo puede leer en cada vuelta.</figcaption></figure><div class="prose"><p>Lo importante es lo que este mecanismo <b>no</b> hace. El modelo no busca la respuesta en un archivo, no consulta una tabla de hechos y no razona como lo harías tú con papel y lápiz: produce la continuación que mejor encaja con lo que leyó. Cuando lo que encaja también es cierto, que es muy a menudo, la respuesta es buena. Cuando no, escribe algo falso con el mismo tono seguro.</p></div><div class="lab" id="01-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>La siguiente palabra: así escribe un modelo</h3></div><p class="hint">Elige cómo empieza la frase y mira las palabras candidatas con su probabilidad. Toca una para elegirla tú o deja que el modelo la sortee. Después mueve la temperatura y mira cómo cambian las barras. Compara la frase sobre París con la de la empresa Ejemplo S.A.</p><style>
+[id="01-lab-1"] .c1l1-texto{font:500 1.08rem/1.5 var(--f-body);background:var(--paper);border-radius:8px;padding:12px 14px;min-height:3.2em}
+[id="01-lab-1"] .c1l1-texto .ini{color:var(--muted)}
+[id="01-lab-1"] .c1l1-texto .nueva{color:var(--warm);font-weight:700}
+[id="01-lab-1"] .c1l1-texto .cur{display:inline-block;width:.55em;height:1.05em;vertical-align:-2px;background:var(--accent);margin-left:3px;border-radius:2px}
+[id="01-lab-1"] .c1l1-ops{display:grid;gap:6px}
+[id="01-lab-1"] .c1l1-ops .tit{font:600 .82rem var(--f-display);color:var(--muted)}
+[id="01-lab-1"] .c1l1-op{display:grid;grid-template-columns:minmax(0,10rem) minmax(0,1fr) 3.6rem;align-items:center;gap:10px;text-align:left;padding:6px 10px;background:var(--card)}
+[id="01-lab-1"] .c1l1-op .pal{font:600 .9rem var(--f-display);overflow-wrap:anywhere}
+[id="01-lab-1"] .c1l1-op .bar{height:14px;border-radius:7px;background:var(--grid);overflow:hidden}
+[id="01-lab-1"] .c1l1-op .bar i{display:block;height:100%;background:var(--accent);border-radius:7px;transition:width .25s ease}
+[id="01-lab-1"] .c1l1-op .pct{font:600 .85rem var(--f-mono);text-align:right;color:var(--accent)}
+[id="01-lab-1"] .c1l1-op.elegida{border-color:var(--warm)}
+[id="01-lab-1"] .c1l1-op.elegida .bar i{background:var(--warm)}
+[id="01-lab-1"] .c1l1-op.elegida .pct{color:var(--warm)}
+@media (max-width:520px){[id="01-lab-1"] .c1l1-op{grid-template-columns:minmax(0,1fr) 3.4rem}[id="01-lab-1"] .c1l1-op .bar{grid-column:1/-1;grid-row:2}}
+@media (prefers-reduced-motion: reduce){[id="01-lab-1"] .c1l1-op .bar i{transition:none}}
+</style>
+<div class="opciones">
+  <label>Empieza la frase
+    <select id="c1l1-ini">
+      <option value="a0" selected>El informe de ventas del mes…</option>
+      <option value="b0">Estimado cliente, le escribimos para…</option>
+      <option value="c0">La capital de Francia es…</option>
+      <option value="d0">En 2024, la empresa Ejemplo S.A. tenía…</option>
+    </select></label>
+</div>
+<div class="ctls">
+  <label class="ctl">Temperatura (cuánto se arriesga) <output id="c1l1-t-o"></output>
+    <input id="c1l1-t" type="range" min="0" max="2" step="0.1" value="1"></label>
+</div>
+<div class="c1l1-texto" id="c1l1-texto" aria-live="polite"></div>
+<div class="c1l1-ops">
+  <span class="tit" id="c1l1-tit">Palabras candidatas y su probabilidad (toca una para elegirla tú)</span>
+  <div class="c1l1-ops" id="c1l1-ops"></div>
+</div>
+<div class="btns">
+  <button class="primary" id="c1l1-uno">Que el modelo elija una</button>
+  <button id="c1l1-todo">Completar la frase</button>
+  <button id="c1l1-reset">Volver a empezar</button>
+</div>
+<div class="readout texto" id="c1l1-out" aria-live="polite"></div></div><div class="prose"><p>En el laboratorio, «La capital de Francia es» tiene una continuación casi segura, porque esa frase aparece miles de veces en lo que el modelo leyó. En cambio, la cantidad de empleados de una empresa que no existe tiene seis continuaciones parecidas y ninguna domina. El modelo igual tiene que escribir algo, y escribe un número. Ahí nacen las cifras inventadas.</p><h3>Cómo aprendió a conversar</h3><p>Un modelo de lenguaje recién entrenado solo sabe continuar textos. Para convertirlo en un asistente que responde preguntas hacen falta más etapas. Los fabricantes las combinan de maneras distintas, pero la idea general es esta:</p></div><figure class="fig fig-esquema" id="01-diagrama-2"><div class="lienzo"><svg viewBox="0 0 820 340" style="min-width:660px" role="img" aria-label="Las tres etapas con que se forma un asistente: preentrenamiento leyendo enormes cantidades de texto, ajuste para conversar con ejemplos escritos por personas y ajuste con preferencias humanas; abajo, una línea de tiempo con la fecha de corte">
+  <defs>
+    <marker id="g1d2-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  <rect x="16" y="20" width="236" height="150" rx="10" class="c-red"/>
+  <text x="30" y="46" class="t t-b">1. Preentrenamiento</text>
+  <text x="30" y="68" class="t t-xs k-red">PRETRAINING</text>
+  <text x="30" y="92" class="t t-s">Lee una cantidad enorme de</text>
+  <text x="30" y="108" class="t t-s">texto: páginas web, libros,</text>
+  <text x="30" y="124" class="t t-s">artículos, código.</text>
+  <text x="30" y="148" class="t t-s t-b">Aprende a predecir</text>
+  <text x="30" y="163" class="t t-s t-b">la siguiente palabra.</text>
+
+  <rect x="292" y="20" width="236" height="150" rx="10" class="c-tra"/>
+  <text x="306" y="46" class="t t-b">2. Ajuste para conversar</text>
+  <text x="306" y="68" class="t t-xs k-tra">FINE-TUNING</text>
+  <text x="306" y="92" class="t t-s">Personas escriben miles de</text>
+  <text x="306" y="108" class="t t-s">ejemplos: un pedido y una</text>
+  <text x="306" y="124" class="t t-s">buena respuesta.</text>
+  <text x="306" y="148" class="t t-s t-b">Aprende el formato</text>
+  <text x="306" y="163" class="t t-s t-b">de una conversación.</text>
+
+  <rect x="568" y="20" width="236" height="150" rx="10" class="c-apl"/>
+  <text x="582" y="46" class="t t-b">3. Ajuste con preferencias</text>
+  <text x="582" y="68" class="t t-xs k-apl">RLHF</text>
+  <text x="582" y="92" class="t t-s">Personas comparan dos</text>
+  <text x="582" y="108" class="t t-s">respuestas y eligen la mejor.</text>
+  <text x="582" y="124" class="t t-s">El modelo aprende a preferirla.</text>
+  <text x="582" y="148" class="t t-s t-b">Aprende a ser útil</text>
+  <text x="582" y="163" class="t t-s t-b">y a negarse a ciertas cosas.</text>
+
+  <line x1="252" y1="95" x2="290" y2="95" class="ln" style="stroke-width:2" marker-end="url(#g1d2-fl)"/>
+  <line x1="528" y1="95" x2="566" y2="95" class="ln" style="stroke-width:2" marker-end="url(#g1d2-fl)"/>
+
+  
+  <text x="16" y="218" class="t t-b">Lo que el modelo leyó tiene fecha</text>
+  <line x1="30" y1="262" x2="540" y2="262" class="ln s-red" style="stroke-width:4"/>
+  <line x1="540" y1="262" x2="790" y2="262" class="ln ln-d" style="stroke-width:3" marker-end="url(#g1d2-fl)"/>
+  <circle cx="540" cy="262" r="7" class="c-apl"/>
+  <text x="30" y="246" class="t t-s t-m">Textos de muchos años</text>
+  <text x="540" y="240" class="t t-s t-b" text-anchor="middle">Fecha de corte</text>
+  <text x="790" y="246" class="t t-s t-m" text-anchor="end">hoy</text>
+  <text x="30" y="290" class="t t-s">Esto lo leyó: puede hablar de ello</text>
+  <text x="30" y="306" class="t t-s t-m">(con errores en lo poco frecuente)</text>
+  <text x="560" y="290" class="t t-s">Esto no lo leyó: no lo sabe,</text>
+  <text x="560" y="306" class="t t-s t-m">salvo que busque en la web</text>
+</svg></div><figcaption><b>De lector a asistente: las tres etapas.</b> De izquierda a derecha: el <b>preentrenamiento</b> (<i>pretraining</i>), en el que lee una cantidad enorme de texto y aprende a predecir la palabra siguiente; el <b>ajuste fino</b> (<i>fine-tuning</i>), con ejemplos de pedidos y buenas respuestas escritos por personas; y el <b>RLHF</b> (<i>reinforcement learning from human feedback</i>, aprendizaje por refuerzo con retroalimentación humana), en el que personas comparan respuestas y el modelo aprende a preferir las mejores. Abajo, la <b>fecha de corte</b> (<i>knowledge cutoff</i>): lo publicado después de esa fecha no lo leyó.</figcaption></figure><div class="prose"><p>De ahí salen tres consecuencias que vas a ver en todo el curso:</p><ul><li><b>No sabe</b>: tiene patrones de lenguaje, no una lista de hechos comprobados. Lo que leyó muchas veces lo reproduce bien; lo que leyó poco, lo reconstruye con errores.</li><li><b>No calcula</b>: una multiplicación es, para él, otra secuencia de tokens que continuar. Acierta las cuentas cortas y frecuentes y falla las largas, salvo que use una herramienta.</li><li><b>No recuerda como una persona</b>: el modelo no cambia cuando conversas con él. Lo que «recuerda» es lo que cabe en la ventana de contexto de esta conversación, más lo que la aplicación guarde aparte si tiene una función de memoria.</li></ul></div></section>
+<section><h2>Una base de datos conversacional que busca por parecido</h2><div class="prose"><p>Una forma útil de pensar en un asistente es como una base de datos con la que se conversa. Pero con una diferencia que cambia todo: no busca por coincidencia exacta, sino por parecido.</p><p>Una <b>base de datos</b> (<i>database</i>) es el sistema donde una empresa guarda sus registros: clientes, facturas, inventario. Le haces una <b>consulta</b> (<i>query</i>), por ejemplo «los clientes con estado moroso», y te devuelve exactamente las filas que cumplen la condición. Si nadie escribió «moroso» con esas letras, te responde «0 resultados». Es rígida, pero confiable: lo que devuelve está guardado tal cual.</p></div><div class="analogia"><b>Imagínalo así</b><p>El archivista de la oficina te pide el número exacto del expediente; si te equivocas en una cifra, no encuentra nada. El bibliotecario de barrio, en cambio, escucha «un libro de esos de detectives, que pasa en un tren» y te trae tres que se parecen a lo que describes. El archivista es la base de datos. El bibliotecario es la IA: entiende lo que quieres decir, pero a veces te trae un libro que no es el que buscabas, y casi nunca te dice «no lo tengo».</p></div><div class="prose"><p>Por dentro, la IA representa cada texto como un punto en un mapa de significados. Ese punto se llama <b>embedding</b> (vector de significado): una lista de números que ubica «moroso», «en mora» y «con deuda» muy cerca entre sí, aunque no compartan letras. Buscar en ese mapa se llama <b>búsqueda semántica</b> (<i>semantic search</i>), y es lo que hace que la IA entienda sinónimos, errores de ortografía y frases dichas de otra manera.</p></div><figure class="fig fig-comparacion" id="01-diagrama-3"><div class="lienzo"><svg viewBox="0 0 820 360" style="min-width:660px" role="img" aria-label="Comparación: una base de datos encuentra solo las filas cuyo valor es exactamente igual al buscado; la IA ubica cada texto en un mapa de significados y devuelve los más cercanos a la pregunta">
+  
+  <rect x="10" y="10" width="392" height="340" rx="12" class="caja"/>
+  <text x="26" y="38" class="t t-b">Base de datos: coincidencia exacta</text>
+  <rect x="26" y="52" width="250" height="30" rx="6" class="c-tra"/>
+  <text x="38" y="72" class="t t-s t-mono">buscar estado = "moroso"</text>
+  
+  <rect x="26" y="96" width="360" height="28" class="caja"/>
+  <text x="40" y="115" class="t t-s t-b">Cliente</text><text x="170" y="115" class="t t-s t-b">Estado</text><text x="290" y="115" class="t t-s t-b">¿Sale?</text>
+  <rect x="26" y="124" width="360" height="28" class="caja"/>
+  <text x="40" y="143" class="t t-s t-mono">C-101</text><text x="170" y="143" class="t t-s">al día</text><text x="290" y="143" class="t t-s t-m">no</text>
+  <rect x="26" y="152" width="360" height="28" class="c-enl"/>
+  <text x="40" y="171" class="t t-s t-mono">C-102</text><text x="170" y="171" class="t t-s">moroso</text><text x="290" y="171" class="t t-s t-b k-enl">sí</text>
+  <rect x="26" y="180" width="360" height="28" class="caja"/>
+  <text x="40" y="199" class="t t-s t-mono">C-103</text><text x="170" y="199" class="t t-s">en mora</text><text x="290" y="199" class="t t-s t-b k-apl">no (¡y debía salir!)</text>
+  <rect x="26" y="208" width="360" height="28" class="c-enl"/>
+  <text x="40" y="227" class="t t-s t-mono">C-104</text><text x="170" y="227" class="t t-s">moroso</text><text x="290" y="227" class="t t-s t-b k-enl">sí</text>
+  <text x="26" y="266" class="t t-s">Compara letra por letra: «en mora» no es «moroso».</text>
+  <text x="26" y="290" class="t t-s t-b">Responde lo que está guardado, igual cada vez,</text>
+  <text x="26" y="306" class="t t-s t-b">o dice «0 resultados».</text>
+  <text x="26" y="334" class="t t-xs t-m">BUENO PARA SALDOS, FACTURAS, INVENTARIO</text>
+
+  
+  <rect x="418" y="10" width="392" height="340" rx="12" class="caja"/>
+  <text x="434" y="38" class="t t-b">IA: búsqueda por parecido</text>
+  <rect x="434" y="52" width="250" height="30" rx="6" class="c-red"/>
+  <text x="446" y="72" class="t t-s">«cliente que no pagó»</text>
+  
+  <rect x="434" y="96" width="360" height="150" rx="8" class="d-inet" style="opacity:.6"/>
+  <circle cx="600" cy="160" r="44" class="c-red" style="opacity:.5"/>
+  <circle cx="584" cy="146" r="5" class="k-red"/><text x="568" y="140" class="t t-s" text-anchor="end">moroso</text>
+  <circle cx="620" cy="138" r="5" class="k-red"/><text x="630" y="134" class="t t-s">en mora</text>
+  <circle cx="626" cy="180" r="5" class="k-red"/><text x="636" y="184" class="t t-s">con deuda</text>
+  <circle cx="576" cy="184" r="5" class="k-red"/><text x="566" y="200" class="t t-s" text-anchor="end">atrasado en pagos</text>
+  <circle cx="602" cy="162" r="7" class="k-warm"/>
+  <circle cx="470" cy="226" r="5" class="fl-muted"/><text x="480" y="230" class="t t-s t-m">al día</text>
+  <circle cx="770" cy="112" r="5" class="fl-muted"/><text x="760" y="116" class="t t-s t-m" text-anchor="end">pagó por adelantado</text>
+  <circle cx="740" cy="222" r="5" class="fl-muted"/><text x="730" y="226" class="t t-s t-m" text-anchor="end">pidió factura</text>
+  <text x="434" y="266" class="t t-s">Cada texto es un punto en un mapa de significados.</text>
+  <text x="434" y="290" class="t t-s t-b">Devuelve lo más cercano, aunque no sea igual,</text>
+  <text x="434" y="306" class="t t-s t-b">y casi nunca dice «no encontré».</text>
+  <text x="434" y="334" class="t t-xs t-m">BUENO PARA LENGUAJE, MALO PARA DATOS EXACTOS</text>
+</svg></div><figcaption><b>Dos maneras de buscar.</b> A la izquierda, una base de datos compara letra por letra: encuentra los dos clientes «moroso» y deja fuera al que dice «en mora». A la derecha, la IA ubica la pregunta «cliente que no pagó» (el punto rojo) en un mapa de significados y devuelve lo que está cerca. Lee la última línea de cada lado: una sirve para datos exactos y la otra para lenguaje.</figcaption></figure><div class="lab" id="01-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Busca por parecido</h3></div><p class="hint">Elige lo que escribe una persona en el buscador de ayuda de una empresa y compara las dos columnas: la búsqueda exacta (palabras iguales) y la búsqueda por parecido (puntos cercanos en el mapa). Agranda el radio de parecido y mira qué artículos empiezan a entrar.</p><style>
+[id="01-lab-2"] svg{width:100%;height:auto;display:block;font-family:var(--f-display)}
+[id="01-lab-2"] .zona{fill:var(--muted);font-size:11px;letter-spacing:.06em}
+[id="01-lab-2"] .doc circle{fill:var(--card);stroke:var(--muted);stroke-width:1.4}
+[id="01-lab-2"] .doc text{fill:var(--ink);font-size:11px;font-weight:700;text-anchor:middle;dominant-baseline:central}
+[id="01-lab-2"] .doc.par circle{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2.2}
+[id="01-lab-2"] .doc.exa circle{stroke:var(--good);stroke-width:3}
+[id="01-lab-2"] .radio{fill:var(--accent-soft);fill-opacity:.55;stroke:var(--accent);stroke-dasharray:4 4}
+[id="01-lab-2"] .q{fill:var(--warm)}
+[id="01-lab-2"] .enl{stroke:var(--accent);stroke-width:1.2}
+[id="01-lab-2"] .c1l2-col h4{font:700 .85rem var(--f-display);margin:0 0 6px}
+[id="01-lab-2"] .c1l2-col ol{margin:0;padding-left:1.3rem;display:grid;gap:4px;font-size:.92rem}
+[id="01-lab-2"] .c1l2-col .vacio{color:var(--muted);font-style:italic;font-size:.9rem;margin:0}
+[id="01-lab-2"] .c1l2-col mark{background:var(--good-soft);color:var(--ink);border-bottom:2px solid var(--good);padding:0 2px}
+[id="01-lab-2"] .c1l2-col .sim{font:600 .8rem var(--f-mono);color:var(--accent);margin-left:4px}
+[id="01-lab-2"] .c1l2-cols{display:grid;gap:14px}
+</style>
+<div class="opciones">
+  <label>Lo que escribe la persona
+    <select id="c1l2-q">
+      <option value="0" selected>quiero tomarme unos días de descanso</option>
+      <option value="1">me cobraron dos veces</option>
+      <option value="2">ya no quiero el servicio</option>
+      <option value="3">olvidé mi clave</option>
+      <option value="4">cómo pido mi factura</option>
+    </select></label>
+</div>
+<div class="ctls">
+  <label class="ctl">Radio de parecido <output id="c1l2-r-o"></output>
+    <input id="c1l2-r" type="range" min="5" max="45" step="1" value="18"></label>
+</div>
+<div class="split">
+  <svg id="c1l2-svg" viewBox="0 0 300 250" role="img" aria-label="Mapa de significados: once artículos de ayuda agrupados por tema y la pregunta de la persona como un punto rojo"></svg>
+  <div class="c1l2-cols">
+    <div class="c1l2-col"><h4>Búsqueda exacta: palabras iguales</h4><div id="c1l2-exa"></div></div>
+    <div class="c1l2-col"><h4>Búsqueda por parecido: significado cercano</h4><div id="c1l2-par"></div></div>
+  </div>
+</div>
+<div class="legend"><span><i style="background:var(--warm)"></i>la pregunta</span><span><i style="background:var(--accent)"></i>artículo cercano (por parecido)</span><span><i style="background:var(--good)"></i>artículo con palabras iguales (borde verde)</span></div>
+<div class="readout texto" id="c1l2-out" aria-live="polite"></div></div><div class="prose"><p>El laboratorio muestra la ventaja y el riesgo a la vez. «Olvidé mi clave» encuentra «Restablecer la contraseña» aunque no comparten ni una palabra: eso es útil. Pero si agrandas el radio, la búsqueda por parecido siempre trae algo, aunque esté lejos. Un asistente funciona igual con los hechos: siempre encuentra algo «parecido» que decir. Por eso tus saldos, facturas y contratos se consultan en los sistemas de la empresa, que guardan el dato exacto, y la IA sirve para redactar, explicar y ordenar alrededor de ese dato.</p></div></section>
+<section><h2>Por qué la misma pregunta no da siempre la misma respuesta</h2><div class="prose"><p>Una calculadora es <b>determinista</b> (<i>deterministic</i>): 2 + 2 da 4 cada vez. Un asistente de IA no. Si le pides dos veces un título para tu informe, te dará dos títulos distintos. No está fallando: así está diseñado.</p><p>En el paso ④ del primer diagrama, el modelo no elige siempre la palabra más probable. Hace un <b>muestreo</b> (<i>sampling</i>): sortea entre las candidatas según su probabilidad, como una ruleta en la que las palabras más probables tienen casillas más grandes. Un ajuste llamado <b>temperatura</b> (<i>temperature</i>) decide qué tan grandes: con temperatura baja, la favorita se lleva casi todo; con temperatura alta, las opciones raras ganan terreno. Los asistentes de chat usan una temperatura intermedia, porque así las respuestas suenan más naturales y menos repetitivas.</p><p>Hay otras fuentes de variación, aunque pesan menos: el fabricante actualiza el modelo sin avisar, la aplicación agrega instrucciones propias que cambian con el tiempo y, si el asistente busca en la web, los resultados de la búsqueda cambian de un día para otro.</p></div><div class="lab" id="01-lab-3"><div class="lab-title"><span class="tag">Laboratorio</span><h3>La misma pregunta cinco veces</h3></div><p class="hint">Elige una pregunta y mira cinco respuestas del mismo modelo. Lo resaltado es lo que cambió entre ellas. Pulsa «Preguntar cinco veces de nuevo» y mueve la temperatura. Fíjate sobre todo en la pregunta sobre Ejemplo S.A.</p><style>
+[id="01-lab-3"] .c1l3-resp{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+[id="01-lab-3"] .c1l3-resp li{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:8px;align-items:start;background:var(--paper);border-radius:8px;padding:9px 12px;font:1rem/1.45 var(--f-body)}
+[id="01-lab-3"] .c1l3-resp li b{font:700 .8rem var(--f-mono);color:var(--muted);padding-top:3px}
+[id="01-lab-3"] .c1l3-resp .cambia{background:var(--mark);border-radius:3px;padding:0 2px}
+[id="01-lab-3"] .c1l3-preg{font:600 .95rem var(--f-display);border-left:3px solid var(--accent);padding:4px 10px}
+</style>
+<div class="opciones">
+  <label>La pregunta
+    <select id="c1l3-q">
+      <option value="0" selected>Dame un título para el informe mensual de ventas</option>
+      <option value="1">¿Cuál es la capital de Perú?</option>
+      <option value="2">Resume en una frase un dato que tú le das</option>
+      <option value="3">¿Cuántos empleados tenía Ejemplo S.A. en 2024?</option>
+    </select></label>
+</div>
+<div class="ctls">
+  <label class="ctl">Temperatura <output id="c1l3-t-o"></output>
+    <input id="c1l3-t" type="range" min="0" max="2" step="0.1" value="1"></label>
+</div>
+<p class="c1l3-preg" id="c1l3-preg"></p>
+<div class="btns"><button class="primary" id="c1l3-otra">Preguntar cinco veces de nuevo</button></div>
+<ol class="c1l3-resp" id="c1l3-resp" aria-label="Cinco respuestas a la misma pregunta"></ol>
+<div class="legend"><span><i style="background:var(--mark)"></i>parte que cambió entre las cinco respuestas</span></div>
+<div class="readout texto" id="c1l3-out" aria-live="polite"></div></div><div class="prose"><p>La regla práctica que sale del laboratorio: <b>que varíen las palabras es normal; que varíen los hechos es una alarma</b>. Si un título cambia, perfecto: tienes opciones. Si una cifra cambia cada vez que preguntas, esa cifra no salió de ningún dato.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>La misma pregunta en tres conversaciones nuevas</h3></div><p>Abre cualquier asistente de IA gratuito (más abajo hay una lista de ejemplos; cualquiera sirve). Vas a hacer dos preguntas, cada una tres veces, y cada vez en una <b>conversación nueva</b>, para que no vea las respuestas anteriores.</p><ol class="steps"><li><span>Pregunta tres veces: «Dame un título para el informe mensual de ventas de un área comercial». Copia los tres títulos.</span></li><li><span>Pregunta tres veces: «¿Cuál es la capital de Perú?». Copia las tres respuestas.</span></li><li><span>Pregunta tres veces: «¿Cuántos empleados tenía en 2024 la empresa Distribuidora Ejemplo del Sur S.A.?» (es inventada).</span></li><li><span>Marca en cada grupo qué cambió y qué se mantuvo.</span></li></ol><p><b>Qué observar:</b> los títulos cambian casi por completo; la capital se mantiene aunque cambie la forma de decirla. En la tercera, algunos asistentes contestan que no tienen esa información y otros dan una cifra distinta cada vez, a veces con una «fuente» incluida. Si te dio una cifra, ya sabes qué pensar de ella. El resultado depende del asistente y de su versión.</p></div></section>
+<section><h2>En qué brilla</h2><div class="prose"><p>Si la IA es un autocompletado con muchísima lectura, sus fortalezas son las del lenguaje. Brilla cuando la tarea consiste en transformar texto que ya existe o en producir texto cuya calidad tú puedes juzgar al leerlo:</p><ul><li><b>Redactar</b> un primer borrador desde notas sueltas: el correo, el informe, la propuesta.</li><li><b>Resumir</b> lo que tú le das: un acta, un contrato, cuarenta páginas de un informe, para lectores distintos.</li><li><b>Reformular</b>: cambiar el tono de un correo difícil, simplificar un texto técnico, acortar un párrafo.</li><li><b>Ordenar ideas</b>: convertir una lluvia de notas en un esquema, agrupar comentarios de clientes por tema.</li><li><b>Explicar</b> un concepto conocido, al nivel que pidas, con ejemplos.</li><li><b>Traducir</b> entre idiomas comunes, cuidando el tono.</li><li><b>Proponer opciones</b>: nombres, títulos, preguntas para una entrevista, objeciones que podría poner un cliente.</li></ul><p>Fíjate en lo que tienen en común: en todas, el material está en tu pedido o es conocimiento muy común, y el resultado lo revisas con solo leerlo. Si el resumen omitió algo, lo notas. Si el tono no te gusta, lo pides de nuevo.</p></div><div class="ml"><b>En la práctica</b><p><b>El área de atención de una empresa de servicios.</b> Un equipo de atención al cliente usa un asistente para redactar respuestas a reclamos: el agente pega el reclamo y pide una respuesta cordial que explique los pasos. Lo que no le pide es el saldo del cliente ni la fecha de su último pago: esos datos los copia del sistema de facturación y los pega en el pedido. La IA pone el lenguaje; los sistemas de la empresa ponen los hechos. Esa división del trabajo es la que vas a ver en casi todos los casos que funcionan.</p></div></section>
+<section><h2>En qué falla</h2><div class="prose"><p>Las fallas también salen del mecanismo. Cuando el modelo no tiene un patrón fuerte para continuar, inventa uno que suena bien. A esa respuesta convincente y falsa se le llama <b>alucinación</b> (<i>hallucination</i>), y tiene su propio capítulo, el segundo de este curso. Por ahora, conviene conocer los terrenos donde aparece:</p><ul><li><b>Datos recientes.</b> Lo ocurrido después de la fecha de corte no lo leyó. Sin <b>búsqueda web</b> (<i>web search</i>), te dará un dato viejo o inventado sobre el precio de hoy, la ley que salió el mes pasado o el resultado de ayer.</li><li><b>Cifras exactas.</b> Porcentajes, montos, fechas y cantidades son justo lo que el modelo reconstruye «por parecido». Un 12 % y un 8 % se ven igual de plausibles.</li><li><b>Cálculos largos.</b> Sumar una columna de doscientos montos o multiplicar números grandes «de memoria» falla con frecuencia. Muchos asistentes pueden <b>ejecutar código</b> (<i>code execution</i>): escriben un pequeño programa que hace la cuenta de verdad. Con esa herramienta, el cálculo es confiable; sin ella, no.</li><li><b>Hechos que no están en lo que leyó.</b> Tu empresa, tus clientes, tus contratos y tus procedimientos internos no estaban en sus datos de entrenamiento. Si no se los das, los inventa con la forma típica que tendrían.</li><li><b>Citas, páginas y enlaces.</b> Una cita textual con número de página o un enlace a un estudio tienen una forma muy reconocible, y el modelo la reproduce perfecto aunque el contenido no exista.</li></ul></div><figure class="fig fig-comparacion" id="01-diagrama-4"><div class="lienzo"><svg viewBox="0 0 820 350" style="min-width:660px" role="img" aria-label="Tres columnas: en qué brilla la IA generativa (tareas de lenguaje), en qué depende de sus herramientas (cálculos, datos de hoy, tablas) y en qué falla (cifras sin fuente, citas, enlaces, hechos recientes o internos)">
+  <defs>
+    <marker id="g1d4-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  <line x1="40" y1="24" x2="780" y2="24" class="ln" style="stroke-width:2" marker-start="url(#g1d4-fl)" marker-end="url(#g1d4-fl)"/>
+  <text x="40" y="16" class="t t-s t-m">más trabajo con el lenguaje</text>
+  <text x="780" y="16" class="t t-s t-m" text-anchor="end">más hechos exactos</text>
+
+  <rect x="16" y="40" width="250" height="296" rx="10" class="c-enl"/>
+  <text x="30" y="66" class="t t-b k-enl">Brilla: úsala</text>
+  <text x="30" y="96" class="t t-s">✓ Redactar desde notas</text>
+  <text x="30" y="120" class="t t-s">✓ Resumir lo que tú le das</text>
+  <text x="30" y="144" class="t t-s">✓ Reformular y cambiar el tono</text>
+  <text x="30" y="168" class="t t-s">✓ Ordenar ideas en un esquema</text>
+  <text x="30" y="192" class="t t-s">✓ Explicar un tema conocido</text>
+  <text x="30" y="216" class="t t-s">✓ Traducir entre idiomas comunes</text>
+  <text x="30" y="240" class="t t-s">✓ Proponer opciones e ideas</text>
+  <text x="30" y="312" class="t t-s t-b">Revisión: leer y ajustar.</text>
+
+  <rect x="285" y="40" width="250" height="296" rx="10" class="c-fis"/>
+  <text x="299" y="66" class="t t-b k-fis">Depende: revisa</text>
+  <text x="299" y="96" class="t t-s">~ Cálculos: bien si usa una</text>
+  <text x="311" y="112" class="t t-s">herramienta de cálculo</text>
+  <text x="299" y="136" class="t t-s">~ Datos de hoy: solo si busca</text>
+  <text x="311" y="152" class="t t-s">en la web, y citando</text>
+  <text x="299" y="176" class="t t-s">~ Analizar una tabla que</text>
+  <text x="311" y="192" class="t t-s">le adjuntas</text>
+  <text x="299" y="216" class="t t-s">~ Hechos muy conocidos</text>
+  <text x="299" y="240" class="t t-s">~ Recordar la conversación</text>
+  <text x="311" y="256" class="t t-s">larga del principio</text>
+  <text x="299" y="312" class="t t-s t-b">Revisión: comprobar una muestra.</text>
+
+  <rect x="554" y="40" width="250" height="296" rx="10" class="c-apl"/>
+  <text x="568" y="66" class="t t-b k-apl">Falla: no confíes</text>
+  <text x="568" y="96" class="t t-s">✗ Cifras exactas sin fuente</text>
+  <text x="568" y="120" class="t t-s">✗ Citas, páginas y enlaces</text>
+  <text x="568" y="144" class="t t-s">✗ Hechos posteriores a su</text>
+  <text x="580" y="160" class="t t-s">fecha de corte</text>
+  <text x="568" y="184" class="t t-s">✗ Lo que no está en lo que</text>
+  <text x="580" y="200" class="t t-s">leyó: tu empresa, tus clientes</text>
+  <text x="568" y="224" class="t t-s">✗ Cálculos largos «de memoria»</text>
+  <text x="568" y="248" class="t t-s">✗ Datos de personas poco</text>
+  <text x="580" y="264" class="t t-s">conocidas</text>
+  <text x="568" y="312" class="t t-s t-b">Revisión: verificar todo.</text>
+</svg></div><figcaption><b>Dónde brilla, dónde depende y dónde falla.</b> La flecha de arriba va del trabajo con el lenguaje (izquierda) a los hechos exactos (derecha). La columna verde es lo que conviene delegar, la naranja depende de que el asistente use una herramienta (calculadora, búsqueda, lectura de archivos) y la roja es lo que no conviene creer sin verificar. La última línea de cada columna dice cuánta revisión pide.</figcaption></figure><div class="lab" id="01-lab-4"><div class="lab-title"><span class="tag">Laboratorio</span><h3>¿Funciona o falla?</h3></div><p class="hint">Doce tareas reales de oficina. Para cada una, predice qué pasa si se la pides a un asistente: funciona bien, depende o suele fallar. Al responder, ves lo que pasa y por qué, y puedes copiar el pedido para probarlo tú en cualquier asistente. La tabla de abajo se llena con tus respuestas.</p><style>
+[id="01-lab-4"] .c1l4-mapa{display:flex;flex-wrap:wrap;gap:6px}
+[id="01-lab-4"] .c1l4-mapa button{width:2.3rem;height:2.3rem;padding:0;border-radius:50%;font:700 .8rem var(--f-mono)}
+[id="01-lab-4"] .c1l4-mapa button.si{background:var(--good-soft);border-color:var(--good);color:var(--ink)}
+[id="01-lab-4"] .c1l4-mapa button.no{background:var(--warm-soft);border-color:var(--warm);color:var(--ink)}
+[id="01-lab-4"] .c1l4-mapa button.actual{outline:3px solid var(--accent);outline-offset:2px}
+[id="01-lab-4"] .c1l4-tarea{background:var(--paper);border-radius:10px;padding:14px;display:grid;gap:10px}
+[id="01-lab-4"] .c1l4-tarea .n{font:700 .75rem var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+[id="01-lab-4"] .c1l4-tarea .q{font:600 1.05rem/1.4 var(--f-display);margin:0}
+[id="01-lab-4"] .c1l4-veredicto{display:grid;gap:8px;border-left:4px solid var(--accent);padding:4px 12px}
+[id="01-lab-4"] .c1l4-veredicto.si{border-color:var(--good)}
+[id="01-lab-4"] .c1l4-veredicto.rev{border-color:var(--accent)}
+[id="01-lab-4"] .c1l4-veredicto.no{border-color:var(--warm)}
+[id="01-lab-4"] .c1l4-veredicto p{margin:0}
+[id="01-lab-4"] .c1l4-pedido{display:grid;gap:6px}
+[id="01-lab-4"] .c1l4-pedido code{display:block;white-space:pre-wrap;font:.85rem/1.45 var(--f-mono);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:8px 10px;overflow-wrap:anywhere}
+[id="01-lab-4"] .c1l4-pedido button{justify-self:start}
+[id="01-lab-4"] td,[id="01-lab-4"] th{font-size:.85rem;vertical-align:top}
+[id="01-lab-4"] td.si{color:var(--good);font-weight:700}
+[id="01-lab-4"] td.rev{color:var(--accent);font-weight:700}
+[id="01-lab-4"] td.no{color:var(--warm);font-weight:700}
+</style>
+<div class="c1l4-mapa" id="c1l4-mapa" aria-label="Las 12 tareas"></div>
+<div class="c1l4-tarea">
+  <span class="n" id="c1l4-n"></span>
+  <p class="q" id="c1l4-q"></p>
+  <div class="btns" role="group" aria-label="Tu predicción">
+    <button data-v="si" class="c1l4-v">Funciona bien</button>
+    <button data-v="rev" class="c1l4-v">Depende: hay que revisar</button>
+    <button data-v="no" class="c1l4-v">Suele fallar</button>
+  </div>
+  <div id="c1l4-ver" aria-live="polite"></div>
+  <div class="btns"><button id="c1l4-ant">← Anterior</button><button id="c1l4-sig" class="primary">Siguiente →</button></div>
+</div>
+<div class="readout texto" id="c1l4-out" aria-live="polite"></div>
+<div class="tbl"><table><thead><tr><th>Tarea</th><th>Tú dijiste</th><th>Lo que pasa</th></tr></thead><tbody id="c1l4-tabla"></tbody></table></div></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Ponlo a prueba: una cuenta y una noticia</h3></div><p>Vas a comprobar dos fallas típicas con un asistente gratuito cualquiera y con tu propia computadora.</p><ol class="steps"><li><span>En una conversación nueva, pide: «¿Cuánto es 48.373 × 9.216? Responde solo con el número, sin usar herramientas».</span></li><li><span>En otra conversación nueva, pide lo mismo pero cambia el final: «usa una herramienta de cálculo si la tienes y dime si la usaste».</span></li><li><span>Comprueba el resultado tú mismo con la calculadora del sistema o con la terminal, con el comando de tu sistema (abajo).</span></li><li><span>Por último, pregunta: «¿Cuál es tu fecha de corte de conocimiento y cuál fue la noticia económica más importante de esta semana?».</span></li></ol><p>Abre PowerShell (en Windows) o la Terminal (en macOS y Linux) y escribe:</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><div class="cmd-l"><code>48373 * 9216</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>echo $((48373 * 9216))</code><button type="button" class="copiar">Copiar</button></div></div></div><p><b>Qué observar:</b> el resultado correcto es 445805568. Sin herramienta, el asistente puede acertar o dar un número muy parecido con algún dígito cambiado; con herramienta, acierta y suele mostrar el código que usó. En la última pregunta, un asistente sin búsqueda web debería reconocer que no sabe lo de esta semana; uno con búsqueda te dará una noticia con enlaces, que tendrás que abrir para comprobar. Si inventa una noticia sin fuente, acabas de ver una alucinación.</p></div></section>
+<section><h2>Los asistentes del mercado y qué los distingue</h2><div class="prose"><p>Hay muchos asistentes, y casi todos tienen una versión gratuita. Algunos ejemplos del mercado, sin orden de preferencia: ChatGPT (de OpenAI), Claude (de Anthropic), Gemini (de Google), Microsoft Copilot, Meta AI, DeepSeek, Le Chat (de Mistral AI), Perplexity (un buscador que responde con fuentes) y Duck.ai (de DuckDuckGo, que da acceso a varios modelos sin crear cuenta). Para las prácticas de este curso <b>cualquiera sirve</b>: lo que aprendes vale para todos.</p><p>Por fuera se parecen: una caja de texto y una conversación. Por dentro son sistemas con varias piezas, y las diferencias entre uno y otro están en esas piezas más que en la caja de texto.</p></div><figure class="fig fig-arquitectura" id="01-diagrama-5"><div class="lienzo"><svg viewBox="0 0 820 400" style="min-width:660px" role="img" aria-label="Las piezas de un asistente de IA: la aplicación donde escribes, el modelo de lenguaje en el centro con las instrucciones del fabricante y tu conversación, las herramientas que puede usar y las condiciones sobre tus datos">
+  <defs>
+    <marker id="g1d5-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  
+  <rect x="16" y="14" width="788" height="66" rx="10" class="d-casa"/>
+  <text x="30" y="38" class="t t-b k-casa">La aplicación: donde escribes</text>
+  <rect x="30" y="48" width="110" height="24" rx="12" class="caja"/><text x="85" y="64" class="t t-s" text-anchor="middle">Página web</text>
+  <rect x="150" y="48" width="120" height="24" rx="12" class="caja"/><text x="210" y="64" class="t t-s" text-anchor="middle">App del celular</text>
+  <rect x="280" y="48" width="210" height="24" rx="12" class="caja"/><text x="385" y="64" class="t t-s" text-anchor="middle">Dentro del correo y la oficina</text>
+  <rect x="500" y="48" width="70" height="24" rx="12" class="caja"/><text x="535" y="64" class="t t-s" text-anchor="middle">Voz</text>
+
+  
+  <rect x="16" y="108" width="236" height="170" rx="10" class="caja"/>
+  <text x="30" y="132" class="t t-b">Lo que el modelo lee</text>
+  <text x="30" y="156" class="t t-s">• Instrucciones del fabricante</text>
+  <text x="42" y="172" class="t t-s t-m">(tono, reglas, límites)</text>
+  <text x="30" y="196" class="t t-s">• Tu conversación</text>
+  <text x="30" y="220" class="t t-s">• Archivos que adjuntas</text>
+  <text x="30" y="244" class="t t-s">• Resultados de herramientas</text>
+  <text x="30" y="268" class="t t-xs t-m">VENTANA DE CONTEXTO</text>
+
+  
+  <rect x="292" y="128" width="236" height="130" rx="12" class="c-red" style="stroke-width:2"/>
+  <text x="410" y="164" class="t t-b" text-anchor="middle">Modelo de lenguaje</text>
+  <text x="410" y="184" class="t t-xs k-red" text-anchor="middle">LLM</text>
+  <text x="410" y="210" class="t t-s" text-anchor="middle">Predice la siguiente palabra.</text>
+  <text x="410" y="228" class="t t-s" text-anchor="middle">Decide cuándo pedir</text>
+  <text x="410" y="244" class="t t-s" text-anchor="middle">ayuda a una herramienta.</text>
+
+  
+  <rect x="568" y="108" width="236" height="170" rx="10" class="c-tra"/>
+  <text x="582" y="132" class="t t-b">Herramientas (tools)</text>
+  <text x="582" y="156" class="t t-s">• Búsqueda en la web</text>
+  <text x="582" y="178" class="t t-s">• Ejecutar código: cálculos,</text>
+  <text x="594" y="194" class="t t-s">tablas y gráficos</text>
+  <text x="582" y="216" class="t t-s">• Leer archivos e imágenes</text>
+  <text x="582" y="238" class="t t-s">• Generar imágenes</text>
+  <text x="582" y="260" class="t t-s">• Memoria entre conversaciones</text>
+
+  <line x1="410" y1="80" x2="410" y2="126" class="ln" style="stroke-width:2" marker-start="url(#g1d5-fl)" marker-end="url(#g1d5-fl)"/>
+  <line x1="252" y1="193" x2="290" y2="193" class="ln" style="stroke-width:2" marker-end="url(#g1d5-fl)"/>
+  <line x1="530" y1="193" x2="566" y2="193" class="ln" style="stroke-width:2" marker-start="url(#g1d5-fl)" marker-end="url(#g1d5-fl)"/>
+
+  
+  <rect x="16" y="306" width="788" height="80" rx="10" class="d-sis"/>
+  <text x="30" y="330" class="t t-b k-sis">Las condiciones: qué pasa con tus datos</text>
+  <text x="30" y="354" class="t t-s">• ¿Se guardan tus conversaciones y por cuánto tiempo?</text>
+  <text x="30" y="374" class="t t-s">• ¿Se usan para entrenar modelos futuros? ¿Se puede desactivar?</text>
+  <text x="470" y="354" class="t t-s">• Plan gratuito o de pago, límites de uso</text>
+  <text x="470" y="374" class="t t-s">• Versión personal o empresarial</text>
+</svg></div><figcaption><b>Qué hay detrás de un asistente.</b> Arriba, la aplicación donde escribes (web, celular, dentro del correo y las herramientas de oficina, por voz). En el centro, el modelo de lenguaje; a su izquierda, todo lo que lee en cada vuelta, y a su derecha, las <b>herramientas</b> (<i>tools</i>) que puede pedir: buscar en la web, ejecutar código, leer archivos, generar imágenes o guardar recuerdos. Abajo, las condiciones sobre tus datos, que dependen de la empresa que ofrece el servicio y del plan.</figcaption></figure><div class="prose"><p>Cuando compares asistentes, mira estas piezas, no la publicidad:</p><div class="tbl"><table><thead><tr><th>Qué mirar</th><th>Por qué importa</th></tr></thead><tbody><tr><td>El modelo y su fecha de corte</td><td>Modelos más recientes y más grandes suelen escribir y razonar mejor</td></tr><tr><td>Búsqueda web con citas</td><td>Sin ella, no sabe nada reciente; con ella, puedes comprobar la fuente</td></tr><tr><td>Ejecutar código o analizar datos</td><td>Decide si los cálculos y las tablas son confiables</td></tr><tr><td>Archivos adjuntos</td><td>Permite que responda con tus documentos (capítulo 4)</td></tr><tr><td>Imagen y voz</td><td>Un asistente <b>multimodal</b> (<i>multimodal</i>) lee y produce imágenes y audio, además de texto</td></tr><tr><td>Memoria</td><td>Recordar preferencias es cómodo, pero conviene saber qué guarda y cómo borrarlo</td></tr><tr><td>Uso de tus datos</td><td>Algunos planes usan tus conversaciones para entrenar modelos futuros; otros no</td></tr><tr><td>Versión empresarial</td><td>Suele traer más controles de privacidad y administración</td></tr></tbody></table></div><p>Las funciones cambian cada pocos meses, así que una tabla de «quién tiene qué» envejece rápido. Lo que no envejece es la lista de preguntas. Y una aclaración importante: en el trabajo, la pregunta de qué asistente usar no es solo tuya. Si tu empresa tiene una política o una versión contratada, esa manda.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Compara dos asistentes con la misma tarea</h3></div><p>Elige dos asistentes gratuitos distintos de la lista anterior. Si no quieres crear cuenta, Duck.ai y algunos otros permiten usarlos sin registro.</p><ol class="steps"><li><span>En los dos, pide lo mismo: «Escribe un párrafo de cinco líneas para el informe mensual de un área de ventas que explique que las ventas cayeron por un retraso en la entrega de un proveedor. Tono profesional, sin inventar cifras».</span></li><li><span>Luego pregunta en los dos: «¿Tienes búsqueda en la web? ¿Puedes ejecutar código? ¿Puedo adjuntarte un archivo? ¿Cuál es tu fecha de corte?».</span></li><li><span>Busca en cada uno la sección de configuración o de privacidad y anota si dice algo sobre usar tus conversaciones para entrenar.</span></li></ol><p><b>Qué observar:</b> los dos párrafos serán buenos y distintos, porque la redacción es terreno común. Las diferencias reales aparecen en el paso 2 y en el 3. Fíjate también en si alguno metió una cifra aunque pediste que no: es una buena prueba de cuánto respeta las instrucciones.</p></div></section>
+<section><h2>Riesgos y ética, en una página</h2><div class="prose"><p>Usar bien la IA también es usarla con cuidado. Este curso trata el uso; el curso <a href="https://aaramirez.github.io/ia-responsable/temario.html" target="_blank" rel="noopener">IA responsable</a> trata estos temas a fondo. Lo mínimo que conviene tener presente desde hoy:</p><ul><li><b>Privacidad.</b> Lo que escribes en un asistente sale de tu computadora y llega a los servidores de otra empresa. No pegues datos personales de clientes ni información confidencial sin saber qué permite la política de tu empresa.</li><li><b>Sesgo.</b> El modelo aprendió de textos escritos por personas, con sus prejuicios. Puede reproducirlos en una descripción de cargo, en una evaluación o en una imagen.</li><li><b>Derechos de autor.</b> Un texto o una imagen generados pueden parecerse demasiado a una obra existente. Las reglas sobre quién es dueño de lo generado todavía se están definiendo.</li><li><b>Suplantación.</b> La misma tecnología que redacta tu correo puede imitar la voz o la cara de una persona. Desconfía de un audio o un video inesperado que pide dinero o datos.</li><li><b>Responsabilidad.</b> Si envías un informe con una cifra inventada, el error es tuyo, no del asistente. Todo lo que sale de la IA es un borrador hasta que lo revisas.</li><li><b>Consumo de recursos.</b> Entrenar y usar estos modelos consume electricidad y agua en centros de datos. No es razón para no usarlos, pero sí para no usarlos sin sentido.</li></ul><p>Si quieres entender cómo funciona por dentro un modelo de lenguaje (tokens, embeddings, entrenamiento), eso está en el curso <a href="https://aaramirez.github.io/modelos-de-ia/temario.html" target="_blank" rel="noopener">Modelos de IA</a>.</p></div></section>
+<section><h2>Pedidos para copiar</h2><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Qué puedes y qué no</h3></div><div class="code-copia"><pre><code>Voy a usarte para preparar el informe mensual de mi área. Antes de empezar, dime con honestidad: ¿qué partes de ese trabajo haces bien y en cuáles debo verificar tu respuesta? Dime también si en esta conversación tienes búsqueda en la web, si puedes ejecutar código para hacer cálculos y cuál es tu fecha de corte de conocimiento.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Separar lenguaje de datos</h3></div><div class="code-copia"><pre><code>Te voy a pegar mis notas para el informe mensual. Redacta un borrador claro y profesional. Reglas: usa solo las cifras que aparecen en mis notas, no agregues ninguna; donde haga falta un dato que no tengo, escribe [FALTA DATO] en lugar de inventarlo.
+[pega aquí tus notas]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Marcar lo que hay que verificar</h3></div><div class="code-copia"><pre><code>Revisa el texto que pego a continuación y haz una lista de todas las afirmaciones que se pueden verificar: cifras, fechas, nombres, citas y enlaces. Para cada una, dime si aparece en el material que te di o si la agregaste tú.
+[pega aquí el texto]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div></section>
+<section><h2>Lo que te llevas</h2><div class="prose"><p>La IA generativa es muy buena con el lenguaje y poco confiable con los hechos: úsala para lo primero y verifica lo segundo. Cuando un dato importa, tráelo tú desde el sistema que lo guarda, o pide al asistente que use una herramienta y comprueba el resultado.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Por qué un asistente puede escribir una cifra falsa con total seguridad?</summary><p>Porque no consulta un registro: elige la continuación más probable según lo que leyó. Cuando ningún dato domina, igual escribe un número que «encaja», con el mismo tono que usa para lo cierto.</p></details><details><summary>Preguntas lo mismo en dos conversaciones nuevas y la cifra cambia. ¿Qué te dice eso?</summary><p>Que la cifra no salió de un dato, sino del sorteo entre continuaciones plausibles. Que varíen las palabras es normal; que varíen los hechos es una alarma.</p></details><details><summary>¿Qué diferencia hay entre buscar en la base de datos de tu empresa y preguntarle a la IA?</summary><p>La base de datos devuelve solo lo que coincide exactamente y dice «0 resultados» si no hay nada. La IA busca por parecido de significado: entiende sinónimos, pero siempre devuelve algo, aunque no sea lo correcto.</p></details><details><summary>¿Por qué un asistente sin búsqueda web no sabe lo que pasó la semana pasada?</summary><p>Porque solo leyó textos publicados hasta su fecha de corte. Lo posterior no está en su entrenamiento.</p></details><details><summary>¿Cuándo puedes confiar más en un cálculo hecho por un asistente?</summary><p>Cuando usó una herramienta que ejecuta código para hacer la cuenta, en lugar de escribir el resultado «de memoria». Aun así, conviene comprobar una muestra.</p></details><details><summary>Nombra tres tareas en las que la IA brilla y di qué tienen en común.</summary><p>Por ejemplo redactar desde notas, resumir un documento que le das y cambiar el tono de un correo. En las tres el material está en tu pedido o es conocimiento común, y el resultado se revisa con solo leerlo.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es la arquitectura Transformer y qué propuso el artículo «Attention Is All You Need» de 2017?<small>Pista: busca el título del artículo junto con «mecanismo de atención».</small></li><li>¿Por qué el mismo texto suele ocupar más tokens en español que en inglés, y qué consecuencias tiene eso?<small>Pista: prueba un «tokenizador» en línea con la misma frase en los dos idiomas.</small></li><li>¿Qué es la «semilla» (<i>seed</i>) de un generador de números aleatorios y por qué algunos programadores la fijan cuando usan un modelo de lenguaje?</li><li>¿Cuánta electricidad y cuánta agua se estima que consume entrenar un modelo grande o responder una pregunta?<small>Pista: busca informes recientes de la Agencia Internacional de Energía sobre centros de datos.</small></li><li>¿Qué diferencia hay entre un modelo de «pesos abiertos» y uno cerrado, y por qué le importa eso a una empresa?</li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://aaramirez.github.io/modelos-de-ia/temario.html" target="_blank" rel="noopener">Modelos de IA: cómo funciona un modelo de lenguaje por dentro <small>curso</small></a><a class="vid" href="https://aaramirez.github.io/ia-responsable/temario.html" target="_blank" rel="noopener">IA responsable: sesgo, privacidad, derechos de autor y regulación <small>curso</small></a><a class="vid" href="https://es.wikipedia.org/wiki/Modelo_extenso_de_lenguaje" target="_blank" rel="noopener">Modelo extenso de lenguaje, en Wikipedia <small>lectura</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-generativa" target="_blank" rel="noopener">github.com/aaramirez/ia-generativa</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const post=[['fin',.5],['frente',.3],['gracias',.2]];
+  const emp=[['empleados',.7],['clientes',.3]];
+  const G={
+    a0:{t:'El informe de ventas del mes',n:[['a_pasado',.45],['a_crecio',.30],['a_muestra',.25]]},
+    a_pasado:{t:'pasado',n:[['a_muestra',.45],['a_crecio',.35],['fin',.20]]},
+    a_crecio:{t:'creció',n:[['p8',.35],['p12',.30],['bastante',.20],['poco',.15]]},
+    p8:{t:'un 8 %',n:post},p12:{t:'un 12 %',n:post},p3:{t:'un 3 %',n:post},
+    bastante:{t:'bastante',n:post},poco:{t:'poco',n:post},
+    frente:{t:'frente a febrero',n:[['fin',.7],['gracias',.3]]},
+    gracias:{t:'gracias a',n:[['campana',.6],['plan',.4]]},
+    campana:{t:'la campaña',n:[['fin',.75],['de_fin',.25]]},
+    de_fin:{t:'de fin de trimestre',n:[['fin',1]]},
+    plan:{t:'el nuevo plan',n:[['fin',1]]},
+    a_muestra:{t:'muestra',n:[['un_crec',.5],['que',.3],['una',.2]]},
+    un_crec:{t:'un crecimiento',n:[['del8',.35],['del12',.30],['del3',.15],['sostenido',.20]]},
+    del8:{t:'del 8 %',n:post},del12:{t:'del 12 %',n:post},del3:{t:'del 3 %',n:post},
+    sostenido:{t:'sostenido',n:[['fin',.6],['gracias',.4]]},
+    que:{t:'que las ventas',n:[['crecieron',.65],['cayeron',.35]]},
+    crecieron:{t:'crecieron',n:[['p8',.4],['p12',.3],['bastante',.3]]},
+    cayeron:{t:'cayeron',n:[['p3',.5],['poco',.5]]},
+    una:{t:'una',n:[['mejora',.6],['caida',.4]]},
+    mejora:{t:'mejora',n:[['frente',.5],['gracias',.3],['fin',.2]]},
+    caida:{t:'caída',n:[['frente',.6],['fin',.4]]},
+    b0:{t:'Estimado cliente, le escribimos para',n:[['informarle',.55],['recordarle',.25],['agradecerle',.15],['ofrecerle',.05]]},
+    informarle:{t:'informarle que',n:[['su_factura',.4],['su_plan',.35],['el_servicio',.25]]},
+    recordarle:{t:'recordarle que',n:[['su_factura',.7],['su_plan',.3]]},
+    agradecerle:{t:'agradecerle',n:[['su_confianza',.7],['su_pago',.3]]},
+    ofrecerle:{t:'ofrecerle',n:[['un_desc',.6],['mejor_plan',.4]]},
+    su_factura:{t:'su factura',n:[['vence',.55],['disponible',.45]]},
+    vence:{t:'vence el viernes',n:[['fin',1]]},
+    disponible:{t:'ya está disponible',n:[['fin',.7],['en_portal',.3]]},
+    en_portal:{t:'en el portal',n:[['fin',1]]},
+    su_plan:{t:'su plan',n:[['cambia',.5],['renueva',.5]]},
+    cambia:{t:'cambia el próximo mes',n:[['fin',1]]},
+    renueva:{t:'se renueva automáticamente',n:[['fin',1]]},
+    el_servicio:{t:'el servicio',n:[['restablecido',.6],['mantenimiento',.4]]},
+    restablecido:{t:'ya fue restablecido',n:[['fin',1]]},
+    mantenimiento:{t:'tendrá un mantenimiento programado',n:[['fin',1]]},
+    su_confianza:{t:'su confianza',n:[['fin',.8],['en_nosotros',.2]]},
+    en_nosotros:{t:'en nosotros',n:[['fin',1]]},
+    su_pago:{t:'su pago puntual',n:[['fin',1]]},
+    un_desc:{t:'un descuento',n:[['del20',.5],['especial',.5]]},
+    del20:{t:'del 20 %',n:[['fin',1]]},especial:{t:'especial',n:[['fin',1]]},
+    mejor_plan:{t:'un plan mejor',n:[['fin',1]]},
+    c0:{t:'La capital de Francia es',n:[['paris',.96],['lyon',.02],['una_ciudad',.02]]},
+    paris:{t:'París',n:[['fin',.9],['desde',.1]]},
+    desde:{t:'desde hace siglos',n:[['fin',1]]},
+    lyon:{t:'Lyon',n:[['fin',1]]},
+    una_ciudad:{t:'una ciudad',n:[['visitada',1]]},
+    visitada:{t:'muy visitada',n:[['fin',1]]},
+    d0:{t:'En 2024, la empresa Ejemplo S.A. tenía',n:[['n1200',.22],['n5000',.20],['n850',.18],['n2400',.16],['n10000',.13],['n300',.11]]},
+    n1200:{t:'unos 1.200',n:emp},n5000:{t:'5.000',n:emp},n850:{t:'cerca de 850',n:emp},
+    n2400:{t:'2.400',n:emp},n10000:{t:'más de 10.000',n:emp},n300:{t:'unos 300',n:emp},
+    empleados:{t:'empleados',n:[['fin',.7],['en_pais',.3]]},
+    clientes:{t:'clientes',n:[['fin',.7],['en_pais',.3]]},
+    en_pais:{t:'en todo el país',n:[['fin',1]]},
+    fin:{t:'.',n:[]}
+  };
+  const NOTA={
+    a0:'Las cifras que aparecen (8 %, 12 %, 3 %) no salen de ningún informe: son continuaciones frecuentes en textos parecidos. El modelo escribe una cifra porque «toca» una cifra.',
+    b0:'En correos de servicio al cliente estas continuaciones son tan comunes que la frase casi siempre suena natural. Es el terreno donde la IA brilla.',
+    c0:'Un hecho que aparece una y otra vez en lo que el modelo leyó tiene una continuación casi segura. Sube la temperatura al máximo y mira qué pasa con «Lyon».',
+    d0:'Ejemplo S.A. no existe. Aun así, el modelo tiene que poner alguna palabra, y cualquier número suena bien. Así nace una cifra inventada.'
+  };
+  let ini='a0',camino=[],elegida=null,antes=null;
+  const nodo=()=>camino.length?camino[camino.length-1]:ini;
+  const T=()=>+$('#c1l1-t').value;
+  function ajustar(ops){
+    const t=T();
+    if(t<0.05){let m=0;ops.forEach((o,i)=>{if(o[1]>ops[m][1])m=i;});return ops.map((o,i)=>[o[0],i===m?1:0]);}
+    const w=ops.map(o=>Math.pow(o[1],1/t)),s=w.reduce((a,b)=>a+b,0);
+    return ops.map((o,i)=>[o[0],w[i]/s]);
+  }
+  const pct=p=>(p*100).toFixed(p>0&&p<0.1?1:0).replace('.',',')+' %';
+  function sortear(ops){let r=Math.random(),a=0;for(const o of ops){a+=o[1];if(r<a)return o[0];}return ops[ops.length-1][0];}
+  function texto(){
+    let h='<span class="ini">'+G[ini].t+'</span>';
+    camino.forEach((id,i)=>{const w=G[id].t,cls=i===camino.length-1?' class="nueva"':'';h+=(w==='.'?'':' ')+'<span'+cls+'>'+w+'</span>';});
+    if(!G[nodo()].n.length)return h;
+    return h+'<span class="cur" aria-hidden="true"></span>';
+  }
+  function elegir(id,porModelo){
+    const ops=ajustar(G[nodo()].n),o=ops.find(x=>x[0]===id);
+    antes={id:id,p:o?o[1]:0,top:Math.max(...ops.map(x=>x[1])),modelo:porModelo,desde:nodo()};
+    camino.push(id);elegida=id;pintar();
+  }
+  function pintar(){
+    $('#c1l1-t-o').textContent=T().toFixed(1).replace('.',',');
+    $('#c1l1-texto').innerHTML=texto();
+    const n=G[nodo()],cont=$('#c1l1-ops');
+    cont.innerHTML='';
+    if(!n.n.length){
+      $('#c1l1-tit').textContent='La frase terminó: el modelo eligió el punto final.';
+    }else{
+      $('#c1l1-tit').textContent='Palabras candidatas después de «'+(camino.length?G[nodo()].t:G[ini].t.split(' ').slice(-1)[0])+'» (toca una para elegirla tú)';
+      ajustar(n.n).slice().sort((a,b)=>b[1]-a[1]).forEach(([id,p])=>{
+        const b=document.createElement('button');b.type='button';b.className='c1l1-op';
+        b.setAttribute('aria-label','Elegir «'+G[id].t+'», probabilidad '+pct(p));
+        b.innerHTML='<span class="pal">'+(id==='fin'?'. (punto final)':G[id].t)+'</span><span class="bar"><i style="width:'+(p*100).toFixed(1)+'%"></i></span><span class="pct">'+pct(p)+'</span>';
+        b.addEventListener('click',()=>elegir(id,false));
+        cont.appendChild(b);
+      });
+    }
+    $('#c1l1-uno').disabled=$('#c1l1-todo').disabled=!n.n.length;
+    // lectura
+    const ops=n.n.length?ajustar(n.n):[];
+    const top=ops.length?Math.max(...ops.map(x=>x[1])):0;
+    let l='';
+    if(antes){
+      const quien=antes.modelo?'El modelo eligió':'Elegiste';
+      const w=antes.id==='fin'?'el punto final':'«'+G[antes.id].t+'»';
+      const rara=antes.p<antes.top-1e-9;
+      l+='<span>'+quien+' '+w+', que tenía '+pct(antes.p)+(rara?' <span class="warn">(no era la más probable: así aparece la variedad, y a veces el error)</span>':' <span class="ok">(la más probable)</span>')+'.</span>';
+    }
+    if(ops.length){
+      const t=T();
+      const seguridad=top>=0.8?'<span class="ok">Una opción domina: la continuación es casi segura.</span>':top<0.3?'<span class="warn">Ninguna opción domina: el modelo no «sabe» qué sigue, pero igual escribirá algo con total seguridad.</span>':'<span>Hay varias continuaciones razonables.</span>';
+      l+=seguridad;
+      l+='<span>'+(t<0.05?'Temperatura 0: siempre gana la más probable, y la frase sale igual cada vez.':t<0.8?'Temperatura baja: la favorita se lleva casi todo.':t<=1.2?'Temperatura media: se respetan las probabilidades aprendidas.':'Temperatura alta: las opciones raras ganan terreno; más creatividad y más disparates.')+'</span>';
+    }
+    l+='<span>'+NOTA[ini]+'</span>';
+    $('#c1l1-out').innerHTML=l;
+  }
+  $('#c1l1-uno').addEventListener('click',()=>{const n=G[nodo()];if(n.n.length)elegir(sortear(ajustar(n.n)),true);});
+  $('#c1l1-todo').addEventListener('click',()=>{let k=0;while(G[nodo()].n.length&&k<15){const id=sortear(ajustar(G[nodo()].n));const ops=ajustar(G[nodo()].n),o=ops.find(x=>x[0]===id);antes={id:id,p:o[1],top:Math.max(...ops.map(x=>x[1])),modelo:true};camino.push(id);k++;}pintar();});
+  $('#c1l1-reset').addEventListener('click',()=>{camino=[];antes=null;pintar();});
+  $('#c1l1-ini').addEventListener('change',e=>{ini=e.target.value;camino=[];antes=null;pintar();});
+  $('#c1l1-t').addEventListener('input',pintar);
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const D=[
+    ['Cómo solicitar vacaciones en el portal de personas',20,25],
+    ['Días libres: política de descanso anual',25,37],
+    ['Permisos por enfermedad y licencias',35,20],
+    ['Cómo dar de baja un servicio',74,27],
+    ['Cancelar el contrato y devolver el equipo',82,40],
+    ['Cambiar de plan sin penalización',64,17],
+    ['Por qué mi factura subió este mes',68,70],
+    ['Cobros duplicados: cómo pedir el reembolso',82,81],
+    ['Fechas de pago y recargos por mora',60,86],
+    ['Configurar la impresora de la oficina',30,78],
+    ['Restablecer la contraseña del correo',17,64]
+  ];
+  const Q=[
+    ['quiero tomarme unos días de descanso',22,30,'Dos palabras coinciden y la búsqueda exacta encuentra un artículo. La de parecido también trae «vacaciones» y «permisos», que no comparten ninguna palabra con la pregunta.'],
+    ['me cobraron dos veces',78,77,'Ninguna palabra coincide («cobraron» no es «cobros»): la búsqueda exacta no encuentra nada. La de parecido llega directo a «Cobros duplicados».'],
+    ['ya no quiero el servicio',77,31,'La palabra «servicio» encuentra un artículo. La búsqueda por parecido agrega «Cancelar el contrato», que es lo que la persona quiere hacer.'],
+    ['olvidé mi clave',20,69,'«Clave» y «contraseña» no se parecen como palabras, pero sí en significado. Sin parecido, la persona se queda sin respuesta.'],
+    ['cómo pido mi factura',66,75,'Aquí las dos búsquedas aciertan. Ojo: con un radio grande, la búsqueda por parecido trae artículos cada vez menos relacionados, y nunca dice «no encontré».']
+  ];
+  const VACIAS=new Set('de la el los las un una unos unas y o a en por para que mi me mis tu su sus ya no del al como cómo es este esta quiero dos veces pido'.split(' '));
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const pal=s=>norm(s).split(/[^a-zñ0-9]+/).filter(w=>w&&!VACIAS.has(w));
+  const X=v=>12+v*2.76,Y=v=>12+v*2.26;
+  function pintar(){
+    const q=Q[+$('#c1l2-q').value],R=+$('#c1l2-r').value;
+    $('#c1l2-r-o').textContent=R;
+    const qp=new Set(pal(q[0]));
+    const exa=D.map((d,i)=>({i,ws:pal(d[0]).filter(w=>qp.has(w))})).filter(o=>o.ws.length);
+    const par=D.map((d,i)=>({i,d:Math.hypot(d[1]-q[1],d[2]-q[2])})).filter(o=>o.d<=R).sort((a,b)=>a.d-b.d);
+    const exaSet=new Set(exa.map(o=>o.i)),parSet=new Set(par.map(o=>o.i));
+    let s='';
+    [['PERSONAS',6,14],['ATENCIÓN',228,14],['SISTEMAS',6,246],['FACTURACIÓN',212,246]].forEach(([t,x,y])=>{s+='<text class="zona" x="'+x+'" y="'+y+'">'+t+'</text>';});
+    s+='<ellipse class="radio" cx="'+X(q[1])+'" cy="'+Y(q[2])+'" rx="'+(R*2.76)+'" ry="'+(R*2.26)+'"/>';
+    par.forEach(o=>{s+='<line class="enl" x1="'+X(q[1])+'" y1="'+Y(q[2])+'" x2="'+X(D[o.i][1])+'" y2="'+Y(D[o.i][2])+'"/>';});
+    D.forEach((d,i)=>{s+='<g class="doc'+(parSet.has(i)?' par':'')+(exaSet.has(i)?' exa':'')+'"><circle cx="'+X(d[1])+'" cy="'+Y(d[2])+'" r="11"/><text x="'+X(d[1])+'" y="'+Y(d[2])+'">'+(i+1)+'</text></g>';});
+    s+='<circle class="q" cx="'+X(q[1])+'" cy="'+Y(q[2])+'" r="6"/>';
+    $('#c1l2-svg').innerHTML=s;
+    const marcar=(t,ws)=>t.split(/(\s+)/).map(w=>ws.includes(pal(w)[0])?'<mark>'+w+'</mark>':w).join('');
+    $('#c1l2-exa').innerHTML=exa.length?'<ol>'+exa.map(o=>'<li value="'+(o.i+1)+'">'+marcar(D[o.i][0],o.ws)+'</li>').join('')+'</ol>':'<p class="vacio">Sin resultados: ninguna palabra coincide.</p>';
+    $('#c1l2-par').innerHTML=par.length?'<ol>'+par.map(o=>'<li value="'+(o.i+1)+'">'+D[o.i][0]+'<span class="sim">'+Math.max(0,Math.round(100-o.d*1.6))+' %</span></li>').join('')+'</ol>':'<p class="vacio">El radio es muy chico: agrándalo.</p>';
+    let l='<span>'+q[3]+'</span>';
+    if(par.length&&par[par.length-1].d>22)l+='<span class="warn">Con este radio ya entran artículos lejanos: el parecido baja y la respuesta se vuelve menos confiable.</span>';
+    l+='<span>Exacta: '+exa.length+' resultado(s). Por parecido: '+par.length+' resultado(s). El porcentaje es la cercanía en el mapa, no una probabilidad de acierto.</span>';
+    $('#c1l2-out').innerHTML=l;
+  }
+  $('#c1l2-q').addEventListener('change',pintar);
+  $('#c1l2-r').addEventListener('input',pintar);
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const P=[
+    {p:'Dame un título para el informe mensual de ventas.',
+     s:[[['Ventas de marzo: ',4],['Informe de marzo: ',3],['Marzo en cifras: ',2],['Resultados de marzo: ',3]],
+        [['crecimiento sostenido',3],['un mes de avance',2],['la campaña da frutos',2],['metas superadas',2],['un cierre sólido',2]]],
+     n:['qué palabras elige para el título','que siempre es un título corto con el mes'],
+     l:'Es una tarea creativa: hay muchas respuestas buenas y la variedad es una ventaja. Pide varias opciones y elige.'},
+    {p:'¿Cuál es la capital de Perú?',
+     s:[[['La capital de Perú es ',8],['Es ',1],['La capital peruana es ',1]],
+        [['Lima',60],['Cusco',0.3]],
+        [['.',5],[', una ciudad en la costa del Pacífico.',2],[', la ciudad más poblada del país.',2]]],
+     n:['la forma de decirlo y el detalle que agrega','el dato: Lima'],
+     l:'El dato aparece tantas veces en lo que el modelo leyó que casi no cambia. Sube la temperatura al máximo y pregunta varias veces: hasta un dato conocido puede salir mal.'},
+    {p:'Resume en una frase: «Las ventas subieron 8 % en marzo por la campaña de fin de trimestre».',
+     s:[[['Las ventas crecieron ',3],['Las ventas subieron ',3],['Las ventas aumentaron ',2]],
+        [['un 8 %',20],['8 %',10],['alrededor de un 8 %',1.5]],
+        [[' en marzo gracias a la campaña de fin de trimestre.',3],[' en marzo, impulsadas por la campaña de cierre de trimestre.',2],[' en marzo por la campaña de fin de trimestre.',3]]],
+     n:['las palabras','el contenido: el 8 %, marzo y la campaña'],
+     l:'Como el dato está en lo que tú le diste, se mantiene. Pero mira si aparece «alrededor de un 8 %»: un resumen también puede suavizar o torcer una cifra. Compara siempre con el original.'},
+    {p:'¿Cuántos empleados tenía la empresa Ejemplo S.A. en 2024?',
+     s:[[['Ejemplo S.A. tenía ',3],['En 2024, Ejemplo S.A. contaba con ',2],['Según sus informes, Ejemplo S.A. tenía ',2]],
+        [['unos 1.200',2],['cerca de 850',2],['alrededor de 2.400',2],['3.150',2],['unos 600',2]],
+        [[' empleados.',3],[' empleados en todo el país.',2],[' trabajadores.',2]]],
+     n:['la cifra, y hasta la supuesta fuente («según sus informes»)','solo el tono seguro'],
+     l:'Ejemplo S.A. no existe, y la cifra cambia cada vez. Esa es una señal de alarma: si un número cambia al repetir la pregunta, no salió de un dato. Algunos asistentes responden «no tengo esa información»; muchos inventan.'}
+  ];
+  const T=()=>+$('#c1l3-t').value;
+  function sortear(ops){
+    const t=T();
+    if(t<0.05){let m=0;ops.forEach((o,i)=>{if(o[1]>ops[m][1])m=i;});return m;}
+    const w=ops.map(o=>Math.pow(o[1],1/t)),s=w.reduce((a,b)=>a+b,0);
+    let r=Math.random()*s,a=0;for(let i=0;i<w.length;i++){a+=w[i];if(r<a)return i;}return w.length-1;
+  }
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  function preguntar(){
+    const q=P[+$('#c1l3-q').value];
+    $('#c1l3-t-o').textContent=T().toFixed(1).replace('.',',');
+    $('#c1l3-preg').textContent='Tú: '+q.p;
+    const R=[];for(let k=0;k<5;k++)R.push(q.s.map(sortear));
+    const varia=q.s.map((_,j)=>new Set(R.map(r=>r[j])).size>1);
+    $('#c1l3-resp').innerHTML=R.map((r,k)=>'<li><b>#'+(k+1)+'</b><span>'+r.map((i,j)=>{const t=esc(q.s[j][i][0]);return varia[j]?'<span class="cambia">'+t+'</span>':t;}).join('')+'</span></li>').join('');
+    const distintas=new Set(R.map(r=>r.join(','))).size;
+    let l='<span class="big">'+distintas+' respuesta'+(distintas===1?'':'s')+' distinta'+(distintas===1?'':'s')+' de 5.</span>';
+    if(T()<0.05)l+='<span>Con temperatura 0 el modelo elige siempre lo más probable: las cinco salen iguales. Los asistentes de chat casi nunca te dejan bajar la temperatura a 0.</span>';
+    else l+='<span>Suele cambiar: '+q.n[0]+'. Suele mantenerse: '+q.n[1]+'.</span>';
+    l+='<span>'+q.l+'</span>';
+    $('#c1l3-out').innerHTML=l;
+  }
+  $('#c1l3-otra').addEventListener('click',preguntar);
+  $('#c1l3-q').addEventListener('change',preguntar);
+  $('#c1l3-t').addEventListener('input',preguntar);
+  preguntar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const NOM={si:'Funciona bien',rev:'Depende: hay que revisar',no:'Suele fallar'};
+  const TAREAS=[
+    {t:'Reescribir un correo molesto para que suene cordial y firme.',v:'si',k:'lenguaje',
+     por:'Es trabajo con el lenguaje: cambiar el tono sin cambiar el contenido. Lo hace muy bien y en segundos. Revisa que no haya agregado promesas que tú no haces.',
+     p:'Reescribe este correo para que suene cordial pero firme, sin agregar ni quitar datos: «Ya les dije tres veces que la factura está mal. Arréglenla de una vez.»'},
+    {t:'Resumir en cinco viñetas un acta de tres páginas que tú le pegas.',v:'si',k:'lenguaje',
+     por:'El material está en el pedido, así que no tiene que recordar nada. Aun así, lee el acta: a veces omite un acuerdo importante.',
+     p:'Resume en cinco viñetas de una línea el acta que pego a continuación. Al final, lista los acuerdos con su responsable.\n[pega aquí el texto del acta]'},
+    {t:'Explicarle a alguien de 12 años qué es la inflación.',v:'si',k:'lenguaje',
+     por:'Explicar y adaptar al lector es una de sus fortalezas: leyó miles de explicaciones de este tema, para todos los niveles.',
+     p:'Explícale a alguien de 12 años qué es la inflación, con un ejemplo de la tienda del barrio, en menos de 100 palabras.'},
+    {t:'Proponer diez nombres para una campaña de fin de año.',v:'si',k:'lenguaje',
+     por:'Generar opciones es su terreno. No todas serán buenas: tú eliges. Antes de usar un nombre, revisa que no sea una marca de otra empresa.',
+     p:'Propón diez nombres para una campaña de fin de año dirigida a pequeños negocios. Cortos, fáciles de recordar y sin juegos de palabras en inglés.'},
+    {t:'Traducir un párrafo al inglés manteniendo el tono formal.',v:'si',k:'lenguaje',
+     por:'Traduce bien entre idiomas comunes y respeta el tono si se lo pides. Revisa nombres propios, cifras y términos de tu empresa.',
+     p:'Traduce al inglés este párrafo, en tono formal de negocios: «Agradecemos su interés en nuestra propuesta. Adjuntamos las condiciones comerciales para su revisión.»'},
+    {t:'Ordenar notas sueltas en el esquema de un informe.',v:'si',k:'lenguaje',
+     por:'Encontrar estructura en un texto desordenado es trabajo de lenguaje. Te devuelve un esquema razonable que luego ajustas.',
+     p:'Ordena estas notas en el esquema de un informe mensual, con títulos y subtítulos: ventas bajaron en la zona norte; campaña nueva en abril; faltan dos vendedores; el cliente grande renovó; revisar precios.'},
+    {t:'Decir a cuánto cerró ayer el tipo de cambio del dólar.',v:'rev',k:'hechos',
+     por:'Sin búsqueda en la web, el modelo no sabe nada posterior a su fecha de corte: dará una cifra vieja o inventada. Con búsqueda puede acertar, pero abre la fuente que cita.',
+     p:'¿A cuánto cerró ayer el tipo de cambio del dólar frente a la moneda de mi país? Dime de qué fuente sacaste el dato y de qué fecha es.'},
+    {t:'Multiplicar 48.373 × 9.216.',v:'rev',k:'calculo',
+     por:'Si «calcula de memoria», escribe dígitos plausibles y a veces se equivoca. Si el asistente usa una herramienta de cálculo (ejecuta código), acierta. El resultado correcto es 445.805.568.',
+     p:'¿Cuánto es 48.373 × 9.216? Responde solo con el número.'},
+    {t:'Sumar una columna de 200 montos que le pegas como texto.',v:'rev',k:'calculo',
+     por:'Puede «hacer como que suma» y dar un total que se ve bien. Pídele que use análisis de datos (que ejecute código) y comprueba el total en tu hoja de cálculo.',
+     p:'Suma estos montos y dime el total. Usa una herramienta de cálculo si la tienes y dime si la usaste.\n[pega aquí la columna]'},
+    {t:'Dar tres citas textuales de un libro con su número de página.',v:'no',k:'hechos',
+     por:'No guarda los libros como archivos que se puedan consultar: reconstruye frases que suenan al autor. Las citas y las páginas suelen ser inventadas.',
+     p:'Dame tres citas textuales de «Cien años de soledad» con el número de página de la edición que uses.'},
+    {t:'Decir qué dice la cláusula 7 del contrato con un proveedor, sin adjuntarlo.',v:'no',k:'hechos',
+     por:'Ese contrato no estaba en lo que leyó. Sin el documento, inventará una cláusula típica. Con el documento adjunto, la tarea pasa a funcionar (capítulo 4).',
+     p:'¿Qué dice la cláusula 7 del contrato de servicios entre mi empresa y nuestro proveedor de transporte?'},
+    {t:'Dar el enlace exacto del estudio que respalda una afirmación, sin búsqueda web.',v:'no',k:'hechos',
+     por:'Inventa enlaces con forma correcta que no llevan a ninguna parte o llevan a otra cosa. Con búsqueda web mejora, pero abre cada enlace antes de citarlo.',
+     p:'Dame el enlace exacto de un estudio publicado que demuestre que trabajar cuatro días a la semana aumenta la productividad.'}
+  ];
+  const r=new Array(TAREAS.length).fill(null);let i=0;
+  function copiar(txt,b){
+    const ok=()=>{b.textContent='Copiado';setTimeout(()=>{b.textContent='Copiar el pedido';},1500);};
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(ok,()=>{b.textContent='Selecciónalo y copia';});
+    else b.textContent='Selecciónalo y copia';
+  }
+  function pintar(){
+    const T=TAREAS[i];
+    $('#c1l4-n').textContent='Tarea '+(i+1)+' de '+TAREAS.length;
+    $('#c1l4-q').textContent=T.t;
+    document.querySelectorAll('#c1l4-mapa button').forEach((b,k)=>{b.className=(r[k]?(r[k]===TAREAS[k].v?'si':'no'):'')+(k===i?' actual':'');b.setAttribute('aria-current',k===i?'true':'false');});
+    document.querySelectorAll('[id="01-lab-4"] .c1l4-v').forEach(b=>b.setAttribute('aria-pressed',r[i]===b.dataset.v?'true':'false'));
+    const ver=$('#c1l4-ver');
+    if(r[i]){
+      const bien=r[i]===T.v;
+      ver.innerHTML='<div class="c1l4-veredicto '+T.v+'"><p><b>'+(bien?'Coincide. ':'No coincide. ')+'Lo que pasa: '+NOM[T.v]+'.</b> '+T.por+'</p><div class="c1l4-pedido"><span class="hint">Pruébalo en cualquier asistente gratuito:</span><code id="c1l4-p"></code><button type="button" id="c1l4-cp">Copiar el pedido</button></div></div>';
+      $('#c1l4-p').textContent=T.p;
+      $('#c1l4-cp').addEventListener('click',e=>copiar(T.p,e.target));
+    }else ver.innerHTML='<p class="hint">Elige tu predicción para ver qué pasa y copiar el pedido para probarlo.</p>';
+    $('#c1l4-ant').disabled=i===0;$('#c1l4-sig').disabled=i===TAREAS.length-1;
+    const hechas=r.filter(Boolean).length,bien=r.filter((x,k)=>x&&x===TAREAS[k].v).length;
+    let l='<span class="big">Clasificaste '+hechas+' de 12 · coinciden '+bien+'.</span>';
+    if(hechas===12){
+      l+='<span>Mira la tabla: las seis tareas de lenguaje (tono, resumen, explicación, ideas, traducción, estructura) funcionan. Las de cálculo y datos al día dependen de que el asistente tenga una herramienta. Las que piden un hecho exacto que no está en el pedido (citas, cláusulas, enlaces) fallan.</span>';
+    }else l+='<span>Recorre las 12 tareas con los botones de arriba o con «Siguiente».</span>';
+    $('#c1l4-out').innerHTML=l;
+    $('#c1l4-tabla').innerHTML=TAREAS.map((T,k)=>'<tr><td>'+(k+1)+'. '+T.t+'</td><td>'+(r[k]?NOM[r[k]]:'—')+'</td><td class="'+(r[k]?T.v:'')+'">'+(r[k]?NOM[T.v]:'(elige primero)')+'</td></tr>').join('');
+  }
+  const mapa=$('#c1l4-mapa');
+  TAREAS.forEach((_,k)=>{const b=document.createElement('button');b.type='button';b.textContent=k+1;b.setAttribute('aria-label','Tarea '+(k+1));b.addEventListener('click',()=>{i=k;pintar();});mapa.appendChild(b);});
+  document.querySelectorAll('[id="01-lab-4"] .c1l4-v').forEach(b=>b.addEventListener('click',()=>{r[i]=b.dataset.v;pintar();}));
+  $('#c1l4-ant').addEventListener('click',()=>{if(i>0){i--;pintar();}});
+  $('#c1l4-sig').addEventListener('click',()=>{if(i<TAREAS.length-1){i++;pintar();}});
+  pintar();
+})();
+</script>
+</body>
+</html>

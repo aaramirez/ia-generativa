@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imagen, audio y video · IA generativa · IA generativa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Usar la IA generativa en el trabajo, sin tecnicismos: qué puede y qué no, cómo pedir bien, cómo verificar, qué hacer con texto, imágenes y datos, casos por área y cómo llevarla a tu equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="imagen-audio-y-video">
+<header class="topbar"><a class="brand" href="index.html">IA <b>generativa</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 06 DE 10</span><h1>Imagen, audio y video</h1><p class="lede">Los asistentes ya no solo leen y escriben texto: generan y editan imágenes, leen fotos de pizarras, transcriben reuniones, hablan con voces sintéticas y producen videos cortos. Saber describir con precisión lo que quieres es la habilidad que sirve para todas esas herramientas.</p></header>
+<section><div class="prose"><p>El informe mensual ya tiene texto. Ahora le faltan otras cosas: una imagen para la portada, la foto de la pizarra donde el equipo planificó el mes (tomada de lado, con reflejo), la grabación de una llamada con un cliente que hay que resumir y un pedido de la gerencia: «¿Podemos tener un video de un minuto con los resultados para la reunión general?».</p><p>Hace pocos años, cada una de esas tareas requería una herramienta distinta y a alguien que supiera usarla. Hoy muchas se hacen desde el mismo asistente, porque los modelos se volvieron <b>multimodales</b> (<i>multimodal</i>): leen y producen texto, imágenes, audio y, cada vez más, video. Este capítulo recorre qué funciona en cada medio, cómo funciona por dentro lo justo para usarlo bien y dónde están los límites.</p></div></section>
+<section><h2>Describir una imagen para generarla</h2><div class="prose"><p>Los generadores de imágenes que se usan hoy (por ejemplo los integrados en ChatGPT, Gemini, Copilot y Meta AI, o herramientas dedicadas como Midjourney, Adobe Firefly, Ideogram o los modelos abiertos de la familia Stable Diffusion y FLUX) funcionan casi todos con la misma idea: los <b>modelos de difusión</b> (<i>diffusion models</i>).</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en un restaurador de fotos antiguas que recibe una imagen tan dañada que solo se ve ruido, como la nieve de un televisor sin señal. Su oficio es quitar un poco de ruido cada vez, guiándose por lo que le dijeron que había en la foto: «una mujer con una computadora, en una oficina, de día». Después de muchas pasadas, aparece una imagen nítida. El modelo de difusión es ese restaurador, con una diferencia: la foto original nunca existió. La imagen que «restaura» la inventa a partir de tu descripción.</p></div><figure class="fig fig-esquema" id="06-diagrama-1"><div class="lienzo"><svg viewBox="0 0 820 330" style="min-width:680px" role="img" aria-label="Cómo genera una imagen un modelo de difusión: la descripción se convierte en números que guían al modelo, que parte de puro ruido y lo limpia en muchos pasos hasta la imagen final">
+  <defs>
+    <marker id="g6d1-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  <rect x="10" y="40" width="150" height="150" rx="10" class="caja"/>
+  <text x="22" y="64" class="t t-b">① Tu descripción</text>
+  <text x="22" y="90" class="t t-s">«una técnica junto</text>
+  <text x="22" y="106" class="t t-s">a un poste, plano</text>
+  <text x="22" y="122" class="t t-s">general, de día,</text>
+  <text x="22" y="138" class="t t-s">ilustración plana»</text>
+  <text x="22" y="176" class="t t-xs t-m">PALABRAS</text>
+  <rect x="178" y="40" width="124" height="150" rx="10" class="c-tra"/>
+  <text x="190" y="64" class="t t-b k-tra">② Codificador</text>
+  <text x="190" y="90" class="t t-s">la descripción</text>
+  <text x="190" y="106" class="t t-s">se vuelve una</text>
+  <text x="190" y="122" class="t t-s">lista de números</text>
+  <text x="190" y="146" class="t t-s t-mono">[0,12; −0,8; …]</text>
+  <text x="190" y="176" class="t t-xs k-tra">LA GUÍA</text>
+  <line x1="160" y1="115" x2="176" y2="115" class="ln" style="stroke-width:2" marker-end="url(#g6d1-fl)"/>
+  <path d="M302 115 H318" class="ln" style="stroke-width:2" marker-end="url(#g6d1-fl)"/>
+  <path d="M240 40 V22 H726 V36" class="ln ln-d" style="stroke-width:1.5" marker-end="url(#g6d1-fl)"/>
+  <path d="M486 22 V56" class="ln ln-d" style="stroke-width:1.5" marker-end="url(#g6d1-fl)"/>
+  <path d="M596 22 V56" class="ln ln-d" style="stroke-width:1.5" marker-end="url(#g6d1-fl)"/>
+  <text x="330" y="16" class="t t-s t-m">la guía se usa en cada paso</text>
+  <g>
+  <rect x="320" y="60" width="90" height="90" class="c-red" style="stroke-width:1"/>
+  <rect x="320.0" y="60.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="320.0" y="69.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="320.0" y="78.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="320.0" y="87.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="320.0" y="96.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="320.0" y="105.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="320.0" y="114.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="320.0" y="123.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="320.0" y="132.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="320.0" y="141.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="329.0" y="60.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="329.0" y="69.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="329.0" y="78.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="329.0" y="87.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="329.0" y="96.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="329.0" y="105.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="329.0" y="114.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="329.0" y="123.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="329.0" y="132.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="329.0" y="141.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="338.0" y="60.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="338.0" y="69.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="338.0" y="78.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="338.0" y="87.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="338.0" y="96.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="338.0" y="105.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="338.0" y="114.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="338.0" y="123.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="338.0" y="132.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="338.0" y="141.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="347.0" y="60.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="347.0" y="69.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="347.0" y="78.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="347.0" y="87.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="347.0" y="96.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="347.0" y="105.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="347.0" y="114.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="347.0" y="123.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="347.0" y="132.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="347.0" y="141.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="356.0" y="60.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="356.0" y="69.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="356.0" y="78.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="356.0" y="87.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="356.0" y="96.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="356.0" y="105.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="356.0" y="114.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="356.0" y="123.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="356.0" y="132.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="356.0" y="141.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="365.0" y="60.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="365.0" y="69.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="365.0" y="78.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="365.0" y="87.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="365.0" y="96.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="365.0" y="105.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="365.0" y="114.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="365.0" y="123.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="365.0" y="132.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="365.0" y="141.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="374.0" y="60.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="374.0" y="69.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="374.0" y="78.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="374.0" y="87.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="374.0" y="96.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="374.0" y="105.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="374.0" y="114.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="374.0" y="123.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="374.0" y="132.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="374.0" y="141.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="383.0" y="60.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="383.0" y="69.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="383.0" y="78.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="383.0" y="87.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="383.0" y="96.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="383.0" y="105.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="383.0" y="114.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="383.0" y="123.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="383.0" y="132.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="383.0" y="141.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="392.0" y="60.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="392.0" y="69.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="392.0" y="78.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="392.0" y="87.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="392.0" y="96.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="392.0" y="105.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="392.0" y="114.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="392.0" y="123.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="392.0" y="132.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="392.0" y="141.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="401.0" y="60.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="401.0" y="69.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="401.0" y="78.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="401.0" y="87.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="401.0" y="96.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="401.0" y="105.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="401.0" y="114.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="401.0" y="123.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="401.0" y="132.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="401.0" y="141.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="320" y="60" width="90" height="90" fill="none" class="ln"/>
+  </g>
+  <g>
+  <rect x="432" y="60" width="90" height="90" class="c-red" style="stroke-width:1"/>
+  <rect x="432" y="121.2" width="90" height="28.8" class="c-enl" style="stroke-width:0"/>
+  <circle cx="502.2" cy="83.4" r="9.9" class="c-fis"/>
+  <line x1="459.0" y1="70.8" x2="459.0" y2="123.0" class="ln" style="stroke-width:3.0"/>
+  <rect x="451.8" y="87.0" width="14.4" height="9.0" class="caja"/>
+  <circle cx="478.8" cy="97.8" r="5.4" class="k-tra"/>
+  <rect x="474.3" y="104.1" width="9.0" height="18.0" rx="2" class="k-tra"/>
+  <rect x="432.0" y="60.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="432.0" y="69.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="432.0" y="78.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="432.0" y="87.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="432.0" y="123.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="441.0" y="60.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="441.0" y="69.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="441.0" y="78.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="441.0" y="96.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="441.0" y="123.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="450.0" y="60.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="450.0" y="69.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="450.0" y="78.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="450.0" y="87.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="450.0" y="105.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="450.0" y="114.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="450.0" y="123.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="450.0" y="132.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="459.0" y="69.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="459.0" y="78.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="459.0" y="87.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="459.0" y="96.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="459.0" y="114.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="459.0" y="123.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="459.0" y="132.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="468.0" y="69.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="468.0" y="96.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="468.0" y="105.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="468.0" y="114.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="468.0" y="132.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="468.0" y="141.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="477.0" y="69.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="477.0" y="78.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="477.0" y="87.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="477.0" y="96.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="477.0" y="105.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="477.0" y="114.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="477.0" y="123.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="486.0" y="60.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="486.0" y="69.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="486.0" y="78.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="486.0" y="123.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="486.0" y="132.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="486.0" y="141.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="495.0" y="60.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="495.0" y="69.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="495.0" y="87.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="495.0" y="96.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="495.0" y="105.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="495.0" y="114.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="495.0" y="123.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="495.0" y="132.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="504.0" y="69.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="504.0" y="78.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="504.0" y="96.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="504.0" y="132.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="513.0" y="60.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="513.0" y="69.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="513.0" y="78.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="513.0" y="87.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="513.0" y="96.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="513.0" y="132.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="432" y="60" width="90" height="90" fill="none" class="ln"/>
+  </g>
+  <g>
+  <rect x="542" y="60" width="90" height="90" class="c-red" style="stroke-width:1"/>
+  <rect x="542" y="121.2" width="90" height="28.8" class="c-enl" style="stroke-width:0"/>
+  <circle cx="612.2" cy="83.4" r="9.9" class="c-fis"/>
+  <line x1="569.0" y1="70.8" x2="569.0" y2="123.0" class="ln" style="stroke-width:3.0"/>
+  <rect x="561.8" y="87.0" width="14.4" height="9.0" class="caja"/>
+  <circle cx="588.8" cy="97.8" r="5.4" class="k-tra"/>
+  <rect x="584.3" y="104.1" width="9.0" height="18.0" rx="2" class="k-tra"/>
+  <rect x="542.0" y="78.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="542.0" y="87.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="542.0" y="132.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="551.0" y="87.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="551.0" y="96.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="560.0" y="69.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="560.0" y="87.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="560.0" y="114.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="569.0" y="132.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="578.0" y="60.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="578.0" y="78.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="578.0" y="87.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="578.0" y="141.0" width="9.0" height="9.0" class="c-tra" style="stroke-width:0"/>
+  <rect x="587.0" y="96.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="587.0" y="123.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="587.0" y="141.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="596.0" y="78.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="596.0" y="105.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="596.0" y="114.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="596.0" y="123.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="614.0" y="69.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="614.0" y="78.0" width="9.0" height="9.0" class="c-enl" style="stroke-width:0"/>
+  <rect x="614.0" y="105.0" width="9.0" height="9.0" class="caja" style="stroke-width:0"/>
+  <rect x="623.0" y="78.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="623.0" y="87.0" width="9.0" height="9.0" class="c-red" style="stroke-width:0"/>
+  <rect x="623.0" y="96.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="623.0" y="132.0" width="9.0" height="9.0" class="c-fis" style="stroke-width:0"/>
+  <rect x="623.0" y="141.0" width="9.0" height="9.0" class="c-apl" style="stroke-width:0"/>
+  <rect x="542" y="60" width="90" height="90" fill="none" class="ln"/>
+  </g>
+  <g>
+  <rect x="660" y="40" width="132" height="132" class="c-red" style="stroke-width:1"/>
+  <rect x="660" y="129.8" width="132" height="42.2" class="c-enl" style="stroke-width:0"/>
+  <circle cx="763.0" cy="74.3" r="14.5" class="c-fis"/>
+  <line x1="699.6" y1="55.8" x2="699.6" y2="132.4" class="ln" style="stroke-width:4.4"/>
+  <rect x="689.0" y="79.6" width="21.1" height="13.2" class="caja"/>
+  <circle cx="728.6" cy="95.4" r="7.9" class="k-tra"/>
+  <rect x="722.0" y="104.7" width="13.2" height="26.4" rx="2" class="k-tra"/>
+  <rect x="660" y="40" width="132" height="132" fill="none" class="ln"/>
+  </g>
+  <line x1="410" y1="105" x2="430" y2="105" class="ln" style="stroke-width:2" marker-end="url(#g6d1-fl)"/>
+  <line x1="522" y1="105" x2="540" y2="105" class="ln" style="stroke-width:2" marker-end="url(#g6d1-fl)"/>
+  <line x1="632" y1="105" x2="658" y2="105" class="ln" style="stroke-width:2" marker-end="url(#g6d1-fl)"/>
+  <text x="365" y="168" class="t t-s t-b" text-anchor="middle">③ puro ruido</text>
+  <text x="477" y="168" class="t t-s t-b" text-anchor="middle">④ paso 10</text>
+  <text x="587" y="168" class="t t-s t-b" text-anchor="middle">④ paso 30</text>
+  <text x="726" y="190" class="t t-s t-b" text-anchor="middle">⑤ paso 50: listo</text>
+  <text x="365" y="184" class="t t-s t-m" text-anchor="middle">al azar</text>
+  <text x="532" y="184" class="t t-s t-m" text-anchor="middle">quita un poco de ruido por paso</text>
+  <rect x="10" y="214" width="800" height="104" rx="10" class="d-sis"/>
+  <text x="24" y="238" class="t t-b k-sis">Lo que no describes, lo decide el azar</text>
+  <text x="24" y="262" class="t t-s">Tu descripción no dijo la edad de la técnica, su ropa, el color del cielo ni si había casas. El modelo los elige</text>
+  <text x="24" y="280" class="t t-s">en cada intento, a partir del ruido inicial, que es distinto cada vez. Por eso el mismo pedido corto da imágenes</text>
+  <text x="24" y="298" class="t t-s">muy distintas, y un pedido con más piezas da imágenes que se parecen entre sí.</text>
+</svg></div><figcaption><b>Cómo nace una imagen generada.</b> Tu descripción (①) se convierte en números que guían al modelo (②). El modelo parte de una imagen de puro ruido (③) y la limpia en muchos pasos (④), cada vez un poco más parecida a lo que describiste, hasta la imagen final (⑤). Abajo, lo que no describiste: el modelo lo decide al azar, y por eso cada intento sale distinto.</figcaption></figure><div class="prose"><p>La consecuencia práctica está en la franja de abajo del diagrama: <b>todo lo que no describes, lo decide el modelo</b>. Si pides «una persona trabajando en una oficina», el modelo elige la edad, la ropa, el ángulo de la cámara, la luz, el estilo y el formato. Cada vez elige distinto. Una buena descripción para generar imágenes, que a veces se llama <i>prompt</i> de imagen, se arma con piezas:</p><div class="tbl"><table><thead><tr><th>Pieza</th><th>Qué decide</th><th>Ejemplo</th></tr></thead><tbody><tr><td>Sujeto y acción</td><td>Qué hay y qué hace</td><td>«una técnica revisando una caja de fibra en un poste»</td></tr><tr><td>Entorno</td><td>Dónde ocurre</td><td>«en una calle de barrio, con casas bajas»</td></tr><tr><td>Estilo</td><td>Cómo se ve</td><td>«fotografía realista», «ilustración plana», «acuarela»</td></tr><tr><td>Composición</td><td>Desde dónde se mira</td><td>«plano general», «primer plano», «vista desde abajo»</td></tr><tr><td>Luz y paleta</td><td>El ambiente</td><td>«luz de atardecer», «tonos azules y blancos»</td></tr><tr><td>Formato</td><td>La forma del lienzo</td><td>«horizontal 16:9», «cuadrado», «vertical para celular»</td></tr><tr><td>Texto</td><td>Palabras dentro de la imagen</td><td>«sin texto» o el texto exacto entre comillas</td></tr></tbody></table></div><p>El formato se expresa como <b>relación de aspecto</b> (<i>aspect ratio</i>): 16:9 es el de una pantalla o una lámina de presentación; 1:1, el de una publicación cuadrada; 9:16, el de una historia en el celular. Pedirlo desde el inicio evita recortar después y perder lo importante.</p></div><div class="lab" id="06-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Arma una imagen por piezas</h3></div><p class="hint">Activa las piezas de la descripción una por una y elige su valor. Lo que no está activado lo decide el modelo: pulsa «Generar otra vez» y mira qué cambia y qué se queda fijo. Arriba aparece el pedido completo que estás armando.</p><style>
+[id="06-lab-1"] .c6l1-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;align-items:start}
+@media (max-width:720px){[id="06-lab-1"] .c6l1-grid{grid-template-columns:minmax(0,1fr)}}
+[id="06-lab-1"] .c6l1-piezas{display:grid;gap:6px}
+[id="06-lab-1"] .c6l1-p{display:grid;grid-template-columns:auto minmax(0,7rem) minmax(0,1fr);gap:8px;align-items:center;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--card);font:500 .86rem var(--f-display)}
+[id="06-lab-1"] .c6l1-p.off{background:transparent;border-style:dashed;color:var(--muted)}
+[id="06-lab-1"] .c6l1-p select{min-width:0;width:100%}
+[id="06-lab-1"] .c6l1-p.off select{opacity:.5}
+@media (max-width:420px){[id="06-lab-1"] .c6l1-p{grid-template-columns:auto minmax(0,1fr)}[id="06-lab-1"] .c6l1-p select{grid-column:1/-1}}
+[id="06-lab-1"] .c6l1-lienzo{display:grid;place-items:center;background:var(--paper);border-radius:10px;padding:10px;min-height:250px}
+[id="06-lab-1"] .c6l1-lienzo svg{display:block;max-width:100%;height:auto;max-height:330px;border-radius:6px;border:1px solid var(--line)}
+[id="06-lab-1"] .c6l1-pedido{font:.86rem/1.5 var(--f-mono);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;overflow-wrap:anywhere}
+[id="06-lab-1"] .c6l1-pedido .az{color:var(--muted);font-style:italic}
+</style>
+<div class="c6l1-pedido" id="c6l1-pedido" aria-live="polite"></div>
+<div class="c6l1-grid">
+  <div class="c6l1-piezas" id="c6l1-piezas"></div>
+  <div class="c6l1-lienzo" id="c6l1-lienzo" role="img" aria-label="Imagen generada"></div>
+</div>
+<div class="btns"><button class="primary" id="c6l1-gen">Generar otra vez</button><button id="c6l1-todo">Activar todas las piezas</button><button id="c6l1-nada">Solo el sujeto</button></div>
+<div class="readout texto" id="c6l1-out" aria-live="polite"></div></div><div class="prose"><p>Lo que muestra el laboratorio es la habilidad central de este capítulo: con dos piezas, cada intento es una sorpresa; con seis, los intentos se parecen entre sí y a lo que tenías en la cabeza. Hay dos piezas que todavía fallan con frecuencia y conviene revisar siempre: el <b>texto dentro de la imagen</b> (los modelos recientes escriben mucho mejor que los de hace dos años, pero se siguen colando letras cambiadas) y los <b>detalles contables</b>, como el número de dedos, de ventanas o de personas.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Una portada en cuatro intentos</h3></div><p>Vas a generar la imagen de portada del informe mensual agregando piezas en cada intento. Usa cualquier asistente gratuito que genere imágenes (por ejemplo Copilot, Gemini, ChatGPT o Meta AI; la disponibilidad y los límites diarios de la versión gratuita cambian).</p><ol class="steps"><li><span>Primer intento: «Una imagen de un equipo de trabajo».</span></li><li><span>Segundo: agrega entorno y estilo: «… en una oficina luminosa, ilustración plana».</span></li><li><span>Tercero: agrega composición, luz y formato: «… plano general, luz de mañana, tonos azules, formato horizontal 16:9».</span></li><li><span>Cuarto: agrega texto: «… con el título "Informe de mayo" arriba a la izquierda».</span></li><li><span>Pide dos veces el cuarto pedido y compara.</span></li></ol><p><b>Qué observar:</b> el primer intento sale genérico y cada pieza que agregas reduce la sorpresa. En el cuarto, revisa letra por letra el título: es donde más se equivocan. Compara las dos versiones finales: lo que describiste se mantiene y lo que no, cambia. Si la imagen va a un documento oficial, revisa también que no aparezca ningún logotipo o marca real.</p></div></section>
+<section><h2>Editar imágenes: quitar, cambiar, ampliar</h2><div class="prose"><p>Generar desde cero es solo una parte. En el trabajo, muchas veces lo útil es <b>editar</b> una imagen que ya tienes. Los editores con IA (el «relleno generativo» de Adobe Photoshop, las funciones de Canva, los editores de fotos del celular o el propio asistente de chat) hacen cuatro operaciones básicas:</p><ul><li><b>Rellenar una zona</b> (<i>inpainting</i>): marcas una parte de la imagen y describes qué poner. Quitar un cable que cruza la foto de un producto o cambiar el color de una camiseta.</li><li><b>Ampliar el lienzo</b> (<i>outpainting</i>): el modelo inventa lo que habría fuera del marco. Útil para convertir una foto vertical en una portada horizontal.</li><li><b>Quitar el fondo</b>: separa el sujeto del fondo. Es la más madura de todas.</li><li><b>Aumentar la resolución</b> (<i>upscaling</i>): agranda una imagen pequeña inventando detalle plausible.</li></ul><p>Fíjate en una palabra que se repite: <b>inventa</b>. Rellenar, ampliar y aumentar la resolución no recuperan lo que había, sino que generan algo que encaja. Para una portada, eso es perfecto. Para una foto que es <b>evidencia</b> (la instalación terminada que un técnico reporta, el daño de un equipo para un reclamo al seguro, el estado de un local al entregarlo), editar es alterar la prueba. Esa foto no se edita con IA, ni siquiera para «mejorarla».</p></div></section>
+<section><h2>Leer imágenes: pizarras, capturas y documentos escaneados</h2><div class="prose"><p>La otra dirección es igual de útil: darle una imagen al asistente y pedirle que la lea. Aquí hay dos tecnologías con historias distintas.</p><p>El <b>reconocimiento óptico de caracteres</b> (<i>optical character recognition</i>, OCR) existe hace décadas: detecta las letras en una imagen y las convierte en texto. Es muy bueno con documentos impresos y limpios, y es lo que usan los escáneres de oficina y las apps bancarias que leen un cheque. Los <b>modelos de visión y lenguaje</b> (<i>vision-language models</i>) son más recientes: además de leer las letras, interpretan lo que ven. Entienden que una flecha une dos ideas, que algo tachado ya no vale o que un número en una columna es un monto.</p><p>Esa interpretación es la gran ventaja y también el riesgo. Cuando una palabra no se lee bien, el OCR clásico deja un símbolo raro; un modelo de visión y lenguaje tiende a escribir la palabra que tendría sentido. Si en la pizarra dice «15/6» con un 5 borroso, puede leer «16/6» con total seguridad. Por eso el pedido debe incluir una regla: «si algo no se lee con claridad, escribe [ilegible] o márcalo con signo de pregunta».</p></div><div class="lab" id="06-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>De la pizarra a la lista de tareas</h3></div><p class="hint">La foto es de la pizarra de una reunión de planificación. Avanza por los cuatro pasos (leer, interpretar, ordenar y revisar) y, en el último, resuelve tú las dudas que el asistente marcó. Prueba también con la foto con reflejo y mira qué cambia en la lectura.</p><style>
+[id="06-lab-2"] .c6l2-piz{position:relative;background:var(--card);border:6px solid var(--line);border-radius:8px;padding:14px 16px 16px;font:500 1.02rem/1.9 "Segoe Print","Bradley Hand","Comic Sans MS",cursive;color:var(--ink);overflow:hidden}
+[id="06-lab-2"] .c6l2-piz .ti{font-size:1.2rem;text-decoration:underline;color:var(--accent)}
+[id="06-lab-2"] .c6l2-piz div{overflow-wrap:anywhere;margin:4px 0}
+[id="06-lab-2"] .c6l2-piz .r1{transform:rotate(-1.2deg)} [id="06-lab-2"] .c6l2-piz .r2{transform:rotate(.8deg)} [id="06-lab-2"] .c6l2-piz .r3{transform:rotate(-.5deg)}
+[id="06-lab-2"] .c6l2-piz s{color:var(--muted);text-decoration-thickness:2px}
+[id="06-lab-2"] .c6l2-piz .bor{filter:blur(1.1px)}
+[id="06-lab-2"] .c6l2-piz .urg{color:var(--warm)}
+[id="06-lab-2"] .c6l2-piz .ref{position:absolute;left:34%;top:46%;width:46%;height:30%;border-radius:50%;background:radial-gradient(closest-side,var(--card),transparent);opacity:0;pointer-events:none;transition:opacity .3s}
+[id="06-lab-2"] .c6l2-piz.reflejo .ref{opacity:.92}
+[id="06-lab-2"] .c6l2-pasos button[aria-pressed="true"]{background:var(--accent);color:var(--card);border-color:var(--accent)}
+[id="06-lab-2"] .c6l2-panel{background:var(--paper);border-radius:10px;padding:12px 14px;display:grid;gap:8px}
+[id="06-lab-2"] .c6l2-l{display:grid;grid-template-columns:minmax(0,1fr) 5.5rem;gap:10px;align-items:center;font:500 .88rem var(--f-display)}
+[id="06-lab-2"] .c6l2-l .bar{height:10px;border-radius:5px;background:var(--grid);overflow:hidden;position:relative}
+[id="06-lab-2"] .c6l2-l .bar i{display:block;height:100%;background:var(--good)}
+[id="06-lab-2"] .c6l2-l .bar i.baja{background:var(--warm)}
+[id="06-lab-2"] .c6l2-l .t{overflow-wrap:anywhere}
+[id="06-lab-2"] .c6l2-l .t small{display:block;color:var(--muted);font-weight:500}
+[id="06-lab-2"] .c6l2-flag{color:var(--warm);font-weight:700}
+[id="06-lab-2"] .c6l2-dec{display:grid;gap:4px;padding:8px 10px;border:1px dashed var(--warm);border-radius:8px;background:var(--card)}
+[id="06-lab-2"] .c6l2-dec.ok{border:1px solid var(--good)}
+[id="06-lab-2"] .c6l2-dec select{max-width:100%}
+[id="06-lab-2"] td,[id="06-lab-2"] th{font-size:.85rem}
+</style>
+<div class="opciones">
+  <label>La foto
+    <select id="c6l2-foto">
+      <option value="ok" selected>Nítida, de frente</option>
+      <option value="ref">Con reflejo de la ventana</option>
+    </select></label>
+</div>
+<div class="c6l2-piz" id="c6l2-piz" aria-label="Foto de una pizarra con el plan de mayo">
+  <div class="ti r1">PLAN MAYO</div>
+  <div class="r2">1. Catálogo nuevo → Ana · 10/5</div>
+  <div class="r3">2. Capacitar nuevos → Luis · 20/5</div>
+  <div class="r1">3. <s>Revisar precios plan básico</s></div>
+  <div class="r2">4. Llamar prov. equipos → JP · 1<span class="bor">5</span>/5 <span class="urg">¡urgente!</span></div>
+  <div class="r3">5. Encuesta clientes → Marta · fin de mes</div>
+  <div class="r1">¿Campaña +1 mes?? → gerencia</div>
+  <span class="ref" aria-hidden="true"></span>
+</div>
+<div class="btns c6l2-pasos" role="group" aria-label="Pasos">
+  <button data-p="0" aria-pressed="true">① Leer</button><button data-p="1" aria-pressed="false">② Interpretar</button><button data-p="2" aria-pressed="false">③ Ordenar</button><button data-p="3" aria-pressed="false">④ Revisar tú</button>
+</div>
+<div class="c6l2-panel" id="c6l2-panel" aria-live="polite"></div>
+<div class="readout texto" id="c6l2-out" aria-live="polite"></div></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Tu letra, leída por una máquina</h3></div><p>Vas a ver cómo lee un asistente una nota escrita a mano. Necesitas un papel, tu celular y cualquier asistente gratuito que acepte imágenes.</p><ol class="steps"><li><span>Escribe a mano una lista de cinco tareas con fecha y responsable inventados. Haz una de las fechas a propósito poco legible y tacha una tarea.</span></li><li><span>Tómale una foto con el celular y súbela al asistente con este pedido: «Convierte esta foto en una tabla de tareas con responsable y fecha. Si algo no se lee con claridad, márcalo con [?] en lugar de adivinarlo. Ignora lo tachado».</span></li><li><span>Repite con otra foto tomada de lado y con poca luz.</span></li></ol><p><b>Qué observar:</b> con buena luz, el asistente lee casi todo y respeta lo tachado. Fíjate en la fecha poco legible: ¿la marcó con [?] o la «adivinó»? Con la foto de lado y oscura aparecen más errores, y a veces el asistente los escribe con la misma seguridad que el resto. Esa es la razón de comparar siempre la tabla con la foto antes de enviarla.</p></div></section>
+<section><h2>Transcribir reuniones y llamadas</h2><div class="prose"><p>La transcripción es probablemente la tarea multimodal que más tiempo ahorra en una empresa. El <b>reconocimiento automático del habla</b> (<i>automatic speech recognition</i>, ASR) convierte la voz en texto. Lo hacen las plataformas de reuniones (Teams, Meet, Zoom), aplicaciones dedicadas y modelos abiertos como Whisper, que se puede instalar en una computadora propia sin enviar el audio a ningún servicio externo.</p></div><figure class="fig fig-flujo" id="06-diagrama-2"><div class="lienzo"><svg viewBox="0 0 820 340" style="min-width:680px" role="img" aria-label="La voz en dos direcciones: de la voz al texto con reconocimiento del habla, texto con marcas de tiempo y hablantes y un resumen; y del texto a la voz con síntesis de voz y, con una muestra, clonación de voz">
+  <defs>
+    <marker id="g6d2-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  
+  <text x="10" y="20" class="t t-xs t-m">DE LA VOZ AL TEXTO</text>
+  <rect x="10" y="30" width="110" height="92" rx="10" class="caja"/>
+  <text x="22" y="52" class="t t-b">① Audio</text>
+  <text x="22" y="74" class="t t-s">reunión o</text>
+  <text x="22" y="90" class="t t-s">llamada</text>
+  <rect x="140" y="30" width="130" height="92" rx="10" class="c-red"/>
+  <text x="152" y="52" class="t t-b k-red">② ASR</text>
+  <text x="152" y="74" class="t t-s">reconocimiento</text>
+  <text x="152" y="90" class="t t-s">del habla</text>
+  <text x="152" y="108" class="t t-s t-m">Whisper, Teams…</text>
+  <rect x="290" y="30" width="200" height="92" rx="10" class="caja"/>
+  <text x="302" y="52" class="t t-b">③ Texto con tiempos</text>
+  <text x="302" y="74" class="t t-s t-mono">[00:03] Ana: Empecemos…</text>
+  <text x="302" y="90" class="t t-s t-mono">[00:09] Luis: El retraso…</text>
+  <text x="302" y="108" class="t t-s t-m">hablantes separados</text>
+  <rect x="510" y="30" width="130" height="92" rx="10" class="c-red"/>
+  <text x="522" y="52" class="t t-b k-red">④ Resumen</text>
+  <text x="522" y="74" class="t t-s">modelo de</text>
+  <text x="522" y="90" class="t t-s">lenguaje</text>
+  <line x1="120" y1="76" x2="138" y2="76" class="ln" style="stroke-width:2" marker-end="url(#g6d2-fl)"/>
+  <line x1="270" y1="76" x2="288" y2="76" class="ln" style="stroke-width:2" marker-end="url(#g6d2-fl)"/>
+  <line x1="490" y1="76" x2="508" y2="76" class="ln" style="stroke-width:2" marker-end="url(#g6d2-fl)"/>
+  <rect x="660" y="30" width="150" height="92" rx="10" class="c-fis"/>
+  <text x="672" y="52" class="t t-b k-fis">Cuidado</text>
+  <text x="672" y="74" class="t t-s">permiso para grabar</text>
+  <text x="672" y="90" class="t t-s">datos personales</text>
+  <text x="672" y="106" class="t t-s">nombres y cifras</text>
+
+  <line x1="10" y1="146" x2="810" y2="146" class="ln ln-d"/>
+
+  
+  <text x="10" y="172" class="t t-xs t-m">DEL TEXTO A LA VOZ</text>
+  <rect x="10" y="182" width="110" height="92" rx="10" class="caja"/>
+  <text x="22" y="204" class="t t-b">⑤ Guion</text>
+  <text x="22" y="226" class="t t-s">texto que</text>
+  <text x="22" y="242" class="t t-s">se va a decir</text>
+  <rect x="140" y="182" width="130" height="92" rx="10" class="c-tra"/>
+  <text x="152" y="204" class="t t-b k-tra">⑥ TTS</text>
+  <text x="152" y="226" class="t t-s">síntesis</text>
+  <text x="152" y="242" class="t t-s">de voz</text>
+  <rect x="290" y="182" width="200" height="92" rx="10" class="caja"/>
+  <text x="302" y="204" class="t t-b">⑦ Audio</text>
+  <text x="302" y="226" class="t t-s">voz sintética, en el</text>
+  <text x="302" y="242" class="t t-s">idioma que pidas</text>
+  <line x1="120" y1="228" x2="138" y2="228" class="ln" style="stroke-width:2" marker-end="url(#g6d2-fl)"/>
+  <line x1="270" y1="228" x2="288" y2="228" class="ln" style="stroke-width:2" marker-end="url(#g6d2-fl)"/>
+  <rect x="510" y="182" width="130" height="92" rx="10" class="c-apl"/>
+  <text x="522" y="204" class="t t-b k-apl">⑧ Muestra</text>
+  <text x="522" y="226" class="t t-s">segundos de la</text>
+  <text x="522" y="242" class="t t-s">voz de alguien</text>
+  <text x="522" y="262" class="t t-s t-m">clonación</text>
+  <path d="M575 274 V296 H205 V276" class="ln ln-d" style="stroke-width:1.5" marker-end="url(#g6d2-fl)"/>
+  <text x="300" y="314" class="t t-s t-m">la muestra le enseña a imitar esa voz</text>
+  <rect x="660" y="182" width="150" height="92" rx="10" class="c-fis"/>
+  <text x="672" y="204" class="t t-b k-fis">Cuidado</text>
+  <text x="672" y="226" class="t t-s">permiso de la</text>
+  <text x="672" y="242" class="t t-s">persona; riesgo</text>
+  <text x="672" y="258" class="t t-s">de fraude</text>
+</svg></div><figcaption><b>La voz en las dos direcciones.</b> Arriba, de la voz al texto: el audio (①) pasa por el reconocimiento del habla (②), que entrega texto con <b>marcas de tiempo</b> (<i>timestamps</i>) y hablantes separados (③), y un modelo de lenguaje lo resume (④). Abajo, del texto a la voz: un guion (⑤) pasa por la <b>síntesis de voz</b> (⑥) y sale audio (⑦); si además recibe unos segundos de grabación de una persona, imita su voz (⑧). A la derecha, el cuidado que pide cada camino.</figcaption></figure><div class="prose"><p>Lo que más afecta la calidad de una transcripción no es la herramienta sino el audio. Un micrófono cerca de quien habla, una persona a la vez y poco ruido de fondo valen más que cambiar de proveedor. Los errores típicos son siempre los mismos: nombres propios, siglas, cifras y palabras de la jerga de tu área. Muchas herramientas aceptan un <b>vocabulario personalizado</b> (<i>custom vocabulary</i>), una lista de términos que el sistema debe reconocer, y la diferencia se nota de inmediato.</p></div><div class="ml"><b>En la práctica</b><p><b>La calidad de una llamada.</b> Un área de atención al cliente transcribe las llamadas y usa un modelo de lenguaje para resumir cada una en tres líneas: motivo, solución y si quedó algo pendiente. Los supervisores ya no escuchan llamadas al azar: leen los resúmenes, filtran los que quedaron con pendientes y escuchan solo esos. Dos cuidados hicieron que funcionara. Las llamadas tienen datos personales, así que se procesan en una plataforma contratada por la empresa con las condiciones de privacidad acordadas, no en un asistente gratuito. Y el resumen nunca reemplaza la grabación: cuando hay un reclamo, se escucha el audio.</p></div><div class="prose"><p>Grabar exige permiso. En una reunión interna, avisa antes de activar la transcripción; en una llamada con clientes, la empresa debe informar que se graba. Y si la conversación tiene datos personales o confidenciales, aplica lo que viste en el capítulo 4: no se suben a cualquier servicio.</p></div></section>
+<section><h2>Voz sintética y doblaje</h2><div class="prose"><p>El camino inverso es la <b>síntesis de voz</b> (<i>text-to-speech</i>, TTS): convertir texto en audio hablado. Las voces sintéticas de hoy hacen pausas, entonan preguntas y suenan naturales en muchos idiomas. Sirven para versiones en audio de procedimientos, mensajes de la central telefónica, narración de capacitaciones o accesibilidad para personas con baja visión. Hay ejemplos del mercado como ElevenLabs, las voces de Microsoft Azure y Google Cloud, y las funciones de voz de los propios asistentes.</p><p>Dos variantes merecen atención:</p><ul><li>La <b>clonación de voz</b> (<i>voice cloning</i>): con una grabación corta de una persona, el sistema imita su voz diciendo cualquier cosa.</li><li>El <b>doblaje automático</b> (<i>AI dubbing</i>): traduce lo que dice una persona en un video y lo pone en su propia voz, en otro idioma, a veces ajustando el movimiento de los labios.</li></ul><p>Las dos son útiles (una capacitación grabada una vez y doblada a tres idiomas) y las dos abren la puerta al fraude. Con unos segundos de audio de un directivo, sacados de una entrevista pública, se puede fabricar una llamada que pide una transferencia urgente.</p></div><div class="caso"><b>Un caso real</b><p><b>La videollamada en la que nadie era real.</b> En 2024 se hizo público el caso de una empresa multinacional cuyo empleado de finanzas en Hong Kong transfirió unos 25 millones de dólares después de una videollamada con quien parecía ser el director financiero y otros colegas. Todos los participantes, menos él, eran imitaciones generadas con IA a partir de videos públicos. La defensa que recomiendan los equipos de seguridad no es tecnológica sino de procedimiento: ninguna transferencia ni cambio de datos bancarios se aprueba solo por una llamada o un video; se confirma por un segundo canal conocido, por ejemplo devolviendo la llamada al número registrado.</p></div></section>
+<section><h2>Video: lo que funciona hoy y lo que todavía no</h2><div class="prose"><p>El video generado avanza muy rápido, y conviene tener expectativas realistas. Hay herramientas que generan video a partir de texto (<i>text-to-video</i>) o animan una imagen fija (<i>image-to-video</i>), como Sora, Veo, Runway o Kling, y otras que producen un <b>avatar</b> (<i>avatar</i>), una persona sintética que habla a cámara leyendo un guion, como Synthesia o HeyGen. Son ejemplos del mercado; cambian de versión cada pocos meses.</p><p>Lo que funciona bien hoy, en general:</p><ul><li><b>Clips cortos</b> de pocos segundos para acompañar una presentación: un paisaje, un producto girando, una escena ambiental.</li><li><b>Avatares</b> que leen un guion para capacitaciones o comunicados internos, con un aspecto que todavía se nota sintético.</li><li><b>Subtítulos automáticos</b> y traducción de subtítulos, que en realidad son transcripción y traducción.</li><li><b>Editar video por su transcripción</b>: borras frases del texto y se borran del video.</li></ul><p>Lo que todavía falla con frecuencia: historias largas con coherencia de principio a fin, el mismo personaje idéntico en varias escenas, texto legible dentro del video, manos y objetos que interactúan, la física de lo que cae o se rompe, y reproducir con exactitud un producto o una marca reales. Además, generar video cuesta mucho más tiempo y dinero que generar una imagen.</p></div><figure class="fig fig-comparacion" id="06-diagrama-3"><div class="lienzo"><svg viewBox="0 0 820 380" style="min-width:680px" role="img" aria-label="Matriz de madurez: qué tan listo está cada camino entre texto, imagen, audio y video como entrada y como salida; lo que termina en video es lo menos maduro">
+  <text x="475" y="16" class="t t-xs t-m" text-anchor="middle">LO QUE TE DEVUELVE</text>
+  <text x="70" y="44" class="t t-xs t-m" text-anchor="middle">LO QUE LE DAS</text>
+  <rect x="130" y="24" width="160" height="30" rx="6" class="caja"/><text x="210" y="44" class="t t-b" text-anchor="middle">Texto</text>
+  <rect x="300" y="24" width="160" height="30" rx="6" class="caja"/><text x="380" y="44" class="t t-b" text-anchor="middle">Imagen</text>
+  <rect x="470" y="24" width="160" height="30" rx="6" class="caja"/><text x="550" y="44" class="t t-b" text-anchor="middle">Audio</text>
+  <rect x="640" y="24" width="160" height="30" rx="6" class="caja"/><text x="720" y="44" class="t t-b" text-anchor="middle">Video</text>
+
+  <text x="20" y="96" class="t t-b">Texto</text>
+  <text x="20" y="166" class="t t-b">Imagen</text>
+  <text x="20" y="236" class="t t-b">Audio</text>
+  <text x="20" y="306" class="t t-b">Video</text>
+
+  
+  <rect x="130" y="64" width="160" height="60" rx="8" class="c-enl"/><text x="142" y="90" class="t t-s">redactar, resumir,</text><text x="142" y="106" class="t t-s">traducir</text>
+  <rect x="300" y="64" width="160" height="60" rx="8" class="c-red"/><text x="312" y="90" class="t t-s">generar imágenes</text><text x="312" y="106" class="t t-s">(revisar texto, manos)</text>
+  <rect x="470" y="64" width="160" height="60" rx="8" class="c-enl"/><text x="482" y="90" class="t t-s">voz sintética</text><text x="482" y="106" class="t t-s">a partir de un guion</text>
+  <rect x="640" y="64" width="160" height="60" rx="8" class="c-fis"/><text x="652" y="90" class="t t-s">clips cortos,</text><text x="652" y="106" class="t t-s">avatares que hablan</text>
+  
+  <rect x="130" y="134" width="160" height="60" rx="8" class="c-enl"/><text x="142" y="160" class="t t-s">leer documentos,</text><text x="142" y="176" class="t t-s">describir una foto</text>
+  <rect x="300" y="134" width="160" height="60" rx="8" class="c-red"/><text x="312" y="160" class="t t-s">editar, quitar el</text><text x="312" y="176" class="t t-s">fondo, ampliar</text>
+  <rect x="470" y="134" width="160" height="60" rx="8" class="caja"/><text x="482" y="160" class="t t-s t-m">poco uso en</text><text x="482" y="176" class="t t-s t-m">la oficina</text>
+  <rect x="640" y="134" width="160" height="60" rx="8" class="c-fis"/><text x="652" y="160" class="t t-s">animar una</text><text x="652" y="176" class="t t-s">foto fija</text>
+  
+  <rect x="130" y="204" width="160" height="60" rx="8" class="c-enl"/><text x="142" y="230" class="t t-s">transcribir reuniones</text><text x="142" y="246" class="t t-s">y llamadas</text>
+  <rect x="300" y="204" width="160" height="60" rx="8" class="caja"/><text x="312" y="230" class="t t-s t-m">poco uso en</text><text x="312" y="246" class="t t-s t-m">la oficina</text>
+  <rect x="470" y="204" width="160" height="60" rx="8" class="c-red"/><text x="482" y="230" class="t t-s">doblar, limpiar</text><text x="482" y="246" class="t t-s">ruido, clonar voz</text>
+  <rect x="640" y="204" width="160" height="60" rx="8" class="c-fis"/><text x="652" y="230" class="t t-s">un avatar que</text><text x="652" y="246" class="t t-s">dice tu audio</text>
+  
+  <rect x="130" y="274" width="160" height="60" rx="8" class="c-red"/><text x="142" y="300" class="t t-s">resumir, subtitular,</text><text x="142" y="316" class="t t-s">buscar un momento</text>
+  <rect x="300" y="274" width="160" height="60" rx="8" class="caja"/><text x="312" y="300" class="t t-s t-m">elegir una toma</text><text x="312" y="316" class="t t-s t-m">para la portada</text>
+  <rect x="470" y="274" width="160" height="60" rx="8" class="c-red"/><text x="482" y="300" class="t t-s">doblar a otro</text><text x="482" y="316" class="t t-s">idioma</text>
+  <rect x="640" y="274" width="160" height="60" rx="8" class="c-fis"/><text x="652" y="300" class="t t-s">editar, cambiar</text><text x="652" y="316" class="t t-s">escenas, labios</text>
+
+  
+  <rect x="130" y="350" width="14" height="14" rx="3" class="c-enl"/><text x="150" y="362" class="t t-s">lista, con revisión normal</text>
+  <rect x="330" y="350" width="14" height="14" rx="3" class="c-red"/><text x="350" y="362" class="t t-s">útil, con revisión cuidadosa</text>
+  <rect x="540" y="350" width="14" height="14" rx="3" class="c-fis"/><text x="560" y="362" class="t t-s">experimental o irregular</text>
+</svg></div><figcaption><b>Qué tan maduro está cada camino.</b> Las filas son lo que le das a la IA y las columnas, lo que te devuelve. El color dice la madurez para usar en el trabajo: verde, lista con revisión normal; azul, útil con revisión cuidadosa; naranja, experimental o con resultados irregulares; gris, poco uso en la oficina. Lee la última columna: todo lo que termina en video es lo más nuevo.</figcaption></figure><div class="prose"><p>Para el video de un minuto que pidió la gerencia, la respuesta realista es una mezcla: las gráficas y el guion los haces con IA, la narración puede ser tu voz o una voz sintética, y el montaje lo armas con una herramienta de edición, usando clips generados solo como apoyo visual.</p></div></section>
+<section><h2>Derechos, marcas y caras reales</h2><div class="prose"><p>Tres reglas cortas, porque el detalle está en el curso <a href="https://aaramirez.github.io/ia-responsable/temario.html" target="_blank" rel="noopener">IA responsable</a>:</p><ul><li><b>Caras y voces reales</b>: no generes ni edites imágenes, voces o videos de personas reales (compañeros, clientes, figuras públicas) sin su permiso.</li><li><b>Marcas y obras</b>: no pidas imágenes «al estilo de» una marca, un personaje o un artista vivo para un material de la empresa. Las reglas sobre derechos de autor de lo generado todavía se discuten.</li><li><b>Transparencia</b>: si una imagen o un video generados pueden pasar por reales, dilo.</li></ul><p>La tecnología también ayuda a la transparencia. El estándar <b>C2PA</b> (de la <i>Coalition for Content Provenance and Authenticity</i>, coalición para la procedencia y autenticidad del contenido) permite que un archivo lleve <b>credenciales de contenido</b> (<i>content credentials</i>): un registro firmado de qué herramienta lo creó y qué ediciones tuvo. Varios generadores las agregan, y algunos fabricantes ponen además <b>marcas de agua invisibles</b> (<i>watermarks</i>) en lo que generan, como SynthID de Google.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>¿De dónde salió esta imagen?</h3></div><p>Vas a revisar si una imagen generada lleva credenciales de contenido. Usa la imagen que generaste en la primera práctica (descárgala) y el verificador público de Content Credentials, que no pide registro.</p><ol class="steps"><li><span>Abre <a href="https://contentcredentials.org/verify" target="_blank" rel="noopener">contentcredentials.org/verify</a> y arrastra la imagen.</span></li><li><span>Lee lo que muestra: si encontró credenciales, qué aplicación la creó y en qué fecha.</span></li><li><span>Toma una captura de pantalla de esa misma imagen y verifica la captura.</span></li></ol><p><b>Qué observar:</b> según el generador, la imagen original puede mostrar credenciales que dicen que fue creada con IA, o no mostrar nada si esa herramienta no las agrega. La captura de pantalla casi nunca las conserva: es un archivo nuevo. Por eso la ausencia de credenciales no prueba que una imagen sea real; su presencia sí es una buena pista de su origen.</p></div></section>
+<section><h2>Pedidos para copiar</h2><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Imagen por piezas</h3></div><div class="code-copia"><pre><code>Genera una imagen con estas características:
+Sujeto y acción: [qué hay y qué hace]
+Entorno: [dónde]
+Estilo: [fotografía realista / ilustración plana / acuarela…]
+Composición: [plano general / primer plano / vista desde arriba]
+Luz y paleta: [luz y colores]
+Formato: [horizontal 16:9 / cuadrado / vertical 9:16]
+Texto: [sin texto / el texto exacto entre comillas]
+Evita: logotipos, marcas y personas reconocibles.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Leer una foto sin adivinar</h3></div><div class="code-copia"><pre><code>Convierte la imagen adjunta en [una lista de tareas / una tabla / texto]. Reglas: transcribe solo lo que se ve; si una palabra o un número no se lee con claridad, escribe [?] en su lugar; ignora lo tachado; al final, lista todo lo que marcaste con [?] para que yo lo revise.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Resumen de una transcripción de llamada</h3></div><div class="code-copia"><pre><code>Resume esta transcripción de una llamada en tres líneas: motivo del contacto, solución dada y pendientes (con responsable si se mencionó). Usa solo lo que está en la transcripción. Si algo no quedó claro en el audio (por ejemplo una cifra o un nombre), dilo.
+[pega aquí la transcripción]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Guion para un video corto</h3></div><div class="code-copia"><pre><code>Escribe el guion de un video de 60 segundos para presentar [tema] a [público]. Divídelo en escenas de 5 a 10 segundos; para cada una, indica la narración, lo que se ve en pantalla y si conviene una gráfica, una imagen generada o una toma real. No inventes cifras: usa solo estas: [datos].</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div></section>
+<section><h2>Lo que te llevas</h2><div class="prose"><p>Describir con precisión lo que quieres ver es la habilidad que sirve para cualquier herramienta de imagen. Lo que no describes, lo decide el modelo. Y en los dos sentidos, de la imagen o el audio al texto y del texto a la imagen o la voz, el modelo completa lo que falta con algo plausible: revisa siempre contra la foto, la grabación o la persona real.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Por qué dos imágenes generadas con el mismo pedido corto salen tan distintas?</summary><p>Porque todo lo que el pedido no describe (edad, ropa, ángulo, luz, estilo, formato) lo decide el modelo al azar en cada intento. Cuantas más piezas describes, menos sorpresa.</p></details><details><summary>¿Qué es la relación de aspecto y por qué conviene pedirla desde el inicio?</summary><p>Es la forma del lienzo, como 16:9 (horizontal), 1:1 (cuadrado) o 9:16 (vertical). Pedirla al inicio evita recortar después y perder lo importante.</p></details><details><summary>¿Por qué no se debe editar con IA la foto de un daño o de una instalación terminada?</summary><p>Porque rellenar, ampliar o «mejorar» inventan contenido que encaja. En una foto que es evidencia, eso es alterar la prueba.</p></details><details><summary>¿Qué diferencia hay entre el OCR clásico y un modelo de visión y lenguaje al leer una palabra borrosa?</summary><p>El OCR deja un símbolo raro o un error visible; el modelo de visión y lenguaje tiende a escribir la palabra que tendría sentido, con seguridad, aunque no sea la que está escrita.</p></details><details><summary>¿Qué mejora más una transcripción: cambiar de herramienta o mejorar el audio?</summary><p>Mejorar el audio: micrófono cerca, una persona a la vez, poco ruido. Un vocabulario personalizado con nombres y siglas también ayuda mucho.</p></details><details><summary>Recibes una videollamada del director financiero que pide una transferencia urgente. ¿Qué haces?</summary><p>No apruebas nada por esa llamada. Confirmas por un segundo canal conocido, por ejemplo devolviendo la llamada al número registrado, porque la voz y la cara se pueden imitar con IA.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es el «espacio latente» (<i>latent space</i>) y por qué los modelos de difusión trabajan ahí en lugar de hacerlo directamente sobre los píxeles?<small>Pista: busca «latent diffusion».</small></li><li>¿Cómo funciona una marca de agua invisible como SynthID y por qué puede debilitarse al recortar o comprimir una imagen?</li><li>¿Qué es la frecuencia de muestreo de un audio (16 kHz, 44,1 kHz) y qué frecuencia usan los sistemas de reconocimiento del habla?</li><li>¿Cómo se mide la calidad de un sistema de reconocimiento del habla y qué es la tasa de error por palabra?<small>Pista: busca «word error rate».</small></li><li>¿Qué dice la ley de tu país sobre usar la imagen o la voz de una persona sin su autorización?</li><li>¿Por qué generar diez segundos de video exige tanto más cómputo que generar una imagen?<small>Pista: piensa en cuántos fotogramas por segundo tiene un video.</small></li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://contentcredentials.org/verify" target="_blank" rel="noopener">Verificador de Content Credentials <small>herramienta</small></a><a class="vid" href="https://c2pa.org/" target="_blank" rel="noopener">C2PA: el estándar de procedencia del contenido <small>lectura</small></a><a class="vid" href="https://es.wikipedia.org/wiki/Modelo_de_difusi%C3%B3n" target="_blank" rel="noopener">Modelo de difusión, en Wikipedia <small>lectura</small></a><a class="vid" href="https://aaramirez.github.io/ia-responsable/temario.html" target="_blank" rel="noopener">IA responsable: derechos de autor, deepfakes y transparencia <small>curso</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-generativa" target="_blank" rel="noopener">github.com/aaramirez/ia-generativa</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const P=[
+    {k:'suj',n:'Sujeto',fija:true,o:[['tec','una técnica junto a un poste'],['van','una camioneta de reparto'],['reu','dos personas con una laptop']]},
+    {k:'ent',n:'Entorno',o:[['calle','en una calle con casas'],['campo','en el campo'],['int','en una oficina']]},
+    {k:'est',n:'Estilo',o:[['plana','ilustración plana'],['real','estilo realista, con sombras'],['boceto','boceto a lápiz']]},
+    {k:'comp',n:'Composición',o:[['gen','plano general'],['pp','primer plano'],['abajo','vista desde abajo']]},
+    {k:'luz',n:'Luz',o:[['dia','luz de día'],['tarde','luz de atardecer'],['noche','de noche']]},
+    {k:'fmt',n:'Formato',o:[['h','horizontal 16:9'],['c','cuadrado 1:1'],['v','vertical 9:16']]},
+    {k:'txt',n:'Texto',o:[['no','sin texto'],['si','con el título «Informe de mayo»']]}
+  ];
+  const on={suj:true},val={},az={};
+  P.forEach(p=>{val[p.k]=p.o[0][0];on[p.k]=!!p.fija;});
+  let intento=1,errTxt='';
+  const pick=a=>a[Math.floor(Math.random()*a.length)];
+  function sortear(){
+    P.forEach(p=>{az[p.k]=pick(p.o)[0];});
+    errTxt=pick(['Informe de mayo','Infrome de mayo','Informe de mayvo','Informe de mayo']);
+    if(!on.txt&&Math.random()<.5)az.txt='raro';
+  }
+  const v=k=>on[k]?val[k]:az[k];
+  function dibujar(){
+    const fmt=v('fmt'),W=fmt==='h'?320:fmt==='c'?240:180,H=fmt==='h'?180:fmt==='c'?240:320;
+    const est=v('est'),luz=v('luz'),ent=v('ent'),comp=v('comp'),suj=v('suj');
+    const B=est==='boceto';
+    const F=(c)=>B?'fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-dasharray="'+pick(['4 2','5 3','6 2'])+'"':'fill="'+c+'"'+(est==='real'?' stroke="var(--ink)" stroke-opacity=".25"':'');
+    const cielo=luz==='dia'?'var(--accent-soft)':luz==='tarde'?'var(--warm-soft)':'var(--c-tra-s)';
+    const gy=comp==='abajo'?H*.9:H*.7;
+    let s='<svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" xmlns="http://www.w3.org/2000/svg">';
+    s+='<defs><linearGradient id="c6l1-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:'+cielo+'"/><stop offset="1" style="stop-color:var(--card)"/></linearGradient></defs>';
+    s+='<rect width="'+W+'" height="'+H+'" fill="var(--card)"/>';
+    const fondoCielo=B?'':(est==='real'?'<rect width="'+W+'" height="'+gy+'" fill="url(#c6l1-g)"/>':'<rect width="'+W+'" height="'+gy+'" fill="'+cielo+'"/>');
+    function astro(x,y,r){
+      if(luz==='dia')return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" '+F('var(--c-fis)')+'/>';
+      if(luz==='tarde')return '<circle cx="'+x+'" cy="'+(y+r*2.2)+'" r="'+(r*1.3)+'" '+F('var(--warm)')+'/>';
+      let t='<circle cx="'+x+'" cy="'+y+'" r="'+r+'" '+F('var(--muted)')+'/>';
+      for(let i=0;i<7;i++)t+='<circle cx="'+(W*((i*37%100)/100))+'" cy="'+(gy*((i*53%60)/100)+6)+'" r="1.4" fill="var(--muted)"/>';
+      return t;
+    }
+    if(ent==='int'){
+      s+='<rect width="'+W+'" height="'+gy+'" '+F('var(--paper)')+'/>';
+      const wx=W*.08,wy=H*.1,ww=W*.38,wh=gy*.5;
+      s+='<rect x="'+wx+'" y="'+wy+'" width="'+ww+'" height="'+wh+'" '+(B?F(''):'fill="'+cielo+'" stroke="var(--line)" stroke-width="3"')+'/>';
+      s+=astro(wx+ww*.7,wy+wh*.3,Math.min(ww,wh)*.12);
+      s+='<rect y="'+gy+'" width="'+W+'" height="'+(H-gy)+'" '+F('var(--line)')+'/>';
+    }else{
+      s+=fondoCielo+astro(W*.8,H*.16,Math.min(W,H)*.06);
+      if(ent==='calle'){
+        for(let i=0;i<4;i++){const x=i*W/4+4,w=W/4-10,h=gy*(.22+((i*7)%3)*.06);s+='<rect x="'+x+'" y="'+(gy-h)+'" width="'+w+'" height="'+h+'" '+F(i%2?'var(--line)':'var(--grid)')+'/><path d="M'+(x-3)+' '+(gy-h)+' L'+(x+w/2)+' '+(gy-h-w*.35)+' L'+(x+w+3)+' '+(gy-h)+'Z" '+F('var(--c-apl-s)')+'/>';}
+        s+='<rect y="'+gy+'" width="'+W+'" height="'+(H-gy)+'" '+F('var(--grid)')+'/>';
+      }else{
+        s+='<ellipse cx="'+(W*.25)+'" cy="'+gy+'" rx="'+(W*.45)+'" ry="'+(gy*.25)+'" '+F('var(--c-enl-s)')+'/><ellipse cx="'+(W*.85)+'" cy="'+gy+'" rx="'+(W*.4)+'" ry="'+(gy*.18)+'" '+F('var(--good-soft)')+'/>';
+        s+='<rect y="'+gy+'" width="'+W+'" height="'+(H-gy)+'" '+F('var(--c-enl-s)')+'/>';
+      }
+    }
+    // sujeto en coordenadas locales: pies en (0,0), alto ~120
+    let g='';
+    if(est==='real')g+='<ellipse cx="0" cy="2" rx="60" ry="6" fill="var(--ink)" opacity=".18"/>';
+    const persona=(x,c)=>'<rect x="'+(x-7)+'" y="-34" width="6" height="34" '+F('var(--ink)')+'/><rect x="'+(x+1)+'" y="-34" width="6" height="34" '+F('var(--ink)')+'/><rect x="'+(x-10)+'" y="-72" width="20" height="40" rx="4" '+F(c)+'/><circle cx="'+x+'" cy="-82" r="9" '+F('var(--c-fis-s)')+'/>';
+    if(suj==='tec'){
+      g+='<rect x="-50" y="-150" width="7" height="150" '+F('var(--muted)')+'/><rect x="-58" y="-112" width="24" height="18" rx="2" '+F('var(--card)')+'/><line x1="-46" y1="-140" x2="-130" y2="-128" stroke="var(--ink)" stroke-width="1.2"/><line x1="-43" y1="-140" x2="130" y2="-130" stroke="var(--ink)" stroke-width="1.2"/>';
+      g+=persona(0,'var(--c-tra)')+'<path d="M-10 -86 a10 10 0 0 1 20 0z" '+F('var(--c-fis)')+'/><line x1="-8" y1="-62" x2="-42" y2="-100" stroke="var(--c-tra)" stroke-width="5" stroke-linecap="round"/>';
+    }else if(suj==='van'){
+      g+='<rect x="-70" y="-66" width="100" height="52" rx="5" '+F('var(--accent)')+'/><path d="M30 -54 h24 l16 22 v18 h-40z" '+F('var(--accent)')+'/><path d="M34 -50 h18 l11 16 h-29z" '+F('var(--accent-soft)')+'/><circle cx="-44" cy="-12" r="12" '+F('var(--ink)')+'/><circle cx="46" cy="-12" r="12" '+F('var(--ink)')+'/><rect x="-60" y="-56" width="70" height="14" rx="2" '+F('var(--card)')+'/>';
+    }else{
+      g+=persona(-38,'var(--c-red)')+persona(38,'var(--c-enl)')+'<rect x="-70" y="-46" width="140" height="7" '+F('var(--muted)')+'/><rect x="-4" y="-40" width="8" height="40" '+F('var(--muted)')+'/><path d="M-16 -46 l4 -18 h24 l4 18z" '+F('var(--line)')+'/>';
+    }
+    const esc=(comp==='gen'?.55:comp==='pp'?1.6:1.05)*Math.min(W,H)/180;
+    const cy=comp==='pp'?gy+H*.28:gy;
+    s+='<g transform="translate('+(W/2)+' '+cy+') scale('+esc.toFixed(3)+')">'+g+'</g>';
+    const tx=v('txt');
+    if(tx==='si')s+='<rect x="8" y="8" width="'+Math.min(W-16,150)+'" height="26" rx="4" fill="var(--card)" opacity=".85"/><text x="14" y="26" style="font:700 '+(W<200?11:14)+'px var(--f-display)" fill="var(--ink)">'+(on.txt?errTxt:'Informe de mayo')+'</text>';
+    if(tx==='raro')s+='<rect x="8" y="8" width="70" height="22" rx="4" fill="var(--card)" opacity=".85"/><text x="14" y="24" style="font:700 12px var(--f-display)" fill="var(--warm)">'+pick(['OFRTA','INFRMO','SAELS'])+'</text>';
+    return s+'</svg>';
+  }
+  function pintar(){
+    const cont=$('#c6l1-piezas');
+    if(!cont.childElementCount){
+      P.forEach(p=>{
+        const d=document.createElement('div');d.className='c6l1-p';d.dataset.k=p.k;
+        d.innerHTML='<input type="checkbox" aria-label="Usar la pieza '+p.n+'"'+(p.fija?' checked disabled':'')+'><span>'+p.n+'</span><select aria-label="'+p.n+'">'+p.o.map(o=>'<option value="'+o[0]+'">'+o[1]+'</option>').join('')+'</select>';
+        const cb=d.querySelector('input'),se=d.querySelector('select');
+        cb.addEventListener('change',()=>{on[p.k]=cb.checked;pintar();});
+        se.addEventListener('change',()=>{val[p.k]=se.value;on[p.k]=true;cb.checked=true;pintar();});
+        cont.appendChild(d);
+      });
+    }
+    cont.querySelectorAll('.c6l1-p').forEach(d=>{const k=d.dataset.k;d.classList.toggle('off',!on[k]);d.querySelector('input').checked=!!on[k];d.querySelector('select').value=val[k];});
+    $('#c6l1-lienzo').innerHTML=dibujar();
+    const txt=k=>P.find(p=>p.k===k).o.find(o=>o[0]===val[k])[1];
+    const partes=P.filter(p=>on[p.k]).map(p=>txt(p.k));
+    $('#c6l1-pedido').innerHTML='<b>Pedido:</b> «'+partes.join(', ')+'»'+(P.some(p=>!on[p.k])?' <span class="az">(lo demás lo decide el modelo)</span>':'');
+    const libres=P.filter(p=>!on[p.k]);
+    let h='<span class="big">Intento '+intento+' · decidiste '+(P.length-libres.length)+' de '+P.length+' piezas</span>';
+    if(libres.length){
+      h+='<span>El modelo eligió al azar: '+libres.map(p=>{const o=p.o.find(o=>o[0]===az[p.k]);return p.n.toLowerCase()+' ('+(az[p.k]==='raro'?'agregó un letrero que nadie pidió':o?o[1]:'')+')';}).join(', ')+'. Pulsa «Generar otra vez»: eso cambiará.</span>';
+    }else h+='<span class="ok">Describiste todas las piezas: cada intento se parece al anterior y a lo que tenías en la cabeza.</span>';
+    if(on.txt&&val.txt==='si')h+=errTxt!=='Informe de mayo'?'<span class="warn">Revisa el título letra por letra: dice «'+errTxt+'». El texto dentro de la imagen es de lo que más falla.</span>':'<span>El título salió bien esta vez. Genera otra vez: no siempre sale igual.</span>';
+    $('#c6l1-out').innerHTML=h;
+  }
+  $('#c6l1-gen').addEventListener('click',()=>{intento++;sortear();pintar();});
+  $('#c6l1-todo').addEventListener('click',()=>{P.forEach(p=>on[p.k]=true);pintar();});
+  $('#c6l1-nada').addEventListener('click',()=>{P.forEach(p=>on[p.k]=!!p.fija);pintar();});
+  sortear();Object.assign(az,{ent:'campo',est:'plana',comp:'gen',luz:'tarde',fmt:'h',txt:'no'});pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  let paso=0;const dec={jp:'',fe:'',ca:''};
+  const ref=()=>$('#c6l2-foto').value==='ref';
+  function lectura(){
+    const r=ref();
+    return [
+      ['PLAN MAYO',98],['1. Catálogo nuevo → Ana · 10/5',96],['2. Capacitar nuevos → Luis · 20/5',95],
+      ['3. Revisar precios plan básico (tachado)',90],
+      [r?'4. Llamar prov. equipos → JP · 16/5 ¡urgente!':'4. Llamar prov. equipos → JP · 15/5 ¡urgente!',r?71:64,r?'La IA leyó «16/5» con bastante seguridad: el reflejo tapa el número.':'El 5 está borroso: la IA lo marca como dudoso.'],
+      [r?'5. Encuesta clientes → Marla · fin de mes':'5. Encuesta clientes → Marta · fin de mes',r?58:93,r?'«Marla» no es nadie del equipo: el reflejo cambió una letra.':''],
+      ['¿Campaña +1 mes?? → gerencia',88]
+    ];
+  }
+  function tareas(){
+    const r=ref();
+    return [
+      {t:'Catálogo nuevo',q:'Ana',f:'10/5',n:10},
+      {t:'Llamar al proveedor de equipos',q:'JP',f:r?'16/5':'15/5',n:r?16:15,urg:true,flag:'jp'},
+      {t:'Capacitar a los nuevos',q:'Luis',f:'20/5',n:20},
+      {t:'Encuesta de clientes',q:r?'Marla':'Marta',f:'31/5',n:31,nota:'«fin de mes» se interpretó como 31/5'}
+    ];
+  }
+  function panel(){
+    const r=ref(),L=lectura(),T=tareas();let h='';
+    if(paso===0){
+      h='<b>El asistente transcribe lo que ve, línea por línea, con su confianza.</b>';
+      h+=L.map(l=>'<div class="c6l2-l"><span class="t">'+l[0]+(l[2]?'<small>'+l[2]+'</small>':'')+'</span><span class="bar" title="'+l[1]+' %"><i class="'+(l[1]<75?'baja':'')+'" style="width:'+l[1]+'%"></i></span></div>').join('');
+    }else if(paso===1){
+      h='<b>El asistente interpreta: qué es tarea, qué no y qué quiso decir cada abreviatura.</b><ul style="margin:0;padding-left:1.2rem">';
+      h+='<li>Línea 3 está tachada: <b>se descarta</b>.</li>';
+      h+='<li>«prov.» = proveedor. «JP» = <span class="c6l2-flag">¿quién? Hay un Juan Pablo en el equipo, y «JP» también puede ser el jefe de proyecto.</span></li>';
+      h+='<li>«fin de mes» = 31/5 (supuesto razonable, pero es un supuesto).</li>';
+      h+='<li>«¿Campaña +1 mes??» <span class="c6l2-flag">no es una tarea: es una pregunta para la gerencia.</span></li>';
+      if(r)h+='<li>Fecha de la línea 4: 16/5. <span class="hint">(No la marcó como dudosa.)</span></li>';
+      h+='</ul>';
+    }else if(paso===2){
+      h='<b>Lista ordenada por fecha, con lo urgente primero.</b><div class="tbl"><table><thead><tr><th>Tarea</th><th>Responsable</th><th>Fecha</th></tr></thead><tbody>';
+      T.slice().sort((a,b)=>(b.urg?1:0)-(a.urg?1:0)||a.n-b.n).forEach(x=>{
+        const q=x.flag==='jp'&&dec.jp?(dec.jp==='preguntar'?'(por confirmar)':dec.jp):(x.q==='Marla'&&dec.ma?dec.ma:x.q),f=x.flag==='jp'&&dec.fe?dec.fe:x.f;
+        h+='<tr><td>'+(x.urg?'⚑ ':'')+x.t+(x.nota?'<br><small class="hint">'+x.nota+'</small>':'')+'</td><td>'+q+'</td><td>'+f+'</td></tr>';
+      });
+      h+='</tbody></table></div><span class="hint">Pendiente para la gerencia: decidir si la campaña se amplía un mes.</span>';
+    }else{
+      h='<b>Las dudas las resuelves tú, mirando la foto o preguntando.</b>';
+      h+='<div class="c6l2-dec'+(dec.jp==='Juan Pablo Ríos'||dec.jp==='preguntar'?' ok':'')+'"><label>¿Quién es «JP»? <select id="c6l2-jp"><option value="">(elige)</option><option>Juan Pablo Ríos</option><option>Jefe de proyecto</option><option value="preguntar">No estoy seguro: pregunto en el grupo</option></select></label></div>';
+      h+='<div class="c6l2-dec'+(dec.fe==='15/5'?' ok':'')+'"><label>Fecha de la llamada al proveedor: <select id="c6l2-fe"><option value="">(elige)</option><option>15/5</option><option>16/5</option></select></label><span class="hint">'+(r?'Con el reflejo no se ve. Pide la foto nítida a quien la tomó, o pregunta.':'Mira la línea 4 de la foto: el número está borroso, pero se distingue.')+'</span></div>';
+      if(r)h+='<div class="c6l2-dec'+(dec.ma==='Marta'?' ok':'')+'"><label>Responsable de la encuesta: <select id="c6l2-ma"><option value="">(elige)</option><option>Marla</option><option>Marta</option></select></label></div>';
+    }
+    $('#c6l2-panel').innerHTML=h;
+    if(paso===3){
+      $('#c6l2-jp').value=dec.jp;$('#c6l2-fe').value=dec.fe;
+      $('#c6l2-jp').addEventListener('change',e=>{dec.jp=e.target.value;pintar();});
+      $('#c6l2-fe').addEventListener('change',e=>{dec.fe=e.target.value;pintar();});
+      if(r){$('#c6l2-ma').value=dec.ma||'';$('#c6l2-ma').addEventListener('change',e=>{dec.ma=e.target.value;pintar();});}
+    }
+  }
+  function pintar(){
+    $('#c6l2-piz').classList.toggle('reflejo',ref());
+    document.querySelectorAll('[id="06-lab-2"] .c6l2-pasos button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.p===paso?'true':'false'));
+    panel();
+    const r=ref();let h='';
+    if(paso===0)h='<span class="big">Paso 1 de 4: leer</span><span>'+(r?'Con reflejo, dos lecturas cambiaron. Fíjate: «16/5» tiene más confianza que el «15/5» de la foto nítida. Una lectura equivocada puede venir con mucha seguridad.':'Las barras naranjas son las lecturas dudosas. Un buen asistente las marca; uno apurado las «adivina».')+'</span>';
+    else if(paso===1)h='<span class="big">Paso 2 de 4: interpretar</span><span>Aquí está el valor de un modelo de visión y lenguaje: entiende lo tachado, las flechas y las abreviaturas. Y aquí está el riesgo: completa lo que falta con supuestos.</span>';
+    else if(paso===2)h='<span class="big">Paso 3 de 4: ordenar</span><span>La tabla se ve terminada y lista para enviar. Todavía no lo está: tiene un responsable ambiguo'+(r?', una fecha y un nombre mal leídos':' y una fecha dudosa')+'.</span>';
+    else{
+      const okJ=dec.jp==='Juan Pablo Ríos'||dec.jp==='preguntar',okF=dec.fe==='15/5',okM=!r||dec.ma==='Marta';
+      const n=(dec.jp?1:0)+(dec.fe?1:0)+(r?(dec.ma?1:0):0),tot=r?3:2;
+      h='<span class="big">Paso 4 de 4: resolviste '+n+' de '+tot+' dudas</span>';
+      if(dec.jp==='Jefe de proyecto')h+='<span class="warn">Puede ser, pero es una suposición tuya, igual que la de la IA. Si no estás seguro, pregunta.</span>';
+      if(dec.fe==='16/5')h+='<span class="warn">16/5 es lo que leyó la IA con el reflejo. En la foto nítida dice 15/5: un día tarde en una tarea urgente.</span>';
+      if(r&&dec.ma==='Marla')h+='<span class="warn">No hay ninguna Marla en el equipo: es Marta, con una letra cambiada por el reflejo.</span>';
+      if(okJ&&okF&&okM)h+='<span class="ok">Lista para enviar. La IA hizo en segundos el 90 % del trabajo; tú pusiste el 10 % que la hace confiable. Vuelve al paso ③ para ver la tabla corregida.</span>';
+    }
+    $('#c6l2-out').innerHTML=h;
+  }
+  document.querySelectorAll('[id="06-lab-2"] .c6l2-pasos button').forEach(b=>b.addEventListener('click',()=>{paso=+b.dataset.p;pintar();}));
+  $('#c6l2-foto').addEventListener('change',()=>{dec.jp='';dec.fe='';dec.ma='';pintar();});
+  pintar();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alucinaciones y verificar · IA generativa · IA generativa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Usar la IA generativa en el trabajo, sin tecnicismos: qué puede y qué no, cómo pedir bien, cómo verificar, qué hacer con texto, imágenes y datos, casos por área y cómo llevarla a tu equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="alucinaciones-y-verificar">
+<header class="topbar"><a class="brand" href="index.html">IA <b>generativa</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 02 DE 10</span><h1>Alucinaciones y cómo verificar</h1><p class="lede">Un asistente de IA puede inventar una cita, una cifra o una ley con el mismo tono seguro con que dice la verdad. Este capítulo explica por qué pasa y te da una rutina corta para revisar cada respuesta antes de usarla.</p></header>
+<section><div class="prose"><p>Volvamos al informe mensual del capítulo anterior. El borrador decía que las ventas crecieron un 12 %, y tus notas no decían eso. Lo corriges, pero ahora la duda se extiende a todo lo demás: el párrafo de contexto del sector menciona «un estudio de 2022» con su revista y su página, y el cierre cita una norma sobre facturación electrónica con número y año. ¿Existen? ¿Dicen eso?</p><p>Este capítulo trata de esa duda. Primero, qué es exactamente una alucinación y qué formas toma. Luego, por qué ocurre, con lo mínimo de tecnología que hace falta para anticiparla. Y al final, lo más útil: una rutina de verificación que se ajusta a lo que está en juego, para no revisar todo con lupa ni dejar pasar lo importante.</p></div></section>
+<section><h2>Qué es una alucinación</h2><div class="prose"><p>Una <b>alucinación</b> (<i>hallucination</i>) es una respuesta de un modelo de IA que suena bien, tiene la forma correcta y es falsa. No es un error de ortografía ni una frase torpe: es un contenido inventado presentado como si fuera un hecho. Algunos investigadores prefieren llamarla <b>confabulación</b> (<i>confabulation</i>), la palabra que usa la psicología para los recuerdos falsos que una persona cuenta de buena fe, porque describe mejor lo que pasa: el modelo no «ve» cosas que no están, rellena huecos con lo que encaja.</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en el compañero que en una reunión nunca dice «no sé». Le preguntas por la cifra de cierre del trimestre pasado y responde «unos 3,2 millones, más o menos», con total naturalidad. A veces acierta, porque estuvo atento. Otras veces el número salió de una mezcla de recuerdos y de lo que le pareció razonable. Lo difícil es que, por cómo lo dice, no puedes distinguir un caso del otro. Un asistente de IA se comporta como ese compañero, con dos diferencias: sabe muchísimo más y nunca se pone nervioso.</p></div><div class="prose"><p>Conviene distinguir dos tipos, porque se revisan distinto:</p><ul><li><b>Inventa algo que no existe en ninguna parte</b>: un estudio, una persona, una ley. Aquí falla la <b>factualidad</b> (<i>factuality</i>), la correspondencia con los hechos del mundo.</li><li><b>Contradice el material que tú le diste</b>: le pegas un acta donde se acordó revisar los precios en mayo, y el resumen dice «en junio». Aquí falla la <b>fidelidad</b> (<i>faithfulness</i>), la correspondencia con la fuente. Es la alucinación más traicionera, porque confías en que el asistente solo «resumió».</li></ul><p>Una alucinación tampoco es lo mismo que un dato desactualizado (el modelo leyó algo que era cierto y dejó de serlo) ni que una opinión discutible. Las tres cosas se revisan, pero solo la alucinación aparece sin ninguna base.</p></div><div class="caso"><b>Un caso real</b><p><b>Un escrito judicial con precedentes que no existían.</b> En 2023, en un tribunal federal de Nueva York, un abogado presentó un escrito con varios fallos anteriores que respaldaban su argumento. Ni el juez ni la parte contraria pudieron encontrarlos: los había redactado un chatbot, con nombres de casos, números y citas internas que sonaban perfectos. Cuando el abogado le preguntó al mismo chatbot si los casos eran reales, este respondió que sí. El tribunal sancionó a los abogados. La lección no es que la herramienta sea inútil, sino que preguntarle a la IA si su respuesta es cierta no es verificar: verificar es ir a la fuente.</p></div></section>
+<section><h2>Las más comunes: citas, cifras, nombres, enlaces y leyes</h2><div class="prose"><p>Las alucinaciones no se reparten al azar. Aparecen sobre todo donde el texto tiene una <b>forma muy reconocible</b> y un <b>contenido muy específico</b>: el modelo reproduce la forma a la perfección y rellena el contenido con lo plausible.</p></div><figure class="fig fig-comparacion" id="02-diagrama-1"><div class="lienzo"><svg viewBox="0 0 820 412" style="min-width:660px" role="img" aria-label="Tabla de los cinco inventos más comunes de la IA (citas, cifras, nombres, enlaces y leyes), con un ejemplo de cada uno y la herramienta con que se comprueba">
+  <text x="24" y="28" class="t t-xs t-m">TIPO DE INVENTO</text>
+  <text x="214" y="28" class="t t-xs t-m">EJEMPLO CON LA FORMA TÍPICA</text>
+  <text x="584" y="28" class="t t-xs t-m">CÓMO SE COMPRUEBA</text>
+
+  <rect x="16" y="40" width="182" height="64" rx="8" class="c-apl"/>
+  <text x="30" y="68" class="t t-b k-apl">① Citas</text>
+  <text x="30" y="88" class="t t-s">autores, revista, páginas</text>
+  <rect x="206" y="40" width="364" height="64" rx="8" class="caja"/>
+  <text x="220" y="66" class="t t-s">Martínez, L. y Okafor, J. (2022). Productividad</text>
+  <text x="220" y="82" class="t t-s">y asistentes de IA… Rev. Iberoam., 14(3), 45-67.</text>
+  <text x="220" y="98" class="t t-xs t-mono t-m">doi:10.4821/rigd.2022.143</text>
+  <rect x="578" y="40" width="226" height="64" rx="8" class="c-enl"/>
+  <text x="592" y="66" class="t t-s">Abrir doi.org/… · buscar el</text>
+  <text x="592" y="82" class="t t-s">título exacto en Crossref o</text>
+  <text x="592" y="98" class="t t-s">Google Académico</text>
+
+  <rect x="16" y="112" width="182" height="64" rx="8" class="c-fis"/>
+  <text x="30" y="140" class="t t-b k-fis">② Cifras</text>
+  <text x="30" y="160" class="t t-s">porcentajes, montos</text>
+  <rect x="206" y="112" width="364" height="64" rx="8" class="caja"/>
+  <text x="220" y="138" class="t t-s">«El 37,4 % de las pymes de la región ya usa</text>
+  <text x="220" y="154" class="t t-s">asistentes de IA a diario».</text>
+  <text x="220" y="170" class="t t-xs t-m">PRECISO, SIN FUENTE</text>
+  <rect x="578" y="112" width="226" height="64" rx="8" class="c-enl"/>
+  <text x="592" y="138" class="t t-s">Pedir la fuente · comparar con</text>
+  <text x="592" y="154" class="t t-s">tus notas, el sistema o el</text>
+  <text x="592" y="170" class="t t-s">informe original</text>
+
+  <rect x="16" y="184" width="182" height="64" rx="8" class="c-tra"/>
+  <text x="30" y="212" class="t t-b k-tra">③ Nombres</text>
+  <text x="30" y="232" class="t t-s">personas, cargos</text>
+  <rect x="206" y="184" width="364" height="64" rx="8" class="caja"/>
+  <text x="220" y="210" class="t t-s">«Según Ana Ríos, gerente de innovación de</text>
+  <text x="220" y="226" class="t t-s">Ejemplo S.A., el proyecto ahorró un mes».</text>
+  <text x="220" y="242" class="t t-xs t-m">PERSONA + CARGO + EMPRESA</text>
+  <rect x="578" y="184" width="226" height="64" rx="8" class="c-enl"/>
+  <text x="592" y="210" class="t t-s">Sitio oficial de la organización,</text>
+  <text x="592" y="226" class="t t-s">comunicados o la propia</text>
+  <text x="592" y="242" class="t t-s">persona</text>
+
+  <rect x="16" y="256" width="182" height="64" rx="8" class="c-red"/>
+  <text x="30" y="284" class="t t-b k-red">④ Enlaces</text>
+  <text x="30" y="304" class="t t-s">direcciones web</text>
+  <rect x="206" y="256" width="364" height="64" rx="8" class="caja"/>
+  <text x="220" y="282" class="t t-s t-mono">https://www.ejemplo.com/estudios/</text>
+  <text x="220" y="298" class="t t-s t-mono">2023/ia-productividad-oficina.pdf</text>
+  <text x="220" y="314" class="t t-xs t-m">ESTRUCTURA PERFECTA, PÁGINA DE ERROR</text>
+  <rect x="578" y="256" width="226" height="64" rx="8" class="c-enl"/>
+  <text x="592" y="282" class="t t-s">Abrirlo · buscar la frase con</text>
+  <text x="592" y="298" class="t t-s">Ctrl+F · si ya no abre,</text>
+  <text x="592" y="314" class="t t-s">Wayback Machine</text>
+
+  <rect x="16" y="328" width="182" height="64" rx="8" class="d-sis"/>
+  <text x="30" y="356" class="t t-b k-sis">⑤ Leyes y normas</text>
+  <text x="30" y="376" class="t t-s">número, año, artículo</text>
+  <rect x="206" y="328" width="364" height="64" rx="8" class="caja"/>
+  <text x="220" y="354" class="t t-s">«La Ley 1.527 de 2019, artículo 14, obliga a</text>
+  <text x="220" y="370" class="t t-s">emitir la factura en 24 horas».</text>
+  <text x="220" y="386" class="t t-xs t-m">FORMA EXACTA DE UNA LEY</text>
+  <rect x="578" y="328" width="226" height="64" rx="8" class="c-enl"/>
+  <text x="592" y="354" class="t t-s">Diario oficial o sitio del</text>
+  <text x="592" y="370" class="t t-s">congreso · leer el artículo</text>
+  <text x="592" y="386" class="t t-s">completo</text>
+</svg></div><figcaption><b>Los cinco inventos más comunes y cómo atraparlos.</b> Cada fila es un tipo de alucinación. La columna del medio muestra un ejemplo con la forma típica; la de la derecha, la herramienta con la que se comprueba. Fíjate en que todas las comprobaciones tienen algo en común: se hacen fuera del asistente, en la fuente original.</figcaption></figure><div class="prose"><ul><li><b>Citas y referencias.</b> Una referencia académica tiene autores, año, título, revista, volumen y páginas. El modelo vio millones de ellas y arma una nueva combinando piezas reales: autores que existen, una revista que existe y un título que nunca se publicó. A veces el título es real, pero el año o la revista están cambiados.</li><li><b>Cifras.</b> Porcentajes, montos, cantidades de clientes o de empleados. Un «37,4 %» luce más creíble que un «cerca de un tercio», y por eso es más peligroso.</li><li><b>Nombres.</b> De personas poco conocidas, de cargos («la gerente de innovación de…»), de productos o de cláusulas. Con personas reales, además, un invento puede dañar su reputación.</li><li><b>Enlaces.</b> Una dirección web tiene una estructura predecible: dominio, sección, fecha, título con guiones. El modelo arma una que se ve perfecta y que lleva a una página de error, o a otra cosa.</li><li><b>Leyes, normas y resoluciones.</b> «La Ley 1.527 de 2019, artículo 14» tiene la forma exacta de una ley. Puede no existir, o existir y tratar de otro tema.</li></ul><p>Para las referencias académicas hay una pieza de tecnología muy útil: el <b>DOI</b> (<i>Digital Object Identifier</i>, identificador de objeto digital), un código permanente como <code>10.1162/tacl_a_00638</code> que identifica un artículo publicado. Si escribes <code>https://doi.org/</code> seguido del código, el sistema te lleva a la página del artículo. Un DOI inventado no lleva a ninguna parte. Los libros tienen algo parecido, el <b>ISBN</b> (<i>International Standard Book Number</i>, número internacional normalizado del libro).</p></div><div class="lab" id="02-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Detecta la cita inventada</h3></div><p class="hint">Este es el párrafo de contexto de un informe, con cinco referencias que propuso un asistente. Dos son falsas. Para cada referencia, usa las herramientas (buscar el DOI, buscar el título) y decide si es real o inventada. Al final, mira cuáles detectaste y por qué.</p><style>
+[id="02-lab-1"] .c2l1-parrafo{background:var(--paper);border-radius:10px;padding:12px 14px;font:1rem/1.55 var(--f-body);margin:0}
+[id="02-lab-1"] .c2l1-parrafo sup{font:700 .7rem var(--f-mono);color:var(--accent)}
+[id="02-lab-1"] .c2l1-refs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+[id="02-lab-1"] .c2l1-ref{border:1px solid var(--line);border-left:5px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:8px;background:var(--card)}
+[id="02-lab-1"] .c2l1-ref.real{border-left-color:var(--good)}
+[id="02-lab-1"] .c2l1-ref.falsa{border-left-color:var(--warm)}
+[id="02-lab-1"] .c2l1-cita{font:.95rem/1.45 var(--f-body);margin:0;overflow-wrap:anywhere}
+[id="02-lab-1"] .c2l1-cita b{font:700 .78rem var(--f-mono);color:var(--accent);margin-right:4px}
+[id="02-lab-1"] .c2l1-herr{font:.84rem/1.45 var(--f-mono);background:var(--paper);border-radius:6px;padding:7px 9px;margin:0;overflow-wrap:anywhere}
+[id="02-lab-1"] .c2l1-herr .no{color:var(--warm);font-weight:700}
+[id="02-lab-1"] .c2l1-herr .si{color:var(--good);font-weight:700}
+[id="02-lab-1"] .c2l1-fila{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+[id="02-lab-1"] .c2l1-fila .sep{flex:1 1 10px}
+[id="02-lab-1"] .c2l1-exp{margin:0;font-size:.92rem}
+[id="02-lab-1"] .c2l1-barra{display:flex;gap:4px}
+[id="02-lab-1"] .c2l1-barra i{flex:1;height:12px;border-radius:4px;background:var(--grid)}
+[id="02-lab-1"] .c2l1-barra i.ok{background:var(--good)}
+[id="02-lab-1"] .c2l1-barra i.mal{background:var(--warm)}
+</style>
+<p class="c2l1-parrafo">«En los últimos años, los asistentes de IA se han vuelto habituales en el trabajo de oficina. Un estudio regional encontró que mejoran la productividad en tareas de redacción<sup>[4]</sup>, aunque los modelos de lenguaje pueden inventar información<sup>[2]</sup> y leen peor los datos que están en medio de un texto largo<sup>[1]</sup>. Estos modelos se basan en la arquitectura Transformer<sup>[3]</sup> y pueden aprender una tarea con pocos ejemplos<sup>[5]</sup>.»</p>
+<ol class="c2l1-refs" id="c2l1-refs"></ol>
+<div class="c2l1-barra" id="c2l1-barra" aria-hidden="true"></div>
+<div class="readout texto" id="c2l1-out" aria-live="polite"></div></div><div class="prose"><p>En el laboratorio, una de las referencias falsas está inventada por completo y la otra es más difícil: el título y los autores son reales, pero el año, la revista y el DOI no. Esa mezcla de piezas verdaderas es la forma más común de las citas alucinadas, y la razón por la que «me suena» no es una verificación.</p></div></section>
+<section><h2>Por qué pasa: el modelo completa, no consulta</h2><div class="prose"><p>En el capítulo 1 viste que un modelo de lenguaje escribe token a token, eligiendo la continuación más probable. Ese mecanismo explica las alucinaciones sin necesidad de suponer mala intención: cuando el modelo tiene que escribir el año de un artículo, escribe el año que mejor encaja, no el año que buscó en un registro. Si ese artículo apareció muchas veces en lo que leyó, el año correcto es también el más probable. Si apareció poco, o nunca, cualquier año plausible sirve.</p></div><div class="analogia"><b>Imagínalo así</b><p>En el teatro de improvisación hay una regla de oro: «sí, y además». Nunca se niega lo que propone el compañero y nunca se deja la escena en silencio. Un modelo de lenguaje fue entrenado con una regla parecida: siempre hay una siguiente palabra, y quedarse callado no es una opción. Las etapas de entrenamiento que lo convierten en asistente le enseñaron, además, que las respuestas completas y seguras suelen gustar más que un «no lo sé».</p></div><div class="prose"><p>Esa última parte es importante. Durante el ajuste con retroalimentación humana, las personas que evaluaban respuestas tendían a premiar las que respondían algo concreto. Los fabricantes trabajan para que sus modelos reconozcan cuando no saben, y los modelos recientes lo hacen mejor que los de hace dos años, pero el incentivo de fondo sigue ahí.</p></div><figure class="fig fig-flujo" id="02-diagrama-2"><div class="lienzo"><svg viewBox="0 0 820 400" style="min-width:660px" role="img" aria-label="Dos caminos para una pregunta: sin fuente, el modelo completa con lo que encaja y responde con seguridad; con anclaje, el asistente busca en la web o en tus documentos, pone los fragmentos en su contexto y responde citándolos. En ambos casos una persona abre la fuente.">
+  <defs>
+    <marker id="g2d2-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  
+  <rect x="16" y="150" width="120" height="96" rx="10" class="caja"/>
+  <circle cx="76" cy="172" r="9" class="caja" style="stroke:var(--ink);stroke-width:1.6"/><path d="M60 198 Q76 178 92 198" class="ln" style="stroke:var(--ink);stroke-width:1.6"/>
+  <text x="76" y="212" class="t t-b" text-anchor="middle">Tú</text>
+  <text x="76" y="230" class="t t-s t-m" text-anchor="middle">preguntas</text>
+
+  
+  <rect x="164" y="16" width="640" height="150" rx="12" class="c-apl"/>
+  <text x="180" y="40" class="t t-b k-apl">Sin fuente: completa con lo que encaja</text>
+  <rect x="180" y="56" width="180" height="92" rx="8" class="caja"/>
+  <text x="194" y="80" class="t t-b">① La pregunta</text>
+  <text x="194" y="100" class="t t-s">«¿Qué ley regula la</text>
+  <text x="194" y="116" class="t t-s">factura electrónica?»</text>
+  <rect x="396" y="56" width="180" height="92" rx="8" class="caja"/>
+  <text x="410" y="80" class="t t-b">② Completa</text>
+  <text x="410" y="100" class="t t-s">«Ley» → «1.527» →</text>
+  <text x="410" y="116" class="t t-s">«de» → «2019»…</text>
+  <text x="410" y="136" class="t t-xs t-m">LO MÁS PROBABLE</text>
+  <rect x="612" y="56" width="176" height="92" rx="8" class="caja"/>
+  <text x="626" y="80" class="t t-b">③ Responde</text>
+  <text x="626" y="100" class="t t-s">con tono seguro,</text>
+  <text x="626" y="116" class="t t-s">sea cierto o no</text>
+  <text x="626" y="136" class="t t-xs k-apl">SIN CITA</text>
+  <line x1="360" y1="102" x2="394" y2="102" class="ln" style="stroke-width:2" marker-end="url(#g2d2-fl)"/>
+  <line x1="576" y1="102" x2="610" y2="102" class="ln" style="stroke-width:2" marker-end="url(#g2d2-fl)"/>
+
+  
+  <rect x="164" y="182" width="640" height="150" rx="12" class="c-enl"/>
+  <text x="180" y="206" class="t t-b k-enl">Con anclaje (grounding): busca y cita</text>
+  <rect x="180" y="222" width="180" height="92" rx="8" class="caja"/>
+  <text x="194" y="246" class="t t-b">④ Busca</text>
+  <text x="194" y="266" class="t t-s">en la web o en tus</text>
+  <text x="194" y="282" class="t t-s">documentos</text>
+  <rect x="396" y="222" width="180" height="92" rx="8" class="caja"/>
+  <text x="410" y="246" class="t t-b">⑤ Lee fragmentos</text>
+  <text x="410" y="266" class="t t-s">los pone en su</text>
+  <text x="410" y="282" class="t t-s">ventana de contexto</text>
+  <rect x="612" y="222" width="176" height="92" rx="8" class="caja"/>
+  <text x="626" y="246" class="t t-b">⑥ Responde</text>
+  <text x="626" y="266" class="t t-s">citando cada</text>
+  <text x="626" y="282" class="t t-s">fragmento [1] [2]</text>
+  <text x="626" y="302" class="t t-xs k-enl">CON CITA</text>
+  <line x1="360" y1="268" x2="394" y2="268" class="ln" style="stroke-width:2" marker-end="url(#g2d2-fl)"/>
+  <line x1="576" y1="268" x2="610" y2="268" class="ln" style="stroke-width:2" marker-end="url(#g2d2-fl)"/>
+
+  
+  <path d="M136 180 H150 V102 H178" class="ln" style="stroke-width:2" marker-end="url(#g2d2-fl)"/>
+  <path d="M136 220 H150 V268 H178" class="ln" style="stroke-width:2" marker-end="url(#g2d2-fl)"/>
+
+  
+  <rect x="164" y="346" width="640" height="44" rx="10" class="d-sis"/>
+  <text x="180" y="373" class="t t-b k-sis">⑦ En los dos caminos:</text>
+  <text x="330" y="373" class="t t-s">abres la fuente y compruebas que exista y que diga eso.</text>
+</svg></div><figcaption><b>Dos caminos para una misma pregunta.</b> Arriba, el camino sin fuente: la pregunta llega al modelo (①), el modelo completa con lo que encaja (②) y la respuesta sale con tono seguro (③), sea cierta o no. Abajo, el camino con <b>anclaje</b> (<i>grounding</i>): el asistente busca primero en la web o en tus documentos (④), pone los fragmentos encontrados en su ventana de contexto (⑤) y responde citándolos (⑥). El último paso es igual en los dos caminos: alguien tiene que abrir la fuente (⑦).</figcaption></figure><div class="prose"><p>El segundo camino del diagrama reduce mucho las alucinaciones, pero no las elimina. Con búsqueda web, el asistente puede citar una página real que no dice lo que él afirma, mezclar datos de dos fuentes o quedarse con una página vieja. Por eso, incluso cuando ves una cita con su enlace, la verificación sigue siendo tuya.</p><p>Hay situaciones que aumentan el riesgo y conviene reconocerlas:</p><ul><li><b>Preguntas de nicho</b>: tu sector en tu país, una norma local, una empresa mediana. El modelo leyó poco sobre eso.</li><li><b>Preguntas con premisa falsa</b> (<i>false premise</i>): «¿por qué la ley de 2019 prohíbe facturar en dólares?». Si la ley no existe, muchos modelos igual explican el porqué.</li><li><b>Complacencia</b> (<i>sycophancy</i>): la tendencia del modelo a darte la razón. Si insistes en que un dato es otro, puede cambiar de opinión aunque la primera respuesta fuera la correcta.</li><li><b>Conversaciones muy largas</b>: lo dicho al principio queda lejos y se mezcla con lo dicho después.</li><li><b>Pedirle precisión sin darle material</b>: «dame la cifra exacta» empuja a escribir una cifra exacta, exista o no.</li></ul></div></section>
+<section><h2>Pedir fuentes y comprobarlas una por una</h2><div class="prose"><p>La primera defensa es pedir las fuentes. Un buen pedido dice tres cosas: que cite la fuente de cada dato, que dé el enlace o el identificador, y que diga explícitamente cuándo no tiene fuente. Los asistentes con <b>búsqueda web</b> (<i>web search</i>) muestran sus citas como números o como enlaces al lado de cada frase; los que no buscan en la web pueden dar referencias de memoria, que son justo las más propensas a ser inventadas.</p><p>La segunda defensa, la que de verdad cuenta, es comprobar cada fuente. Una cita puede terminar en tres resultados, y solo uno sirve:</p><ol class="steps"><li><span><b>La fuente existe y dice eso.</b> Puedes usar el dato, citando la fuente original, no al asistente.</span></li><li><span><b>La fuente existe, pero no dice eso.</b> Es el caso más frecuente con búsqueda web. Abre la página, usa la búsqueda del navegador (Ctrl+F en Windows y Linux, Cmd+F en macOS) con una palabra clave del dato y lee el párrafo completo.</span></li><li><span><b>La fuente no existe.</b> El enlace da error, el DOI no resuelve, el título no aparece en ningún buscador.</span></li></ol><p>Cada tipo de fuente tiene su herramienta pública: para artículos académicos, el buscador de Crossref (la agencia que registra la mayoría de los DOI) y Google Académico; para leyes, el diario oficial o el sitio del congreso de tu país; para datos de empresas, su sitio oficial o sus informes anuales; para un enlace que ya no abre, la <b>Wayback Machine</b> del Internet Archive, que guarda copias de páginas antiguas.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Pregúntale a Crossref si un artículo existe</h3></div><p>Crossref ofrece una <b>API</b> (<i>Application Programming Interface</i>, interfaz de programación de aplicaciones) pública y gratuita: una dirección web que, en lugar de una página para personas, devuelve datos para programas. Vas a usarla para buscar un artículo por su título y para comprobar si un DOI existe. Solo hace falta la terminal.</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>(Invoke-RestMethod "https://api.crossref.org/works?query.bibliographic=Lost+in+the+Middle+How+Language+Models+Use+Long+Contexts&amp;rows=2&amp;select=DOI,title,container-title").message.items | Format-List</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>curl.exe -s -o NUL -w "%{http_code}" https://doi.org/10.1162/tacl_a_00638</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>curl.exe -s -o NUL -w "%{http_code}" https://doi.org/10.4821/rigd.2022.143</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>curl -s "https://api.crossref.org/works?query.bibliographic=Lost+in+the+Middle+How+Language+Models+Use+Long+Contexts&amp;rows=2&amp;select=DOI,title,container-title"</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>curl -s -o /dev/null -w "%{http_code}\n" https://doi.org/10.1162/tacl_a_00638</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>curl -s -o /dev/null -w "%{http_code}\n" https://doi.org/10.4821/rigd.2022.143</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Ejecuta la primera línea. Busca un artículo real sobre cómo los modelos leen textos largos. Anota el DOI y la revista del primer resultado.</span></li><li><span>Ejecuta la segunda: pregunta a <code>doi.org</code> por ese DOI. Anota el número que devuelve.</span></li><li><span>Ejecuta la tercera, con un DOI inventado para este capítulo. Compara el número.</span></li><li><span>Cambia el título de la primera línea por uno inventado, por ejemplo «Productividad y asistentes de IA en oficinas latinoamericanas» (con signos + en lugar de los espacios), y mira qué devuelve.</span></li></ol><p><b>Qué observar:</b> con el título real, el primer resultado coincide palabra por palabra y trae su DOI. Con el DOI real, <code>doi.org</code> responde <code>302</code> (una redirección: «el artículo está en tal dirección»); con el inventado, <code>404</code> (no existe). Con el título inventado, Crossref no responde «no existe»: devuelve los artículos que más se parecen, ninguno igual. Es la búsqueda por parecido del capítulo 1, ahora a tu favor: si el título no aparece tal cual, sospecha.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Tres referencias, tres comprobaciones</h3></div><p>Abre cualquier asistente de IA gratuito (cualquiera sirve) en una conversación nueva.</p><ol class="steps"><li><span>Pide: «Dame tres artículos académicos publicados sobre el uso de asistentes de IA en el trabajo de oficina, con autores, año, revista y DOI. No uses búsqueda web».</span></li><li><span>Para cada referencia, entra a <code>https://doi.org/</code> y pega el DOI después de la barra. Anota si abre y si el artículo que abre es el mismo que dijo el asistente.</span></li><li><span>Busca el título exacto, entre comillas, en <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Académico</a> o en el <a href="https://search.crossref.org/" target="_blank" rel="noopener">buscador de Crossref</a>.</span></li><li><span>Repite el pedido en un asistente con búsqueda web activada, quitando la última frase, y compara.</span></li></ol><p><b>Qué observar:</b> sin búsqueda web es común que al menos una referencia falle: un DOI que no abre, o que abre otro artículo, o un título que no aparece. Con búsqueda web los enlaces suelen funcionar, pero revisa si el artículo dice de verdad lo que el asistente resumió. El resultado varía según el asistente y su versión; algunos se niegan a dar referencias sin buscar, y esa es una buena respuesta.</p></div></section>
+<section><h2>Señales de alerta en una respuesta</h2><div class="prose"><p>No hace falta verificar cada palabra de cada respuesta. Con práctica, aprendes a ver las señales que piden detenerse. Ninguna prueba que algo sea falso, pero todas dicen «comprueba esto antes de usarlo»:</p><ul><li><b>Precisión sin fuente</b>: «el 37,4 % de las empresas», «2.318 clientes», sin decir de dónde sale.</li><li><b>Citas textuales con página</b>: «como dice en la página 112…». El modelo no tiene el libro abierto.</li><li><b>Autoridad vaga</b>: «según un estudio de una prestigiosa universidad», «los expertos coinciden en que».</li><li><b>Nombres propios poco conocidos con cargo</b>: una persona, su puesto y su empresa, todo junto.</li><li><b>Enlaces largos y perfectos</b> que nadie te pidió.</li><li><b>Normas con número y año</b> en una pregunta sobre tu país o tu sector.</li><li><b>Datos posteriores a su fecha de corte</b> en un asistente sin búsqueda web.</li><li><b>Cambios al repetir</b>: preguntas lo mismo en otra conversación y el dato cambia (lo viste en el capítulo 1).</li><li><b>Acuerdo inmediato</b> cuando lo corriges, aunque tu corrección sea equivocada.</li></ul></div><div class="lab" id="02-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Señales de alerta</h3></div><p class="hint">Esta es la respuesta de un asistente a un pedido para el informe mensual. Toca las frases que te parecen sospechosas y pulsa «Revisar». Verás cuáles eran señales de alerta, cuáles no y por qué. Puedes cambiar de respuesta con el selector.</p><style>
+[id="02-lab-2"] .c2l2-pedido{font:600 .92rem var(--f-display);border-left:3px solid var(--accent);padding:4px 10px;margin:0}
+[id="02-lab-2"] .c2l2-resp{background:var(--paper);border-radius:10px;padding:12px 14px;font:1rem/1.9 var(--f-body);margin:0}
+[id="02-lab-2"] .c2l2-resp .seg{cursor:pointer;border-radius:4px;padding:1px 2px;border-bottom:1px dashed var(--line);outline-offset:2px}
+[id="02-lab-2"] .c2l2-resp .seg:hover{background:var(--accent-soft)}
+[id="02-lab-2"] .c2l2-resp .seg.marca{background:var(--mark)}
+[id="02-lab-2"] .c2l2-resp .seg.hall{background:var(--good-soft);box-shadow:inset 0 -2px 0 var(--good)}
+[id="02-lab-2"] .c2l2-resp .seg.paso{background:var(--warm-soft);box-shadow:inset 0 -2px 0 var(--warm)}
+[id="02-lab-2"] .c2l2-resp .seg.falsa{text-decoration:line-through;text-decoration-color:var(--muted)}
+[id="02-lab-2"] .c2l2-exp{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+[id="02-lab-2"] .c2l2-exp li{border-left:4px solid var(--line);padding:4px 10px;font-size:.92rem}
+[id="02-lab-2"] .c2l2-exp li.hall{border-color:var(--good)}
+[id="02-lab-2"] .c2l2-exp li.paso{border-color:var(--warm)}
+</style>
+<div class="opciones">
+  <label>La respuesta
+    <select id="c2l2-sel">
+      <option value="0" selected>Contexto del sector para el informe</option>
+      <option value="1">Resumen de una norma de facturación</option>
+    </select></label>
+</div>
+<p class="c2l2-pedido" id="c2l2-pedido"></p>
+<p class="c2l2-resp" id="c2l2-resp" aria-label="Respuesta del asistente: toca las frases sospechosas"></p>
+<div class="btns"><button type="button" class="primary" id="c2l2-rev">Revisar</button><button type="button" id="c2l2-reset">Empezar de nuevo</button></div>
+<div class="legend"><span><i style="background:var(--mark)"></i>marcada por ti</span><span><i style="background:var(--good)"></i>señal que encontraste</span><span><i style="background:var(--warm)"></i>señal que se te pasó</span></div>
+<div class="readout texto" id="c2l2-out" aria-live="polite"></div>
+<ul class="c2l2-exp" id="c2l2-exp"></ul></div><div class="prose"><p>El laboratorio muestra algo que conviene recordar: las frases de lenguaje («es importante considerar», «en resumen») casi nunca son el problema. El riesgo está en los datos concretos, y por eso la revisión se concentra en ellos. Una técnica útil es pedirle al propio asistente que liste todas las afirmaciones verificables de su respuesta: no le pides que diga si son ciertas, sino que te haga la lista para que tú las revises.</p></div></section>
+<section><h2>La rutina de verificación según lo que está en juego</h2><div class="prose"><p>Revisar cuesta tiempo. Si verificas con el mismo cuidado el título del informe y el monto que le vas a cobrar a un cliente, o pierdes la mañana o te descuidas en lo importante. La pregunta que ordena todo es una sola: <b>¿qué pasa si esto está mal?</b></p></div><figure class="fig fig-flujo" id="02-diagrama-3"><div class="lienzo"><svg viewBox="0 0 820 370" style="min-width:660px" role="img" aria-label="Rutina de verificación en tres niveles según qué pasa si la respuesta está mal: verde, solo leer; amarillo, contrastar los datos con la fuente; rojo, verificar todo y pedir una segunda revisión">
+  <defs>
+    <marker id="g2d3-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  <rect x="250" y="14" width="320" height="58" rx="29" class="caja"/>
+  <text x="410" y="40" class="t t-b" text-anchor="middle">¿Qué pasa si esto está mal?</text>
+  <text x="410" y="58" class="t t-s t-m" text-anchor="middle">la pregunta que ordena la revisión</text>
+
+  <path d="M330 72 L144 108" class="ln" style="stroke-width:2" marker-end="url(#g2d3-fl)"/>
+  <path d="M410 72 V106" class="ln" style="stroke-width:2" marker-end="url(#g2d3-fl)"/>
+  <path d="M490 72 L676 108" class="ln" style="stroke-width:2" marker-end="url(#g2d3-fl)"/>
+
+  <rect x="16" y="112" width="252" height="244" rx="12" class="c-enl"/>
+  <circle cx="40" cy="138" r="9" class="k-enl"/>
+  <text x="58" y="143" class="t t-b k-enl">Verde: solo leer</text>
+  <text x="58" y="160" class="t t-s t-m">si nadie se ve afectado</text>
+  <text x="32" y="180" class="t t-xs t-m">EJEMPLOS</text>
+  <text x="32" y="196" class="t t-s">· Ideas de título</text>
+  <text x="32" y="214" class="t t-s">· Borrador que vas a reescribir</text>
+  <text x="32" y="232" class="t t-s">· Explicar un tema conocido</text>
+  <text x="32" y="258" class="t t-xs t-m">QUÉ SE REVISA</text>
+  <text x="32" y="278" class="t t-s">Que tenga sentido y</text>
+  <text x="32" y="294" class="t t-s">el tono adecuado</text>
+  <text x="32" y="336" class="t t-b">≈ 1 minuto</text>
+
+  <rect x="284" y="112" width="252" height="244" rx="12" class="c-fis"/>
+  <circle cx="308" cy="138" r="9" class="k-fis"/>
+  <text x="326" y="143" class="t t-b k-fis">Amarillo: contrastar</text>
+  <text x="326" y="160" class="t t-s t-m">si hay molestia o retrabajo</text>
+  <text x="300" y="180" class="t t-xs t-m">EJEMPLOS</text>
+  <text x="300" y="196" class="t t-s">· Resumen para tu equipo</text>
+  <text x="300" y="214" class="t t-s">· Correo interno con fechas</text>
+  <text x="300" y="232" class="t t-s">· El informe mensual</text>
+  <text x="300" y="258" class="t t-xs t-m">QUÉ SE REVISA</text>
+  <text x="300" y="278" class="t t-s">Cada cifra, nombre, fecha</text>
+  <text x="300" y="294" class="t t-s">y cita, contra su fuente</text>
+  <text x="300" y="336" class="t t-b">≈ 5 a 15 minutos</text>
+
+  <rect x="552" y="112" width="252" height="244" rx="12" class="c-apl"/>
+  <circle cx="576" cy="138" r="9" class="k-apl"/>
+  <text x="594" y="143" class="t t-b k-apl">Rojo: verificar todo</text>
+  <text x="594" y="160" class="t t-s t-m">si hay dinero, clientes o ley</text>
+  <text x="568" y="180" class="t t-xs t-m">EJEMPLOS</text>
+  <text x="568" y="196" class="t t-s">· Monto de una factura</text>
+  <text x="568" y="214" class="t t-s">· Cláusula de un contrato</text>
+  <text x="568" y="232" class="t t-s">· Respuesta a un regulador</text>
+  <text x="568" y="258" class="t t-xs t-m">QUÉ SE REVISA</text>
+  <text x="568" y="278" class="t t-s">Todo, contra la fuente</text>
+  <text x="568" y="294" class="t t-s">primaria, y otra persona</text>
+  <text x="568" y="310" class="t t-s">lo revisa antes de enviar</text>
+  <text x="568" y="336" class="t t-b">Lo que haga falta</text>
+</svg></div><figcaption><b>La rutina de verificación en tres niveles.</b> Empieza arriba con la pregunta «¿qué pasa si está mal?». Si nadie se ve afectado (verde), basta con leer. Si hay una molestia o un retrabajo (amarillo), contrasta cada dato concreto con su fuente. Si hay dinero, clientes, personas o la ley de por medio (rojo), verifica todo y pide una segunda revisión. Debajo de cada nivel están el tiempo aproximado y lo que se revisa.</figcaption></figure><div class="prose"><p>En la práctica, la rutina queda así:</p><ul><li><b>Verde, solo leer (un minuto).</b> Ideas de títulos, un borrador interno que tú vas a reescribir, la explicación de un concepto conocido. Lees, ajustas y listo. Si algo no tiene sentido, lo notas.</li><li><b>Amarillo, contrastar los datos (cinco a quince minutos).</b> El resumen que va a tu equipo, un correo con fechas, el informe mensual. Marcas cada cifra, nombre, fecha y cita, y la comparas con su fuente: tus notas, el sistema, el documento original.</li><li><b>Rojo, verificar todo y pedir otra mirada (lo que haga falta).</b> Un monto en una factura, una cláusula de un contrato, una respuesta a un regulador, una decisión sobre una persona. Cada dato contra la fuente primaria, y otra persona que conozca el tema lo revisa antes de que salga.</li></ul><p>Dos recursos ayudan en cualquier nivel. El primero, preguntar lo mismo en una conversación nueva o en otro asistente: si los datos no coinciden, ya sabes dónde mirar. El segundo, pedirle que marque su propia incertidumbre: «indica con [VERIFICAR] cada dato del que no tengas fuente». Ninguno de los dos reemplaza ir a la fuente; solo te dicen dónde ir primero.</p></div><div class="lab" id="02-lab-3"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Semáforo de riesgo</h3></div><p class="hint">Seis tareas reales de un mes de trabajo. Para cada una, decide cuánto verificar: nada, leer, contrastar con la fuente o verificar todo con una segunda revisión. Mira cuánto tiempo te cuesta cada decisión y qué errores se escapan. Pulsa «Simular el mes» para ver un mes posible.</p><style>
+[id="02-lab-3"] .c2l3-tareas{display:grid;gap:10px}
+[id="02-lab-3"] .c2l3-t{border:1px solid var(--line);border-left:6px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:8px;background:var(--card)}
+[id="02-lab-3"] .c2l3-t.verde{border-left-color:var(--good)}
+[id="02-lab-3"] .c2l3-t.amarillo{border-left-color:var(--c-fis)}
+[id="02-lab-3"] .c2l3-t.rojo{border-left-color:var(--warm)}
+[id="02-lab-3"] .c2l3-t h4{margin:0;font:600 .98rem/1.35 var(--f-display)}
+[id="02-lab-3"] .c2l3-t .meta{font:.8rem var(--f-mono);color:var(--muted)}
+[id="02-lab-3"] .c2l3-t .btns button{font-size:.8rem;padding:5px 9px}
+[id="02-lab-3"] .c2l3-barras{display:grid;grid-template-columns:5.5rem minmax(0,1fr) 4.6rem;gap:4px 8px;align-items:center;font:.8rem var(--f-display);color:var(--muted)}
+[id="02-lab-3"] .c2l3-barras .b{height:10px;border-radius:5px;background:var(--grid);overflow:hidden}
+[id="02-lab-3"] .c2l3-barras .b i{display:block;height:100%;transition:width .25s}
+[id="02-lab-3"] .c2l3-barras .tt i{background:var(--accent)}
+[id="02-lab-3"] .c2l3-barras .rr i{background:var(--warm)}
+[id="02-lab-3"] .c2l3-barras b{font:600 .8rem var(--f-mono);color:var(--ink);text-align:right}
+[id="02-lab-3"] .c2l3-nota{margin:0;font-size:.88rem}
+[id="02-lab-3"] .c2l3-sim{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+[id="02-lab-3"] .c2l3-sim li{font-size:.9rem;border-left:3px solid var(--warm);padding:2px 8px}
+@media (prefers-reduced-motion: reduce){[id="02-lab-3"] .c2l3-barras .b i{transition:none}}
+</style>
+<div class="c2l3-tareas" id="c2l3-tareas"></div>
+<div class="btns"><button type="button" class="primary" id="c2l3-sim">Simular el mes</button><button type="button" id="c2l3-rec">Usar el semáforo recomendado</button></div>
+<div class="readout texto" id="c2l3-out" aria-live="polite"></div>
+<ul class="c2l3-sim" id="c2l3-lista" aria-live="polite"></ul></div><div class="prose"><p>El laboratorio enseña dos errores simétricos. Verificar todo al máximo consume horas que nadie tiene, y la gente termina por no verificar nada. Verificar poco en lo rojo es barato hasta el día en que un error llega a un cliente. La mejor combinación casi siempre es la misma: poco tiempo en lo verde, el tiempo justo en lo amarillo y todo el necesario en lo rojo.</p></div><div class="ml"><b>En la práctica</b><p><b>Un equipo de cobranzas que usa IA para redactar.</b> En un área de cobranzas, los gestores usan un asistente para redactar los recordatorios de pago. La regla del equipo es simple: el texto lo escribe la IA, pero el nombre del cliente, el monto, la fecha de vencimiento y el número de factura se copian del sistema de facturación y se revisan contra él antes de enviar. Un recordatorio con el monto equivocado genera un reclamo, una llamada y, a veces, un cliente perdido. Treinta segundos de revisión por correo cuestan mucho menos que eso.</p></div></section>
+<section><h2>Tú firmas el resultado</h2><div class="prose"><p>Cuando envías un informe, un correo o una propuesta, el que responde eres tú. Que un asistente haya escrito el primer borrador no cambia eso, igual que no cambia si te ayudó un practicante o si copiaste un párrafo de un informe anterior. La responsabilidad no se delega a la herramienta.</p><p>En el diseño de sistemas con IA esto tiene un nombre: <b>humano en el circuito</b> (<i>human in the loop</i>), un punto del proceso en el que una persona revisa y aprueba antes de que el resultado tenga efecto. En tu trabajo diario, ese punto eres tú, entre la respuesta del asistente y el botón de enviar.</p><p>Tres hábitos ayudan a sostenerlo:</p><ul><li><b>Trata todo lo que sale de la IA como un borrador.</b> Nunca como un documento terminado, por bien escrito que esté.</li><li><b>Cita la fuente original, no al asistente.</b> Si un dato sale de un informe anual, se cita el informe anual. «Lo dijo la IA» no es una fuente.</li><li><b>Sigue la política de tu empresa sobre el uso de IA.</b> Algunas organizaciones piden declarar cuándo un documento se preparó con ayuda de IA, o prohíben usarla para ciertas tareas. Si no sabes cuál es la política, pregunta.</li></ul><p>Los temas de responsabilidad, transparencia y regulación de la IA se tratan a fondo en el curso <a href="https://aaramirez.github.io/ia-responsable/temario.html" target="_blank" rel="noopener">IA responsable</a>. Y si quieres ver cómo se diseña la revisión humana dentro de un producto, está en <a href="https://aaramirez.github.io/aplicaciones-con-ia/temario.html" target="_blank" rel="noopener">Aplicaciones con IA</a>.</p></div></section>
+<section><h2>Pedidos para copiar</h2><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Responder con fuentes</h3></div><div class="code-copia"><pre><code>Responde la pregunta que va al final. Reglas: para cada dato concreto (cifra, fecha, nombre, norma o cita), indica la fuente con su enlace o identificador. Si no tienes una fuente para un dato, escribe [SIN FUENTE] a su lado en lugar de inventarla. Si no sabes la respuesta, dilo.
+Pregunta: [escribe aquí tu pregunta]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Lista de lo que hay que verificar</h3></div><div class="code-copia"><pre><code>Te pego un texto. Haz una tabla con todas las afirmaciones verificables que contiene (cifras, fechas, nombres de personas u organizaciones, normas, citas y enlaces). Columnas: afirmación, tipo, dónde se podría comprobar. No me digas si son ciertas: solo haz la lista.
+[pega aquí el texto]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Fiel al material</h3></div><div class="code-copia"><pre><code>Resume el documento que pego a continuación para la gerencia, en cinco viñetas. Reglas: usa solo información que esté en el documento; no agregues cifras, fechas ni conclusiones propias. Después del resumen, para cada viñeta, copia entre comillas la frase del documento que la respalda.
+[pega aquí el documento]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div></section>
+<section><h2>Lo que te llevas</h2><div class="prose"><p>Todo lo que sale de la IA es un borrador hasta que una persona lo revisa. La revisión se ajusta a lo que está en juego: leer cuando nadie sale afectado, contrastar los datos cuando hay retrabajo y verificar todo, con otra mirada, cuando hay dinero, clientes, personas o la ley de por medio. Y verificar siempre es ir a la fuente, nunca preguntarle a la IA si tenía razón.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Qué diferencia hay entre una falla de factualidad y una de fidelidad?</summary><p>La de factualidad inventa algo que no existe en el mundo (un estudio, una ley). La de fidelidad contradice el material que tú le diste, por ejemplo un resumen que cambia una fecha del acta.</p></details><details><summary>Un asistente te da una referencia con autores reales, revista real y DOI. ¿Por qué todavía puede ser falsa?</summary><p>Porque las citas alucinadas suelen mezclar piezas reales. El título puede no existir, o el año, la revista y el DOI pueden estar cambiados. Hay que abrir el DOI y comprobar que lleva a ese artículo.</p></details><details><summary>¿Por qué preguntarle al mismo chatbot si su respuesta es cierta no sirve como verificación?</summary><p>Porque el modelo vuelve a completar texto con lo que encaja, y lo que encaja después de su propia afirmación es confirmarla. Verificar es ir a la fuente original.</p></details><details><summary>¿Qué tres resultados puede tener la comprobación de una cita, y cuál permite usar el dato?</summary><p>La fuente existe y dice eso; existe pero no dice eso; no existe. Solo el primero permite usarlo, citando la fuente original.</p></details><details><summary>Tienes que revisar un correo a un cliente con el monto que debe. ¿En qué nivel de la rutina está y qué haces?</summary><p>En rojo: hay dinero y un cliente de por medio. Se comprueba el monto, la fecha y la factura contra el sistema, y si la política lo pide, otra persona lo revisa antes de enviar.</p></details><details><summary>¿Por qué la búsqueda web reduce las alucinaciones pero no las elimina?</summary><p>Porque el asistente puede citar una página real que no dice lo que afirma, mezclar dos fuentes o usar una página desactualizada. La cita facilita la verificación, pero no la reemplaza.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Quién administra el sistema DOI y qué es el <i>Handle System</i> sobre el que funciona?<small>Pista: busca «International DOI Foundation» y «Handle System».</small></li><li>¿Qué miden pruebas como TruthfulQA o SimpleQA, y por qué los fabricantes publican sus resultados al presentar un modelo nuevo?</li><li>¿Qué es el «sesgo de automatización» y en qué accidentes de aviación o errores médicos se ha estudiado?<small>Pista: busca «automation bias» junto a «aviation» o «clinical decision support».</small></li><li>¿Alucinan menos los modelos que «razonan» antes de responder? Busca qué dicen los informes técnicos de los fabricantes sobre sus tasas de alucinación.</li><li>¿Cómo decide la Wayback Machine qué páginas guardar y cada cuánto?<small>Pista: busca cómo funciona el rastreador del Internet Archive.</small></li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://es.wikipedia.org/wiki/Alucinaci%C3%B3n_(inteligencia_artificial)" target="_blank" rel="noopener">Alucinación (inteligencia artificial), en Wikipedia <small>lectura</small></a><a class="vid" href="https://search.crossref.org/" target="_blank" rel="noopener">Buscador de metadatos de Crossref <small>herramienta</small></a><a class="vid" href="https://aaramirez.github.io/ia-responsable/temario.html" target="_blank" rel="noopener">IA responsable: transparencia, responsabilidad y regulación <small>curso</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-generativa" target="_blank" rel="noopener">github.com/aaramirez/ia-generativa</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const R=[
+    {c:'Liu, N. F., Lin, K., Hewitt, J. y otros (2024). Lost in the Middle: How Language Models Use Long Contexts. Transactions of the Association for Computational Linguistics, 12. doi:10.1162/tacl_a_00638',
+     real:true,
+     doi:'doi.org/10.1162/tacl_a_00638 → <span class="si">302</span>: redirige a la página del artículo en la revista. Título, autores y año coinciden.',
+     tit:'Crossref, título exacto → <span class="si">1 coincidencia exacta</span>: «Lost in the Middle…», Transactions of the ACL, 2024.',
+     exp:'Real. El DOI abre el mismo artículo y el título aparece tal cual. Se puede citar.'},
+    {c:'Ji, Z., Lee, N., Frieske, R. y otros (2023). Survey of Hallucination in Natural Language Generation. ACM Computing Surveys, 55(12). doi:10.1145/3571730',
+     real:true,
+     doi:'doi.org/10.1145/3571730 → <span class="si">302</span>: redirige a la biblioteca digital de la ACM. Coincide.',
+     tit:'Búsqueda del título exacto → <span class="si">aparece</span> en la revista ACM Computing Surveys, volumen 55, número 12, 2023.',
+     exp:'Real. Es una de las revisiones más citadas sobre alucinaciones. Fíjate en que Crossref no siempre la pone primera con una búsqueda aproximada: por eso conviene probar también el DOI.'},
+    {c:'Vaswani, A., Shazeer, N., Parmar, N. y otros (2019). Attention Is All You Need. Nature, 571, 210-215. doi:10.1038/s41586-019-1234-5',
+     real:false,
+     doi:'doi.org/10.1038/s41586-019-1234-5 → <span class="no">404</span>: ese DOI no existe.',
+     tit:'Búsqueda del título exacto → <span class="si">aparece</span>, pero en otro lugar: conferencia NeurIPS de <b>2017</b> y arXiv 1706.03762. No en Nature ni en 2019.',
+     exp:'Inventada a medias, la forma más engañosa: el título y los autores son reales, pero el año, la revista, las páginas y el DOI no. Si la citas así, cualquiera que la busque pensará que no revisaste.'},
+    {c:'Martínez Rojas, L. y Okafor, J. (2022). Productividad y asistentes de IA en oficinas latinoamericanas. Revista Iberoamericana de Gestión Digital, 14(3), 45-67. doi:10.4821/rigd.2022.143',
+     real:false,
+     doi:'doi.org/10.4821/rigd.2022.143 → <span class="no">404</span>: ese DOI no existe.',
+     tit:'Búsqueda del título exacto → <span class="no">0 coincidencias exactas</span>. Crossref devuelve artículos «parecidos» sobre IA y productividad, ninguno con ese título.',
+     exp:'Inventada por completo (la escribimos para este laboratorio). Tiene todo lo que hace creíble una cita: dos autores, revista con nombre serio, volumen, páginas y DOI. Y es justo la que respaldaba la afirmación más útil para el informe.'},
+    {c:'Brown, T., Mann, B., Ryder, N. y otros (2020). Language Models are Few-Shot Learners. Advances in Neural Information Processing Systems 33. arXiv:2005.14165',
+     real:true,
+     doi:'Esta referencia no trae DOI, sino un identificador de arXiv. arxiv.org/abs/2005.14165 → <span class="si">200</span>: abre el artículo, con el mismo título y autores.',
+     tit:'Búsqueda del título exacto → <span class="si">aparece</span> en NeurIPS 2020 y en arXiv.',
+     exp:'Real. No todas las fuentes tienen DOI: los preprints usan arXiv, los libros ISBN y las leyes su número oficial. Lo importante es que el identificador lleve a ese documento.'}
+  ];
+  const st=R.map(()=>({doi:false,tit:false,v:null}));
+  const lista=$('#c2l1-refs');
+  function pintar(){
+    lista.innerHTML='';
+    R.forEach((r,k)=>{
+      const s=st[k],li=document.createElement('li');
+      li.className='c2l1-ref'+(s.v?(' '+(r.real?'real':'falsa')):'');
+      let h='<p class="c2l1-cita"><b>['+(k+1)+']</b></p>';
+      h+='<div class="c2l1-fila"><button type="button" data-a="doi" aria-pressed="'+s.doi+'">Buscar el DOI o el identificador</button><button type="button" data-a="tit" aria-pressed="'+s.tit+'">Buscar el título</button></div>';
+      if(s.doi)h+='<p class="c2l1-herr">'+r.doi+'</p>';
+      if(s.tit)h+='<p class="c2l1-herr">'+r.tit+'</p>';
+      h+='<div class="c2l1-fila"><span class="hint">Tu veredicto:</span><button type="button" data-a="real" aria-pressed="'+(s.v==='real')+'">Real</button><button type="button" data-a="falsa" aria-pressed="'+(s.v==='falsa')+'">Inventada</button></div>';
+      if(s.v){const ok=(s.v==='real')===r.real;h+='<p class="c2l1-exp"><b>'+(ok?'Bien visto. ':'No era así. ')+'</b>'+r.exp+'</p>';}
+      li.innerHTML=h;
+      li.querySelector('.c2l1-cita').appendChild(document.createTextNode(r.c));
+      li.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
+        const a=b.dataset.a;if(a==='doi'||a==='tit')s[a]=!s[a];else s.v=a;pintar();
+        const nb=lista.children[k].querySelector('[data-a="'+a+'"]');if(nb)nb.focus();
+      }));
+      lista.appendChild(li);
+    });
+    const hechas=st.filter(s=>s.v).length;
+    const bien=st.filter((s,k)=>s.v&&((s.v==='real')===R[k].real)).length;
+    const herr=st.reduce((a,s)=>a+(s.doi?1:0)+(s.tit?1:0),0);
+    $('#c2l1-barra').innerHTML=R.map((r,k)=>'<i class="'+(st[k].v?(((st[k].v==='real')===r.real)?'ok':'mal'):'')+'"></i>').join('');
+    let l='<span class="big">Revisaste '+hechas+' de 5 · aciertos: '+bien+' · comprobaciones usadas: '+herr+'.</span>';
+    const sinMirar=st.filter(s=>s.v&&!s.doi&&!s.tit).length;
+    if(sinMirar)l+='<span>Diste '+sinMirar+' veredicto'+(sinMirar>1?'s':'')+' sin usar ninguna herramienta. Eso es juzgar por la forma, y la forma de una cita inventada es perfecta.</span>';
+    if(hechas===5){
+      l+=bien===5?'<span>Encontraste las dos falsas: la [4], inventada por completo, y la [3], que mezcla un título real con año, revista y DOI falsos.</span>'
+                 :'<span>Las falsas eran la [4] (inventada por completo) y la [3] (título real con datos falsos). Vuelve a mirar qué dijo cada herramienta.</span>';
+      l+='<span>Fíjate en qué afirmación del párrafo se queda sin respaldo: «mejoran la productividad en tareas de redacción». Era la que más le servía al informe.</span>';
+    }
+    $('#c2l1-out').innerHTML=l;
+  }
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const D=[
+    {p:'Tú: Escribe un párrafo de contexto del sector para el informe mensual del área comercial.',
+     s:[['El sector de servicios atraviesa un momento de cambio. ',0],
+        ['Según un estudio de una prestigiosa universidad, ',1,'Autoridad vaga: ¿qué universidad, qué estudio, de qué año? Sin el nombre no se puede comprobar, y suele ser la antesala de un dato inventado.'],
+        ['el 37,4 % de las empresas medianas de la región ya automatizó parte de su atención al cliente. ',1,'Precisión sin fuente: un porcentaje con decimal da sensación de rigor, pero no dice de dónde sale.'],
+        ['Es importante considerar que la competencia se ha intensificado ',0],
+        ['y que los clientes esperan respuestas cada vez más rápidas. ',0],
+        ['Como explica la consultora Ejemplo Analítica en su informe anual, página 34, ',1,'Cita con página de un documento que nadie le dio al asistente. El modelo no tiene el informe abierto: la página, y quizás la consultora, son inventadas.'],
+        ['«la velocidad es el nuevo precio». ',1,'Cita textual entre comillas atribuida a una fuente específica. Si no puedes encontrar la frase en el original, no la uses.'],
+        ['En este contexto, ',0],
+        ['las ventas del sector crecieron un 6 % el mes pasado, ',1,'Dato posterior a la fecha de corte: un asistente sin búsqueda web no puede saber qué pasó el mes pasado.'],
+        ['lo que representa una oportunidad para nuestra área.',0]]},
+    {p:'Tú: Resume en un párrafo qué cambió en la norma de facturación electrónica de mi país.',
+     s:[['La facturación electrónica busca reducir la evasión y simplificar los trámites. ',0],
+        ['La Resolución 000042 de 2024, artículo 7, ',1,'Norma con número, año y artículo en una pregunta sobre tu país: es la forma exacta de una norma real. Búscala en el diario oficial antes de citarla.'],
+        ['obliga a emitir la factura en un plazo máximo de 48 horas ',1,'Plazo concreto que depende de la norma anterior. Si la norma no existe o dice otra cosa, el plazo también es inventado.'],
+        ['desde la entrega del bien o servicio. ',0],
+        ['En general, ',0],
+        ['los sistemas de facturación deben conectarse con la autoridad tributaria para validar cada documento. ',0],
+        ['Puedes consultar el texto completo en https://www.ejemplo.gov/normas/res-000042-2024.pdf. ',1,'Enlace largo y perfecto que nadie pidió. Ábrelo: con frecuencia lleva a una página de error.'],
+        ['Según la abogada tributarista María Elena Ríos, socia del estudio Ejemplo Abogados, ',1,'Persona poco conocida, con cargo y organización. Puede no existir, o existir y no haber dicho nunca eso.'],
+        ['«la norma cambia por completo la relación con el contribuyente». ',1,'Cita textual atribuida a una persona: comprobarla exige encontrar dónde la dijo.'],
+        ['Conviene revisar los procesos internos con el área de sistemas.',0]]}
+  ];
+  let q=0,marcas=new Set(),revisado=false;
+  function pintar(){
+    const d=D[q];
+    $('#c2l2-pedido').textContent=d.p;
+    const cont=$('#c2l2-resp');cont.innerHTML='';
+    d.s.forEach((s,k)=>{
+      const sp=document.createElement('span');
+      sp.className='seg';sp.tabIndex=0;sp.setAttribute('role','button');
+      sp.textContent=s[0];
+      const m=marcas.has(k);
+      sp.setAttribute('aria-pressed',m?'true':'false');
+      if(!revisado){if(m)sp.classList.add('marca');}
+      else{
+        if(s[1]&&m)sp.classList.add('hall');
+        else if(s[1])sp.classList.add('paso');
+        else if(m)sp.classList.add('marca','falsa');
+      }
+      const tog=()=>{if(revisado)return;m?marcas.delete(k):marcas.add(k);pintar();const n=$('#c2l2-resp').children[k];if(n)n.focus();};
+      sp.addEventListener('click',tog);
+      sp.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog();}});
+      cont.appendChild(sp);
+    });
+    const total=d.s.filter(s=>s[1]).length;
+    if(!revisado){
+      $('#c2l2-out').innerHTML='<span class="big">Marcaste '+marcas.size+' frase'+(marcas.size===1?'':'s')+'.</span><span>Toca las que te parezcan sospechosas y pulsa «Revisar». Hay '+total+' señales de alerta escondidas.</span>';
+      $('#c2l2-exp').innerHTML='';return;
+    }
+    let hall=0,falsas=0;d.s.forEach((s,k)=>{if(s[1]&&marcas.has(k))hall++;if(!s[1]&&marcas.has(k))falsas++;});
+    let l='<span class="big">Encontraste '+hall+' de '+total+' señales'+(falsas?' · '+falsas+' falsa'+(falsas>1?'s':'')+' alarma'+(falsas>1?'s':''):'')+'.</span>';
+    l+=falsas?'<span>Las frases tachadas son lenguaje general («es importante considerar», «en general»): pueden ser vagas, pero no afirman un dato que se pueda inventar.</span>':'';
+    l+='<span>Todas las señales tienen algo en común: un dato concreto (cifra, nombre, cita, norma, enlace o fecha) que se puede comprobar en una fuente. Ahí se concentra la revisión.</span>';
+    $('#c2l2-out').innerHTML=l;
+    $('#c2l2-exp').innerHTML=d.s.map((s,k)=>s[1]?'<li class="'+(marcas.has(k)?'hall':'paso')+'"><b>'+(marcas.has(k)?'Encontrada: ':'Se te pasó: ')+'</b>'+s[2]+'</li>':'').join('');
+  }
+  $('#c2l2-rev').addEventListener('click',()=>{revisado=true;pintar();});
+  $('#c2l2-reset').addEventListener('click',()=>{revisado=false;marcas.clear();pintar();});
+  $('#c2l2-sel').addEventListener('change',e=>{q=+e.target.value;revisado=false;marcas.clear();pintar();});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const NIV=[{n:'Nada',min:0,atrapa:0},{n:'Leer',min:1,atrapa:.4},{n:'Contrastar',min:8,atrapa:.85},{n:'Todo + otra persona',min:25,atrapa:.98}];
+  const T=[
+    {t:'Ideas de título para el informe mensual',m:[0,1,3,10],f:1,p:.3,imp:1,sem:'verde',rec:1,c:'un título flojo que cambias al leerlo; nadie sale afectado'},
+    {t:'Explicarle un concepto al nuevo del equipo',m:[0,1,4,10],f:2,p:.1,imp:1,sem:'verde',rec:1,c:'una explicación imprecisa que se corrige en la siguiente conversación'},
+    {t:'Resumen del acta semanal para tu equipo',m:[0,1,5,15],f:4,p:.15,imp:5,sem:'amarillo',rec:2,c:'un acuerdo mal anotado: alguien hace un trabajo dos veces'},
+    {t:'Informe mensual a la gerencia, con cifras',m:[0,3,15,45],f:1,p:.35,imp:25,sem:'amarillo',rec:2,c:'la gerencia decide con una cifra que no existe'},
+    {t:'Recordatorios de pago a clientes, con montos',m:[0,.3,.5,1],f:40,p:.05,imp:15,sem:'rojo',rec:3,c:'un cliente recibe un monto equivocado, reclama y desconfía'},
+    {t:'Resumen de un contrato con un proveedor antes de firmar',m:[0,5,30,90],f:1,p:.2,imp:150,sem:'rojo',rec:3,c:'se firma una cláusula que nadie leyó bien'}
+  ];
+  const sel=T.map(()=>1);
+  const cont=$('#c2l3-tareas');
+  const tiempo=k=>Math.round(T[k].f*T[k].m[sel[k]]);
+  const escapan=k=>T[k].f*T[k].p*(1-NIV[sel[k]].atrapa);
+  const dano=k=>escapan(k)*T[k].imp;
+  const maxT=T.reduce((m,t)=>Math.max(m,t.f*t.m[3]),0);
+  const tRec=T.reduce((a,t)=>a+t.f*t.m[t.rec],0);
+  const maxD=T.reduce((m,t)=>Math.max(m,t.f*t.p*t.imp),0);
+  const fmt1=x=>x.toFixed(x<10?1:0).replace('.',',');
+  function construir(){
+    T.forEach((t,k)=>{
+      const d=document.createElement('div');d.className='c2l3-t';d.id='c2l3-t'+k;
+      d.innerHTML='<h4>'+t.t+'</h4><span class="meta">'+t.f+' vez'+(t.f>1?'es':'')+' al mes · sin revisar, falla '+Math.round(t.p*100)+' % de las veces</span>'+
+        '<div class="btns" role="group" aria-label="Cuánto verificar: '+t.t+'">'+NIV.map((n,j)=>'<button type="button" data-j="'+j+'">'+n.n+'</button>').join('')+'</div>'+
+        '<div class="c2l3-barras"><span>Tiempo</span><span class="b tt"><i></i></span><b class="vt"></b><span>Riesgo</span><span class="b rr"><i></i></span><b class="vr"></b></div>'+
+        '<p class="c2l3-nota hint"></p>';
+      d.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{sel[k]=+b.dataset.j;$('#c2l3-lista').innerHTML='';pintar();}));
+      cont.appendChild(d);
+    });
+  }
+  function pintar(){
+    let tT=0,tE=0,tD=0,bien=0;
+    T.forEach((t,k)=>{
+      const d=$('#c2l3-t'+k);
+      d.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.j===sel[k]?'true':'false'));
+      const ti=tiempo(k),es=escapan(k),da=dano(k);tT+=ti;tE+=es;tD+=da;
+      d.querySelector('.tt i').style.width=(100*ti/maxT)+'%';
+      d.querySelector('.rr i').style.width=(100*da/maxD)+'%';
+      d.querySelector('.vt').textContent=ti+' min';
+      d.querySelector('.vr').textContent=fmt1(es)+' err.';
+      d.className='c2l3-t '+t.sem;
+      let nota;
+      if(sel[k]===t.rec){nota='Bien calibrado para una tarea '+t.sem+'.';bien++;}
+      else if(sel[k]<t.rec)nota='Poco para una tarea '+t.sem+'. Si se escapa un error: '+t.c+'.';
+      else nota='Más de lo necesario para una tarea '+t.sem+': gastas '+Math.round(ti-t.f*t.m[t.rec])+' minutos de más al mes.';
+      d.querySelector('.c2l3-nota').textContent=nota;
+    });
+    let l='<span class="big">Al mes: '+fmt1(tT/60)+' horas de revisión · '+fmt1(tE)+' errores llegan a destino · daño '+Math.round(tD)+' puntos.</span>';
+    l+='<span>'+bien+' de 6 tareas con el nivel del semáforo. La barra azul es el tiempo que te cuesta revisar; la roja, el daño esperado de los errores que se escapan (más alto si la tarea es frecuente o grave).</span>';
+    if(sel.every(s=>s===3))l+='<span>Verificar todo al máximo cuesta '+fmt1(tT/60)+' horas al mes, frente a '+fmt1(tRec/60)+' con el semáforo, y el daño casi no baja. En la vida real, esa carga hace que la gente termine por no revisar nada.</span>';
+    else if(sel[4]<2||sel[5]<2)l+='<span class="warn">Las tareas rojas casi no se revisan: ahí está casi todo el daño. Un solo contrato mal leído pesa más que cien títulos flojos.</span>';
+    $('#c2l3-out').innerHTML=l;
+  }
+  function simular(){
+    const ev=[];let gen=0,atr=0;
+    T.forEach((t,k)=>{for(let i=0;i<t.f;i++){if(Math.random()<t.p){gen++;if(Math.random()<NIV[sel[k]].atrapa)atr++;else ev.push(t.t+': '+t.c+'.');}}});
+    pintar();
+    $('#c2l3-out').insertAdjacentHTML('beforeend','<span><b>Un mes simulado:</b> la IA cometió '+gen+' errores; tu revisión atrapó '+atr+' y se escaparon '+ev.length+'.</span>');
+    $('#c2l3-lista').innerHTML=ev.length?ev.map(e=>'<li>'+e+'</li>').join(''):'<li style="border-color:var(--good)">Ningún error llegó a destino este mes. Simula otra vez: la suerte cambia, el riesgo esperado no.</li>';
+  }
+  construir();
+  $('#c2l3-sim').addEventListener('click',simular);
+  $('#c2l3-rec').addEventListener('click',()=>{T.forEach((t,k)=>sel[k]=t.rec);$('#c2l3-lista').innerHTML='';pintar();});
+  pintar();
+})();
+</script>
+</body>
+</html>

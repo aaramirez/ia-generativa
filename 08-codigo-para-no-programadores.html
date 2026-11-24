@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX76XF8R');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Código para no programadores · IA generativa · IA generativa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Usar la IA generativa en el trabajo, sin tecnicismos: qué puede y qué no, cómo pedir bien, cómo verificar, qué hacer con texto, imágenes y datos, casos por área y cómo llevarla a tu equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX76XF8R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrap" data-page="codigo-para-no-programadores">
+<header class="topbar"><a class="brand" href="index.html">IA <b>generativa</b></a><span class="eyebrow">Curso visual e interactivo · Datos e inteligencia artificial</span><a class="al-sitio" href="https://aaramirez.github.io/">← Todos los cursos</a></header>
+<div class="layout">
+<nav class="toc" id="toc" aria-label="Ruta de aprendizaje"></nav>
+<main>
+<header class="page-head"><span class="num">CAPÍTULO 08 DE 10</span><h1>Código para no programadores</h1><p class="lede">Renombrar cincuenta archivos, unir tres hojas en una o darle formato a la misma tabla cada mes son tareas que una computadora hace en segundos si alguien le escribe las instrucciones. Hoy ese alguien puede ser un asistente de IA, siempre que le describas bien la tarea y pruebes lo que escribe sobre una copia.</p></header>
+<section><div class="prose"><p>Cada mes, antes de escribir una sola línea del informe, alguien del equipo pasa casi una hora en tareas que no requieren pensar. Descarga del sistema tres archivos de ventas, uno por zona, con nombres como <code>export(3).csv</code>. Les cambia el nombre para saber cuál es cuál. Los copia uno debajo del otro en una sola hoja, borra los encabezados repetidos, le da formato a la tabla y guarda una copia en la carpeta del mes. El mes siguiente, lo mismo.</p><p>En el capítulo anterior la IA te ayudó a calcular con fórmulas. Este capítulo da un paso más: pedirle a la IA un pequeño programa que haga la tarea repetitiva por ti. No vas a aprender a programar. Vas a aprender a describir una tarea para que la IA escriba el programa, a leer lo justo para saber qué va a hacer y, sobre todo, a probarlo sin poner en riesgo tus archivos.</p></div></section>
+<section><h2>Qué se puede automatizar sin ser programador</h2><div class="prose"><p>Un <b>script</b> (guion o secuencia de instrucciones) es un programa corto que le dice a la computadora, paso a paso, qué hacer con archivos, carpetas, hojas o datos. Una <b>macro</b> (<i>macro</i>) es lo mismo, pero vive dentro de una aplicación de oficina, como Excel, y actúa sobre el documento abierto. Las dos hacen lo que tú harías con el mouse y el teclado, solo que en segundos, sin cansarse y sin saltarse un paso.</p></div><div class="analogia"><b>Imagínalo así</b><p>Piensa en un practicante muy obediente y completamente literal. Le dejas una nota: «a cada archivo de la carpeta ponle adelante la fecha del mes». Lo hace con mil archivos en un minuto y sin errores de tipeo. Pero si la carpeta tenía también la foto de tu credencial, también le pone la fecha, porque la nota decía «cada archivo». No pregunta, no duda y no avisa. Un script es esa nota: hace exactamente lo que dice, que no siempre es lo que quisiste decir.</p></div><div class="prose"><p>Hay varias herramientas para automatizar, de la más simple a la más seria. Conviene conocerlas porque el pedido a la IA cambia según la que uses:</p><ul><li><b>Fórmulas</b> de la hoja de cálculo, que viste en el capítulo 7: calculan, pero no mueven ni crean archivos.</li><li><b>Macros</b>: en Excel de escritorio se escriben en <b>VBA</b> (<i>Visual Basic for Applications</i>, el lenguaje de macros de Microsoft Office); en Excel para la web, en <b>Office Scripts</b>; en Google Sheets, en <b>Apps Script</b>, y en LibreOffice, en LibreOffice Basic. Todas ordenan, dan formato, copian entre hojas o generan un documento por fila.</li><li><b>Scripts de la línea de comandos</b>: en Windows, <b>PowerShell</b>; en macOS y Linux, la terminal con <b>Bash</b> o <b>zsh</b>. Son ideales para archivos y carpetas: renombrar, mover, unir, listar.</li><li><b>Scripts en Python</b>, el lenguaje que la IA usa por defecto para casi todo lo que tiene datos. Requieren instalar Python en tu computadora, cosa que en muchas empresas solo puede hacer el área de sistemas.</li><li><b>Plataformas de automatización sin código</b> (<i>no-code</i>): Power Automate, Zapier, Make o n8n, como ejemplos del mercado. Encadenan un <b>disparador</b> (<i>trigger</i>), por ejemplo «llega un correo con adjunto», con una o varias <b>acciones</b>, como «guardar el adjunto en la carpeta del mes y avisar en el chat del equipo». Se conectan con otros sistemas mediante sus <b>API</b> (<i>application programming interface</i>, interfaz de programación), la puerta por la que un programa le habla a otro.</li></ul></div><figure class="fig fig-comparacion" id="08-diagrama-1"><div class="lienzo"><svg viewBox="0 0 860 384" style="min-width:720px" role="img" aria-label="Comparación de cinco herramientas para automatizar, de menor a mayor alcance: fórmula, macro, script, flujo sin código y aplicación de sistemas, con dónde vive cada una, un ejemplo, qué puede tocar y quién la mantiene">
+  <defs>
+    <marker id="g8d1-fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  <text x="10" y="14" class="t t-xs t-m">MENOS ALCANCE, MENOS RIESGO</text>
+  <text x="850" y="14" class="t t-xs t-m" text-anchor="end">MÁS ALCANCE, MÁS RIESGO</text>
+  <line x1="14" y1="24" x2="846" y2="24" class="ln" style="stroke-width:1.6" marker-start="url(#g8d1-fl)" marker-end="url(#g8d1-fl)"/>
+
+  
+  <rect x="10" y="36" width="160" height="50" rx="10" class="c-enl"/>
+  <text x="22" y="57" class="t t-b k-enl">① Fórmula</text>
+  <text x="22" y="76" class="t t-s t-mono">=SUMAR.SI(…)</text>
+  <rect x="10" y="94" width="160" height="226" rx="10" class="caja"/>
+  <text x="22" y="114" class="t t-xs t-m">VIVE EN</text>
+  <text x="22" y="130" class="t t-s">una celda de la hoja</text>
+  <text x="22" y="166" class="t t-xs t-m">EJEMPLO DEL INFORME</text>
+  <text x="22" y="182" class="t t-s">el total por zona</text>
+  <text x="22" y="196" class="t t-s">del mes</text>
+  <text x="22" y="218" class="t t-xs t-m">PUEDE TOCAR</text>
+  <text x="22" y="234" class="t t-s">solo calcula: no mueve</text>
+  <text x="22" y="248" class="t t-s">ni crea archivos</text>
+  <text x="22" y="270" class="t t-xs t-m">LA MANTIENE</text>
+  <text x="22" y="286" class="t t-s">quien usa la hoja</text>
+
+  
+  <rect x="180" y="36" width="160" height="50" rx="10" class="c-red"/>
+  <text x="192" y="57" class="t t-b k-red">② Macro</text>
+  <text x="192" y="76" class="t t-s t-mono">VBA · Apps Script</text>
+  <rect x="180" y="94" width="160" height="226" rx="10" class="caja"/>
+  <text x="192" y="114" class="t t-xs t-m">VIVE EN</text>
+  <text x="192" y="130" class="t t-s">dentro del archivo</text>
+  <text x="192" y="144" class="t t-s">(.xlsm, hoja en línea)</text>
+  <text x="192" y="166" class="t t-xs t-m">EJEMPLO DEL INFORME</text>
+  <text x="192" y="182" class="t t-s">dar formato y crear</text>
+  <text x="192" y="196" class="t t-s">una pestaña por zona</text>
+  <text x="192" y="218" class="t t-xs t-m">PUEDE TOCAR</text>
+  <text x="192" y="234" class="t t-s">el documento abierto,</text>
+  <text x="192" y="248" class="t t-s">sin Ctrl+Z</text>
+  <text x="192" y="270" class="t t-xs t-m">LA MANTIENE</text>
+  <text x="192" y="286" class="t t-s">tú o tu equipo</text>
+
+  
+  <rect x="350" y="36" width="160" height="50" rx="10" class="c-tra"/>
+  <text x="362" y="57" class="t t-b k-tra">③ Script</text>
+  <text x="362" y="76" class="t t-s t-mono">PowerShell · Python</text>
+  <rect x="350" y="94" width="160" height="226" rx="10" class="caja"/>
+  <text x="362" y="114" class="t t-xs t-m">VIVE EN</text>
+  <text x="362" y="130" class="t t-s">un archivo de texto</text>
+  <text x="362" y="144" class="t t-s">que ejecutas tú</text>
+  <text x="362" y="166" class="t t-xs t-m">EJEMPLO DEL INFORME</text>
+  <text x="362" y="182" class="t t-s">unir los tres CSV</text>
+  <text x="362" y="196" class="t t-s">de ventas en uno</text>
+  <text x="362" y="218" class="t t-xs t-m">PUEDE TOCAR</text>
+  <text x="362" y="234" class="t t-s">archivos y carpetas,</text>
+  <text x="362" y="248" class="t t-s">sin papelera</text>
+  <text x="362" y="270" class="t t-xs t-m">LA MANTIENE</text>
+  <text x="362" y="286" class="t t-s">tú</text>
+
+  
+  <rect x="520" y="36" width="160" height="50" rx="10" class="c-fis"/>
+  <text x="532" y="57" class="t t-b k-fis">④ Flujo sin código</text>
+  <text x="532" y="76" class="t t-s t-mono">disparador → acción</text>
+  <rect x="520" y="94" width="160" height="226" rx="10" class="caja"/>
+  <text x="532" y="114" class="t t-xs t-m">VIVE EN</text>
+  <text x="532" y="130" class="t t-s">una plataforma</text>
+  <text x="532" y="144" class="t t-s">en la nube</text>
+  <text x="532" y="166" class="t t-xs t-m">EJEMPLO DEL INFORME</text>
+  <text x="532" y="182" class="t t-s">guardar los adjuntos</text>
+  <text x="532" y="196" class="t t-s">y avisar al equipo</text>
+  <text x="532" y="218" class="t t-xs t-m">PUEDE TOCAR</text>
+  <text x="532" y="234" class="t t-s">correo, chat y otras</text>
+  <text x="532" y="248" class="t t-s">aplicaciones (API)</text>
+  <text x="532" y="270" class="t t-xs t-m">LA MANTIENE</text>
+  <text x="532" y="286" class="t t-s">tú, con los permisos</text>
+  <text x="532" y="300" class="t t-s">que da sistemas</text>
+
+  
+  <rect x="690" y="36" width="160" height="50" rx="10" class="d-sis"/>
+  <text x="702" y="57" class="t t-b k-sis">⑤ Aplicación</text>
+  <text x="702" y="76" class="t t-s t-mono">proceso de la empresa</text>
+  <rect x="690" y="94" width="160" height="226" rx="10" class="caja"/>
+  <text x="702" y="114" class="t t-xs t-m">VIVE EN</text>
+  <text x="702" y="130" class="t t-s">servidores de</text>
+  <text x="702" y="144" class="t t-s">la empresa</text>
+  <text x="702" y="166" class="t t-xs t-m">EJEMPLO DEL INFORME</text>
+  <text x="702" y="182" class="t t-s">el informe que se</text>
+  <text x="702" y="196" class="t t-s">arma solo cada día 1</text>
+  <text x="702" y="218" class="t t-xs t-m">PUEDE TOCAR</text>
+  <text x="702" y="234" class="t t-s">los sistemas de ventas</text>
+  <text x="702" y="248" class="t t-s">y facturación</text>
+  <text x="702" y="270" class="t t-xs t-m">LA MANTIENE</text>
+  <text x="702" y="286" class="t t-s">el área de sistemas</text>
+
+  
+  <rect x="10" y="334" width="500" height="40" rx="8" class="d-casa"/>
+  <text x="260" y="359" class="t t-s t-b k-casa" text-anchor="middle">Lo haces tú, con copia y modo de simulación</text>
+  <rect x="520" y="334" width="160" height="40" rx="8" class="c-fis"/>
+  <text x="600" y="351" class="t t-s k-fis" text-anchor="middle">Tú, si solo toca lo tuyo;</text>
+  <text x="600" y="366" class="t t-s k-fis" text-anchor="middle">si no, con sistemas</text>
+  <rect x="690" y="334" width="160" height="40" rx="8" class="d-sis"/>
+  <text x="770" y="359" class="t t-s t-b k-sis" text-anchor="middle">Lo hace sistemas</text>
+</svg></div><figcaption><b>Cinco escalones para automatizar.</b> De izquierda a derecha, las herramientas van de la que menos puede romper a la que más alcance tiene: la fórmula, la macro, el script, el flujo sin código y la aplicación que construye el área de sistemas. Lee cada columna de arriba abajo: dónde vive, un ejemplo del informe mensual, qué puede tocar y quién la mantiene. La franja de abajo marca dónde termina lo que puedes hacer tú solo y empieza lo que conviene hablar con sistemas.</figcaption></figure><div class="prose"><p>¿Qué tareas son buenas candidatas? Las que cumplen tres condiciones: se repiten (cada día, cada semana, cada cierre de mes), siguen siempre los mismos pasos y tienen una entrada y una salida que puedes describir con un ejemplo. Renombrar archivos, unir varias hojas en una, separar una hoja grande en una por zona, convertir formatos, generar una carta por cliente a partir de una tabla, limpiar columnas o mover adjuntos a una carpeta son ejemplos clásicos. En cambio, una tarea que cada vez requiere decidir algo distinto no es para un script: es para ti, con la IA como ayuda para pensar.</p></div></section>
+<section><h2>Pedir un script: la entrada, la salida y un ejemplo</h2><div class="prose"><p>En el capítulo 3 aprendiste que un buen pedido tiene contexto, rol, ejemplos y formato. Un pedido de código es un caso especial: el ejemplo pasa a ser la pieza más importante, porque un programa no entiende intenciones, solo casos concretos.</p><p>Un pedido de script completo responde seis preguntas:</p><ol class="steps"><li><span><b>Dónde va a correr.</b> Windows con PowerShell, macOS con la Terminal, Excel de escritorio, Google Sheets. Sin este dato, la IA elige por ti y muchas veces elige Python, que quizá no tengas.</span></li><li><span><b>La entrada.</b> Qué archivos, en qué carpeta, con qué nombres y qué columnas. Lo mejor es pegar las dos o tres primeras filas reales, con los datos cambiados si son sensibles.</span></li><li><span><b>La salida.</b> Qué archivo se crea, con qué nombre, con qué columnas y en qué orden.</span></li><li><span><b>Un ejemplo de entrada y su salida esperada.</b> «Si entra <code>export(3).csv</code> con la zona Norte, sale <code>2026-03_ventas-norte.csv</code>.» Este ejemplo vale más que tres párrafos de explicación.</span></li><li><span><b>Los casos raros.</b> Qué hacer si falta un archivo, si una fila viene vacía, si ya existe un archivo con ese nombre.</span></li><li><span><b>Los límites.</b> «No borres nada», «no sobrescribas archivos existentes», «antes de cambiar, muestra lo que harías».</span></li></ol><p>Y cierra siempre con dos pedidos: que te explique el script línea por línea en lenguaje simple, y que te diga paso a paso cómo ejecutarlo.</p></div><figure class="fig fig-flujo" id="08-diagrama-2"><div class="lienzo"><svg viewBox="0 0 840 420" style="min-width:700px" role="img" aria-label="Diagrama de secuencia del pedido al script en uso: describes la tarea con un ejemplo, la IA escribe el script y la explicación, preguntas por las líneas peligrosas, lo ejecutas en simulación o sobre una copia, comparas con el ejemplo, vuelves a pedir con el error si no coincide y solo al final lo usas con los archivos reales">
+  <defs>
+    <marker id="g8d2-apl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="k-apl"/></marker>
+    <marker id="g8d2-tra" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="k-tra"/></marker>
+    <marker id="g8d2-enl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="k-enl"/></marker>
+    <marker id="g8d2-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+  </defs>
+  
+  <rect x="20" y="12" width="130" height="46" rx="10" class="caja"/>
+  <text x="85" y="33" class="t t-b" text-anchor="middle">Tú</text>
+  <text x="85" y="49" class="t t-s t-m" text-anchor="middle">describes y pruebas</text>
+  <rect x="215" y="12" width="130" height="46" rx="10" class="c-apl"/>
+  <text x="280" y="33" class="t t-b k-apl" text-anchor="middle">Asistente de IA</text>
+  <text x="280" y="49" class="t t-s t-m" text-anchor="middle">escribe el código</text>
+  <rect x="410" y="12" width="130" height="46" rx="10" class="c-tra"/>
+  <text x="475" y="33" class="t t-b k-tra" text-anchor="middle">Ensayo</text>
+  <text x="475" y="49" class="t t-s t-m" text-anchor="middle">copia o simulación</text>
+  <rect x="580" y="12" width="110" height="46" rx="10" class="c-enl"/>
+  <text x="635" y="33" class="t t-b k-enl" text-anchor="middle">Originales</text>
+  <text x="635" y="49" class="t t-s t-m" text-anchor="middle">con respaldo</text>
+  <line x1="85" y1="58" x2="85" y2="404" class="vida"/>
+  <line x1="280" y1="58" x2="280" y2="404" class="vida"/>
+  <line x1="475" y1="58" x2="475" y2="404" class="vida"/>
+  <line x1="635" y1="58" x2="635" y2="404" class="vida"/>
+
+  
+  <text x="182" y="86" class="t t-s" text-anchor="middle">① tarea + ejemplo de entrada y salida</text>
+  <line x1="87" y1="94" x2="276" y2="94" class="ln s-apl" style="stroke-width:2" marker-end="url(#g8d2-apl)"/>
+  <text x="182" y="122" class="t t-s" text-anchor="middle">② script + explicación línea a línea</text>
+  <line x1="278" y1="130" x2="89" y2="130" class="ln s-apl" style="stroke-width:2" marker-end="url(#g8d2-apl)"/>
+  <text x="182" y="158" class="t t-s" text-anchor="middle">③ ¿qué líneas borran o sobrescriben?</text>
+  <line x1="87" y1="166" x2="276" y2="166" class="ln s-apl" style="stroke-width:2" marker-end="url(#g8d2-apl)"/>
+  <text x="280" y="206" class="t t-s" text-anchor="middle">④ ejecutar con datos de prueba, en una copia o con -WhatIf</text>
+  <line x1="87" y1="214" x2="471" y2="214" class="ln s-tra" style="stroke-width:2" marker-end="url(#g8d2-tra)"/>
+  <text x="280" y="242" class="t t-s" text-anchor="middle">⑤ resultado: ¿coincide con el ejemplo? ¿mismas filas?</text>
+  <line x1="473" y1="250" x2="89" y2="250" class="ln s-tra" style="stroke-width:2" marker-end="url(#g8d2-tra)"/>
+  <text x="182" y="286" class="t t-s t-m" text-anchor="middle">si no coincide: el error exacto, y a ②</text>
+  <line x1="87" y1="294" x2="276" y2="294" class="ln ln-d" style="stroke-width:1.6" marker-end="url(#g8d2-m)"/>
+  <text x="360" y="354" class="t t-s" text-anchor="middle">⑥ solo cuando coincide: usarlo con los archivos reales</text>
+  <line x1="87" y1="362" x2="631" y2="362" class="ln s-enl" style="stroke-width:2" marker-end="url(#g8d2-enl)"/>
+
+  
+  <text x="712" y="78" class="t t-xs t-m">FASES</text>
+  <rect x="712" y="84" width="118" height="96" rx="8" class="c-apl"/>
+  <text x="722" y="106" class="t t-b k-apl">Describir</text>
+  <text x="722" y="124" class="t t-s">y leer</text>
+  <text x="722" y="150" class="t t-s t-m">10 a 15 min,</text>
+  <text x="722" y="166" class="t t-s t-m">una sola vez</text>
+  <rect x="712" y="194" width="118" height="114" rx="8" class="c-tra"/>
+  <text x="722" y="216" class="t t-b k-tra">Ensayar</text>
+  <text x="722" y="240" class="t t-s t-m">las vueltas que</text>
+  <text x="722" y="256" class="t t-s t-m">hagan falta hasta</text>
+  <text x="722" y="272" class="t t-s t-m">que coincida</text>
+  <rect x="712" y="330" width="118" height="70" rx="8" class="c-enl"/>
+  <text x="722" y="352" class="t t-b k-enl">Usar</text>
+  <text x="722" y="374" class="t t-s t-m">segundos, cada</text>
+  <text x="722" y="390" class="t t-s t-m">mes</text>
+</svg></div><figcaption><b>Del pedido al script en uso.</b> Sigue los números. Tú describes la tarea con su ejemplo (①). La IA escribe el script y su explicación (②). Tú lees la explicación y preguntas por las líneas que borran, mueven o sobrescriben (③). Lo ejecutas primero en modo de simulación o sobre una copia (④) y comparas el resultado con tu ejemplo (⑤). Si algo no coincide, vuelves a ② con el mensaje de error exacto. Solo cuando coincide lo usas con los archivos reales, con respaldo (⑥). A la derecha, cuánto tiempo suele tomar cada fase.</figcaption></figure><div class="lab" id="08-lab-1"><div class="lab-title"><span class="tag">Laboratorio</span><h3>Describe la tarea y córrela sobre archivos de prueba</h3></div><p class="hint">La tarea es la del informe mensual: unir los tres archivos de ventas en uno solo. Activa o desactiva las piezas del pedido (dónde corre, la entrada, la salida con ejemplo, los casos raros) y mira cómo cambia el script que escribe el asistente. Después pulsa «Ejecutar sobre los archivos de prueba» y compara el archivo que resulta con el que esperabas.</p><style>
+[id="08-lab-1"] .c8l1-piezas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:8px}
+[id="08-lab-1"] .c8l1-piezas label{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:500 .86rem/1.35 var(--f-display);cursor:pointer}
+[id="08-lab-1"] .c8l1-piezas label.on{border-color:var(--accent);background:var(--accent-soft)}
+[id="08-lab-1"] .c8l1-piezas small{display:block;color:var(--muted);font-weight:400}
+[id="08-lab-1"] .c8l1-cab{font:600 .74rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+[id="08-lab-1"] .c8l1-pedido{background:var(--card);border:1px dashed var(--accent);border-radius:10px;padding:10px 12px;font:400 .92rem/1.5 var(--f-body);margin:0}
+[id="08-lab-1"] .c8l1-cod{font:.78rem/1.5 var(--f-mono);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 12px;white-space:pre-wrap;word-break:break-word;margin:0}
+[id="08-lab-1"] .c8l1-cod .com{color:var(--muted)}
+[id="08-lab-1"] .c8l1-cod .nuevo{background:var(--good-soft);border-radius:3px}
+[id="08-lab-1"] .c8l1-dir{display:flex;flex-wrap:wrap;gap:6px}
+[id="08-lab-1"] .c8l1-dir span{font:500 .78rem var(--f-mono);border:1px solid var(--line);border-radius:6px;padding:3px 7px;background:var(--card)}
+[id="08-lab-1"] .c8l1-dir span.us{border-color:var(--accent);color:var(--accent)}
+[id="08-lab-1"] .c8l1-dir span.mal{border-color:var(--warm);color:var(--warm)}
+[id="08-lab-1"] table{border-collapse:collapse;width:100%}
+[id="08-lab-1"] th,[id="08-lab-1"] td{font:500 .8rem var(--f-mono);padding:3px 6px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+[id="08-lab-1"] td.n{text-align:right}
+[id="08-lab-1"] tr.mal td{background:var(--warm-soft)}
+[id="08-lab-1"] td.nota{font-family:var(--f-display);color:var(--warm);white-space:normal}
+[id="08-lab-1"] .c8l1-err{font:.8rem/1.5 var(--f-mono);color:var(--warm);background:var(--warm-soft);border-radius:8px;padding:10px 12px;margin:0;white-space:pre-wrap;word-break:break-word}
+</style>
+<div>
+  <p class="c8l1-cab">Las piezas de tu pedido</p>
+  <div class="c8l1-piezas" id="c8l1-piezas">
+    <label><input type="checkbox" data-p="donde"><span>Dónde corre<small>Windows, con PowerShell</small></span></label>
+    <label><input type="checkbox" data-p="entrada"><span>La entrada<small>los tres archivos de este mes, por su nombre</small></span></label>
+    <label><input type="checkbox" data-p="salida"><span>La salida, con un ejemplo<small>un solo encabezado y debajo todas las filas</small></span></label>
+    <label><input type="checkbox" data-p="raros"><span>Casos raros<small>omitir filas vacías y contar lo que entra y sale</small></span></label>
+  </div>
+</div>
+<div>
+  <p class="c8l1-cab">Tu pedido al asistente</p>
+  <p class="c8l1-pedido" id="c8l1-pedido" aria-live="polite"></p>
+</div>
+<div>
+  <p class="c8l1-cab">El script que escribe el asistente</p>
+  <pre class="c8l1-cod" id="c8l1-cod"></pre>
+</div>
+<div>
+  <p class="c8l1-cab">La carpeta de prueba</p>
+  <div class="c8l1-dir" id="c8l1-dir"></div>
+</div>
+<div class="btns"><button type="button" id="c8l1-run">Ejecutar sobre los archivos de prueba</button><button type="button" id="c8l1-reset">Empezar de nuevo</button></div>
+<div id="c8l1-res"></div>
+<div class="readout texto" id="c8l1-out" aria-live="polite"></div></div><div class="prose"><p>Fíjate en lo que muestra el laboratorio: con un pedido vago, el script corre sin errores y aun así entrega un archivo equivocado, con los encabezados repetidos en medio de los datos o con el archivo de otro mes mezclado. Un programa que «funciona» no es lo mismo que un programa que hace lo que querías. La única forma de saberlo es compararlo con un ejemplo cuyo resultado ya conoces.</p></div><div class="practica"><div class="practica-title"><span class="tag">En la terminal</span><h3>Tu primer script, en una carpeta de prueba</h3></div><p>Vas a crear una carpeta con tres archivos vacíos, pedirle a un asistente un comando para renombrarlos y ejecutarlo primero en modo de simulación. Sirve cualquier asistente gratuito. Nada de esto toca tus archivos reales.</p><p>Primero abre la terminal (en Windows, PowerShell) y crea la carpeta de prueba con estos comandos, uno por uno:</p><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>mkdir $HOME\prueba-ia</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>cd $HOME\prueba-ia</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>New-Item -ItemType File ventas-norte.csv, ventas-sur.csv, ventas-centro.csv</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-ChildItem</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>mkdir ~/prueba-ia</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>cd ~/prueba-ia</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>touch ventas-norte.csv ventas-sur.csv ventas-centro.csv</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>ls</code><button type="button" class="copiar">Copiar</button></div></div></div><ol class="steps"><li><span>Pídele al asistente: «Estoy en [Windows con PowerShell / macOS con la Terminal / Linux]. En la carpeta actual tengo ventas-norte.csv, ventas-sur.csv y ventas-centro.csv. Quiero agregar el prefijo 2026-03_ al nombre de cada archivo .csv. Ejemplo: ventas-norte.csv pasa a llamarse 2026-03_ventas-norte.csv. Dame primero un comando que solo muestre lo que haría, sin cambiar nada, y después el comando real. Explícame cada parte».</span></li><li><span>Ejecuta el comando de simulación y lee lo que dice que haría. Después ejecuta el comando real y lista la carpeta de nuevo.</span></li><li><span>Compara con estos comandos, que hacen lo mismo (el primero de cada grupo simula; el segundo cambia los nombres):</span></li></ol><div class="cmds"><div class="cmd-tabs" role="tablist" aria-label="Sistema operativo"><button type="button" role="tab" data-so="win">Windows</button><button type="button" role="tab" data-so="mac linux">macOS y Linux</button></div><div class="cmd-panel" role="tabpanel" data-so="win"><p class="cmd-nota">Windows (PowerShell)</p><div class="cmd-l"><code>(Get-ChildItem *.csv) | Rename-Item -NewName { "2026-03_" + $_.Name } -WhatIf</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>(Get-ChildItem *.csv) | Rename-Item -NewName { "2026-03_" + $_.Name }</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>Get-ChildItem</code><button type="button" class="copiar">Copiar</button></div></div><div class="cmd-panel" role="tabpanel" data-so="mac linux"><div class="cmd-l"><code>for f in *.csv; do echo mv "$f" "2026-03_$f"; done</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>for f in *.csv; do mv -n "$f" "2026-03_$f"; done</code><button type="button" class="copiar">Copiar</button></div><div class="cmd-l"><code>ls</code><button type="button" class="copiar">Copiar</button></div></div></div><p><b>Qué observar:</b> en Windows, la simulación usa el parámetro <code>-WhatIf</code> y escribe una línea que empieza con «WhatIf» por cada archivo, sin cambiar nada; en macOS y Linux, el truco es poner <code>echo</code> delante de <code>mv</code>, para que el comando se escriba en lugar de ejecutarse. Fíjate en si el asistente te ofreció una simulación sin que tuvieras que explicarle cómo, y en si su comando se parece al de arriba. Si lo ejecutas dos veces, ¿qué pasa con los nombres? Esa pregunta es un caso raro que tu pedido no cubría. Cuando termines, puedes borrar la carpeta <code>prueba-ia</code> desde el explorador de archivos.</p></div></section>
+<section><h2>Macros de hojas de cálculo y automatizaciones de oficina</h2><div class="prose"><p>La parte del informe que ocurre dentro de la hoja (ordenar por zona, poner los montos con separador de miles, pintar de rojo lo que bajó, crear una pestaña por zona) es terreno de las macros. Hay dos maneras de conseguir una.</p><p>La primera es la <b>grabadora de macros</b> (<i>macro recorder</i>) de Excel o de LibreOffice: la activas, haces la tarea una vez con el mouse y la grabadora escribe el código por ti. Es una buena forma de empezar, pero graba todo literalmente: si hiciste clic en la celda D14, la macro siempre irá a D14, aunque el mes siguiente la tabla tenga más filas. La segunda manera es pedírsela a la IA, describiendo la hoja como aprendiste en el capítulo anterior: nombre de la pestaña, qué hay en cada columna y desde qué fila empiezan los datos. Una tercera, la mejor de las dos, es combinarlas: grabas la macro y le pides a la IA que la explique y la haga funcionar con cualquier cantidad de filas.</p><p>Tres cosas propias de las macros que conviene saber antes de usarlas:</p><ul><li><b>No tienen «deshacer».</b> Lo que una macro cambia no se revierte con Ctrl+Z. Antes de correrla, guarda una copia del archivo.</li><li><b>Viven dentro del archivo.</b> Un Excel con macros se guarda con otra extensión (<code>.xlsm</code>) y, al abrirlo, el programa te pregunta si quieres habilitarlas.</li><li><b>Son una puerta de entrada de virus.</b> Por eso Office bloquea las macros de los archivos que llegan por correo o se descargan de internet. Nunca habilites las macros de un archivo que no esperabas, aunque parezca venir de alguien conocido.</li></ul><p>Fuera de la hoja, las plataformas sin código automatizan lo que pasa entre aplicaciones: guardar los adjuntos de un correo en una carpeta, avisar en el chat del equipo cuando llega un formulario, crear una tarea cuando alguien completa una solicitud. La IA ayuda aquí de dos maneras: describe el flujo que necesitas y te dice qué disparador y qué acciones usar, y muchas de estas plataformas ya incluyen un asistente que arma el flujo a partir de una frase. La lógica de prueba es la misma que con un script: primero con datos de prueba, después con los reales.</p></div><div class="practica"><div class="practica-title"><span class="tag">En el navegador</span><h3>Pide una macro y léela antes de usarla</h3></div><p>Vas a pedir una macro para la tabla de ventas del capítulo 7 y a revisar qué hace cada línea. No hace falta ejecutarla: el objetivo es aprender a leerla.</p><ol class="steps"><li><span>En un asistente gratuito cualquiera, pide: «Escribe una macro para [Excel de escritorio en VBA / Google Sheets en Apps Script / LibreOffice Calc]. La hoja se llama Ventas y tiene en A1:E1 los encabezados Fecha, Vendedor, Zona, Producto y Monto; los datos empiezan en la fila 2 y la cantidad de filas cambia cada mes. La macro debe ordenar por Zona y luego por Monto de mayor a menor, poner la columna Monto con separador de miles y crear una pestaña nueva por cada zona con sus filas. No debe borrar ni modificar la hoja Ventas salvo para ordenarla».</span></li><li><span>Pide después: «Explícame la macro línea por línea, en lenguaje simple. Marca con [CAMBIA] cada línea que modifica o borra datos, y dime qué pasa si la ejecuto dos veces seguidas».</span></li><li><span>Si usas Google Sheets o LibreOffice y quieres probarla, hazlo en una hoja nueva donde pegues solo los datos de ejemplo del capítulo 7.</span></li></ol><p><b>Qué observar:</b> cuenta cuántas líneas quedaron marcadas con [CAMBIA]: esas son las que hay que entender sí o sí. Fíjate sobre todo en la respuesta sobre ejecutarla dos veces: si la macro intenta crear pestañas que ya existen, suele fallar o duplicarlas, y un buen asistente lo avisa y te propone cómo evitarlo. Si el asistente usó otro lenguaje que el que pediste, díselo: es una señal de que hay que revisar el resto con más cuidado.</p></div></section>
+<section><h2>Probar con una copia, nunca con el original</h2><div class="prose"><p>Esta es la regla que separa una automatización útil de un desastre. Un script equivocado no se equivoca una vez: se equivoca con cada archivo, en un segundo, y sin papelera de reciclaje. Cuando un comando de la terminal borra o sobrescribe un archivo, el archivo no va a la papelera: desaparece.</p></div><div class="analogia"><b>Imagínalo así</b><p>Antes de un estreno, la compañía de teatro hace un ensayo general con vestuario, luces y música, pero sin público. Si se cae un decorado, se arregla y no pasa nada. Un script merece lo mismo: un ensayo completo con todo igual que el día real, salvo lo único que no se puede reemplazar, que son tus archivos originales.</p></div><div class="prose"><p>La rutina de prueba tiene cuatro piezas, y conviene pedirle a la IA que la incluya desde el principio:</p><ul><li><b>Datos de prueba pequeños con resultado conocido.</b> Tres archivos de cinco filas cada uno, armados por ti, de los que sabes exactamente qué debería salir.</li><li><b>Una carpeta de copia.</b> Copias los archivos reales a una carpeta de trabajo y corres el script ahí. Si algo sale mal, los originales siguen intactos.</li><li><b>Un modo de simulación</b> (<i>dry run</i>): el script dice lo que haría sin hacerlo. En PowerShell muchos comandos aceptan <code>-WhatIf</code>; en otros casos, pídele a la IA que agregue una opción que solo escriba la lista de cambios.</li><li><b>Una comparación al final</b>: cuántos archivos o filas había antes y cuántos hay después, y si el total de la columna principal es el mismo. Es la misma rutina de comprobación del capítulo 7, aplicada al resultado del script.</li></ul></div><div class="lab" id="08-lab-2"><div class="lab-title"><span class="tag">Laboratorio</span><h3>El ensayo general</h3></div><p class="hint">El asistente escribió un script para ponerle a cada archivo de la carpeta el nombre de su zona y su mes. Tiene un error que no se ve al leerlo. Elige cómo correrlo (sobre los originales, sobre una copia o en modo de simulación) y mira qué pasa con cada archivo. Después corrige el pedido y vuelve a probar.</p><style>
+[id="08-lab-2"] .c8l2-cod{font:.78rem/1.5 var(--f-mono);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 12px;white-space:pre-wrap;word-break:break-word;margin:0}
+[id="08-lab-2"] .c8l2-cod .mal{background:var(--warm-soft);border-radius:3px}
+[id="08-lab-2"] .c8l2-cod .bien{background:var(--good-soft);border-radius:3px}
+[id="08-lab-2"] .c8l2-cod .com{color:var(--muted)}
+[id="08-lab-2"] .c8l2-dirs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}
+[id="08-lab-2"] .c8l2-dir{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:6px;align-content:start}
+[id="08-lab-2"] .c8l2-dir h4{margin:0;font:600 .78rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+[id="08-lab-2"] .c8l2-f{display:grid;gap:1px;border:1px solid var(--line);border-radius:7px;padding:5px 8px;background:var(--paper)}
+[id="08-lab-2"] .c8l2-f b{font:600 .8rem var(--f-mono);word-break:break-all}
+[id="08-lab-2"] .c8l2-f small{font:500 .74rem var(--f-display);color:var(--muted)}
+[id="08-lab-2"] .c8l2-f.perdido{border-color:var(--warm);background:var(--warm-soft)}
+[id="08-lab-2"] .c8l2-f.perdido b{text-decoration:line-through;color:var(--warm)}
+[id="08-lab-2"] .c8l2-f.ok{border-color:var(--good)}
+[id="08-lab-2"] .c8l2-sim{font:.8rem/1.6 var(--f-mono);margin:0;padding:0;list-style:none;display:grid;gap:3px}
+[id="08-lab-2"] .c8l2-sim li{padding:3px 6px;border-radius:5px;word-break:break-all}
+[id="08-lab-2"] .c8l2-sim li.dup{background:var(--warm-soft);color:var(--warm)}
+[id="08-lab-2"] .c8l2-vacio{font:500 .8rem var(--f-display);color:var(--muted)}
+</style>
+<div class="opciones">
+  <label>Cómo correrlo
+    <select id="c8l2-modo">
+      <option value="orig">Sobre los originales</option>
+      <option value="copia">Sobre una copia</option>
+      <option value="sim" selected>Simulación (-WhatIf)</option>
+    </select></label>
+  <label>Pedido
+    <select id="c8l2-ver">
+      <option value="1" selected>Primer pedido</option>
+      <option value="2">Pedido corregido</option>
+    </select></label>
+</div>
+<pre class="c8l2-cod" id="c8l2-cod"></pre>
+<div class="btns"><button type="button" id="c8l2-run">Ejecutar</button><button type="button" id="c8l2-reset">Restaurar la carpeta</button></div>
+<div class="c8l2-dirs" id="c8l2-dirs"></div>
+<div class="readout texto" id="c8l2-out" aria-live="polite"></div></div><div class="prose"><p>El error del laboratorio es de los más comunes: dos archivos terminan con el mismo nombre nuevo y el segundo <b>sobrescribe</b> al primero. En los originales, uno de los dos se pierde sin ningún mensaje de error. En la copia, lo notas al contar los archivos. En la simulación, lo ves antes de que pase, porque la lista muestra dos veces el mismo destino.</p></div><div class="caso"><b>Un caso real</b><p><b>Las filas que no cabían.</b> En octubre de 2020, la agencia de salud pública de Inglaterra descubrió que casi 16.000 casos positivos de covid-19 no se habían informado a tiempo. Un proceso automático pasaba los resultados de los laboratorios, que llegaban como archivos de texto, a una plantilla en un formato antiguo de Excel (<code>.xls</code>) que admite como máximo 65.536 filas. Lo que no cabía se descartaba sin aviso. El proceso no daba error: simplemente entregaba menos filas de las que recibía. La lección vale para cualquier automatización, grande o chica: compara siempre cuántos registros entran y cuántos salen.</p></div></section>
+<section><h2>Cuándo pedir ayuda al equipo de sistemas</h2><div class="prose"><p>Que la IA te permita escribir un script no significa que todos los scripts te correspondan. Hay automatizaciones personales, que solo tocan tus archivos y que solo usas tú, y hay automatizaciones que tocan sistemas de la empresa o de las que dependen otras personas. Las segundas son terreno del área de sistemas, o al menos hay que hablarlas con ella.</p><p>Cuando una automatización crece sin que sistemas lo sepa, se forma lo que en el área de tecnología llaman <b>TI en la sombra</b> (<i>shadow IT</i>): procesos importantes que dependen de un archivo en la computadora de una persona, que nadie más entiende y que dejan de funcionar el día que esa persona se va de vacaciones o cambia la contraseña.</p></div><figure class="fig fig-esquema" id="08-diagrama-3"><div class="lienzo"><svg viewBox="0 0 760 430" style="min-width:640px" role="img" aria-label="Árbol de decisión: cinco preguntas sobre una automatización; un sí en cualquiera lleva a hablar con sistemas, y cinco no llevan a una automatización personal que haces tú con copia y simulación">
+  <defs>
+    <marker id="g8d3-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="fl-muted"/></marker>
+    <marker id="g8d3-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" class="k-sis"/></marker>
+  </defs>
+  <text x="20" y="18" class="t t-xs t-m">LA AUTOMATIZACIÓN QUE QUIERES HACER…</text>
+
+  <rect x="20" y="28" width="420" height="44" rx="10" class="caja"/>
+  <text x="36" y="55" class="t">1. ¿Escribe o cambia datos en un sistema de la empresa?</text>
+  <rect x="20" y="92" width="420" height="44" rx="10" class="caja"/>
+  <text x="36" y="119" class="t">2. ¿Usa contraseñas, claves o permisos de acceso?</text>
+  <rect x="20" y="156" width="420" height="44" rx="10" class="caja"/>
+  <text x="36" y="183" class="t">3. ¿Maneja datos personales o confidenciales?</text>
+  <rect x="20" y="220" width="420" height="44" rx="10" class="caja"/>
+  <text x="36" y="247" class="t">4. ¿Corre sola, programada, sin que la mires?</text>
+  <rect x="20" y="284" width="420" height="44" rx="10" class="caja"/>
+  <text x="36" y="311" class="t">5. ¿Otras personas dependen de su resultado?</text>
+
+  
+  <line x1="120" y1="72" x2="120" y2="90" class="ln" marker-end="url(#g8d3-m)"/>
+  <text x="128" y="86" class="t t-s t-m">no</text>
+  <line x1="120" y1="136" x2="120" y2="154" class="ln" marker-end="url(#g8d3-m)"/>
+  <text x="128" y="150" class="t t-s t-m">no</text>
+  <line x1="120" y1="200" x2="120" y2="218" class="ln" marker-end="url(#g8d3-m)"/>
+  <text x="128" y="214" class="t t-s t-m">no</text>
+  <line x1="120" y1="264" x2="120" y2="282" class="ln" marker-end="url(#g8d3-m)"/>
+  <text x="128" y="278" class="t t-s t-m">no</text>
+  <line x1="120" y1="328" x2="120" y2="354" class="ln" marker-end="url(#g8d3-m)"/>
+  <text x="128" y="346" class="t t-s t-m">no a las cinco</text>
+
+  
+  <line x1="440" y1="50" x2="516" y2="50" class="ln" style="stroke:var(--d-sis);stroke-width:1.8" marker-end="url(#g8d3-s)"/>
+  <text x="470" y="44" class="t t-s k-sis">sí</text>
+  <line x1="440" y1="114" x2="516" y2="114" class="ln" style="stroke:var(--d-sis);stroke-width:1.8" marker-end="url(#g8d3-s)"/>
+  <text x="470" y="108" class="t t-s k-sis">sí</text>
+  <line x1="440" y1="178" x2="516" y2="178" class="ln" style="stroke:var(--d-sis);stroke-width:1.8" marker-end="url(#g8d3-s)"/>
+  <text x="470" y="172" class="t t-s k-sis">sí</text>
+  <line x1="440" y1="242" x2="516" y2="242" class="ln" style="stroke:var(--d-sis);stroke-width:1.8" marker-end="url(#g8d3-s)"/>
+  <text x="470" y="236" class="t t-s k-sis">sí</text>
+  <line x1="440" y1="306" x2="516" y2="306" class="ln" style="stroke:var(--d-sis);stroke-width:1.8" marker-end="url(#g8d3-s)"/>
+  <text x="470" y="300" class="t t-s k-sis">sí</text>
+
+  
+  <rect x="520" y="28" width="220" height="300" rx="12" class="d-sis"/>
+  <text x="536" y="56" class="t t-b k-sis">Habla con sistemas</text>
+  <text x="536" y="74" class="t t-s">antes de seguir</text>
+  <text x="536" y="108" class="t t-xs t-m">LLEVA CONTIGO</text>
+  <text x="536" y="130" class="t t-s">• la tarea descrita en una</text>
+  <text x="536" y="146" class="t t-s">  página</text>
+  <text x="536" y="170" class="t t-s">• el ejemplo de entrada</text>
+  <text x="536" y="186" class="t t-s">  y de salida</text>
+  <text x="536" y="210" class="t t-s">• el prototipo probado con</text>
+  <text x="536" y="226" class="t t-s">  datos de prueba</text>
+  <text x="536" y="250" class="t t-s">• qué sistemas y datos toca</text>
+  <text x="536" y="274" class="t t-s">• cada cuánto debe correr</text>
+  <text x="536" y="310" class="t t-s t-m">Tu idea ahorra semanas.</text>
+
+  
+  <rect x="20" y="358" width="420" height="58" rx="12" class="c-enl"/>
+  <text x="36" y="382" class="t t-b k-enl">Automatización personal: hazla tú</text>
+  <text x="36" y="402" class="t t-s">con datos de prueba, una copia y el modo de simulación</text>
+</svg></div><figcaption><b>¿Lo hago yo o hablo con sistemas?</b> Sigue las preguntas de arriba abajo. Basta un «sí» en cualquiera de las cinco para que la respuesta sea hablar con sistemas antes de seguir: escribe en un sistema de la empresa, usa contraseñas o claves de acceso, maneja datos personales o confidenciales, corre solo y sin supervisión, u otras personas dependen del resultado. Si llegas abajo con cinco «no», es una automatización personal: hazla tú, con copia y simulación.</figcaption></figure><div class="prose"><p>Pedir ayuda no es renunciar a la idea. Llegas con algo muy valioso: la tarea descrita, el ejemplo de entrada y salida y un prototipo que funciona sobre datos de prueba. Para sistemas, eso ahorra semanas de entender qué necesitas. Y hay señales para pedir ayuda que no dependen del riesgo, sino de ti: si el asistente te pide instalar programas, si el script tiene más de una o dos pantallas que no entiendes, o si llevas una hora corrigiendo errores sin avanzar, es momento de buscar a alguien que sepa.</p></div><div class="ml"><b>En la práctica</b><p><b>El informe que se arma solo, con permiso.</b> En un área comercial, una analista tenía un script de PowerShell, escrito con ayuda de un asistente, que unía los tres archivos de ventas, comprobaba el total contra la suma de los originales y dejaba el resultado en la carpeta del mes. Le ahorraba casi una hora cada cierre. Cuando su jefe pidió que corriera solo cada día 1 y que tomara los datos directamente del sistema de ventas, ella llevó el script y sus archivos de prueba al área de sistemas. Sistemas lo convirtió en una tarea programada con una cuenta de servicio propia y un registro de cada ejecución. La idea y el ejemplo fueron de ella; la conexión con el sistema y el mantenimiento, de sistemas.</p></div></section>
+<section><h2>Programar como profesional es otro curso</h2><div class="prose"><p>Este capítulo cubre la automatización personal: scripts cortos, macros y flujos que entiendes y que pruebas tú. Los programadores usan la IA de otra manera y a otra escala: asistentes integrados en su editor de código y <b>agentes de programación</b> (<i>coding agents</i>) que leen un proyecto completo, proponen cambios en muchos archivos, ejecutan las pruebas y corrigen sus propios errores. Ese trabajo tiene sus propias prácticas (revisión de código, pruebas automáticas, control de versiones) y está en el curso <a href="https://aaramirez.github.io/desarrollo-de-aplicaciones/temario.html" target="_blank" rel="noopener">Ingeniería de software</a>. Si lo que quieres es aprender a programar desde cero, el camino es <a href="https://aaramirez.github.io/programacion-python/temario.html" target="_blank" rel="noopener">Programación en Python</a>, y para dominar la terminal, <a href="https://aaramirez.github.io/linea-de-comandos/temario.html" target="_blank" rel="noopener">Línea de comandos y PowerShell</a>.</p></div></section>
+<section><h2>Pedidos para copiar</h2><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Un script con entrada, salida y ejemplo</h3></div><div class="code-copia"><pre><code>Necesito un script para [Windows con PowerShell / macOS con la Terminal / Linux / Python, si ya lo tengo instalado].
+Entrada: [carpeta, nombres de archivo, formato y las primeras filas de ejemplo].
+Salida: [qué archivo se crea, con qué nombre y qué columnas].
+Ejemplo: si entra [ejemplo de entrada], debe salir [ejemplo de salida].
+Casos raros: [archivo que falta, filas vacías, nombres repetidos].
+Reglas: no borres ni sobrescribas nada; incluye un modo de simulación que solo muestre lo que haría; al final, muestra cuántos archivos o filas había antes y cuántos hay después.
+Explícame el script línea por línea en lenguaje simple y dime paso a paso cómo ejecutarlo.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Leer un script antes de correrlo</h3></div><div class="code-copia"><pre><code>Te pego un script que [me pasaron / escribí con otro asistente]. No lo cambies todavía. Explícame qué hace, paso a paso, en lenguaje simple. Marca con [CAMBIA] las líneas que modifican, mueven, sobrescriben o borran algo, y con [RED] las que se conectan a internet o a otro sistema. Dime qué pasa si lo ejecuto dos veces seguidas.
+[pega aquí el script]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Corregir con el error exacto</h3></div><div class="code-copia"><pre><code>Ejecuté el script en [sistema] y apareció este mensaje de error, copiado tal cual:
+[pega aquí el error completo]
+Esto es lo que había en la carpeta antes de ejecutarlo: [lista]. Explícame qué significa el error y corrige el script. Muéstrame solo las líneas que cambiaste y por qué.</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div><div class="prompt"><div class="prompt-title"><span class="tag">Prompt para la IA</span><h3>Preparar la conversación con sistemas</h3></div><div class="code-copia"><pre><code>Tengo un script que automatiza [tarea] y quiero que el área de sistemas lo convierta en un proceso de la empresa. Escribe una descripción de una página con: el objetivo, la entrada y la salida con un ejemplo, la frecuencia, los sistemas y datos que toca, los riesgos que ves y las pruebas que ya hice.
+[pega aquí el script y tus notas]</code></pre><button type="button" class="copiar copiar-todo">Copiar</button></div></div></section>
+<section><h2>Lo que te llevas</h2><div class="prose"><p>Describe la tarea con un ejemplo de entrada y de salida, y prueba siempre sobre una copia. La IA escribe el código en segundos; tu trabajo es describir bien el caso, entender qué líneas cambian algo y ensayar antes de tocar los originales. Y cuando la automatización toca sistemas, datos sensibles o el trabajo de otros, el siguiente paso es hablar con el área de sistemas, con tu prototipo en la mano.</p></div><div class="quiz"><h3>Pruébate</h3><details><summary>¿Qué pieza de un pedido de script es la más importante y por qué?</summary><p>Un ejemplo concreto de entrada con su salida esperada. Un programa no entiende intenciones, solo casos; el ejemplo le dice exactamente qué hacer y a ti te permite comprobar el resultado.</p></details><details><summary>¿Qué es un modo de simulación (<i>dry run</i>) y cómo se pide en PowerShell?</summary><p>Es una forma de ejecutar el script para que diga lo que haría sin hacerlo. En PowerShell, muchos comandos aceptan el parámetro -WhatIf; en Bash se suele poner echo delante del comando.</p></details><details><summary>¿Por qué un script que corre sin errores puede estar mal?</summary><p>Porque «sin errores» solo significa que la computadora pudo ejecutar las instrucciones, no que esas instrucciones hagan lo que querías. Hay que comparar el resultado con un ejemplo conocido.</p></details><details><summary>Una macro de Excel reorganizó mal tu hoja. ¿Puedes deshacerlo con Ctrl+Z?</summary><p>No. Lo que hace una macro no se deshace con Ctrl+Z; por eso se guarda una copia del archivo antes de ejecutarla.</p></details><details><summary>Nombra tres señales de que una automatización debe hablarse con el área de sistemas.</summary><p>Por ejemplo: escribe en un sistema de la empresa, usa contraseñas o claves, maneja datos personales o confidenciales, corre sola sin supervisión, u otras personas dependen de su resultado.</p></details><details><summary>¿Qué control simple habría detectado a tiempo el caso de las filas que no cabían?</summary><p>Comparar cuántos registros entraban al proceso con cuántos salían. Si salen menos de los que entran, algo se perdió.</p></details></div><div class="investiga"><h3>Para investigar</h3><p class="hint">Estas preguntas no se responden en el capítulo: búscalas por tu cuenta.</p><ol><li>¿Qué es una expresión regular (<i>regular expression</i>) y por qué aparece tanto en los scripts que renombran archivos o limpian textos?<small>Pista: busca «expresiones regulares para principiantes» y prueba un sitio como regex101.</small></li><li>¿Qué es la política de ejecución (<i>execution policy</i>) de PowerShell y por qué a veces impide correr un script descargado?</li><li>¿Qué es Git y por qué los programadores guardan cada versión de sus scripts en lugar de sobrescribir el archivo?</li><li>¿Qué es la automatización robótica de procesos (RPA) y en qué se diferencia de un script o de una macro?</li><li>¿Qué es una cuenta de servicio y por qué sistemas no deja que una tarea programada corra con la contraseña de una persona?</li></ol></div><div class="vids"><span>Para saber más</span><a class="vid" href="https://aaramirez.github.io/desarrollo-de-aplicaciones/temario.html" target="_blank" rel="noopener">Ingeniería de software: programar con asistentes y agentes de IA <small>curso</small></a><a class="vid" href="https://aaramirez.github.io/linea-de-comandos/temario.html" target="_blank" rel="noopener">Línea de comandos y PowerShell <small>curso</small></a><a class="vid" href="https://learn.microsoft.com/es-es/powershell/module/microsoft.powershell.management/rename-item" target="_blank" rel="noopener">Documentación de Rename-Item en PowerShell <small>referencia</small></a><a class="vid" href="https://developers.google.com/apps-script/overview?hl=es" target="_blank" rel="noopener">Descripción general de Apps Script <small>referencia</small></a></div></section>
+<label class="got"><input type="checkbox" id="got"> Lo tengo claro</label>
+<nav class="pager" id="pager" aria-label="Capítulo anterior y siguiente"></nav>
+</main>
+</div>
+<footer><span>Curso abierto de aaramirez.github.io.</span><span>Sitio publicado: <a href="https://github.com/aaramirez/ia-generativa" target="_blank" rel="noopener">github.com/aaramirez/ia-generativa</a></span></footer>
+</div>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  const H=['Fecha','Vendedor','Zona','Monto'];
+  const ARCH=[
+    ['ventas-centro.csv',[['14/03','Marta','Centro',390],['27/03','Ana','Centro',530]]],
+    ['ventas-norte-febrero.csv',[['08/02','Ana','Norte',610],['21/02','Luis','Norte',340]]],
+    ['ventas-norte.csv',[['03/03','Ana','Norte',420],['11/03','Ana','Norte',760],['19/03','Luis','Norte',450]]],
+    ['ventas-sur.csv',[['05/03','Luis','Sur',980],['24/03','Marta','Sur',410],['','','','']]]
+  ];
+  const MES=['ventas-norte.csv','ventas-sur.csv','ventas-centro.csv'];
+  const ESP_FILAS=7,ESP_TOTAL=3940;
+  const P={donde:false,entrada:false,salida:false,raros:false};
+  let corrido=false;
+  const n=x=>x.toLocaleString('es');
+  const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+  function pedido(){
+    let t='Une los archivos de ventas en uno solo llamado ventas-marzo.csv.';
+    if(P.donde)t+=' Lo voy a correr en <b>Windows con PowerShell</b>.';
+    if(P.entrada)t+=' <b>Entrada: ventas-norte.csv, ventas-sur.csv y ventas-centro.csv</b>, separados por punto y coma; en la carpeta hay otros archivos que no se usan.';
+    if(P.salida)t+=' <b>Salida: un solo encabezado (Fecha;Vendedor;Zona;Monto) y debajo todas las filas.</b> Ejemplo: si norte tiene 3 filas y sur 2, salen 1 encabezado y 5 filas.';
+    if(P.raros)t+=' <b>Omite las filas vacías y, al final, escribe cuántas filas entraron y cuántas salieron.</b>';
+    return t;
+  }
+  function script(){
+    if(!P.donde)return [
+      ['c','# Python (el asistente eligió el lenguaje)'],
+      ['','import glob, pandas as pd'],
+      [P.entrada?'n':'',P.entrada?'archivos = ["ventas-norte.csv", "ventas-sur.csv", "ventas-centro.csv"]':'archivos = glob.glob("ventas-*.csv")'],
+      ['','df = pd.concat(pd.read_csv(a, sep=";") for a in archivos)'],
+      [P.raros?'n':'',P.raros?'df = df.dropna(how="all"); print(len(df), "filas")':''],
+      ['','df.to_csv("ventas-marzo.csv", sep=";", index=False)']
+    ].filter(l=>l[1]);
+    const L=[['c','# PowerShell']];
+    L.push(P.entrada?['n','$archivos = "ventas-norte.csv", "ventas-sur.csv", "ventas-centro.csv"']:['','$archivos = Get-ChildItem ventas-*.csv']);
+    if(P.salida){
+      L.push(['n','$filas = $archivos | ForEach-Object { Import-Csv $_ -Delimiter ";" }']);
+      if(P.raros){L.push(['n','$entran = $filas.Count']);L.push(['n','$filas = $filas | Where-Object { $_.Monto -ne "" }']);}
+      L.push(['n','$filas | Export-Csv ventas-marzo.csv -Delimiter ";" -NoTypeInformation']);
+    }else{
+      if(P.raros){L.push(['n','$lineas = Get-Content $archivos | Where-Object { $_ -notmatch "^;*$" }']);L.push(['','$lineas | Set-Content ventas-marzo.csv']);}
+      else L.push(['','Get-Content $archivos | Set-Content ventas-marzo.csv']);
+    }
+    if(P.raros)L.push(['n',P.salida?'"Entraron $entran filas; salieron $($filas.Count)"':'"Salieron $($lineas.Count) líneas"']);
+    return L;
+  }
+  function ejecutar(){
+    // devuelve filas: {c:[..], mal:'motivo'|''}
+    const usados=P.entrada?MES.map(m=>ARCH.find(a=>a[0]===m)):ARCH;
+    const filas=[];let entran=0;
+    usados.forEach((a,i)=>{
+      if(!P.salida)filas.push({c:H,mal:i===0?'':'encabezado repetido',hdr:i===0});
+      a[1].forEach(r=>{
+        entran++;
+        const vacia=r.every(x=>x==='');
+        if(vacia&&P.raros)return;
+        let mal='';
+        if(vacia)mal='fila vacía';
+        else if(a[0].includes('febrero'))mal='fila de febrero';
+        filas.push({c:r,mal});
+      });
+    });
+    return {usados:usados.map(a=>a[0]),filas,entran};
+  }
+  function pintar(){
+    document.querySelectorAll('#c8l1-piezas label').forEach(l=>l.classList.toggle('on',l.querySelector('input').checked));
+    $('#c8l1-pedido').innerHTML=pedido();
+    $('#c8l1-cod').innerHTML=script().map(l=>'<span class="'+(l[0]==='c'?'com':l[0]==='n'?'nuevo':'')+'">'+esc(l[1])+'</span>').join('\n');
+    const r=corrido&&P.donde?ejecutar():null;
+    $('#c8l1-dir').innerHTML=ARCH.map(a=>'<span class="'+(r&&r.usados.includes(a[0])?(a[0].includes('febrero')?'mal':'us'):'')+'">'+a[0]+' · '+a[1].length+' filas</span>').join('')+(r?'<span class="us">ventas-marzo.csv (nuevo)</span>':'');
+    const res=$('#c8l1-res'),out=$('#c8l1-out');
+    if(!corrido){res.innerHTML='';out.innerHTML='<span>Elige las piezas del pedido y pulsa «Ejecutar». El resultado correcto tiene <b>1 encabezado y '+ESP_FILAS+' filas</b>, con un total de <b>'+n(ESP_TOTAL)+'</b>.</span>';return;}
+    if(!P.donde){
+      res.innerHTML='<pre class="c8l1-err">PS C:\\Informe\\2026-03&gt; python unir.py\npython : El término \'python\' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable.</pre>';
+      out.innerHTML='<span class="warn">No se pudo ejecutar.</span><span>Como no dijiste dónde iba a correr, el asistente eligió Python, que no está instalado en esta computadora. Activa «Dónde corre» y vuelve a ejecutar.</span>';
+      return;
+    }
+    let h='<div class="tbl"><table><thead><tr><th colspan="4">ventas-marzo.csv</th><th></th></tr></thead><tbody>';
+    let datos=0,total=0;const prob={};
+    r.filas.forEach((f,i)=>{
+      const esHdr=f.hdr||f.mal==='encabezado repetido';
+      if(!esHdr){datos++;total+=Number(f.c[3])||0;}
+      if(f.mal)prob[f.mal]=(prob[f.mal]||0)+1;
+      h+='<tr class="'+(f.mal?'mal':'')+'">'+f.c.map((x,j)=>'<td'+(j===3?' class="n"':'')+'>'+(esHdr?'<b>'+x+'</b>':(x===''?'·':esc(x)))+'</td>').join('')+'<td class="nota">'+(f.mal||'')+'</td></tr>';
+    });
+    if(P.salida){h=h.replace('<tbody>','<tbody><tr><td><b>Fecha</b></td><td><b>Vendedor</b></td><td><b>Zona</b></td><td class="n"><b>Monto</b></td><td></td></tr>');}
+    h+='</tbody></table></div>';
+    res.innerHTML=h;
+    const datosReal=r.filas.filter(f=>!f.hdr&&f.mal!=='encabezado repetido').length;
+    let o='<span class="big">Filas de datos: '+datosReal+' (esperadas '+ESP_FILAS+') · total Monto: '+n(total)+' (esperado '+n(ESP_TOTAL)+')</span>';
+    if(prob['encabezado repetido'])o+='<span class="warn">'+prob['encabezado repetido']+' encabezados repetidos en medio de los datos.</span><span>El script pegó los archivos tal cual, con su primera línea. Una fórmula que sume la columna Monto los ignora, pero un filtro o una tabla dinámica los cuenta como filas. Lo arregla la pieza «La salida, con un ejemplo».</span>';
+    if(prob['fila de febrero'])o+='<span class="warn">'+prob['fila de febrero']+' filas de febrero mezcladas: el total sube en '+n(950)+'.</span><span>«Todos los archivos ventas-*.csv» incluye el del mes anterior que quedó en la carpeta. Lo arregla la pieza «La entrada».</span>';
+    if(prob['fila vacía'])o+='<span class="warn">1 fila vacía.</span><span>El archivo de la zona Sur trae una línea vacía al final, como muchas exportaciones. Lo arregla la pieza «Casos raros».</span>';
+    if(!Object.keys(prob).length)o+='<span class="ok">Coincide con lo esperado: un encabezado, '+ESP_FILAS+' filas y un total de '+n(ESP_TOTAL)+'.</span>';
+    if(P.raros)o+='<span>El script avisa al terminar: '+(P.salida?'«Entraron '+r.entran+' filas; salieron '+datosReal+'». La diferencia es la fila vacía que omitió, y lo sabes sin contar a mano.':'«Salieron '+r.filas.length+' líneas». Cuenta encabezados como si fueran datos: sin la pieza de salida, el conteo también engaña.')+'</span>';
+    else if(!Object.keys(prob).length)o+='<span>Funcionó, pero el script no cuenta nada: la próxima vez que falle, no te vas a enterar. Agrega «Casos raros».</span>';
+    if(Object.keys(prob).length)o+='<span>El script no dio ningún mensaje de error: «funcionó». Lo que delata el problema es compararlo con el resultado esperado.</span>';
+    out.innerHTML=o;
+  }
+  document.querySelectorAll('#c8l1-piezas input').forEach(i=>i.addEventListener('change',()=>{P[i.dataset.p]=i.checked;corrido=false;pintar();}));
+  $('#c8l1-run').addEventListener('click',()=>{corrido=true;pintar();});
+  $('#c8l1-reset').addEventListener('click',()=>{Object.keys(P).forEach(k=>P[k]=false);document.querySelectorAll('#c8l1-piezas input').forEach(i=>i.checked=false);corrido=false;pintar();});
+  pintar();
+})();
+</script>
+<script>
+(function(){
+  const {$}=window.Lab;
+  // nombre, zona, mes de los datos, filas, fecha de descarga
+  const F=[
+    ['export.csv','Norte','2026-03',3],
+    ['export(1).csv','Sur','2026-03',2],
+    ['export(2).csv','Centro','2026-03',2],
+    ['export(3).csv','Norte','2026-02',2]
+  ];
+  const DESC='2026-04';
+  const COD={
+    '1':[['','foreach ($a in Get-ChildItem export*.csv) {'],['','  $zona = (Import-Csv $a -Delimiter ";")[0].Zona'],['mal','  $mes = $a.LastWriteTime.ToString("yyyy-MM")'],['mal','  Move-Item $a "ventas-$zona-$mes.csv" -Force'],['','}']],
+    '2':[['','foreach ($a in Get-ChildItem export*.csv) {'],['','  $fila = (Import-Csv $a -Delimiter ";")[0]'],['bien','  $mes = ([datetime]::ParseExact($fila.Fecha, "dd/MM/yyyy", $null)).ToString("yyyy-MM")'],['bien','  $nuevo = "ventas-$($fila.Zona)-$mes.csv"'],['bien','  if (Test-Path $nuevo) { Write-Warning "$nuevo ya existe"; continue }'],['bien','  Move-Item $a $nuevo'],['','}']]
+  };
+  let estado=null; // resultado de la última ejecución
+  const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const destino=(f,v)=>'ventas-'+f[1]+'-'+(v==='1'?DESC:f[2])+'.csv';
+  function ficha(f,cls,nombre){return '<div class="c8l2-f '+(cls||'')+'"><b>'+esc(nombre||f[0])+'</b><small>'+f[1]+' · '+(f[2]==='2026-03'?'marzo':'febrero')+' · '+f[3]+' filas</small></div>';}
+  function correr(modo,v){
+    const ops=F.map(f=>[f,destino(f,v)]);
+    const vistos={},res=[],perdidos=[],avisos=[];
+    ops.forEach(([f,d])=>{
+      if(vistos[d]){
+        if(v==='1'){perdidos.push(vistos[d]);vistos[d]=f;}
+        else{avisos.push(d);res.push([f,f[0]]);return;}
+      }else vistos[d]=f;
+    });
+    Object.keys(vistos).forEach(d=>res.push([vistos[d],d]));
+    return {modo,v,ops,res,perdidos,avisos};
+  }
+  function pintar(){
+    const v=$('#c8l2-ver').value,modo=$('#c8l2-modo').value;
+    const L=COD[v].slice();
+    if(modo==='sim'){const i=L.findIndex(l=>/Move-Item/.test(l[1]));L[i]=[L[i][0],L[i][1]+' -WhatIf'];}
+    const pre=modo==='copia'?[['com','# antes: Copy-Item C:\\Informe\\descargas C:\\Informe\\copia -Recurse'],['com','cd C:\\Informe\\copia']]:modo==='orig'?[['com','cd C:\\Informe\\descargas']]:[['com','cd C:\\Informe\\descargas']];
+    const PED={'1':'# Pedido: «ponle a cada archivo su zona y su mes»','2':'# Pedido: «el mes sale de la columna Fecha; si el nombre ya existe, no sobrescribas y avisa»'};
+    $('#c8l2-cod').innerHTML=[['com',PED[v]]].concat(pre,L).map(l=>'<span class="'+l[0]+'">'+esc(l[1])+'</span>').join('\n');
+    const dirs=$('#c8l2-dirs'),out=$('#c8l2-out');
+    const intactos='<div class="c8l2-dir"><h4>Originales: descargas</h4>'+F.map(f=>ficha(f)).join('')+'</div>';
+    if(!estado){dirs.innerHTML=intactos;out.innerHTML='<span>La carpeta tiene 4 archivos descargados del sistema: tres de marzo y uno de febrero que alguien bajó para comparar. Elige cómo correr el script y pulsa «Ejecutar».</span>';return;}
+    const e=estado;
+    let h='',o='';
+    if(e.modo==='sim'){
+      const cuenta={};e.ops.forEach(([f,d])=>cuenta[d]=(cuenta[d]||0)+1);
+      h=intactos+'<div class="c8l2-dir"><h4>Lo que haría (nada cambió)</h4><ul class="c8l2-sim">'+e.ops.map(([f,d])=>{const dup=cuenta[d]>1;return '<li class="'+(dup?'dup':'')+'">WhatIf: '+esc(f[0])+' → '+esc(d)+(dup&&e.v==='2'&&f===e.ops.filter(o=>o[1]===d)[1][0]?' (lo saltaría)':'')+'</li>';}).join('')+'</ul></div>';
+      const dups=Object.keys(cuenta).filter(d=>cuenta[d]>1);
+      if(dups.length&&e.v==='1')o='<span class="warn">Dos operaciones van al mismo destino: '+esc(dups[0])+'.</span><span>La segunda sobrescribiría a la primera y se perdería la venta de marzo de la zona Norte. Además, todos los nombres dicen 2026-04: el mes sale de la fecha de descarga, no de los datos. Lo viste antes de que pasara, sin tocar ningún archivo.</span><span>Ahora elige «Pedido corregido» y simula de nuevo.</span>';
+      else o='<span class="ok">Cuatro destinos distintos, cada uno con el mes de sus datos.</span><span>La simulación confirma el plan. El siguiente paso es correrlo sobre una copia, contar los archivos y recién después usarlo con los originales.</span>';
+    }else{
+      const titulo=e.modo==='copia'?'Copia de trabajo, después de correr':'Originales: descargas, después de correr';
+      let carpeta='<div class="c8l2-dir"><h4>'+titulo+'</h4>'+e.res.map(([f,d])=>ficha(f,e.v==='2'?'ok':'',d)).join('')+e.perdidos.map(f=>ficha(f,'perdido',f[0]+' (sobrescrito)')).join('')+'</div>';
+      h=e.modo==='copia'?intactos+carpeta:carpeta;
+      if(e.perdidos.length){
+        o='<span class="big">Antes: 4 archivos · después: '+e.res.length+'</span>';
+        if(e.modo==='orig')o+='<span class="warn">Se perdió la venta de marzo de la zona Norte (3 filas). No hubo ningún mensaje de error y no hay papelera: Move-Item con -Force sobrescribió el archivo sin avisar.</span><span>La única forma de recuperarlo es volver a descargarlo del sistema, si todavía se puede. Pulsa «Restaurar la carpeta» y prueba otra forma de correrlo.</span>';
+        else o+='<span class="warn">En la copia falta un archivo: la venta de marzo de la zona Norte quedó sobrescrita por la de febrero.</span><span>Lo notaste porque contaste los archivos antes y después. Los originales siguen intactos, a la izquierda. Corrige el pedido y prueba de nuevo.</span>';
+      }else{
+        o='<span class="big">Antes: 4 archivos · después: 4</span><span class="ok">Cada archivo tiene su zona y el mes de sus datos, y ninguno se sobrescribió.</span>';
+        o+=e.modo==='orig'?'<span>Salió bien, pero lo corriste directo sobre los originales: si hubiera fallado, no tenías vuelta atrás. El orden seguro es simulación, copia y recién después originales.</span>':'<span>Con la copia comprobada, ya puedes correrlo sobre los originales con tranquilidad.</span>';
+      }
+    }
+    dirs.innerHTML=h;out.innerHTML=o;
+  }
+  $('#c8l2-run').addEventListener('click',()=>{estado=correr($('#c8l2-modo').value,$('#c8l2-ver').value);pintar();});
+  $('#c8l2-reset').addEventListener('click',()=>{estado=null;pintar();});
+  ['#c8l2-modo','#c8l2-ver'].forEach(s=>$(s).addEventListener('change',()=>{estado=null;pintar();}));
+  pintar();
+})();
+</script>
+</body>
+</html>
